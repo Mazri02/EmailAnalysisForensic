@@ -1,0 +1,800 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp1057939dye;
+        Fri, 24 Jan 2025 11:44:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEq0xjUcCzYf0fZCaD6s0ub8CHYLqqqkTsphsKmYhQ/42fbdsSmR0ikZbxS2MPZmCRMF+on
+X-Received: by 2002:a05:6a20:12cf:b0:1e0:e027:2eaf with SMTP id adf61e73a8af0-1eb214daa01mr45165210637.19.1737747852179;
+        Fri, 24 Jan 2025 11:44:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737747852; cv=none;
+        d=google.com; s=arc-20240605;
+        b=B5ei01LhmT74fgtwZVmJYjrmNOOrDHYn7XPta+qGAcz+Sq74oLTijgpnVhdpqMKnAn
+         h5gXnwMI8It5kgV04A7RQA1pCUbiyrGBwlhsXdkEvVmSanEaL+IbuA1lH4BU90e/F+pb
+         qb724RqrtPsfeZOY3pIZzaNS4wDHRQsHOa9TdqEQRoo93v3w5MQG+/dwy/3hFjEgXFez
+         u7AscTrJ9sPPSVQMZOytKIIZoxstFDYdwj4gL0LkKUpMxfnXilIKrvTXGGScIWGr8oUW
+         Q/tB42emO9xw+5zo+4Px2APbRNn+7kAeMzh8EkCzzWg5x2FUupoFujtU/1zDrrO/yGac
+         EEIw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=c2Ow4oXz7hptXPzq07I01Nup8wgZpaEV0VYcquugsa4=;
+        fh=xlTyL2aeJY2eox2TeC1tOeMbD2mT8GxXXfQQZTd5YBw=;
+        b=MNigtbwmRCq3Mhm+PfJAjv0f2JR/qsr3S09wT9tUjOmNKci1y0BSDL0SHbGJPKger9
+         9aMrJP5WIqErjOssID+ehsw6coQr0M3er9K5vLWhXBtjMbxGkgh9wRXxyvCMgnvXRjra
+         bQ7Sl8w7FZG9wq9megWI6rX3RylsdT3fCg9Mx/ojyv506dPKZ70x9JizGOVaaZB9nxgD
+         81jGqFvj5JvFrjkiyqNrmX8kc4MjVj2Rlww8zrZKgjwU54cvQNv8biTOKJaEm3fjsBWq
+         kd8sxCVmQXt5KdQdvoQYg6KxCDcQtTkqfeUOwPcAS27C0SDhPq5irmMb+LJoOAU5cY8H
+         8O+A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hello.powtoon.com header.s=scph0223 header.b="j+C9/Nym";
+       spf=pass (google.com: domain of msprvs1=20119xbc-7qfu=bounces-280172-1434@bounces.powtoon.com designates 147.253.216.101 as permitted sender) smtp.mailfrom="msprvs1=20119xbc-7qfU=bounces-280172-1434@bounces.powtoon.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hello.powtoon.com
+Return-Path: <msprvs1=20119xbc-7qfU=bounces-280172-1434@bounces.powtoon.com>
+Received: from mta-253-216-101.sparkpostmail.com (mta-253-216-101.sparkpostmail.com. [147.253.216.101])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac497273576si3636672a12.409.2025.01.24.11.44.11
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 24 Jan 2025 11:44:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=20119xbc-7qfu=bounces-280172-1434@bounces.powtoon.com designates 147.253.216.101 as permitted sender) client-ip=147.253.216.101;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hello.powtoon.com header.s=scph0223 header.b="j+C9/Nym";
+       spf=pass (google.com: domain of msprvs1=20119xbc-7qfu=bounces-280172-1434@bounces.powtoon.com designates 147.253.216.101 as permitted sender) smtp.mailfrom="msprvs1=20119xbc-7qfU=bounces-280172-1434@bounces.powtoon.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hello.powtoon.com
+X-MSFBL: xDKqUsIy+yxCTV/xT7l86Dk1q9DjnCFp7PHXkmcZIb8=|eyJtZXNzYWdlX2lkIjo
+	iNjc4ZThiZWQ5MzY3ZWI0MDI3YzciLCJyIjoiYXpyaS5tb2toemFuaUBnbWFpbC5
+	jb20iLCJ0ZW5hbnRfaWQiOiJzcGMiLCJzdWJhY2NvdW50X2lkIjoiMTQzNCIsImN
+	1c3RvbWVyX2lkIjoiMjgwMTcyIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hello.powtoon.com;
+	s=scph0223; t=1737747851; i=@hello.powtoon.com;
+	bh=c2Ow4oXz7hptXPzq07I01Nup8wgZpaEV0VYcquugsa4=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=j+C9/NymFJQCyUD0yAWquVRTkXYFPYZMmZgumMHNpp/bl+1eOj9eHSECRDm28j2eX
+	 Ky4OMCUWhDH/BSJtWxDaMOy/ZxIQlsBLB2W8IQcBDZajXe/Cy3qtmMNvdId2JuR6uv
+	 SMw2rBJF1rR3gcukGsIkxymddNW4DZjHMZsdHNoY=
+To: "MUHD AZRI BIN MOKHZANI" <azri.mokhzani@gmail.com>
+Message-ID: <7C.7A.10665.B8DE3976@i-0e3d9800063056712.mta1vrest.sd.prd.sparkpost>
+Date: Fri, 24 Jan 2025 19:44:11 +0000
+Content-Type: multipart/alternative; boundary="_----mCezZrfyJomVt/jhWOPP1A===_5C/7A-10665-B8DE3976"
+MIME-Version: 1.0
+X-Campaign-ID: 12389216
+List-Unsubscribe: <https://links.powtoon.com/e/encryptedUnsubscribe?_r=f903732034f0487ca934de9e0aa6503b&_s=a9bf62af645843d1888ccb2acb5b3a35&_t=5yAKR1kPcVo6d0e_G79Ta6PWmDCU1uOoXy133BMQ6aTtGqCVht_3ESD94FzMsOBN17xQdNb9C0T9iMqCGvqPSCK7bIGXhVihAhVjhw4Q_Vb1BYe4KFSd9Ux4m9nAoUa5>,<mailto:unsubscribe+12389216+16245203@unsubscribe.iterable.com>
+X-Message-ID: a9bf62af645843d1888ccb2acb5b3a35
+X-Feedback-ID: 16245203:12389216:76540:iterable
+Reply-To: support@powtoon.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: =?utf-8?B?TWFrZSBBbnl0aGluZyBJbnRlcmVzdGluZ+KEojogVmlkZW8ncyBN?=
+	=?utf-8?B?YWdpYyBUb3VjaA==?=
+From: "Powtoon Awesomeness" <awesomeness@hello.powtoon.com>
+Feedback-ID: 16245203:12389216:76540:iterable
+
+--_----mCezZrfyJomVt/jhWOPP1A===_5C/7A-10665-B8DE3976
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Facts and figures on how video transforms even the flattest of topics=0A=0A=
+=0A=0A =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =0A=CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF  =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=
+=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=
+=AF =CD=8F=E2=80=AF  =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=
+=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=
+=80=AF =0A=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF =
+=CD=8F=E2=80=AF =CD=8F=E2=80=AF =CD=8F=E2=80=AF=0A <https://www.powtoon.com=
+/guide/engage-your-audience/> =0A=0A=0A=0ADid you know=E2=80=A6=0A=0A=0A=0A=
+ <https://www.powtoon.com/guide/engage-your-audience/>=0A=0AViewers retain =
+95% of a message when they watch it in a video compared to 10% =0Awhen read=
+ing it in text.=0A=0A <https://www.powtoon.com/guide/engage-your-audience/>=
+=0A=0AHumans have a shorter attention span than goldfish.=0A=0A <https://ww=
+w.powtoon.com/guide/engage-your-audience/>=0A=0APeople spend 2.6x more time=
+ on pages with video than without.=0A=0A=0A=0A <https://www.powtoon.com/gui=
+de/engage-your-audience/> =0A=0A=0A=0AOver the next few weeks, we=E2=80=99l=
+l reveal how video content is revolutionizing =0Aemployee engagement and ma=
+king even the most mundane topics fascinating.=0A=0A=0A=0A=0AStay tuned to =
+learn how to=0Atransform your strategy and=0A=0A=0AMake Anything Interestin=
+g=E2=84=A2!=0A=0AStart engaging your audience =0A<https://www.powtoon.com/g=
+uide/engage-your-audience/> =0A=0A=0A=0A <https://www.facebook.com/Powtoon/=
+> <https://www.tiktok.com/@powtoon_official>=0A <https://www.instagram.com/=
+powtoon/> =0A<https://www.linkedin.com/company/powtoon-ltd> =0A<https://www=
+.youtube.com/user/PowToon>=0A=0A=0A <>=0A <https://powtoonsupport.powtoon.=
+com/hc/en-gb> =0A=0A=0A=0AYou're receiving this email because you signed up=
+ to receive Awesome updates.=0ADon't want to hear from us anymore=3F Okay, =
+we get it, you need your space...=0A Manage your communication & personaliz=
+ation settings here =0A<https://links.powtoon.com/e/eh=3F_t=3Df903732034f04=
+87ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTc=
+V3oBbQp3ti5RXGwO2GKLcy_VHmnL4NsvBl7R5_JXz8mzX6LJvwc1OtPt9q4XixklNqh2ZvK_E8Q=
+ddZhyEWOhFVXjtdNYGPs57V9WlApf370ycOxkaueCpicIsu92iIv4cYXBbklHeWIF5HA9iZpb5s=
+T2TXeMaqPuT9iFJB2_BPBbzZtYRVMUnRycu65ScFNQP5o08T-tshujphdUMuovB9Cr-FxVw6CmU=
+QCoULlMkbD0L6AaKkJfQJ8_SeARhk7lRb8zltBnGnNEaOLnFgjzFmrY9KSYIPtxv2lNopkyQWY_=
+mUfOCYk->=0A!=0A=0A=0AView in browser =0A<https://links.powtoon.com/e/evib=
+=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3=
+a35&_e=3D5yAKR1kPcVo6d0e_G79Ta6PWmDCU1uOoXy133BMQ6aQ-TMmrfizQ8BMxTgbFtVu7>
+--_----mCezZrfyJomVt/jhWOPP1A===_5C/7A-10665-B8DE3976
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head><title></title><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><!--[if mso]><xml><o:OfficeDocumentSettings=
+><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettin=
+gs></xml><![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googlea=
+pis.com/css2=3Ffamily=3DOpen+Sans:wght@400;700&amp;display=3Dswap" rel=3D"s=
+tylesheet" type=3D"text/css"><!--<![endif]--><style>*{box-sizing:border-box=
+}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;=
+text-decoration:inherit!important}#MessageViewBody a{color:inherit;text-dec=
+oration:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hi=
+de:all;display:none;max-height:0;overflow:hidden}.image_block img+div{displ=
+ay:none}sub,sup{font-size:75%;line-height:0}@media(max-width:620px){.row-6 =
+.column-1 .block-3.button_block .alignment a,.row-6 .column-1 .block-3.but=
+ton_block .alignment div,.social_block.desktop_hide .social-table{display:i=
+nline-block!important}.image_block div.fullWidth{max-width:100%!important}.=
+mobile_hide{display:none}.row-content{width:100%!important}.stack .column{w=
+idth:100%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;=
+overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table=
+!important;max-height:none!important}.row-2 .column-1 .block-1.text_block t=
+d.pad{padding:20px 35px 15px!important}.row-3 .column-3 .block-2.text_block=
+ td.pad{padding:20px 35px 40px!important}.row-3 .column-2 .block-2.text_blo=
+ck td.pad{padding:30px 35px!important}.row-6 .column-1 .block-3.button_bloc=
+k td.pad{padding:10px 25px 45px 35px!important}.row-6 .column-1 .block-3.bu=
+tton_block a,.row-6 .column-1 .block-3.button_block div,.row-6 .column-1 .b=
+lock-3.button_block span{line-height:27px!important}.row-6 .column-1 .block=
+-3.button_block .alignment{text-align:left!important}}</style><!--[if mso ]=
+><style>sup,sub{font-size:100%!important}sup{mso-text-raise:10%}sub{mso-tex=
+t-raise:-10%}</style><![endif]--></head><body class=3D"body" style=3D"box-s=
+izing: border-box; background-color: #f4f4f4; margin: 0; padding: 0; -webki=
+t-text-size-adjust: none; text-size-adjust: none;">=0D=0A<div style=3D"colo=
+r:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height=
+:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:no=
+ne!important;line-height:0px!important;"><img border=3D"0" width=3D"1" heig=
+ht=3D"1" src=3D"https://post.spmailtechnolo.com/q/0CYQYU9Rzf6tUW_RhcfRnA~~/=
+AARGbAA~/RgRpdnKLPVcDc3BjQgpnjovtk2frQCfHUhdhenJpLm1va2h6YW5pQGdtYWlsLmNvbV=
+gEAAAFmg~~" alt=3D""/></div>=0D=0A<span style=3D"color:transparent;visibili=
+ty:hidden;display:none;opacity:0;height:0;width:0;font-size:0;">Facts and f=
+igures on how video transforms even the flattest of topics</span><img src=
+=3D"https://links.powtoon.com/e/eo=3F_t=3Df903732034f0487ca934de9e0aa6503b&=
+amp;_m=3Da9bf62af645843d1888ccb2acb5b3a35&amp;_e=3D5yAKR1kPcVo6d0e_G79Ta6PW=
+mDCU1uOoXy133BMQ6aTtGqCVht_3ESD94FzMsOBN17xQdNb9C0T9iMqCGvqPSCK7bIGXhVihAhV=
+jhw4Q_VZbqAt_fmXw0iUpVPacqLZ75UTAsLsnPp8fgrHrKdvHuw%3D%3D" style=3D"border:=
+0;width:1px;height:1px;border-width:0px!important;display:none!important;li=
+ne-height:0!important;" width=3D"1" height=3D"1"/><table class=3D"nl-contai=
+ner" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; background-color: #f4f4f4;" bgcolor=3D"#f4f4f4"><tbody st=
+yle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td s=
+tyle=3D"box-sizing: border-box;"><table class=3D"row row-1" align=3D"center=
+" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; background-color: #f4f4f4;" bgcolor=3D"#f4f4f4"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; background-color: #fff; border-radius: 0; color: #000; width: 600px; mar=
+gin: 0 auto;" width=3D"600" bgcolor=3D"#fff"><tbody style=3D"box-sizing: bo=
+rder-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column=
+-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; ms=
+o-table-rspace: 0; font-weight: 400; text-align: left; vertical-align: top;=
+ border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=
+=3D"left" valign=3D"top"><table class=3D"html_block block-1" width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><t=
+r style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: =
+border-box;"><div style=3D"box-sizing: border-box; font-family: 'Open Sans'=
+,'Helvetica Neue',Helvetica,Arial,sans-serif; text-align: center;" align=3D=
+"center"> <div style=3D"display: none; max-height: 0px; overflow: hidden;">=
+ &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbs=
+p;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nb=
+sp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&n=
+bsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&=
+nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;=
+&nbsp; </div> <div style=3D"display: none; max-height: 0px; overflow: hidde=
+n;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;=
+&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239=
+;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#823=
+9;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#82=
+39;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8=
+239;&nbsp; </div> <div style=3D"display: none; max-height: 0px; overflow: h=
+idden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8=
+239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#=
+8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&=
+#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;=
+&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847=
+;&#8239;&nbsp; </div> <div style=3D"display: none; max-height: 0px; overflo=
+w: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847=
+;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#84=
+7;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#8=
+47;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#=
+847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&=
+#847;&#8239;&nbsp; </div> <div style=3D"display: none; max-height: 0px; ove=
+rflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&=
+#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;=
+&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp=
+;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbs=
+p;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nb=
+sp;&#847;&#8239;&nbsp; </div> <div style=3D"display: none; max-height: 0px;=
+ overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nb=
+sp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&n=
+bsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&=
+nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;=
+&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239=
+;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display: none; max-height: =
+0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239=
+;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#823=
+9;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#82=
+39;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8=
+239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#=
+8239;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display: none; max-heig=
+ht: 0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#=
+8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&=
+#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;=
+&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847=
+;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#84=
+7;&#8239;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display: none; max-=
+height: 0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#84=
+7;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#8=
+47;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#=
+847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&=
+#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;=
+&#847;&#8239;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display: none; =
+max-height: 0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&nbsp;=
+&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp=
+;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbs=
+p;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nb=
+sp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&n=
+bsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display: no=
+ne; max-height: 0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#8239;&n=
+bsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&=
+nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;=
+&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239=
+;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#823=
+9;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp; </div> <div style=3D"display=
+: none; max-height: 0px; overflow: hidden;"> &#847;&#8239;&nbsp;&#847;&#823=
+9;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#82=
+39;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8=
+239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#=
+8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&=
+#8239;&nbsp;&#847;&#8239;&nbsp;&#847;&#8239;&nbsp; </div></div></td></tr></=
+table><table class=3D"image_block block-2" width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: =
+border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-siz=
+ing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; paddin=
+g-top: 35px; width: 100%;" width=3D"100%"><div class=3D"alignment" align=3D=
+"center" style=3D"box-sizing: border-box; line-height: 10px;"><div style=3D=
+"box-sizing: border-box; max-width: 600px;"><a href=3D"https://links.powtoo=
+n.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1=
+888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmnL4Nt8yU7f8uzjh=
+KWFEFJyDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPfAfzyuF67OZVK0t6fI9v4C=
+peV4D92po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsHtZtMSsTJFhleBmWdFPXLxE1yu=
+iR8h-IVslQcdD2mIOdYcH90FeHg-XHsQ1zcIBM7elnI4UgSEQHyzFB6An5Y4EmuIksk_eJnijUx=
+XXN8g0mlB3bpLhAgJxXQ8_1-03UHdR4wlp6GyasF3VeA5KBlMtJQ6cBe0fW2dSCRLy6V5gW1yrU=
+sO2SjUPik4%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: =
+none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/pu=
+blic/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/6c4916e685d64ec=
+fab558434a453d063/2025/January/Group%2030206%402x_1.png" style=3D"box-sizin=
+g: border-box; display: block; height: auto; border: 0; width: 100%;" width=
+=3D"600" alt=3D"At Powtoon, it=E2=80=99s our goal to Make Anything Interest=
+ing=E2=84=A2 through the power of video" title=3D"At Powtoon, it=E2=80=99s =
+our goal to Make Anything Interesting=E2=84=A2 through the power of video" =
+height=3D"auto"></a></div></div></td></tr></table></td></tr></tbody></table=
+> </td></tr></tbody></table><table class=3D"row row-2" align=3D"center" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: =
+border-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-cont=
+ent" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; background-color: #fff; border-radius: 0; color: #000; wi=
+dth: 600px; margin: 0 auto;" width=3D"600" bgcolor=3D"#fff"><tbody style=3D=
+"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; pad=
+ding-bottom: 5px; vertical-align: top; border-top: 0; border-right: 0; bord=
+er-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=
+=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-tab=
+le-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"bo=
+x-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; p=
+adding-bottom: 40px; padding-left: 35px; padding-right: 35px; padding-top: =
+20px;"><div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;=
+"><div class style=3D"box-sizing: border-box; font-size: 12px; text-align: =
+center; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-seri=
+f; mso-line-height-alt: 21.6px; color: #795ee9; line-height: 1.8;"><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-heigh=
+t-alt: 36px;"><span style=3D"box-sizing: border-box; word-break: break-word=
+; font-size: 20px;">Did you know=E2=80=A6</span></p></div></div></td></tr><=
+/table></td></tr></tbody></table></td></tr></tbody></table><table class=3D"=
+row row-3" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-=
+box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border=
+-box;"><table class=3D"row-content stack" align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+ff; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"=
+600" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D=
+"box-sizing: border-box;"><td class=3D"column column-1" width=3D"33.3333333=
+33333336%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; font-weight: 400; text-align: left; padding-bottom: 30px; paddin=
+g-top: 5px; vertical-align: top; border-top: 0; border-right: 0; border-bot=
+tom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"imag=
+e_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td cla=
+ss=3D"pad" style=3D"box-sizing: border-box; padding-left: 35px; padding-rig=
+ht: 35px; width: 100%;" width=3D"100%"><div class=3D"alignment" align=3D"ce=
+nter" style=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"bo=
+x-sizing: border-box; max-width: 80px;"><a href=3D"https://links.powtoon.co=
+m/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888c=
+cb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmnL4Nt8yU7f8uzjhKWFE=
+FJyDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPfAfzyuF67OZVK0t6fI9v4CpeV4=
+D92po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsHtZtMSsTJFhleBmtCe7pFipf300m44=
+1UZML9Pir1rL5NbmQ3N8Ha-HjUvK3J3qaNNeMPSqPaY-7dcwCdEBRtYNqwWJof0d_PZtrN0zK-7=
+vYFviN3gG7k8cQYwg-6e-HZVO1hGmGakcviDZ_-3uBx-OEe1WfEWG-fgdYLvKUX-pp7FO9WemmI=
+LBv1JA%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: none=
+;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public=
+/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/6c4916e685d64ecfab5=
+58434a453d063/2025/January/Group%2030300%402x.png" style=3D"box-sizing: bor=
+der-box; display: block; height: auto; border: 0; width: 100%;" width=3D"80=
+" alt=3D"Eye image" title=3D"Eye image" height=3D"auto"></a></div></div></t=
+d></tr></table><table class=3D"text_block block-2" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: b=
+reak-word;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=
+=3D"box-sizing: border-box; padding-bottom: 10px; padding-left: 35px; paddi=
+ng-right: 30px; padding-top: 15px;"><div style=3D"box-sizing: border-box; f=
+ont-family: sans-serif;"><div class style=3D"box-sizing: border-box; font-s=
+ize: 14px; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-s=
+erif; mso-line-height-alt: 16.8px; color: #555; line-height: 1.2;"><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 14p=
+x; text-align: center; mso-line-height-alt: 16.8px;">Viewers retain 95% of =
+a message when they watch it in a video compared to 10% when reading it in =
+text.</p></div></div></td></tr></table></td><td class=3D"column column-2" w=
+idth=3D"33.333333333333336%" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bo=
+ttom: 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-rig=
+ht: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><ta=
+ble class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-left:=
+ 35px; padding-right: 35px; width: 100%;" width=3D"100%"><div class=3D"alig=
+nment" align=3D"center" style=3D"box-sizing: border-box; line-height: 10px;=
+"><div style=3D"box-sizing: border-box; max-width: 80px;"><a href=3D"https:=
+//links.powtoon.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9=
+bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmn=
+L4Nt8yU7f8uzjhKWFEFJyDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPfAfzyuF6=
+7OZVK0t6fI9v4CpeV4D92po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsHtZtMSsTJFhl=
+eBmEyH7F5Ix6sDpEAagLZL7VtTac20xDA1At8M-IHYJaW8jEiE3jzlwbc-jrTkyVouPLt3QF-GI=
+FQwXa6BAwAgfwc27u4g1nJlxpSxlvppANdLiPf82oIw9CCxl2j9y8a3-xVicm3qFcKtHD1BbbJ5=
+s9qAbhF82zXG5y_2x3qWWx1o%3D" target=3D"_blank" style=3D"box-sizing: border-=
+box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.clo=
+udfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/6=
+c4916e685d64ecfab558434a453d063/2025/January/Group%2026340%402x.png" style=
+=3D"box-sizing: border-box; display: block; height: auto; border: 0; width:=
+ 100%;" width=3D"80" alt=3D"Goldfish Image" title=3D"Goldfish Image" height=
+=3D"auto"></a></div></div></td></tr></table><table class=3D"text_block bloc=
+k-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-=
+box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 10=
+px; padding-left: 35px; padding-right: 35px; padding-top: 30px;"><div style=
+=3D"box-sizing: border-box; font-family: sans-serif;"><div class style=3D"b=
+ox-sizing: border-box; font-size: 14px; font-family: 'Open Sans','Helvetica=
+ Neue',Helvetica,Arial,sans-serif; mso-line-height-alt: 16.8px; color: #555=
+; line-height: 1.2;"><p style=3D"box-sizing: border-box; line-height: inher=
+it; margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16=
+.8px;">Humans have a shorter attention span than goldfish.</p> </div></div=
+></td></tr></table></td><td class=3D"column column-3" width=3D"33.333333333=
+333336%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rs=
+pace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; padding-t=
+op: 5px; vertical-align: top; border-top: 0; border-right: 0; border-bottom=
+: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"image_b=
+lock block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace:=
+ 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"pad" style=3D"box-sizing: border-box; padding-left: 35px; padding-right=
+: 35px; width: 100%;" width=3D"100%"><div class=3D"alignment" align=3D"cent=
+er" style=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"box-=
+sizing: border-box; max-width: 80px;"><a href=3D"https://links.powtoon.com/=
+u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb=
+2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmnL4Nt8yU7f8uzjhKWFEFJ=
+yDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPfAfzyuF67OZVK0t6fI9v4CpeV4D9=
+2po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsHtZtMSsTJFhleBmfROHtUzzwiIvQP_Wg=
+2PxMNeVCT75nUnZtYIrvu2D5o6UoZI3ros2wjREAlnEsuJWIJqvxWq0KTA-mXgR-bDl_tWo3djO=
+qBpBnnebZ9-oBEoqKrck46WzJIECaT-z4zP2ln1On5gvGKMJgsy9Vosod7i7pRjn_RXEGkrxc1U=
+4Gtk%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: none;"=
+ tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/u=
+sers/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/6c4916e685d64ecfab558=
+434a453d063/2025/January/Group%2030301%402x.png" style=3D"box-sizing: borde=
+r-box; display: block; height: auto; border: 0; width: 100%;" width=3D"80" =
+alt=3D"Play button" title=3D"Play button" height=3D"auto"></a></div></div><=
+/td></tr></table><table class=3D"text_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break=
+: break-word;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" styl=
+e=3D"box-sizing: border-box; padding-bottom: 10px; padding-left: 35px; padd=
+ing-right: 35px; padding-top: 20px;"><div style=3D"box-sizing: border-box; =
+font-family: sans-serif;"><div class style=3D"box-sizing: border-box; font-=
+size: 14px; font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-=
+serif; mso-line-height-alt: 16.8px; color: #555; line-height: 1.2;"><p styl=
+e=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 14=
+px; text-align: center; mso-line-height-alt: 16.8px;">People spend 2.6x mor=
+e time on pages with video than without.</p></div></div></td></tr></table><=
+/td></tr></tbody></table></td></tr></tbody></table><table class=3D"row row-=
+4" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-l=
+space: 0; mso-table-rspace: 0; background-color: #f4f4f4;" bgcolor=3D"#f4f4=
+f4"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: borde=
+r-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-content s=
+tack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; ms=
+o-table-rspace: 0; background-color: #f4f4f4; border-radius: 0; color: #000=
+; width: 600px; margin: 0 auto;" width=3D"600" bgcolor=3D"#f4f4f4"><tbody s=
+tyle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td =
+class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left=
+; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0=
+; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=
+=3D"top"><table class=3D"image_block block-1" width=3D"100%" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizin=
+g: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-=
+sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; pad=
+ding-left: 35px; padding-right: 35px; width: 100%;" width=3D"100%"><div cla=
+ss=3D"alignment" align=3D"center" style=3D"box-sizing: border-box; line-hei=
+ght: 10px;"><div style=3D"box-sizing: border-box; max-width: 530px;"><a hre=
+f=3D"https://links.powtoon.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa65=
+03b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO=
+2GKLcy_VHmnL4Nt8yU7f8uzjhKWFEFJyDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z=
+1gPfAfzyuF67OZVK0t6fI9v4CpeV4D92po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsH=
+tZtMSsTJFhleBm_OagDeSmTRSbaaMasFiNR2bN0e81HLboyQPzZMyAdJgV7KZFF_M3K_-qqPzyc=
+JjgFR-ESBKbjvfrC8XxDjGOW2PitQobt3MJqz9_KzyXGefbZU3iEMdoYZhTLYEkgZ7ix2ZAI-JA=
+JnolfxRVVU6qNNY7_Xiw2Koh62s1NjWkL7w%3D" target=3D"_blank" style=3D"box-sizi=
+ng: border-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d1=
+1r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c54=
+2cff6dd6a/6c4916e685d64ecfab558434a453d063/2025/January/Group%2030204%402x.=
+png" style=3D"box-sizing: border-box; display: block; height: auto; border:=
+ 0; width: 100%;" width=3D"530" alt=3D"Start Exploring" title=3D"Start Expl=
+oring" height=3D"auto"></a></div></div></td></tr></table></td></tr></tbody>=
+ </table></td></tr></tbody></table><table class=3D"row row-5" align=3D"cent=
+er" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; background-color: #f4f4f4;" bgcolor=3D"#f4f4f4"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; background-color: #fff; border-radius: 0; color: #000; width: 600px; mar=
+gin: 0 auto;" width=3D"600" bgcolor=3D"#fff"><tbody style=3D"box-sizing: bo=
+rder-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column=
+-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; ms=
+o-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px;=
+ padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0; bor=
+der-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=
+=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"35" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"b=
+ox-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"=
+><div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;"><div=
+ class style=3D"box-sizing: border-box; font-size: 12px; font-family: 'Open=
+ Sans','Helvetica Neue',Helvetica,Arial,sans-serif; mso-line-height-alt: 24=
+px; color: #000; line-height: 2;"><p style=3D"box-sizing: border-box; line-=
+height: inherit; margin: 0; text-align: center; mso-line-height-alt: 36px;"=
+><span style=3D"box-sizing: border-box; word-break: break-word; font-size: =
+18px;">Over the next few weeks, we=E2=80=99ll reveal how video content is r=
+evolutionizing employee engagement and making even the most mundane topics =
+fascinating.</span></p></div></div></td></tr></table></td></tr></tbody></ta=
+ble></td></tr></tbody></table> <table class=3D"row row-6" align=3D"center" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; background-color: #f4f4f4;" bgcolor=3D"#f4f4f4"><tbody style=3D"=
+box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D=
+"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; b=
+ackground-color: #795ee9; border-radius: 0; color: #000; width: 600px; marg=
+in: 0 auto;" width=3D"600" bgcolor=3D"#795ee9"><tbody style=3D"box-sizing: =
+border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column colu=
+mn-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; =
+mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5p=
+x; padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0; b=
+order-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table clas=
+s=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"b=
+ox-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; =
+padding-left: 60px; padding-right: 35px; padding-top: 45px;"><div style=3D"=
+box-sizing: border-box; font-family: Arial,sans-serif;"><div class style=3D=
+"box-sizing: border-box; font-size: 14px; font-family: 'Open Sans','Helveti=
+ca Neue',Helvetica,Arial,sans-serif; mso-line-height-alt: 25.2px; color: #f=
+afafa; line-height: 1.8;"><p style=3D"box-sizing: border-box; line-height: =
+inherit; margin: 0; font-size: 28px; text-align: left; mso-line-height-alt:=
+ 50.4px;">Stay tuned to learn how to<br style=3D"box-sizing: border-box;">t=
+ransform your strategy and</p></div></div></td></tr></table><table class=3D=
+"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-=
+lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"box-s=
+izing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padd=
+ing-bottom: 20px; padding-left: 60px; padding-right: 35px;"><div style=3D"b=
+ox-sizing: border-box; font-family: Arial,sans-serif;"><div class style=3D"=
+box-sizing: border-box; font-size: 14px; font-family: 'Open Sans','Helvetic=
+a Neue',Helvetica,Arial,sans-serif; mso-line-height-alt: 25.2px; color: #ff=
+f06b; line-height: 1.8;"><p style=3D"box-sizing: border-box; line-height: i=
+nherit; margin: 0; font-size: 28px; text-align: left; mso-line-height-alt: =
+50.4px;"> <span style=3D"box-sizing: border-box; word-break: break-word; fo=
+nt-size: 28px;">Make Anything Interesting=E2=84=A2!</span></p></div></div><=
+/td></tr></table><table class=3D"button_block block-3" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr styl=
+e=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border=
+-box; padding-bottom: 45px; padding-left: 60px; padding-top: 10px; text-ali=
+gn: left;" align=3D"left"><div class=3D"alignment" align=3D"left" style=3D"=
+box-sizing: border-box;"><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-m=
+icrosoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D=
+"https://links.powtoon.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&=
+_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKL=
+cy_VHmnL4Nt8yU7f8uzjhKWFEFJyDRp7J7XzyZTmkY4dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPf=
+AfzyuF67OZVK0t6fI9v4CpeV4D92po_qCikxfAjsXDftyuGVZEd0_4texOn3nKA_8nqKqsHtZtM=
+SsTJFhleBm_4dqMJvp_CvVLQhjR92_a6dV1OwUBuYTSjELCcfoAziXIWhBU0WWy6W-iQe-uvCaK=
+H0Wqi4gH6cJXKYAXYThyk_ndyFwoZ1k930ZShEgRPCepS6Nsl_QVdDQWmLTF3ibpWVOGh3vF2oN=
+5oKFqjGbVyn6irTzLBz65Pd0N4ig1QQ%3D" style=3D"height:57px;width:314px;v-text=
+-anchor:middle;" arcsize=3D"0%" stroke=3D"false" fillcolor=3D"#ffffff"> <w:=
+anchorlock/> <v:textbox inset=3D"0px,0px,0px,0px"> <center dir=3D"false" st=
+yle=3D"color:#000000;font-family:Arial, sans-serif;font-size:18px"><![endif=
+]--> <a class=3D"button" href=3D"https://links.powtoon.com/u/click=3F_t=3Df=
+903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3D=
+RUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmnL4Nt8yU7f8uzjhKWFEFJyDRp7J7XzyZTmkY4=
+dq81E2KdORd4DiKuuO9kM1Yk3K2Z1gPfAfzyuF67OZVK0t6fI9v4CpeV4D92po_qCikxfAjsXDf=
+tyuGVZEd0_4texOn3nKA_8nqKqsHtZtMSsTJFhleBmE5Kdr2PAw3NJ-eS6nO2M-aLTTUbUOqPd4=
+lBgy26uyvUiUSat3I0kHwi1l0JSI4BIOCnvP6wFy2C_Bot0eNTE2ZDUajwGNSZ8w9suV5Xpw4FP=
+MLjvLhDYUnn94FAKJwd6jOeUtzUppAEvHVeEOuqGz49lyuGcg2EN90znZ_2TCVA%3D" target=
+=3D"_blank" style=3D"box-sizing: border-box; background-color: #ffffff; bor=
+der-bottom: 0px solid #795ee9; border-left: 0px solid #795ee9; border-radiu=
+s: 0px; border-right: 0px solid #795ee9; border-top: 0px solid #795ee9; col=
+or: #000000; display: inline-block; font-family: 'Open Sans', 'Helvetica Ne=
+ue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; mso-b=
+order-alt: none; padding-bottom: 15px; padding-top: 15px; text-align: cente=
+r; text-decoration: none; width: auto; word-break: keep-all;"><span style=
+=3D"box-sizing: border-box; word-break: break-word; padding-left: 35px; pad=
+ding-right: 35px; font-size: 18px; display: inline-block; letter-spacing: n=
+ormal;"><span style=3D"box-sizing: border-box; word-break: break-word; line=
+-height: 27px;">Start engaging your audience</span></span></a> <!--[if mso]=
+></center></v:textbox></v:roundrect><![endif]--></div></td></tr></table></t=
+d></tr></tbody></table></td></tr></tbody></table><table class=3D"row row-7"=
+ align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr =
+style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f4f4f4; b=
+order-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600" =
+bgcolor=3D"#f4f4f4"><tbody style=3D"box-sizing: border-box;"><tr style=3D"b=
+ox-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; verti=
+cal-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-le=
+ft: 0;" align=3D"left" valign=3D"top"><table class=3D"social_block block-1"=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table=
+-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=
+=3D"box-sizing: border-box; padding-bottom: 10px; padding-left: 10px; paddi=
+ng-right: 10px; padding-top: 20px; text-align: center;" align=3D"center"><d=
+iv class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"><=
+table class=3D"social-table" width=3D"210px" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0; display: inline-block;"><tr style=
+=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box; padding: =
+0 5px 0 5px;"><a href=3D"https://links.powtoon.com/u/click=3F_t=3Df90373203=
+4f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHX=
+rlTcV3oBbQp3tmyIihPhQXGoP3VyWI9vrLhZFa_HkZScDskktPhq7ZC3mzl6ZnghnoPMnxrbCLb=
+zICEJ5SmHjr7-KaMWCIkyaiadvvEqOBbBAzE73CJaCCQWzVZzrqSnjmjRHrM_ul91wYGgiL4EVO=
+O7BoFNpUNsrmO4G0Cm9XfOrhSX1mWXS0JTYaUaw2_WyZcZwnYMl_q-JJgvCPnriPQU6DZLal46P=
+2SuhcWFIh4j2HKcJBVMmUMJjxMVVmGIJXHw1jg_XNDk9XOTescJD4k9u-UDOBGTotvgKuCJe3E7=
+kP1vo81QuCHU5KzN-NVAQoboMrFMGRwXwQ%3D%3D" target=3D"_blank" style=3D"box-si=
+zing: border-box;"><img src=3D"https://app-rsrc.getbee.io/public/resources/=
+social-networks-icon-sets/default-gray/facebook@2x.png" width=3D"32" height=
+=3D"auto" alt=3D"Facebook" title=3D"Facebook" style=3D"box-sizing: border-b=
+ox; display: block; height: auto; border: 0;"></a></td><td style=3D"box-siz=
+ing: border-box; padding: 0 5px 0 5px;"><a href=3D"https://links.powtoon.co=
+m/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888c=
+cb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3tmYDlXvPPe5poef2-SBc7Zt2l2YQurKHBpBT7=
+8FSssBzr2WY6S-kGxszISzRUHAMFNbolQSj6LyOi4TYCxxTawU51HBPZ9ASyJIgsqhq7iVbcVIv=
+zEqMcVuVEVoAIMlDonFdecJKiCry3jnl-lfv-SGdhtnc2BVokJqr3YDTdpzEdJNsoTLcoJi4_n4=
+j0LfAwVOAAKQa76_n6kk07ix2UqI0GrdRHoErpQD-oMc7zLQvixLtdeN6XwnQ43jF-VjLwbWlT9=
+zUKmhBbPQV62Rtucj6Gz_AvJ2-lNovAw7P_9r72n5GiJq6KzSVQ9dEv0yIcA%3D%3D" target=
+=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"https://app-rsrc.=
+getbee.io/public/resources/social-networks-icon-sets/default-gray/tiktok@2x=
+.png" width=3D"32" height=3D"auto" alt=3D"TikTok" title=3D"TikTok" style=
+=3D"box-sizing: border-box; display: block; height: auto; border: 0;"></a><=
+/td><td style=3D"box-sizing: border-box; padding: 0 5px 0 5px;"><a href=3D"=
+https://links.powtoon.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_=
+m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ts3VkS9-Qgi8E=
+APGy2UwU7lH8Ztvt8duxlrsp8vhhQvYZaGmBKEissREGYLFMO1LrGtKa7S_cT_Ogf35xx5--J8h=
+ckhpcnAqwYLLOwvNVk9obn0HmseEV7Rni3Wx5gWpoN7od9SNxtXtz4ZV8mkC-EAskBZOQDYI4f7=
+IcmThY4tmuAeOMO_jpexqBaKIVQ1g3GNTFffCgIS_E58aKbUOSS5MVxue80Qfcc7QdswOEg4hBN=
+0yxqK7c0ilvrJUkgRzM0sRJdVbUnC-saSLVuf3DeN50R422esfJbWWxJrdCftgZV5WhdamVj_OG=
+QFcYazcMQ%3D%3D" target=3D"_blank" style=3D"box-sizing: border-box;"><img s=
+rc=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets=
+/default-gray/instagram@2x.png" width=3D"32" height=3D"auto" alt=3D"Instagr=
+am" title=3D"Instagram" style=3D"box-sizing: border-box; display: block; he=
+ight: auto; border: 0;"></a></td><td style=3D"box-sizing: border-box; paddi=
+ng: 0 5px 0 5px;"><a href=3D"https://links.powtoon.com/u/click=3F_t=3Df9037=
+32034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9=
+ZwHXrlTcV3oBbQp3tg6VjNV4BQTW9DCBfA2les0dS7y8WulOcS2WuyAKkYtYB8hQPtNxn3CxBQH=
+cuyr24ZZ8_ujAV8gdrUKRCTswRgZzVcvr8FSlyeFa7vnhlpzd06XEUouQPwl1iW4UxNtcIrMx6V=
+T11Zl2QKDpncABDpXAAu_S-d8ATUHpLRjqckP61TFk-8sHhCWCeLC3HL0CePdOKUBj08_aFDJ3e=
+aL0qF7xXcPFN5k3RoeZ2MwYffwck1ZbMtciSLxjoTDZYnCGafQ5ddWSjhT-XPq5MwQ0NyOGuZp2=
+L5qGutg2peWqXFleScUeGxWCwR6ltXI4NAhGVw%3D%3D" target=3D"_blank" style=3D"bo=
+x-sizing: border-box;"><img src=3D"https://app-rsrc.getbee.io/public/resour=
+ces/social-networks-icon-sets/default-gray/linkedin@2x.png" width=3D"32" he=
+ight=3D"auto" alt=3D"LinkedIn" title=3D"LinkedIn" style=3D"box-sizing: bord=
+er-box; display: block; height: auto; border: 0;"></a></td><td style=3D"box=
+-sizing: border-box; padding: 0 5px 0 5px;"><a href=3D"https://links.powtoo=
+n.com/u/click=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1=
+888ccb2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3to6XsGFo9A5KtgMqoI7tw2oqvXQRGI51Y=
+s59D5DkyTfS1WzpeqajYdRXWJsblFxi78QC7YIrrxTaEdTocxqlCDK1Gk0EseWepkgmSaSvRWoC=
+0YiafRuIUwxOqQZUXKWJ4gmpm3yk0W9vPieNABvruN8Csjohya8bDgGatosrishg317yConMX3h=
+HabRZpMIS_p2vlBCIdUXeneDX5EY25QrtTDdaWgOYB2PXxnc7bfUpcuh_3f2BX_4DKrPouZX86N=
+Nob5qepRdcMCgfi_YTRqUXnjh7NrAK09E0_lF1kTTze1nLty_jS6LGlFIEyj1D1Q%3D%3D" tar=
+get=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"https://app-rs=
+rc.getbee.io/public/resources/social-networks-icon-sets/default-gray/youtub=
+e@2x.png" width=3D"32" height=3D"auto" alt=3D"YouTube" title=3D"YouTube" st=
+yle=3D"box-sizing: border-box; display: block; height: auto; border: 0;"></=
+a></td></tr></table></div></td></tr></table></td></tr></tbody></table></td>=
+</tr></tbody></table><table class=3D"row row-8" align=3D"center" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;=
+"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-=
+box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-content" al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; background-color: #f4f4f4; border-radius: 0; color: #000; width:=
+ 600px; margin: 0 auto;" width=3D"600" bgcolor=3D"#f4f4f4"><tbody style=3D"=
+box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D=
+"column column-1" width=3D"66.66666666666667%" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align=
+: left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-=
+top: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" =
+valign=3D"top"><table class=3D"image_block block-1" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=
+=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-=
+box; width: 100%; padding-right: 0; padding-left: 0;" width=3D"100%"><div c=
+lass=3D"alignment" align=3D"center" style=3D"box-sizing: border-box; line-h=
+eight: 10px;"><div class=3D"fullWidth" style=3D"box-sizing: border-box; max=
+-width: 360px;"><a href=3D"#" target=3D"_blank" style=3D"box-sizing: border=
+-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cl=
+oudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/=
+f903732034f0487ca934de9e0aa6503b/Footer/address_482x74%20%281%29.png" style=
+=3D"box-sizing: border-box; display: block; height: auto; border: 0; width:=
+ 100%;" width=3D"360" alt=3D"Moving Beyond Outdated L&amp;D" title=3D"Movin=
+g Beyond Outdated L&amp;D" height=3D"auto"></a></div></div></td></tr></tabl=
+e></td><td class=3D"column column-2" width=3D"33.333333333333336%" style=3D=
+"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-wei=
+ght: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical=
+-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-left:=
+ 0;" align=3D"left" valign=3D"top"><table class=3D"image_block block-1" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"b=
+ox-sizing: border-box; width: 100%; padding-right: 0; padding-left: 0;" wid=
+th=3D"100%"><div class=3D"alignment" align=3D"center" style=3D"box-sizing: =
+border-box; line-height: 10px;"><div style=3D"box-sizing: border-box; max-w=
+idth: 130px;"><a href=3D"https://links.powtoon.com/u/click=3F_t=3Df90373203=
+4f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888ccb2acb5b3a35&_e=3DRUt9ZwHX=
+rlTcV3oBbQp3tuD7Sjp5SHOJUoEhyhrUSXtn9cJapymNBNKZe0LmSedzRNHliX3qQ3JJl5kr-O4=
+PThSjO14-3Hcebu76-oFGl7jN07Kr-79HyT1ia5dM6rBT0TE0HObaFp4kicq1IZA2uOAW7Ra9wj=
+YusgqefFqwSlIy-RQ_yTJZiRmn9M-X5IPAPzz9t9AZeejAiYc_pOFwAeb1TMAJdBg_Pf0_8Bqbi=
+gjqJjuzGXoz5XmOH23rVRTtlyFTnPCNuHXVI3MJWm0WYJAM7-T8LWzlnCSoH1pufJ6mH0jL8t48=
+OGNXDPbArrjnGHv4tXigPEXyhzmgDQx6cQ%3D%3D" target=3D"_blank" style=3D"box-si=
+zing: border-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2=
+d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c=
+542cff6dd6a/f903732034f0487ca934de9e0aa6503b/Footer/contact-us_176x74%20%28=
+1%29.png" style=3D"box-sizing: border-box; display: block; height: auto; bo=
+rder: 0; width: 100%;" width=3D"130" alt title height=3D"auto"></a></div></=
+div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table> =
+<table class=3D"row row-9" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box=
+-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"bo=
+x-sizing: border-box;"><table class=3D"row-content stack" align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; back=
+ground-color: #f4f4f4; border-radius: 0; color: #000; width: 600px; margin:=
+ 0 auto;" width=3D"600" bgcolor=3D"#f4f4f4"><tbody style=3D"box-sizing: bor=
+der-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-=
+1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; =
+padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0; bord=
+er-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=
+=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"10" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"b=
+ox-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"=
+><div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;"><div=
+ class style=3D"box-sizing: border-box; font-size: 12px; font-family: 'Open=
+ Sans','Helvetica Neue',Helvetica,Arial,sans-serif; mso-line-height-alt: 14=
+.399999999999999px; color: #555; line-height: 1.2;"><p style=3D"box-sizing=
+: border-box; line-height: inherit; margin: 0; font-size: 12px; text-align:=
+ center; mso-line-height-alt: 14.399999999999999px;">You're receiving this =
+email because you signed up to receive Awesome updates.<br style=3D"box-siz=
+ing: border-box;">Don't want to hear from us anymore=3F Okay, we get it, yo=
+u need your space...<br style=3D"box-sizing: border-box;"> Manage your comm=
+unication & personalization settings&nbsp;<a href=3D"https://links.powtoon.=
+com/e/eh=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843d1888cc=
+b2acb5b3a35&_e=3DRUt9ZwHXrlTcV3oBbQp3ti5RXGwO2GKLcy_VHmnL4NsvBl7R5_JXz8mzX6=
+LJvwc1OtPt9q4XixklNqh2ZvK_E8QddZhyEWOhFVXjtdNYGPs57V9WlApf370ycOxkaueCpicIs=
+u92iIv4cYXBbklHeWIF5HA9iZpb5sT2TXeMaqPuT9iFJB2_BPBbzZtYRVMU717j7WanxkwBGgAj=
+HwE0-OwUHicpvUZQxOWvPNdWxMoIWn88A8lsKllgiWc9owOnGL2lNiWjEI8vsv_qaJ_YMIwQB23=
+Yi7IQZ_HC4lWtgSsIICjpZCn0BYv7UOhmasIEp5N2zJRrkC91b1NI44zEtz1jRyMxSFOcuD9tSQ=
+bd3IOh0cbRVoNsdqGXOS7baNVSZNNOv0YMYP9TU3p3IXOsbxMht7jDuZ3tlqHGw8BRq0s%3D" t=
+arget=3D"_blank" style=3D"box-sizing: border-box; text-decoration: underlin=
+e; color: #555555;" rel=3D"noopener">here</a>!</p></div></div></td></tr></t=
+able><table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpa=
+dding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: b=
+order-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-siz=
+ing: border-box;"><div style=3D"box-sizing: border-box; font-family: Arial,=
+sans-serif;"><div class style=3D"box-sizing: border-box; font-size: 14px; f=
+ont-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif; mso-li=
+ne-height-alt: 16.8px; color: #555; line-height: 1.2;"><p style=3D"box-sizi=
+ng: border-box; line-height: inherit; margin: 0; font-size: 14px; text-alig=
+n: center; mso-line-height-alt: 16.8px;"><span style=3D"box-sizing: border-=
+box; word-break: break-word; font-size: 11px;"><a href=3D"https://links.pow=
+toon.com/e/evib=3F_t=3Df903732034f0487ca934de9e0aa6503b&_m=3Da9bf62af645843=
+d1888ccb2acb5b3a35&_e=3D5yAKR1kPcVo6d0e_G79Ta6PWmDCU1uOoXy133BMQ6aQ-TMmrfiz=
+Q8BMxTgbFtVu7" target=3D"_blank" rel=3D"noopener" style=3D"box-sizing: bord=
+er-box; color: #555555;">View in browser</a>&nbsp;</span></p></div></div></=
+td></tr></table></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table><!-- End -->=0D=0A<img border=3D"0" width=3D"1" height=
+=3D"1" alt=3D"" src=3D"https://post.spmailtechnolo.com/q/qpPIBwD1oyoyur2PS2=
+CVog~~/AARGbAA~/RgRpdnKLPlcDc3BjQgpnjovtk2frQCfHUhdhenJpLm1va2h6YW5pQGdtYWl=
+sLmNvbVgEAAAFmg~~">=0D=0A</body></html>
+--_----mCezZrfyJomVt/jhWOPP1A===_5C/7A-10665-B8DE3976--
+

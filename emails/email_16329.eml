@@ -1,0 +1,957 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp92287dye;
+        Thu, 23 Jan 2025 02:13:57 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGDX3x1qjfJAxQ0731k5LA4aUC2asg7gg5XMTdLw6EGw5OCjEiULbl4TT/cbFxBMbiOlxeC
+X-Received: by 2002:a05:620a:17a3:b0:7b6:f998:3368 with SMTP id af79cd13be357-7be63252c4cmr4409701585a.57.1737627237656;
+        Thu, 23 Jan 2025 02:13:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737627237; cv=none;
+        d=google.com; s=arc-20240605;
+        b=cO5cKAwC5o8r4CJmbnlOkfXSk94phChrBzieF4ijgbgoFNl8EdjqQrl/CWLfjxTlMQ
+         zlgPtVaiHdMYoS+xs37LnQrq9YU0vaZMXxUdnoBHgoEr6eXK3Yb+yGxz1t9dUxJLKqHz
+         8RQccuFrEuUVP5b6xUHg0A2WEkYSN7qL0qKp8Pf4jq/7mdZXqTU7SnmXBtWGl2ycf9wj
+         OGm4QGKwWISlkMMZOap5VljsR3koA9D9QCOz27P2PUIYL4Fpo8B/LOP0rLd0t2aQpLYK
+         c5btHBDsxKSqFe7Ux0Qw6rbQYQVKnQuXEWty6UGYdH4wn3LZhMBEOvFMtAla41LoJRPn
+         s5gg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature:dkim-signature;
+        bh=xJmNI3/KWYQNVkkhkzlJzaLxUwqtJ4BRMQ8C6i/53Ik=;
+        fh=4tha3YHsfHuhCDEcZNA0SIaKH1xmdLfzOsmfU3Z6VC8=;
+        b=kVATRnys1innDjOAE9cTjrJdIy73aRY/fXV0SbtaD3o8h8N3pHKQi7S8lO/do/khbp
+         HFilZZg2h/J3e3aeTqX1hmXEKEdGmr0MHV2gfIAYQzTud2weSBBjcYC/09QrCPzRDaJ5
+         ed1kvIM5G7EfidbKCQlqNo0mXJ8IyDB4hhybwSc9CXpWXR8sPThQnTSqPrjS9xfcF5S6
+         J//KRx1UIs4rXpdY0CHnSsz3Kqk1fUz3UpfDbm9WPfd4hJRz+gPm06icvx2BJiQf9zQt
+         FCDiuen6wMMQvURBvHNJ5OpY7E8rEft+j44RHr/px7wOA4HqKHd+G4slFw6js0Oso6vD
+         N+YA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@my-news.adidas.com header.s=200608 header.b=B0P5j9Vl;
+       dkim=pass header.i=@s1.y.mc.salesforce.com header.s=fbldkim1 header.b=k6ylPIyy;
+       spf=pass (google.com: domain of bounce-11_html-448712884-3570607-10980052-4203@bounce.link.adidas.com designates 136.147.141.137 as permitted sender) smtp.mailfrom=bounce-11_HTML-448712884-3570607-10980052-4203@bounce.link.adidas.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=my-news.adidas.com
+Return-Path: <bounce-11_HTML-448712884-3570607-10980052-4203@bounce.link.adidas.com>
+Received: from mta100.link.adidas.com (mta100.link.adidas.com. [136.147.141.137])
+        by mx.google.com with ESMTPS id af79cd13be357-7be614bee02si1739609685a.293.2025.01.23.02.13.57
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 23 Jan 2025 02:13:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-11_html-448712884-3570607-10980052-4203@bounce.link.adidas.com designates 136.147.141.137 as permitted sender) client-ip=136.147.141.137;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@my-news.adidas.com header.s=200608 header.b=B0P5j9Vl;
+       dkim=pass header.i=@s1.y.mc.salesforce.com header.s=fbldkim1 header.b=k6ylPIyy;
+       spf=pass (google.com: domain of bounce-11_html-448712884-3570607-10980052-4203@bounce.link.adidas.com designates 136.147.141.137 as permitted sender) smtp.mailfrom=bounce-11_HTML-448712884-3570607-10980052-4203@bounce.link.adidas.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=my-news.adidas.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=my-news.adidas.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Message-ID:Content-Type; i=adidas@my-news.adidas.com;
+ bh=xJmNI3/KWYQNVkkhkzlJzaLxUwqtJ4BRMQ8C6i/53Ik=;
+ b=B0P5j9Vl9Q/VhROPDbJEvi1WYKtMh0QcBshs0hp5uQdUU5Q5ANkHn3HNFCDSYH7dP1Rv6FCTAPpc
+   h1+lmcKL4OdLGEg3lTATVjJ81KWr/4jprTSdW03/t0Ms8RyIokCYm5Fxz5rYvU5ZjnWsXMfRjkiJ
+   x2NDUgz3nzUfu6Zcjm4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim1; d=s1.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:Message-ID:Content-Type;
+ bh=xJmNI3/KWYQNVkkhkzlJzaLxUwqtJ4BRMQ8C6i/53Ik=;
+ b=k6ylPIyyog7LgBwUcuGdqMG9EBONJo8dLg+iTZ5D1ut2Od55P0wrvbAIFMTPbBOSariNFYAR1XQz
+   L8s6H46jIXsmO+g/6W7Tvk+X+s1Lbe2gspPugGybTs2kzo4FODGEtS7EfcJimbXupW5Lb1uHpz4B
+   PDnJU0eX7n7cKVR0YcywpYVEqrHHmgxKLENVc8MKPziAnzlUvKGI65yG0M16lzgcAN/nUGV0qNlv
+   tYrzeNGj3MyuDM2HfvaDkOVODOhXJdbahjzglgXtZNdjFeRSIpuPAhyk+FZX63xEKFs5BZpMgfHN
+   Q6/tYEzlh9pfP/I3lNQsdF1M628DJ7G6KFqXcw==
+Received: by mta100.link.adidas.com id hi8b6a2fmd4u for <azri.mokhzani@gmail.com>; Thu, 23 Jan 2025 10:13:54 +0000 (envelope-from <bounce-11_HTML-448712884-3570607-10980052-4203@bounce.link.adidas.com>)
+From: "adidas" <adidas@my-news.adidas.com>
+To: <azri.mokhzani@gmail.com>
+Subject: =?UTF-8?B?8J+QviBhZGlkYXMgeCBEbWVvdyBQb3AtVXAgQXdhaXRzIQ==?=
+Date: Thu, 23 Jan 2025 04:13:54 -0600
+List-Unsubscribe: <https://click.link.adidas.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiIxMDk4MDA1MiIsInMiOiI0NDg3MTI4ODQiLCJsaWQiOiIxMSIsImoiOiIzNTcwNjA3IiwiamIiOiI0MjAzIiwiZCI6IjEwMTg0In0.z8C_MwaXDVz6xRC8lXdW27avkSUH_41J2FYxdGc0HeY>, <mailto:leave-fd8915711a3c402029-fe2110747d63057f7d1c74-fe9317757264027d72-fe6615707c6c047d7016-ff3610727567@leave.link.adidas.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+X-SFMC-Stack: 1
+x-job: 10980052_3570607
+Message-ID: <ae12d769-dcf9-4d94-99fc-bf5ce68659fc@ind1s01mta1407.xt.local>
+Feedback-ID: 10980052:3570607:136.147.141.137:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="lHICP1r8ur8Q=_?:"
+
+This is a multi-part message in MIME format.
+
+--lHICP1r8ur8Q=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+adidas
+ 
+ 
+
+ 
+
+
+
+
+ 
+ Discover the adidas x Dmeow collection this Jan 24 at The Gardens Mall. Style, vibes, and more!
+ 
+ 
+
+
+
+ 
+ 
+https://click.link.adidas.com/?qs=ae684e7e0ce331bac3a30f1790a16cac50f7c9fc881a278a7933861a3f0458d57ca406a8958fffe61c8c7422990ee8abef5c78ff00261ffc7f24305ed6d24b5f 
+Discover the adidas x Dmeow collection this Jan 24 at The Gardens Mall. Style, vibes, and more! 
+https://view.link.adidas.com/?qs=988ce363a196a9f3c074f6e76eaf84195288e96c588a3075139fd158984d3cef282dec4f816b0f010fd83e68b1df774592391ad664cb03be5dbb4d27a523859373212fb1006bded797bc95fdd5c30ce3 
+View this email online 
+ 
+ 
+
+https://view.link.adidas.com/?qs=988ce363a196a9f3c074f6e76eaf84195288e96c588a3075139fd158984d3cef282dec4f816b0f010fd83e68b1df774592391ad664cb03be5dbb4d27a523859373212fb1006bded797bc95fdd5c30ce3 
+View this email online 
+
+
+
+
+ 
+ 
+
+ 
+
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba33a65d4d4d10395660039e1e54d79198814cc7f3b392a11b22992bbc1c01c090c71974e436f13fa5b27a9bcc9859647fb545d761b672123a 
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331bad92c84d89dbd12933aade0f402ab142443fb129fcf94a8ad46bbaac0ea0d5558fbf3b52065e3dc21f8fe38248da40fc998bb5cb6310a3e6c 
+ 
+ 
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+  
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+ 
+  
+  
+ 
+ 
+
+
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
+
+ 
+
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+ 
+
+ 
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba03edb78214d7f8de1869991200bc384464422ba52e96a1e42e67ddaf245adc06c2125925f43f72ca08c6d8747dcc2879cf2ba4ebd57db3f8 
+
+ Stories, styles and sportswear at adidas, since 1949
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba03edb78214d7f8de1869991200bc384464422ba52e96a1e42e67ddaf245adc06c2125925f43f72ca08c6d8747dcc2879cf2ba4ebd57db3f8 
+
+ Stories, styles and sportswear at adidas, since 1949
+  
+
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba57bc693250cd1eeb0705e388baf86bd3081185d2b62b6ba363a1a8cba4f55c70b2de71f0133800c7ca93d47b06661f0c55460f15ddb60592 
+
+ Update Preferences
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba77cca9cadab7de894f8dd87e9540d8a98b776c6e17d2e0f6c1ba51ab9898d7f71efb73da15db8eee0b25edd6f5540dfae077ee359c1d7f29 
+
+ Privacy Statement
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba33877d2e674cd520da686daec2cbedf391b57210dc67f178351b54ee5c6fdba7b2a8ece8712f41df5abca95d92723e370dddd66dec1e569a 
+
+ Support
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba90b8c93e7fcaaab4f4abd51f2b6237e6eb6ac555385d8d89777e28ade936516508c733863153a6e352e44f5fd9788f38545226392c9c18c4 
+Unsubscribe
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331bada88a1154601d3ea57682b461e7e8696c30ad0dd82db61c55545b8ea81952084dcbe40398d26985c6cd8b52c6064ed2896c67116a4da9119 
+
+ adidas.com.my
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba8dad891d4b465d3c68eb8e189af4c65d7ffb1f30af662ec6972e5b9b2fb0736edcc81aeb27f5ca8f9c789fa0efc6cb372fd3b1ab33be543c 
+
+ 
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba8dad891d4b465d3c68eb8e189af4c65d7ffb1f30af662ec6972e5b9b2fb0736edcc81aeb27f5ca8f9c789fa0efc6cb372fd3b1ab33be543c 
+ 
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331bada88a1154601d3ea57682b461e7e8696c30ad0dd82db61c55545b8ea81952084dcbe40398d26985c6cd8b52c6064ed2896c67116a4da9119 
+ adidas.com.my
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba90b8c93e7fcaaab4f4abd51f2b6237e6eb6ac555385d8d89777e28ade936516508c733863153a6e352e44f5fd9788f38545226392c9c18c4 
+Unsubscribe
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba33877d2e674cd520da686daec2cbedf391b57210dc67f178351b54ee5c6fdba7b2a8ece8712f41df5abca95d92723e370dddd66dec1e569a 
+ Support
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba77cca9cadab7de894f8dd87e9540d8a98b776c6e17d2e0f6c1ba51ab9898d7f71efb73da15db8eee0b25edd6f5540dfae077ee359c1d7f29 
+ Privacy Statement
+  
+
+https://click.link.adidas.com/?qs=ae684e7e0ce331ba57bc693250cd1eeb0705e388baf86bd3081185d2b62b6ba363a1a8cba4f55c70b2de71f0133800c7ca93d47b06661f0c55460f15ddb60592 
+ Update Preferences
+  
+
+ 
+  
+ 
+
+© adidas (Malaysia) Sdn. Bhd. 199401034635 (320318-A), 19-1, The Bousteador No. 10, Jalan PJU 7/6, Mutiara Damansara, 47800 Petaling Jaya, Selangor Darul Ehsan, Malaysia. adidas and the 3-Stripes are registered trademarks of the adidas Group. 
+
+
+ 
+
+
+--lHICP1r8ur8Q=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW"><meta name="referrer" content="no-referrer">
+    <style>
+   
+   @font-face{font-family:AdihausDIN;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Regular.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Regular.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdihausDIN;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Bold.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Bold.ttf) format('truetype');font-weight:700;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdineuePRO;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Regular.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Regular.woff) format('woff');font-weight:400;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdineuePRO;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Bold.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Bold.woff) format('woff');font-weight:600;font-style:normal;font-display:swap;mso-font-alt:Arial}
+      
+@media screen and (max-width:640px){.net-footer-logo-v2{padding-right:27px!important;}
+.mobile-footer-padding-block{padding:27px 20px!important;}.mobile-footer-padding-block-wave2{padding:27px 27px!important;}
+.mobile-privacy-transactional{width:50%!important;display:inline-block!important;padding-bottom:13px!important;}
+.mobile-footer-padding-privacy-block{padding:27px 20px 13px 20px!important;}
+.mobile-footer-padding-privacy-block-wave2{padding:27px 27px 13px 27px!important;}
+}
+ @media screen and (max-width:639px){
+.container{width:100%!important}.resizeImg{width:100%}.resizeImg80{width:80%!important}
+div.hideDesktop{display:block!important;margin:0;padding:0;overflow:visible!important;width:auto!important;height:auto!important;max-height:inherit!important}img.hideDesktop{display:block!important;margin:0;padding:0;overflow:visible!important;width:100%!important;height:auto!important;max-height:inherit!important}tr.show-mobile{display:block!important}.show-mobile{display:block!important;width:auto!important;max-height:inherit!important;overflow:visible!important;float:none!important}
+.reset-height{height:auto!important}.autoheight{height:auto!important}.text{width:100%!important;height:auto!important}.responsive-banner-image{width:100%!important}.hideMobile{display:none!important}
+.templateColumns{width:320px!important}.templateColumns100{width:100%!important}.templateColumnContainer{display:block!important;width:100%!important}
+table.mobile-center-table{text-align:center!important;margin:auto!important}img.reszeImg80_3_2d{width:80%!important}.resetheight{height:auto!important}.hideMobile{display:none!important}.showMobile{display:block!important}table.showMobile{display:table!important;width:100%!important;height:100%!important}}
+@media screen and (max-width:480px){.responsive-banner-image{width:100%!important}.hideDesktop{display:block!important}.hideMobile{display: none!important;}}
+@media screen and (max-width:414px){.responsive-banner-image{width:100%!important}.net-footer-logo-v2{padding-right:27px!important}.net-footer-logo-v2 img{max-width:40px!important;}}
+@media screen and (max-width:320px){.net-footer-logo-v2{padding-right:27px!important}.net-footer-logo-v2 img{max-width:32px!important}}
+
+    </style>
+    <title>adidas
+    </title>
+    <meta name="viewport" content="initial-scale=1.0">    
+    <!-- So that mobile webkit will display zoomed in -->
+    <meta name="format-detection" content="telephone=no"> 
+    <!-- disable auto telephone linking in iOS -->
+    </head>
+    <!--  -->
+  <body style="margin:0; padding: 0; background-color:#ffffff" bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;"></div><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!-- -->
+
+<div style="display:none;">
+    
+</div></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--  --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--  -->
+</td></tr></table>
+    <!---->
+    <div style="font-size:0px;line-height:1px;mso-line-height-rule:exactly;display:none;max-width:0px;max-height:0px;opacity:0;overflow:hidden;mso-hide:all;">
+      Discover the adidas x Dmeow collection this Jan 24 at The Gardens Mall. Style, vibes, and more!
+    </div>
+    <img src="https://click.link.adidas.com/open.aspx?ffcb10-fe9317757264027d72-fe2a17717d61027f731476-fe6615707c6c047d7016-ff9d1571-fe2110747d63057f7d1c74-ff3610727567&d=10184&bmt=0" width="1" height="1" alt="">
+    <!---->
+    <!---->
+    <!---->
+    <!-- For Yahoo Android App  -->
+        <style>
+   @font-face{font-family:AdihausDIN;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Regular.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Regular.ttf) format('truetype');font-weight:400;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdihausDIN;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Bold.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/AdihausDIN-Bold.ttf) format('truetype');font-weight:700;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdineuePRO;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Regular.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Regular.woff) format('woff');font-weight:400;font-style:normal;font-display:swap;mso-font-alt:Arial}
+    @font-face{font-family:AdineuePRO;src:url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Bold.woff2) format('woff2'),url(https://s3-eu-west-1.amazonaws.com/adidas-adl/foundation/dist/adidas/assets/fonts/adidas/adineuePRO-Bold.woff) format('woff');font-weight:600;font-style:normal;font-display:swap;mso-font-alt:Arial}
+
+@media screen and (max-width:640px){.net-footer-logo-v2{padding-right:27px!important;}
+.mobile-footer-padding-block{padding:27px 20px!important;}.mobile-footer-padding-block-wave2{padding:27px 27px!important;}
+.mobile-privacy-transactional{width:50%!important;display:inline-block!important;padding-bottom:13px!important;}
+.mobile-footer-padding-privacy-block{padding:27px 20px 13px 20px!important;}
+.mobile-footer-padding-privacy-block-wave2{padding:27px 27px 13px 27px!important;}
+}
+ @media screen and (max-width:639px){
+.container{width:100%!important}.resizeImg{width:100%}.resizeImg80{width:80%!important}
+div.hideDesktop{display:block!important;margin:0;padding:0;overflow:visible!important;width:auto!important;height:auto!important;max-height:inherit!important}img.hideDesktop{display:block!important;margin:0;padding:0;overflow:visible!important;width:100%!important;height:auto!important;max-height:inherit!important}tr.show-mobile{display:block!important}.show-mobile{display:block!important;width:auto!important;max-height:inherit!important;overflow:visible!important;float:none!important}
+.reset-height{height:auto!important}.autoheight{height:auto!important}.text{width:100%!important;height:auto!important}.responsive-banner-image{width:100%!important}.hideMobile{display:none!important}
+.templateColumns{width:320px!important}.templateColumns100{width:100%!important}.templateColumnContainer{display:block!important;width:100%!important}
+table.mobile-center-table{text-align:center!important;margin:auto!important}img.reszeImg80_3_2d{width:80%!important}.resetheight{height:auto!important}.hideMobile{display:none!important}.showMobile{display:block!important}table.showMobile{display:table!important;width:100%!important;height:100%!important}}
+@media screen and (max-width:480px){.responsive-banner-image{width:100%!important}.hideDesktop{display:block!important}.hideMobile{display: none!important;}}
+@media screen and (max-width:414px){.responsive-banner-image{width:100%!important}.net-footer-logo-v2{padding-right:27px!important}.net-footer-logo-v2 img{max-width:40px!important;}}
+@media screen and (max-width:320px){.net-footer-logo-v2{padding-right:27px!important}.net-footer-logo-v2 img{max-width:32px!important}}
+    </style>
+    <!-- For Yahoo Android App -->
+    <table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0" align="center">
+      <!-- ************************ BEGIN RENDER HEADER ************************ -->
+      <tr>
+        <td align="center" valign="top" >
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- -->
+
+
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center" valign="center" style="background-color:#ffffff;" bgcolor="#000000">
+            <table width="640" class="container" style="background-color:#ffffff;height:27px; " bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    
+                    <td name="preheader-gear-text" id="preheader-gear-text" align="left" class="hideMobile" valign="center" style="font-family: Noto Sans; font-size: 14px;font-weight: 400;line-height:22px;padding-top:4px; padding-bottom:3px;">
+                        <a name="preheader-gear-link" id="preheader-gear-link" style="color:  #767677; text-decoration: underline;white-space:nowrap;" href="https://click.link.adidas.com/?qs=ae684e7e0ce331baf45735b22eb1aad33f413fdfa1a5f3622a2f5bb8f80e0f8a0b8f3b524fe93ac1452e1ddacbd5e317886f2b3c0669f829221fa4009069a967" target="_blank"  _label="preheadersnippetlink0">Discover the adidas x Dmeow collection this Jan 24 at The Gardens Mall. Style, vibes, and more!</a>
+                    </td>
+                    <td name="preheader-VAWPText-text" id="preheader-VAWPText-text" align="right" class="hideMobile" valign="center" style="padding-top:4px; padding-bottom:3px;">
+                        <a name="preheader-VAWPText-link" id="preheader-VAWPText-link" class="preheader" style="color:#767677; text-decoration: underline; font-family: Noto Sans; font-size: 14px;font-weight: 400;line-height:22px;text-align: right;white-space:nowrap;" href="https://view.link.adidas.com/?qs=988ce363a196a9f3c074f6e76eaf84195288e96c588a3075139fd158984d3cef282dec4f816b0f010fd83e68b1df774592391ad664cb03be5dbb4d27a5238593df5a841dafb3bf24de030ca4478bb372" target="_blank"  _label="View_Email_Online">View this email online</a>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="show-mobile preheader" style="display:none;mso-hide:all; padding-top:4px; padding-bottom:3px" name="preheader-VAWPText-text" id="preheader-VAWPText-text" align="center" valign="center">
+                        <a name="preheader-VAWPText-link" id="preheader-VAWPText-link" class="preheader" style="color:#767677; text-decoration: underline; font-family: Noto Sans; font-size: 14px;font-weight: 400;line-height:22px;white-space:nowrap;" href="https://view.link.adidas.com/?qs=988ce363a196a9f3c074f6e76eaf84195288e96c588a3075139fd158984d3cef282dec4f816b0f010fd83e68b1df774592391ad664cb03be5dbb4d27a5238593df5a841dafb3bf24de030ca4478bb372" target="_blank"  _label="View_Email_Online">View this email online</a>
+                    </td>    
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</td></tr></table>
+          
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" >
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--  --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<table width="100%" height="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center" valign="top" bgcolor="#FFFFFF">
+            <table width="640" class="container" bgcolor="#FFFFFF" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" valign="top">
+                        <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:24px 0 24px 0">
+                            <tr align="center">
+                                <td align="center" valign="center" style="display: inline;">                          
+                                    <!---->
+                                    <a name="header-adidas-logo-link" id="header-adidas-logo-link" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba17113f6c25cc71fb9c1ea2121aaa906cbfc1af5397ebaf847160c96d99cf10cb15d662d7832bfa31634e0bad0281e964cad5c678ac443e8a" target="_blank"  style="text-decoration:none;" _label="AdidasLogo">
+                                        <img width="38" height="24" name="header-adidas-logo-image" id="header-adidas-logo-image" class="hide-in-dark-mode" style="width:38px !important;height:24px !important;" alt="Adidas" src="https://image.staging.link.adidas.com/lib/fe6515707c62007e7715/m/96/d6daa093-30d6-4681-a62d-1fb174c2d28b.png" border="0">
+                                    </a>&nbsp;
+                                    <!-- -->     
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table></td></tr></table>
+          
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="top">
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!---->
+
+
+
+
+</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!---->
+
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--     -->
+
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center" valign="center" style="background-color:#ffffff;" bgcolor="#000000">
+            <table width="640" class="container" style="background-color:#ffffff;height:auto;width:600px;" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" valign="center">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 0px 0px 0px 0px;">
+                            
+                            <tr align="center">
+                                <td align="center" valign="center">
+                                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--       -->
+  <!-- HeroImage desktop-->
+
+    
+<table class="hideMobile" width="100%" height="auto" cellspacing="0" cellpadding="0" align="center">
+              <tr class="hideMobile">
+                      <td style="width:100%;height:100%" width="100%" height="100%" align="center">
+        <table class="hideMobile" width="100%" style="min-width:100%" cellspacing="0" cellpadding="0" border="0">
+                       <tr class="hideMobile">
+                            <td>
+                                <table width="100%" style="height:auto;padding-top:0px;" cellspacing="0" cellpadding="0" border="0" align="center">
+                                    <tr>
+                                        <td valign="top" align="center" width="100%" height="100%" style="width:100%;height:100%;">
+                                          <!-- Deep link implementation Start SFMC99726  -->
+                                           
+                                              <a class="--desktop-HeroImageLink" id="--desktop-HeroImageLink" title="" href="https://click.link.adidas.com/?qs=ae684e7e0ce331baa6e3df281adb57b158220ecfceb986d664a5e784911718210d49021fb2e4451ded37edbc0b712030b277777fe15658fd102e7a67545c5292" target="_blank" _urltype="11" _label=""  >
+                                               
+                                                <img name="HeroImage" id="--desktop-HeroImage" style="display:block; max-width:100%; max-height:100%;" src="https://image.link.adidas.com/lib/fe5b15707c610c797010/m/1/15867680-6290-483f-ba20-34599cc63d0f.png" alt="" border="0" align="absmiddle" max-width="100%" max-height="100%" width="640">
+                                             </a>
+                                          
+                                <!-- Deep link implementation END SFMC99726  -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+         </table>
+                </td>
+  </tr>
+
+</table>
+
+
+    <!-- End HeroImage desktop-->
+
+   <!-- HeroImage mobile-->
+    
+        <!--[if !mso]><!-->
+
+        <table class="show-mobile" style="display:none;padding-top:0px;" width="100% !important" height="auto" cellspacing="0" cellpadding="0" border="0" align="">
+                        <tr>
+                            <td width="480px">
+                                <table style="height:auto; margin-left: auto;                                 margin-right: auto; " cellspacing="0" cellpadding="0" border="0" align="center">
+                                    <tr>                                       
+                                        <td align="center">
+                                          <!-- Deep link implementation Start SFMC99726  -->
+                                            <a class="HeroImage-link" name="--mobile-HeroImage-Link" id="--mobile-HeroImage-Link" title="" href="https://click.link.adidas.com/?qs=ae684e7e0ce331bacf16e43aff122401527877b0675762e6624eaff97c28012a8b0088275b66d9e5bed6bfb2d7beb66d791d93a5e23b5e2dd20a27f601e6391a" target="_blank" _urltype="11" _label=""  >
+                                                <img name="HeroImage" id="--mobile-HeroImage" style="display: block;width:100%;margin-left: auto;                                                 margin-right: auto;" src="https://image.link.adidas.com/lib/fe5b15707c610c797010/m/1/15867680-6290-483f-ba20-34599cc63d0f.png" alt="" border="0" align="center" class="resizeImg">
+                                             </a>      
+                                          
+                           <!-- Deep link implementation END SFMC99726  -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+        <!--<![endif]-->
+    
+    <!-- END HeroImage mobile -->
+</td></tr></table>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td align="center" valign="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 0px 0px 0 0px;">
+                                        
+
+                                        
+                                        <tr align="center">
+                                            <td align="center" valign="center">
+                                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+  
+  <!-- Title desktop-->
+
+
+           <table class="hideMobile" style="border:  ;" width="100%" height="auto" cellspacing="0" cellpadding="0" bgcolor="" align="center">
+              <tr class="hideMobile">
+                      <td style="width:100%;" width="100%" align="center">
+                          <table style="width:100%; padding: 40px 0px 0px 0px;max-width:640px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                             <tr style="font-size:38px; line-height:38px; font-family:'adineuePRO','Noto Sans', sans-serif; font-weight:400; color:#111111; text-decoration:none; letter-spacing:1px;">
+                               <td name="--desktop-text" id="--desktop-text" valign="center" align="left" style="text-align:left;">                                                                       Step Into Style with adidas x Dmeow
+                               </td>
+                            </tr>
+                        </table> 
+                      </td>
+                  </tr>
+           </table>                   
+      <!-- End Title desktop--> 
+
+      <!-- Title Mobile--> 
+      <!--[if !mso]><!-->
+        <table class="show-mobile" style="display:none;margin-top:40px;" width="100%" height="auto" cellspacing="0" cellpadding="0" bgcolor="" align="left">   
+                <tr>
+                       <td width="590px" align="left">         
+                             <table cellspacing="0" cellpadding="0" border="0" style="padding: 0px 12px 0px 12px;">          
+                               <tr style="padding:14px 14px 14px 14px; font-size:38px; line-height:38px; font-family:'adineuePRO','Noto Sans', sans-serif; font-weight:400; color:#111111; text-decoration:none; letter-spacing:1px" align="left">                                                     
+                                       <td name="--Mobile-text" id="--Mobile-text" valign="center" align="left" style="text-align:left;">     
+                                           Step Into Style with adidas x Dmeow
+                                       </td>
+                                  </tr>
+                         </table>
+                     </td>
+                </tr>
+       </table>
+       <!--<![endif]-->     
+   <!-- End Title Mobile--> 
+</td></tr></table>
+                                            </td>
+                                        </tr>
+                                        
+
+                                        
+                                        <tr align="center">
+                                            <td align="center" valign="center">
+                                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+  
+  <!-- Text desktop-->
+
+           <table class="hideMobile" style="border:  ;margin-bottom:;" width="100%" height="auto" cellspacing="0" cellpadding="0" bgcolor="" align="center">
+              <tr class="hideMobile">
+                     <td>
+                            <table style="width:100%;padding: 40px 0px 0px 0px;max-width:640px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                           
+                                   <tr style="padding:15px 20px 27px 20px; font-size:16px; line-height:22px; font-family:AdihausDIN,Noto Sans, sans-serif; font-weight:400; color:#111111; letter-spacing:0px;mso-padding-alt:40px 0px 0px 0px;mso-margin-alt:0px 0px 0px 0px;">  
+                              
+                                         <td dir="LTR" name="--desktop-text" id="--desktop-text" valign="top" align="left">
+                                                
+                                              <p>Join us at The Gardens Mall for an exclusive adidas x Dmeow - Limited Collection pop-up experience!</p><p><br></p><p> 📅 Event Details:</p><p> Date: 24th January 2025</p><p> Venue: The Gardens Mall</p><p><br></p><p> 🎉 What’s Happening:</p><p><br></p><p>Explore the Collection: Be the first to see the adidas x Dmeow collab.</p><p>Enjoy Sweet Perks: Make a purchase and score a free ice cream voucher.</p><p>Collect Exclusives: Redeem a Dmeow pin, adidas premium, and shoelace with your purchase.</p><p><br></p><p> 📸 Snap and share your favorite moments and tag @adidasMY and @dmeow.co</p><p><br></p><p> See you there!</p>
+                                         </td>
+                                  </tr>
+                           </table> 
+                      </td>
+                </tr>
+           </table>
+                                      
+      <!-- End text desktop-->  
+
+      <!-- Text Mobile--> 
+    
+      <!--[if !mso]><!-->
+        <table class="show-mobile" style="display:none;margin-top:40px;background-color:#ffffff;" width="100%" height="auto" cellspacing="0" cellpadding="0" bgcolor="" align="left">
+               <tr>
+                     <td style="width:590px;">           
+                          <table style="width:100%; padding: 0px 12px 0px 12px;" cellspacing="0" cellpadding="0" border="0" align="left">                  
+                                    <tr style="padding:15px 20px 27px 20px; font-size:16px; line-height:22px; font-family:AdihausDIN,Noto Sans, sans-serif;font-weight:400; color:#111111; letter-spacing:0px">
+                                      
+                                           <td dir="LTR" name="--Mobile-text" id="--Mobile-text" valign="center" align="left">  
+                                          
+                                               <p>Join us at The Gardens Mall for an exclusive adidas x Dmeow - Limited Collection pop-up experience!</p><p><br></p><p> 📅 Event Details:</p><p> Date: 24th January 2025</p><p> Venue: The Gardens Mall</p><p><br></p><p> 🎉 What’s Happening:</p><p><br></p><p>Explore the Collection: Be the first to see the adidas x Dmeow collab.</p><p>Enjoy Sweet Perks: Make a purchase and score a free ice cream voucher.</p><p>Collect Exclusives: Redeem a Dmeow pin, adidas premium, and shoelace with your purchase.</p><p><br></p><p> 📸 Snap and share your favorite moments and tag @adidasMY and @dmeow.co</p><p><br></p><p> See you there!</p>
+                                     
+                                         </td>
+                                   </tr>
+                         </table>
+       
+                     </td>
+                </tr>
+       </table>
+       <!--<![endif]-->     
+  
+   <!-- End Text Mobile-->  
+</td></tr></table>
+                                            </td>
+                                        </tr>
+                                        
+
+                                        
+                                        <tr align="center">
+                                            <td align="center" valign="center">
+                                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+<!--        -->
+
+    <!-- CTA desktop-->
+    
+        <table class="hideMobile" style="width:100%;" width="100%" height="auto" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td>
+                    <table class="hideMobile" style="width:620px; padding-top:40px;" width="620" height="auto" cellspacing="0" cellpadding="0" align="center">
+                        <tr>
+                            <td>
+                                <!-- Deep link implementation Start SFMC99726  -->
+                              <a name="--desktop-CTA" id="desktop-CTA" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba80476dae3b0bde69971a7b39cc5259daad30c2f0455fc13732bef285698134c0645521fec6de85562657f39d5830261caff6eda2a60429c9" target="_blank" _urltype="11" _label="CTA"  style="text-decoration-line:none;text-decoration:none;" >
+                                    <table class="hideMobile" style=" float:left;" height="auto" cellspacing="0" cellpadding="0" bgcolor="#111111" align="left">
+                                        <tr class="hideMobile">
+                                            <td width="100%" style="border:#ffffff 0px solid; margin:0px 0px 40px 0px;width:100%;" align="left">
+                                                <table style="width: 100%; padding:14px 20px 14px 20px;" cellspacing="0" cellpadding="0" border="0" align="center">
+                                                    <tr>
+                                                        <td name="--desktop-text" id="--desktop-text" style="" valign="middle" align="left">
+                                                            <a name="--desktop-textLink" id="--desktop-textLink" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba80476dae3b0bde69971a7b39cc5259daad30c2f0455fc13732bef285698134c0645521fec6de85562657f39d5830261caff6eda2a60429c9" target="_blank" _urltype="11" _label="CTA"  style="font-size:14px; line-height: 22px; font-family: AdihausDIN,Noto Sans, sans-serif; font-weight: 700; color:#ffffff; text-align: left; text-transform: uppercase; letter-spacing:2px;text-decoration-line:none;text-decoration:none;" dir="LTR" >
+                                                                FIND US
+                                                            </a>
+                                                        </td>
+                                                        
+                                                        <td style="font-size: 0px; mso-line-height-alt: 0;padding-left:15px; text-decoration:none;" valign="middle" align="right">
+                                                            <a name="--desktop-arrowLink" id="--desktop-arrowLink" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba80476dae3b0bde69971a7b39cc5259daad30c2f0455fc13732bef285698134c0645521fec6de85562657f39d5830261caff6eda2a60429c9" target="_blank" _urltype="11" _label="CTA"  >
+                                                                <img name="--desktop-arrowImage" id="--desktop-arrowImage" style="display: block;" src="http://image.link.adidas.com/lib/fe6515707c62007e7715/m/3/b0c011a2-d468-414b-a8a2-8595b3ec7b34.jpg" alt="arrow" border="0" align="absmiddle">
+                                                            </a>
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </a>
+                              
+                             <!-- Deep link implementation END SFMC99726  -->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    
+    <!-- End CTA desktop-->
+
+
+    <!-- CTA mobile-->
+    
+        <!--[if !mso]><!-->
+        <table class="show-mobile" style="width:100%;" width="100%" height="auto" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td>
+                    <!-- Deep link implementation Start SFMC99726  -->
+                    <a name="--mobile-CTA" id="--mobile-CTA" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba065a3201608a25515df4d76059f81a2144ec392e04e8bc970bbf69deb084235367c2ee6dcc7c76aa33ca53256762f9a3bf00fb0503b91327" target="_blank" _urltype="11" _label="CTA"  style="text-decoration-line:none;text-decoration:none;" >
+                        <table class="show-mobile" style="display:none;margin-top:40px; border:#ffffff  0px solid;margin-left:12px;margin-right:12px;" width="" height="auto" cellspacing="0" cellpadding="0" bgcolor="#111111" align="left">
+                            <tr class="show-mobile" style="display:none;">
+                                <td style="padding: 14px 20px 14px 20px; margin: 0px 0px 40px 0px; width:590px;" align="left">
+                                    <table style="width: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                        <tr>
+                                            <td name="--mobile-text" id="--mobile-text" style="padding-right: 0px" valign="middle" align="left">
+                                                <a name="--mobile-textLink" id="--mobile-textLink" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba065a3201608a25515df4d76059f81a2144ec392e04e8bc970bbf69deb084235367c2ee6dcc7c76aa33ca53256762f9a3bf00fb0503b91327" target="_blank" _urltype="11" _label="CTA"  style="font-size:14px; line-height: 22px; font-family: AdihausDIN,Noto Sans, sans-serif; font-weight: 700; color:#ffffff; text-align: left;  text-transform: uppercase; letter-spacing:2px;text-decoration-line:none;text-decoration:none;"  dir="LTR">
+                                                    FIND US
+                                                </a>
+                                            </td>
+                                            
+                                            <td style="font-size: 0px; mso-line-height-alt: 0;" valign="middle" align="right">
+                                                <a name="--mobile-arrowLink" id="--mobile-arrowLink" title="CTA" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba065a3201608a25515df4d76059f81a2144ec392e04e8bc970bbf69deb084235367c2ee6dcc7c76aa33ca53256762f9a3bf00fb0503b91327" target="_blank" _urltype="11" _label="CTA"  >
+                                                    <img name="--mobile-arrowImage" id="--mobile-arrowImage" style="display: block;padding-left:15px;" src="http://image.link.adidas.com/lib/fe6515707c62007e7715/m/3/b0c011a2-d468-414b-a8a2-8595b3ec7b34.jpg" alt="arrow" border="0" align="absmiddle">
+                                                </a>
+                                            </td>
+                                            
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                   
+               <!-- Deep link implementation END SFMC99726  -->
+                </td>
+            </tr>
+        </table>
+        <!--<![endif]-->
+    
+    <!-- END CTA mobile -->
+</td></tr></table>
+                                            </td>
+                                        </tr>
+                                        
+                                      
+  
+                                        
+                                       
+                                        
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table></td></tr></table>
+
+<!--  --></td></tr></table>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" >
+          <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  -->
+
+<!--  -->
+<!-- Footer Strapline starts here! -->
+<table class="hideMobile" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="hideMobile">
+        <td align="center" valign="top" style="                 background-color: #ffffff;                 padding-top: 45px;                 padding-bottom: 5px;             " bgcolor="#ffffff">
+            <table width="640" class="container" style="background-color: #ffffff" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="left" valign="top" style="padding-left: 20px; padding-right: 20px">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="                                 border-top: 1px solid #c6c6c6;                                 mso-border-bottom-alt: 1px solid #c6c6c6;                             ">
+                            <tr>
+                                <td style="                                         align: center;                                         text-align: center;                                         mso-line-height-rule: exactly;                                         padding: 15px 0px 15px 0px;                                         border-bottom: 1px solid #c6c6c6;                                     " width="592px">
+                                    
+<a href="https://click.link.adidas.com/?qs=ae684e7e0ce331bac408a524ddaedff2e4ec03fd3b5f289311961ed5f83417fd8ff233d9aa8d6d1a9bb947b1524366e75d5834ef7c5fe34b725dbd178a816954" id="footer-app-promotion-link"  name="footer-app-promotion-link" style="                                             color: #111111;                                             mso-line-height-rule: exactly;                                             text-decoration: none;                                             font-weight: 700;                                             font-size: 14px;                                             line-height: 22px;                                             text-transform: uppercase;                                             letter-spacing: 2px;                                         
+    font-family: AdihausDIN, Noto Sans,                                                 sans-serif;                                         ">
+                                        Stories, styles and sportswear at adidas, since 1949
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--[if !mso]><!-->
+<table class="show-mobile" style="display: none" width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center" valign="center" style="                 background-color: #ffffff;                 padding-top: 45px;                 padding-bottom: 5px;             " bgcolor="#ffffff">
+            <table width="640" class="container" style="background-color: #ffffff" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" valign="center" style="padding-left: 20px; padding-right: 20px">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="                                 border-top: 1px solid #c6c6c6;                                 border-bottom: 1px solid #c6c6c6;                                 padding: 15px 0px 15px 0px;                             ">
+                            <tr>
+                                <td align="center" valign="center" style="                                         font-size: 14px;                                         font-family: AdiHausDIN;                                         font-weight: 700;                                         mso-line-height-rule: exactly;                                         color: #111111;                                     " height="44px">
+                                    
+<a href="https://click.link.adidas.com/?qs=ae684e7e0ce331bac408a524ddaedff2e4ec03fd3b5f289311961ed5f83417fd8ff233d9aa8d6d1a9bb947b1524366e75d5834ef7c5fe34b725dbd178a816954" id="footer-app-promotion-link"  name="footer-app-promotion-link" style="                                             color: #111111;                                             mso-line-height-rule: exactly;                                             text-decoration: none;                                             font-weight: 700;                                             font-size: 14px;                                             line-height: 22px;                                             font-family: AdihausDIN, Noto Sans,                                                 sans-serif;                                     
+        text-transform: uppercase;                                             letter-spacing: 2px;                                         ">
+                                        Stories, styles and sportswear at adidas, since 1949
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!--<![endif]-->
+<!-- Footer Strapline ends here! -->
+<!--      --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  -->
+
+<!---->
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center" valign="top" bgcolor="#ffffff">
+            <table border="0" width="640" cellpadding="0" cellspacing="0" class="container">
+                <tr>
+                    <td align="left" valign="top" class="mobile-footer-padding-privacy-block" style="padding:40px 20px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="auto">
+                            <tr>
+                                <!---->
+                                <th align="left" valign="top" style="font-weight:normal; margin:0; vertical-align:top;" class="mobile-privacy-transactional desktop-nowrap-property">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td name="footer-my-account-text" id="footer-my-account-text" align="left" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px;Line-height: 22px; padding-right:15px;">
+                                                <a name="footer-my-account-link" id="footer-my-account-link" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba8763831be4da04de5c8bfeed8dfaa3739b0faa7027567b19bc06280ffd3cab8254e27e317fda5466e76bde2192f02f10d09152b82449df92" _label="FooterAccount0" target="_blank"  style="color:#000000;text-decoration:none;">
+                                                Update Preferences
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!---->
+
+                                <!---->
+                                <th align="left" valign="top" style="font-weight:normal; margin:0; vertical-align:top;" class="mobile-privacy-transactional desktop-nowrap-property">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td name="footer-privacy-statement-text" id="footer-privacy-statement-text" align="left" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px;Line-height: 22px; padding-right:15px;">
+                                                <a name="footer-privacy-statement-link" id="footer-privacy-statement-link" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba74eb70b3a309c3dcd19ca2e16fe4fdbb51eb170a904273a1ca05d830dd0ee0e30f4f181a0656e99a23ac75bf3c86e51541a13fcfb04d61fb" _label="FooterPrivacyPolicy0"  target="_blank" style="color:#000000;text-decoration:none;">
+                                                Privacy Statement
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!---->
+
+                                <!---->
+                                <th align="left" valign="top" style="font-weight:normal; margin:0; vertical-align:top;" class="mobile-privacy-transactional desktop-nowrap-property">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td name="footer-support-text" id="footer-support-text" align="left" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px;Line-height: 22px; padding-right:15px; white-space: nowrap;">
+                                                <a name="footer-support-link" id="footer-support-link" href="https://click.link.adidas.com/?qs=ae684e7e0ce331ba5327bf014cd57459e5c7365970d7ebe1b0713930b0f1ebee2c08a8ceb12dc199afa97d38668a32f724ae8111c61a1b17f3bdc3e988325082" _label="FooterHelp0"  target="_blank" style="color:#000000;text-decoration:none;">
+                                                Support
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!---->
+
+                                <!---->
+
+                                <!----> 
+                                <th align="left" valign="top" style="font-weight:normal; margin:0; vertical-align:top;" class="mobile-privacy-transactional desktop-nowrap-property">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td name="footer-unsubscribe-text" id="footer-unsubscribe-text" align="left" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px;Line-height: 22px; padding-right:15px; white-space: nowrap;">
+                                            <!--                                                                                              -->
+                                                <a name="footer-unsubscribe-link" id="footer-unsubscribe-link" style="color:#000000;text-decoration:none;" title="Unsubscribe" href="https://click.link.adidas.com/?qs=ae684e7e0ce331bad30cba8cc842ac1d3f2b4a5d4ccad87e88197ed61672fcf4d30ebdb020f46966356abd1519d4e93da7b08e964750aacf1e8262597ab671b9" _label="FooterUnsubscribe0"  _type="optout" target="_blank">Unsubscribe
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!---->
+
+                                <!---->
+                                <!-- solution for long footer link texts - moving to two lines if the character count crosses 81 limit-->
+                                <!-- 81 Character is the limit where we can add text with out breaking the alignment--> 
+                                <!---->
+
+                                <!---->
+                                <th align="left" valign="top" style="font-weight:normal; margin:0; vertical-align:top;" class="mobile-privacy-transactional desktop-nowrap-property">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td name="footer-adidas-website-text" id="footer-adidas-website-text" align="left" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px;Line-height: 22px; padding-right:15px; white-space: nowrap;">
+                                                <a name="footer-adidas-website-link" id="footer-adidas-website-link" href="https://click.link.adidas.com/?qs=ae684e7e0ce331bada3a8936a9077fa81accc1707fd0646b5faf7c55076e628f258cf240120865a4ea4e80c6cb53a0ddfd64d786ce9bc2ad6917d771542e595d" _label="FooterAdidas0"  target="_blank" style="color:#000000;text-decoration:none;">
+                                                adidas.com.my
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <!---->
+
+                                <!---->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!----></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!---->
+
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"> 
+    <tr>
+        <td style="padding:0px 0px 0px 0px;">
+            <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+                 
+                <!---->
+
+                <!---->
+                <tr>
+                    <td align="center" valign="top" bgcolor="#ffffff">
+                        <table border="0" width="640" cellpadding="0" cellspacing="0" class="container" style="background-color:#ffffff;" bgcolor="#ffffff">
+                            <tr>
+                                <td align="left" valign="top" class="mobile-padding-20" style="padding:0px 20px 0px 20px;">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td dir="LTR" align="left" id="footer-disclaimer-menu-address-text" name="footer-disclaimer-menu-address-text" valign="top" style="font-family:AdihausDIN, Noto Sans, sans-serif; font-size:14px; line-height:22px; color:#000000;">               
+                                                <a style="text-decoration:none; color:black;">© adidas (Malaysia) Sdn. Bhd. 199401034635 (320318-A), 19-1, The Bousteador No. 10, Jalan PJU 7/6, Mutiara Damansara, 47800 Petaling Jaya, Selangor Darul Ehsan, Malaysia. adidas and the 3-Stripes are registered trademarks of the adidas Group.</a>              
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!---->
+
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+
+</td></tr></table>
+      </tr>
+      <!-- ************************ END RENDER FOOTER ************************** -->
+    </table>
+  </body>
+</html>
+
+--lHICP1r8ur8Q=_?:--
+

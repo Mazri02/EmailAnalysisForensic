@@ -1,0 +1,887 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp800887dye;
+        Fri, 24 Jan 2025 04:27:28 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHUrDnd2TNC4yFnIgTLhnA535AD1sMvCmgpIZj9qihQG+xwsR0zUz4OL4Wj67s5oRxGbdpt
+X-Received: by 2002:a7b:c8c9:0:b0:436:fb02:e68 with SMTP id 5b1f17b1804b1-438913bdd6cmr270086115e9.2.1737721648138;
+        Fri, 24 Jan 2025 04:27:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737721648; cv=none;
+        d=google.com; s=arc-20240605;
+        b=f+oH9/4sCNFvpnBt11PiZs7/r61D3CBF4iH4qfn+3BQD3rnGLnE5sql+UK6+vOYwNT
+         TGxBvgOKEWyJlg2BoSN2NWwTLJs9HEdQDngg31rmy/xkEGy1XlXZyagzFyErCEY30yP2
+         7tQkLClXenR+QtCT0pxAtHM1U2ar2Lfp7Y5kerW8PfYVcDDelJtWXFUVhWXWDJTV3Fag
+         za+X2xBuyF6H2WXw83TUN9Oebv+1rtw73wBCE5/qMG5zqp52fUKuH+Ye4vUojbSTEHq2
+         7y+TTLijGWNgtfoCTb2bRG0UfOXvKb38ONFlbk29FtEYpQLqFUm1N8OgQbg7xVlteyvZ
+         JIVg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:content-transfer-encoding
+         :subject:from:to:dkim-signature:dkim-signature;
+        bh=Xu3IZYHs/DaU6oyBmbLhYk7LrB3oMo0IyTnlItNL+hs=;
+        fh=LsEASkjO58hYp6Suw87eGENyVktXL5rjtlu9iSvbF5U=;
+        b=BK3LLPgHB0HZUionM/jlDAm6V/tjspHPqdBnKr3OXEP8my9db4vbcl0sO0VjGdOCzz
+         TE5JBDpilFRrpVpON+O4i65COdK/pWjcclM9Z85dpirHUFoH2XE4OmNLwPyE+xdWVJPJ
+         0xEbtgz98wMut0DHGVMUnwkTe8nej9ECaUYEpI62frcdABu13Tld8QToaym8j/ztxhAR
+         UdJrADfORYWp2yQCM5dRfgK5fon2BZzBFpSRVUpulMaiI4KC2lDpC45vLd2FGJY6Qe8h
+         xTtLiLin7DRe7ztb9+ZMDe0KNWbm31qj7TaWLKA0piA1A1X0RIhco7sUViangwv2QQLg
+         /ayA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@luno.com header.s=jag5i74nfjyry3hlihlf36mme4kuhx3l header.b=CHZfwJda;
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=aw0K9bwd;
+       spf=pass (google.com: domain of 01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com designates 54.240.3.24 as permitted sender) smtp.mailfrom=01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=luno.com
+Return-Path: <01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com>
+Received: from a3-24.smtp-out.eu-west-1.amazonses.com (a3-24.smtp-out.eu-west-1.amazonses.com. [54.240.3.24])
+        by mx.google.com with ESMTPS id 5b1f17b1804b1-438bd48180bsi12344615e9.33.2025.01.24.04.27.27
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 24 Jan 2025 04:27:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com designates 54.240.3.24 as permitted sender) client-ip=54.240.3.24;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@luno.com header.s=jag5i74nfjyry3hlihlf36mme4kuhx3l header.b=CHZfwJda;
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=aw0K9bwd;
+       spf=pass (google.com: domain of 01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com designates 54.240.3.24 as permitted sender) smtp.mailfrom=01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=luno.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=jag5i74nfjyry3hlihlf36mme4kuhx3l; d=luno.com; t=1737721647;
+	h=To:From:Subject:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date;
+	bh=ZCdLYwsuXFSJZCE4QCfPKLCb44N8WfIR4SpUW1wUUa4=;
+	b=CHZfwJda95K+rPs/q85fYi6RACY3fcfBX8jF8pWFOdGCQSsbaDHoGNhSSx59REMO
+	0E1tJqZqPY94wFPVLrtuyoG9fpRzBuBvyfIO8+x5OcoUlvdRXpr3a/PdVNp2uj+31j0
+	8LSV63t8RiX4kfrlBlQ3vr2LLRfDGGV37FRl5Y64=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=uku4taia5b5tsbglxyj6zym32efj7xqv; d=amazonses.com; t=1737721647;
+	h=To:From:Subject:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Feedback-ID;
+	bh=ZCdLYwsuXFSJZCE4QCfPKLCb44N8WfIR4SpUW1wUUa4=;
+	b=aw0K9bwdewAN4XimR2HhsWilidSf/FbeAEZqQUZ033kVVIbLA2i3z8SdB5nmpqU3
+	yN+RlTLPoqZ+YVduXzaFszwyduRRhUKia+NCsnJV7nKPWYLs/jWuHOpakd0VPRONDYs
+	8WZbyHfw6tYcNLLJMiN859DLNq/RX6nV+hOpZPI4=
+To: Muhammad <azri.mokhzani@gmail.com>
+From: Luno <no-reply@luno.com>
+Subject: =?utf-8?q?=F0=9F=94=91_Authorisation_required?=
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Message-ID: <01020194984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000@eu-west-1.amazonses.com>
+Date: Fri, 24 Jan 2025 12:27:27 +0000
+Feedback-ID: ::1.eu-west-1.KYseMiSB7/uKJJ9C7/x/QTJUnvFmC6N447LFvDTsQyA=:AmazonSES
+X-SES-Outgoing: 2025.01.24-54.240.3.24
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://ww=
+w.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micro=
+soft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+  <head>
+   =20
+    <title></title>
+
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+" />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0" />
+
+    <style>
+      @font-face {
+        font-family: "Fracktif";
+        src: url("https://d32exi8v9av3ux.cloudfront.net/static/fonts/Frackt=
+if-Regular.woff");
+      }
+
+      @import url('https://fonts.googleapis.com/css2?family=3DWork+Sans&dis=
+play=3Dswap');
+     =20
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
+      a[href^=3D"tel"]:hover {
+        text-decoration: none !important;
+      }
+
+      td.footer-cell a {
+        color: #ffffff;
+      }
+
+      table td {
+        mso-line-height-rule: exactly;
+      }
+
+      a img {
+        border: none;
+      }
+
+      b,
+      strong {
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      th {
+        padding: 0;
+      }
+
+      td {
+        text-decoration: none;
+      }
+
+      a {
+        outline: none;
+        color: #2639F2;
+        text-decoration: underline;
+      }
+
+      .highlight-phone {
+        color: inherit;
+        border: none;
+      }
+
+      .nl span,
+      .nl a {
+        color: inherit !important;
+        text-decoration: none !important;
+        border: none !important;
+      }
+
+      a:hover {
+        text-decoration: none !important;
+      }
+
+      .h-u a {
+        text-decoration: none;
+      }
+
+      .h-u a:hover {
+        text-decoration: underline !important;
+      }
+
+      .btn-01:hover {
+        background-color: #e8e7e6 !important;
+      }
+
+      .active a:hover {
+        opacity: 0.8;
+      }
+
+      .btn-01,
+      .active a {
+        transition: all 0.3s ease;
+      }
+
+      .active-i a:hover,
+      .active-t:hover {
+        opacity: 0.8;
+      }
+
+      .cta,
+      .active-i a,
+      .active-t {
+        transition: all 0.3s ease;
+      }
+
+      .cta:hover {
+        background: #ffffff !important;
+        color: #ff8800 !important;
+      }
+
+      .contact a {
+        color: #FFFFFF !important;
+        text-decoration: underline !important;
+      }
+
+      ul {
+        Margin: 0 0 0 20px;
+        padding: 0;
+      }
+
+      ol {
+        Margin: 0 0 0 20px;
+        padding: 0;
+      }
+
+      img+div {
+        display: none !important;
+        width: 0px !important;
+        height: 0px !important;
+        opacity: 0 !important;
+      }
+
+      .render-lines-label-container {
+        line-height: 24px;
+        color: #071278;
+        font-weight: 700;
+        padding: 12px 0;
+      }
+
+      .render-lines-inner-div {
+        background-color: #F1F7FD;
+        border-top: 1px solid #F1F7FD;
+        border-bottom: 1px solid #F1F7FD;
+        padding: 14px 14px 0 14px;
+        margin: 0px 0;
+        font-size: 16px;
+      }
+
+      .render-lines-value-container {
+        line-height: 24px;
+        color: #071278;
+        font-weight: 400;
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 500px) and (min-width: 260px) {
+        .body-container {
+          padding: 35px 45px !important;
+        }
+
+        .rhs-image {
+          width: 79px !important;
+          right: 0 !important;
+          transform: translateY(-107px) !important;
+        }
+
+        .greeting {
+          padding: 0 0 20px !important;
+        }
+
+        .message {
+          padding: 0 0 20px !important;
+        }
+
+        .header-background {
+          height: 72px !important;
+        }
+
+        .logo {
+          height: 31px !important;
+          margin: 0 !important;
+        }
+
+        .security-logo {
+          height: 31px !important;
+          margin-left: 10px !important;
+        }
+
+        .id-logo-container {
+          top: 20px !important;
+        }
+
+        .id-logo {
+          height: 31px !important;
+          margin-left: 0 !important;
+        }
+
+        .id-image {
+          width: 95px !important;
+          transform: translateY(-85px) !important;
+        }
+
+        .security-image {
+          width: 115px !important;
+          right: 15px !important;
+        }
+
+        .security-container {
+          top: 25px !important;
+        }
+
+        .first-buy-logo-container {
+          top: 18px !important;
+        }
+
+        .first-buy-logo {
+          height: 31px !important;
+          margin: 0 !important;
+        }
+
+        .store-icon {
+          height: auto !important;
+          width: 120px !important;
+        }
+
+        .store-link {
+          margin-right: 15px !important;
+        }
+      }
+
+      @media only screen and (max-width:375px) and (min-width:374px) {
+        .gmail-fix {
+          min-width: 374px !important;
+        }
+      }
+
+      @media only screen and (max-width:414px) and (min-width:413px) {
+        .gmail-fix {
+          min-width: 413px !important;
+        }
+      }
+
+      @media only screen and (max-width:500px) {
+
+        =20
+        .flexible {
+          width: 100% !important;
+        }
+
+        .img-flex img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .default-header {
+          width: 100% !important;
+          height: auto !important;
+          padding: 0 !important;
+        }
+
+        .table-holder {
+          display: table !important;
+          width: 100% !important;
+        }
+
+        .thead {
+          display: table-header-group !important;
+          width: 100% !important;
+        }
+
+        .tfoot {
+          display: table-footer-group !important;
+          width: 100% !important;
+        }
+
+        .tflex {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        .hide {
+          display: none !important;
+          width: 0 !important;
+          height: 0 !important;
+          padding: 0 !important;
+          font-size: 0 !important;
+          line-height: 0 !important;
+        }
+
+        .tc {
+          margin: 0 auto !important;
+          float: none !important;
+        }
+
+        .ac {
+          text-align: center !important;
+        }
+
+        .h-0 {
+          height: 0 !important;
+        }
+
+        .p-0 {
+          padding: 0 !important;
+        }
+
+        .p-20 {
+          padding: 20px !important;
+        }
+
+        .p-30 {
+          padding: 30px !important;
+        }
+
+        .plr-0 {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .plr-10 {
+          padding-left: 10px !important;
+          padding-right: 10px !important;
+        }
+
+        .plr-10 a {
+          padding-left: 10px !important;
+          padding-right: 10px !important;
+        }
+
+        .plr-15 {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+        }
+
+        .plr-20 {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .pt-20 {
+          padding-top: 20px !important;
+        }
+
+        .pt-30 {
+          padding-top: 30px !important;
+        }
+
+        .pb-20 {
+          padding-bottom: 20px !important;
+        }
+
+        .pb-30 {
+          padding-bottom: 30px !important;
+        }
+
+        =20
+
+        .w-10 {
+          width: 10px !important;
+        }
+
+      }
+    </style>
+  </head>
+
+  <body bgcolor=3D"#f2f2f2" style=3D"margin:0; padding:0; -webkit-text-size=
+-adjust:100%; -ms-text-size-adjust:100%;">
+    <table class=3D"gmail-fix" style=3D"min-width: 320px;" width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#f2f2f2" >
+      <tbody>
+        <tr>
+          <td>
+            <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+              <tbody>
+              <tr>
+                <td style=3D"display: none; font-size: 0; line-height: 0; w=
+idth: 0; height: 0; padding: 0;">&nbsp;</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class=3D"flexible" style=3D"margin: 0 auto;" width=3D"60=
+0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+              <tbody>
+              <tr>
+                <td bgcolor=3D"#ffffff">
+                  <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0"=
+>
+                    <tbody>
+                   =20
+ =20
+<tr>
+  <td class=3D"img-flex"><a href=3D"https://www.luno.com/"><img src=3D"http=
+s://d32exi8v9av3ux.cloudfront.net/static/themes/luno_v3/illustrations/email=
+/security_header_desktop.png" width=3D"600" height=3D"163"/></a></td>
+</tr>
+
+
+                    <tr>
+                      <td class=3D"body-container" style=3D"padding: 0 45px=
+ 35px;">
+                        <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0">
+                          <tbody>
+                           =20
+                              <tr>
+                                <td class=3D"greeting" style=3D"font: 16px/=
+22px 'Fracktif', Arial, Helvetica, sans-serif; color: #071278; padding: 0 0=
+ 20px;">
+                                  Hi=20
+  <a rel=3D"nofollow" href=3D"" style=3D"text-decoration:none; color:inheri=
+t">Muhammad</a>
+
+                                </td>
+                              </tr>
+                           =20
+                           =20
+
+ <tr>
+  <td class=3D"message-section" style=3D"font: 16px/22px 'Fracktif', 'Work =
+Sans', Arial, Helvetica, sans-serif; color: #071278; padding: 0 0 40px;">
+    Please review the following action:</p>
+  </td>
+ </tr>
+
+<tr class=3D"render-lines-section">
+  <td class=3D"render-lines-inner-cell" style=3D"font: 16px/22px 'Fracktif'=
+, 'Work Sans', Arial, Helvetica, sans-serif; color: #071278; padding: 0 0 2=
+0px;">
+    <div class=3D"render-lines-inner-div">
+    <div style=3D"font-size: 20px; padding: 0px 0px 14px 0px; text-align: c=
+enter;">Do you want to trust this device?</div>
+   =20
+  <table class=3D"render-lines-value-container">
+   =20
+      <tr><td colspan=3D"2"><hr style=3D"border: 0; border-bottom: 2px dash=
+ed #777DB5; margin: 6px 0 16px;"></td></tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">Device</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >infinix x6833b=
+</div>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">Permissions</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >Authorise all =
+actions</div>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+      <tr><td colspan=3D"2"><hr style=3D"border: 0; border-bottom: 2px dash=
+ed #777DB5; margin: 6px 0 16px;"></td></tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">Time</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >20:27:27 &#43;=
+08</div>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">Date</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >24-01-2025</di=
+v>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">IP address</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >183.171.242.14=
+ (MY)</div>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+     =20
+     =20
+        <tr>
+         =20
+  <td class=3D"render-lines-label-cell" colspan=3D"1">
+    <div class=3D"render-lines-label-container">Initiating device</div>
+   =20
+  </td>
+
+         =20
+            <td>
+             =20
+  <div class=3D"render-lines-value-container" align=3Dright >infinix x6833b=
+</div>
+ =20
+
+            </td>
+         =20
+        </tr>
+     =20
+   =20
+  </table>
+
+    </div>
+  </td>
+</tr>
+
+<tr class=3D"authorise-button-section">
+  <td class=3D"authorise-button-cell" style=3D"text-rendering: optimizeLegi=
+bility !important; -webkit-font-smoothing: antialiased !important; -moz-osx=
+-font-smoothing: grayscale !important; padding: 0 0 40px;">
+    <table class=3D"flexible" style=3D"margin: 0 auto;" cellspacing=3D"0" c=
+ellpadding=3D"0" align=3D"center">
+      <tbody>
+      <tr class=3D"authorise-button-row">
+        <td class=3D"active-t plr-10" style=3D"font: bold 15px/20px 'Frackt=
+if', 'Work Sans', Arial, Helvetica, sans-serif; color: #fff; mso-padding-al=
+t: 15px 40px; border-radius: 25px; text-transform: uppercase; letter-spacin=
+g: 1px; -webkit-box-shadow: 0px 10px 5px -10px rgba(0,0,0,0.75); -moz-box-s=
+hadow: 0px 10px 5px -10px rgba(0,0,0,0.75); box-shadow: 0px 10px 5px -10px =
+rgba(0,0,0,0.75);" align=3D"center" bgcolor=3D"#2639F2">
+          <a target=3D"_blank" style=3D"text-decoration: none; color: #ffff=
+fe; display: block; padding: 15px 40px;" href=3D"https://www.luno.com/autho=
+rize?token=3DXYl-OfsJTaWIb3sSjgb-qA" rel=3D"noopener noreferrer">AUTHORISE<=
+/a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+
+
+                           =20
+ =20
+    <tr>
+      <td style=3D"font: 16px/22px 'Fracktif', 'Work Sans', Arial, Helvetic=
+a, sans-serif; color: #071278; padding: 0 0 20px;">
+        Don=E2=80=99t recognise this activity?<br><a target=3D"_blank" styl=
+e=3D"color: #2639F2; text-decoration: none;" href=3D"https://www.luno.com/s=
+ecure_account?expires=3D1737808047565&amp;token=3D5VsdHkPP8Wh9GwOVVIZc6_29j=
+lxsFIM0UDCVuzimArM&amp;uid=3D3136748208313717840" rel=3D"noopener noreferre=
+r">Secure your account</a> immediately.
+      </td>
+    </tr>
+    <tr>
+      <td class=3D"h-u" style=3D"font: 16px/22px 'Fracktif', 'Work Sans', A=
+rial, Helvetica, sans-serif; color: #071278;">
+        To the moon =F0=9F=9A=80<br />
+        Team Luno<br /><br />
+      </td>
+    </tr>
+    <tr>
+      <td style=3D"font: 12px 'Fracktif', 'Work Sans', Arial, Helvetica, sa=
+ns-serif !important; color: #071278;">
+        Questions? Learn more about <a target=3D"_blank" style=3D"color: #2=
+639F2; text-decoration: none;" href=3D"https://www.luno.com/help/en-US/arti=
+cles/1000143559" rel=3D"noopener noreferrer">securing your account</a>.
+      </td>
+    </tr>
+
+
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                   =20
+  <tr>
+    <td bgcolor=3D"#071278" style=3D"border-radius: 0 28px 0 0;">
+      <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+        <tbody>
+          <tr>
+            <td style=3D"padding: 32px 0 32px; text-rendering: optimizeLegi=
+bility !important; -webkit-font-smoothing: antialiased !important; -moz-osx=
+-font-smoothing: grayscale !important; border-radius: 0 28px 0 0;" bgcolor=
+=3D"#071278">
+              <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+                <tbody>
+                  <tr>
+    <td>
+      <table style=3D"margin: 0 auto; border-radius: 0 28px 0 0;" cellspaci=
+ng=3D"0" cellpadding=3D"0" align=3D"center">
+        <tbody>
+          <tr>
+            <td class=3D"active">
+                <a class=3D"store-link" target=3D"_blank" href=3D"https://i=
+tunes.apple.com/app/bitx-wallet/id927362479?mt=3D8" rel=3D"noopener norefer=
+rer" style=3D"margin-right: 15px;">
+                  <img class=3D"store-icon" src=3D"https://d32exi8v9av3ux.c=
+loudfront.net/static/images/email/best_trip/btn-app.png" alt=3D"Download on=
+ the App Store" width=3D"136" height=3D"41" />
+                </a>
+            </td>
+            <td class=3D"active">
+              <a target=3D"_blank" href=3D"https://play.google.com/store/ap=
+ps/details?hl=3Den&id=3Dco.bitx.android.wallet" rel=3D"noopener noreferrer"=
+>
+                <img class=3D"store-icon" src=3D"https://d32exi8v9av3ux.clo=
+udfront.net/static/images/email/best_trip/btn-gp.png" alt=3D"Get it on Goog=
+le Play" width=3D"136" height=3D"41" />
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+                 =20
+  <tr>
+    <td class=3D"h-u" style=3D"font: 15px/20px 'Fracktif', 'Work Sans', Ari=
+al, Helvetica, sans-serif; color: #ffffff; padding: 20px 30px 17px;" align=
+=3D"center">You received this email because an account was registered for L=
+uno <br class=3D"hide"> using the address <span class=3D"contact">azri.mokh=
+zani@gmail.com</span>.</td>
+  </tr>
+
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+  <td bgcolor=3D"#071278" style=3D"height: 107px">
+    <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" style=3D"padd=
+ing: 20px 15px 25px; text-rendering: optimizeLegibility !important; -webkit=
+-font-smoothing: antialiased !important; -moz-osx-font-smoothing: grayscale=
+ !important; background-color: #5C65F6; border-radius: 0 28px 0 0;">
+      <tr>
+        <td style=3D"
+        font: 16px/22px 'Fracktif', Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding-bottom: 20px;
+        color: #fff;
+        font-weight: regular;">
+        Follow us on:</td>
+      </tr>
+      <tr>
+        <td style=3D"padding: 0 0 10px;">
+          <div>
+            <table style=3D"margin: 0 auto;" cellspacing=3D"0" cellpadding=
+=3D"0"
+            align=3D"center">
+            <tbody>
+              <tr>
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.facebook.com/Luno=
+World/"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_fb.png"
+                        alt=3D"FB" width=3D"22" height=3D"22" /> </a></td>
+                <td width=3D"25">&nbsp;</td>
+
+               =20
+
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.tiktok.com/@luno_=
+global"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_tt.png"
+                        alt=3D"TT" width=3D"22" height=3D"22" /> </a></td>
+                <td width=3D"25">&nbsp;</td>
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.instagram.com/lun=
+o_global/"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_ig.png"
+                        alt=3D"IG" width=3D"22" height=3D"22" /> </a></td>
+                <td width=3D"25">&nbsp;</td>
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.linkedin.com/comp=
+any/lunoglobal/"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_in.png"
+                        alt=3D"LN" width=3D"22" height=3D"22" /> </a></td>
+                <td width=3D"25">&nbsp;</td>
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.youtube.com/c/Lun=
+oGlobal"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_yt.png"
+                        alt=3D"YT" width=3D"22" height=3D"22" /> </a></td>
+                <td width=3D"25">&nbsp;</td>
+                <td class=3D"active"><a target=3D"_blank"
+                                      href=3D"https://www.x.com/lunoglobal"
+                                      rel=3D"noopener noreferrer"><img
+                        src=3D"https://d32exi8v9av3ux.cloudfront.net/static=
+/themes/matter/icons/naked/white/ic_logo_x.png"
+                        alt=3D"X" width=3D"22" height=3D"22" /> </a></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </td>
+      </tr>
+     =20
+     =20
+     =20
+    </table>
+  </td>
+</tr>
+
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <img alt=3D"" src=3D"https://bh8njj63.r.eu-west-1.awstrack.me/I0/01020194=
+984811e8-9e0a4b45-07b5-4f2e-8d4b-d576add9b1ca-000000/2FHhbhvlGrqtNg27h8hgKP=
+6zWFY=3D410" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

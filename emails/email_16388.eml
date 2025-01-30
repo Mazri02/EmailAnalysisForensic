@@ -1,0 +1,628 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp2179440dye;
+        Sun, 26 Jan 2025 20:48:16 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGwJf8po5qOl78pHHwWdtqwxbbxrbPcoD6j0zcHraX6S0VqysOw80XRg/N5BVFu3vN/4Fvh
+X-Received: by 2002:a05:6a20:7f8e:b0:1e6:8f39:d635 with SMTP id adf61e73a8af0-1eb2146009bmr59207134637.9.1737953296525;
+        Sun, 26 Jan 2025 20:48:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737953296; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jGKtkF/nk2dKRJNxf2sIYOhpproUY7zCwOguErcRwiPqDmhUB5SpXvOBB+ZUdx6zqr
+         YQNiSGaLBjWAb2bmk9ObN3OXqgHeoNxls5cwYw93ZYNdCoDUmHFeBKU5SeUvghZ7t14h
+         lzaj5zRerS8nACn4lFkSKMlE1/KwPzAxIUgJJiT4QKTK9huEDjvA1K1lIyS9uPMhvh1g
+         Po5vPFOYIsYfDrDfn23UvJYsfW6acLMb68j3GQtuz+bhwzd7HEXW6KAqe8XK3liJWFi3
+         YtYitxk72pgw0nzlm98ZkWu/B9vDhZY+RE3j6y1txejeeTYOAJMEyphImCaJoMVbs85Y
+         PJtQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:list-unsubscribe:list-unsubscribe-post
+         :content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=P1PRCPRpdqUQEvJYQCqdaBqPYV4XOaxJm0ayWFYivSo=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=kGSfJ6kFLNwBhqhxs/WQVLKUb0fQ5S25hjwu653qZTzumG04SK60nj1t/94Op9ReRR
+         VxlfjsHw0it7u5olXv+C34hRij6V2brRFMwamu78z6YRFQmADjbuQXcH87p0Pi8wZozf
+         GfBR6k+FtQjXigzMAG440FTZ9Hx+gZk2mCoq64eSiPKNZlXO9dnUEWaQcFOhBhZcF+5j
+         l6HEE4bEhq8BJY4MDWdSs17H/l062E5/QJrLbfHVIq8oGBOK9foX3WIpMJ8QHHM14pfH
+         ophAnBP4L6pK9Nw7qin6+s+C1Wxigedg0oN1kkW7A1mkMyzvSNY2/v9zwzJ8H9jqS1X+
+         W2NA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jora.com header.s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz header.b=sYEhgFu2;
+       dkim=pass header.i=@amazonses.com header.s=th56fxceawp6wyoy6vlgnav4xsxoa5ue header.b="UHVdZ/uo";
+       spf=pass (google.com: domain of 01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com designates 23.251.242.62 as permitted sender) smtp.mailfrom=01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jora.com
+Return-Path: <01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com>
+Received: from e242-62.smtp-out.us-west-1.amazonses.com (e242-62.smtp-out.us-west-1.amazonses.com. [23.251.242.62])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac48e84cb90si9611119a12.41.2025.01.26.20.48.16
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 26 Jan 2025 20:48:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com designates 23.251.242.62 as permitted sender) client-ip=23.251.242.62;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jora.com header.s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz header.b=sYEhgFu2;
+       dkim=pass header.i=@amazonses.com header.s=th56fxceawp6wyoy6vlgnav4xsxoa5ue header.b="UHVdZ/uo";
+       spf=pass (google.com: domain of 01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com designates 23.251.242.62 as permitted sender) smtp.mailfrom=01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jora.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz; d=jora.com; t=1737953296;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=oyusP130n8ulQNNsqyC0bpXTClEIHYMLqvaI4QyogEk=;
+	b=sYEhgFu2anK8P0s7aIiFhPT7eHst1rxL6U0SamCKt7QSMmf5EJxwvaYpjWYeduQ+
+	7Tg6lFd3T5zdRv0GY2vhNpQca4Sn9QSc4Fmvo24oLx//JGphpFV5cevhIzBmDXmdwto
+	sxSd/YuaNshHpR6sMnosz7EVeJOTa89n/PRWTHG8=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=th56fxceawp6wyoy6vlgnav4xsxoa5ue; d=amazonses.com; t=1737953296;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=oyusP130n8ulQNNsqyC0bpXTClEIHYMLqvaI4QyogEk=;
+	b=UHVdZ/uoLhD6nzCIWTXYpbv736n2vX99UFWtCxqH+7xi2ZDn3YlRJ/2JtaGQgYiy
+	FIeP01qU4E8QFC3QQJZYRu+ycMo+CeMdxj5/7wExUmFtuh0T7hIXULxZURTDgDoiP4y
+	ssn3CmaLV36KsELWhcXWW0jz+qU/80pKurodJUsU=
+Date: Mon, 27 Jan 2025 04:48:15 +0000
+From: Jora Job Alert <donotreply@jora.com>
+To: azri.mokhzani@gmail.com
+Message-ID: <01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-000000@us-west-1.amazonses.com>
+Subject: Mindrift is hiring: Tutor + 3 other similar jobs
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Alert-ID: email-alert-daily-46681139-20250127
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://my.jora.com/email_alerts/YxiqcxPx9YNxnyvthtmo/cancel>
+Feedback-ID: ::1.us-west-1.NPEYxqIKOXYoNLfA+oO8wLSoTd+GR1LeFCdqq2yDFd4=:AmazonSES
+X-SES-Outgoing: 2025.01.27-23.251.242.62
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html><head><meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Cont=
+ent-Type"><title>Jora email alert</title><meta content=3D"mordor=3Dtrue, co=
+rrelation_id=3Demail-alert-daily-46681139-20250127" name=3D"jora_meta"><met=
+a content=3D"width=3Ddevice-width; initial-scale=3D1.0" name=3D"viewport"><=
+style>@media only screen and (max-width:530px) {
+
+  table.default-template {
+
+    width: 100% !important;
+
+  }
+
+
+
+  table.table-max-width {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+  }
+
+
+
+  .see-all-btn-link {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-width: 100% !important;
+
+  }
+
+
+
+  img.responsive-image {
+
+    max-width: 100% !important;
+
+    height: auto !important;
+
+  }
+
+}</style><!--[if gte mso 9]>
+
+  <style type=3D"text/css">
+
+    /* https://litmus.com/community/discussions/982-outlook-overrides-font-=
+to-times-new-roman#comment-6488 */
+
+    body, table, td, span, div {
+
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !importan=
+t;
+
+    }
+
+
+
+    body, table, td, a {
+
+      -webkit-text-size-adjust: 100%;
+
+      -ms-text-size-adjust: =3D 100%;
+
+    }
+
+
+
+    .result {
+
+      line-height: 20px;
+
+      padding: 11px 0;
+
+      border-bottom: 10px solid #ffffff;
+
+    }
+
+  </style>
+
+<![endif]-->
+
+<!--[if gte mso 9]>
+
+  <xml>
+
+    <o:OfficeDocumentSettings>
+
+      <o:AllowPNG/>
+
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+
+    </o:OfficeDocumentSettings>
+
+  </xml>
+
+<![endif]--><style>a:link{text-decoration:none !important}</style></head><b=
+ody leftmargin=3D"0" marginheight=3D"0" marginwidth=3D"0" offset=3D"0" topm=
+argin=3D"0" style=3D"font-family:Arial, 'Helvetica Neue', Helvetica, sans-s=
+erif;font-size:14px;line-height:26px;color:#555;height:100% !important;marg=
+in:0 !important;padding:0 !important;width:100% !important;min-width:100% !=
+important"><div class=3D"preheader" style=3D"mso-hide:all;display:none;max-=
+height:0;overflow:hidden;font-size:1px;color:#ffffff;line-height:1px;max-wi=
+dth:0px;opacity:0">Mindrift and Ebit Co., Ltd are looking for candidates li=
+ke you.</div><div class=3D"blank-space" style=3D"mso-hide:all;display:none;=
+max-height:0;overflow:hidden;font-size:1px;color:#ffffff;line-height:1px;ma=
+x-width:0px;opacity:0">=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0</div><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"v2020-root" role=3D=
+"presentation" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-t=
+able-rspace:0pt;min-width: 100%;" width=3D"100%"><tr><td align=3D"center" s=
+tyle=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><!--[if (gte mso 9)|(IE)=
+]>
+
+<table role=3D"presentation" width=3D"560" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0">
+
+  <tr>
+
+    <td>
+
+<![endif]--><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"default-template common-text" role=3D"presentation" widt=
+h=3D"100%" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table=
+-rspace:0pt;font-size:14px;font-weight:normal;font-stretch:normal;font-styl=
+e:normal;letter-spacing:normal;background-color:#fff;max-width:560px"><tr><=
+td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-wid=
+th" role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !important;min-width:1=
+00% !important;max-width:560px !important"><tr><td class=3D"bg-dark" style=
+=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#000000;text=
+-align: center; line-height: 40px; height: 40px; padding-top: 12px; padding=
+-bottom: 12px;" valign=3D"center"><img alt=3D"Jora logo" height=3D"40" styl=
+e=3D"-ms-interpolation-mode:bicubic;height:40px; vertical-align: middle;" s=
+rc=3D"http://cdn1.jora.com/assets/ea-logo-white-ee925b03074098aada971389f07=
+11e7e2e7b6630e5ee324a024582d543d5b7ca.png"></td></tr></table><table align=
+=3D"left" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-width" rol=
+e=3D"presentation" style=3D"border-collapse:collapse;mso-table-lspace:0pt;m=
+so-table-rspace:0pt;width:100% !important;min-width:100% !important;max-wid=
+th:560px !important;border-left: thin solid #DEDEDE; border-right: thin sol=
+id #DEDEDE;" width=3D"100%"><tr><td style=3D"mso-table-lspace:0pt;mso-table=
+-rspace:0pt"><table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"table-max-width" role=3D"presentation" style=3D"border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !impor=
+tant;min-width:100% !important;max-width:560px !important;background-color:=
+ #f7f7f7" width=3D"100%"><tr><td style=3D"mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;padding-top: 12px; padding-bottom: 8px; padding-left: 20px; paddin=
+g-right: 20px"><div class=3D"job-alert-summary-heading" style=3D"mso-line-h=
+eight-rule:exactly;font-size:16px;font-weight:bold;line-height:25px;color:#=
+1c1c1c;margin:0">7 new remote work, part time jobs</div><div class=3D"facet=
+-values" style=3D"mso-line-height-rule:exactly;line-height:32px;color:#1c1c=
+1c;margin:0">Within 10km</div></td></tr></table><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"20" cellspacing=3D"0" class=3D"table-max-width" id=
+=3D"jobresults" role=3D"presentation" width=3D"100%" style=3D"border-collap=
+se:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !important=
+;min-width:100% !important;max-width:560px !important"><tr><td style=3D"mso=
+-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 10px; padding-bottom: 0=
+"><div class=3D"sponsored_jobs"><div class=3D"table-max-width job-item comm=
+on-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:nor=
+mal;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;li=
+ne-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !im=
+portant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job" =
+title=3D"Virtual Assistant" href=3D"https://my.jora.com/job/Virtual-Assista=
+nt-3ec87019941d125b8ef92aea3f3911c1?alert_id=3Demail-alert-daily-46681139-2=
+0250127&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm=
+51bGx9&amp;sp=3Dsalert&amp;sponsored=3Dtrue&amp;sr=3D1&amp;alid=3DYxiqcxPx9=
+YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_=
+alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"t=
+ext-decoration:none;display:block;color:#808080"><div class=3D"job-title" s=
+tyle=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:=
+#1c1c1c">Virtual Assistant</div><div class=3D"company-info"><span class=3D"=
+company-name" style=3D"mso-line-height-rule:exactly;font-size:13px;line-hei=
+ght:20px;color:#1c1c1c;margin-right:4px">Myraid Trading</span>-<span class=
+=3D"company-location" style=3D"mso-line-height-rule:exactly;font-size:13px;=
+line-height:20px;color:#626262;margin-left:4px">Bayan Lepas, Penang</span><=
+/div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-hei=
+ght-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-ra=
+dius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;p=
+adding:3px;text-align:center">Part time</span><span class=3D"space">=C2=A0<=
+/span><span class=3D"extra-info-text" id=3D"salary" style=3D"mso-line-heigh=
+t-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-radi=
+us:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;pad=
+ding:3px;text-align:center">RM1,850 - RM1,850 per week</span><span class=3D=
+"space">=C2=A0</span><span class=3D"extra-info-text quick-apply" style=3D"m=
+so-line-height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-mo=
+z-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-he=
+ight:25px;padding:3px;text-align:center;color:#ffffff;background:#0e8136">Q=
+uick apply</span><div class=3D"job-abstract" style=3D"line-height:24px">The=
+ ideal candidate should be proficient in Microsoft Office and have a reliab=
+le internet connection. This is a great opportunity for...</div></a></div><=
+div class=3D"table-max-width job-item common-text result" style=3D"font-siz=
+e:14px;font-weight:normal;font-stretch:normal;font-style:normal;letter-spac=
+ing:normal;padding:10px 0;display:block;line-height:20px;padding-bottom:20p=
+x;width:100% !important;min-width:100% !important;max-width:560px !importan=
+t;padding-bottom: 15px;"><a class=3D"job" title=3D"Language Specialist - Ch=
+inese/English" href=3D"https://my.jora.com/job/rd/c6c4ceb4913746cb919702c0f=
+65e945c?alert_id=3Demail-alert-daily-46681139-20250127&amp;qd=3DeyJxIjoicmV=
+tb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dsalert&amp;s=
+ponsored=3Dtrue&amp;sr=3D2&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;r=
+ecommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demai=
+l&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;display:=
+block;color:#808080"><div class=3D"job-title" style=3D"mso-line-height-rule=
+:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">Language Specialist=
+ - Chinese/English</div><div class=3D"company-info"><span class=3D"company-=
+name" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px=
+;color:#1c1c1c;margin-right:4px">Ebit Co., Ltd</span>-<span class=3D"compan=
+y-location" style=3D"mso-line-height-rule:exactly;font-size:13px;line-heigh=
+t:20px;color:#626262;margin-left:4px">Kuala Lumpur, Kuala Lumpur</span></di=
+v><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-height=
+-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-radiu=
+s:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padd=
+ing:3px;text-align:center">Part time</span><span class=3D"space">=C2=A0</sp=
+an><div class=3D"job-abstract" style=3D"line-height:24px">We are seeking fo=
+r native Chinese writing experts to contribute to the training of AI models=
+ aimed at enhancing writing capabilities. The...</div></a></div></div></td>=
+</tr><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top=
+: 0; padding-bottom: 0"><div class=3D"table-max-width job-item common-text =
+result" style=3D"font-size:14px;font-weight:normal;font-stretch:normal;font=
+-style:normal;letter-spacing:normal;padding:10px 0;display:block;line-heigh=
+t:20px;padding-bottom:20px;width:100% !important;min-width:100% !important;=
+max-width:560px !important;padding-bottom: 15px;"><a class=3D"job" title=3D=
+"Freelance Finance Analyst - AI Tutor" href=3D"https://my.jora.com/job/Tuto=
+r-9a433068e24a12469ceb53aa22ecb866?alert_id=3Demail-alert-daily-46681139-20=
+250127&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm5=
+1bGx9&amp;sp=3Dalert&amp;sponsored=3Dfalse&amp;sr=3D1&amp;alid=3DYxiqcxPx9Y=
+Nxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_a=
+lerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"te=
+xt-decoration:none;display:block;color:#808080"><div class=3D"job-title" st=
+yle=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#=
+1c1c1c">Freelance Finance Analyst - AI Tutor</div><div class=3D"company-inf=
+o"><span class=3D"company-name" style=3D"mso-line-height-rule:exactly;font-=
+size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Mindrift</span>-=
+<span class=3D"company-location" style=3D"mso-line-height-rule:exactly;font=
+-size:13px;line-height:20px;color:#626262;margin-left:4px">Malaysia</span><=
+/div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-hei=
+ght-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-ra=
+dius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;p=
+adding:3px;text-align:center">Freelance</span><span class=3D"space">=C2=A0<=
+/span><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-he=
+ight-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-r=
+adius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;=
+padding:3px;text-align:center">Part time</span><span class=3D"space">=C2=A0=
+</span><div class=3D"job-abstract" style=3D"line-height:24px">In this role,=
+ you will develop complex question-answer pairs and create scoring criteria=
+ (rubrics) to evaluate and grade the quality of...</div></a></div><div clas=
+s=3D"table-max-width job-item common-text result" style=3D"font-size:14px;f=
+ont-weight:normal;font-stretch:normal;font-style:normal;letter-spacing:norm=
+al;padding:10px 0;display:block;line-height:20px;padding-bottom:20px;width:=
+100% !important;min-width:100% !important;max-width:560px !important;paddin=
+g-bottom: 15px;"><a class=3D"job" title=3D"Language Specialist - Chinese/En=
+glish" href=3D"https://my.jora.com/job/Language-Specialist-c6c4ceb4913746cb=
+919702c0f65e945c?alert_id=3Demail-alert-daily-46681139-20250127&amp;qd=3Dey=
+JxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dale=
+rt&amp;sponsored=3Dfalse&amp;sr=3D2&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=
+=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_med=
+ium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:non=
+e;display:block;color:#808080"><div class=3D"job-title" style=3D"mso-line-h=
+eight-rule:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">Language =
+Specialist - Chinese/English</div><div class=3D"company-info"><span class=
+=3D"company-name" style=3D"mso-line-height-rule:exactly;font-size:13px;line=
+-height:20px;color:#1c1c1c;margin-right:4px">Ebit Co., Ltd</span>-<span cla=
+ss=3D"company-location" style=3D"mso-line-height-rule:exactly;font-size:13p=
+x;line-height:20px;color:#626262;margin-left:4px">Kuala Lumpur, Kuala Lumpu=
+r</span></div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso=
+-line-height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-=
+border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-heig=
+ht:25px;padding:3px;text-align:center">Part time</span><span class=3D"space=
+">=C2=A0</span><div class=3D"job-abstract" style=3D"line-height:24px">We ar=
+e seeking for native Chinese writing experts to contribute to the training =
+of AI models aimed at enhancing writing capabilities. The...</div></a></div=
+><div class=3D"table-max-width job-item common-text result" style=3D"font-s=
+ize:14px;font-weight:normal;font-stretch:normal;font-style:normal;letter-sp=
+acing:normal;padding:10px 0;display:block;line-height:20px;padding-bottom:2=
+0px;width:100% !important;min-width:100% !important;max-width:560px !import=
+ant;padding-bottom: 15px;"><a class=3D"job" title=3D"AI Trainer - Developer=
+s" href=3D"https://my.jora.com/job/Developer-e60cdb9b402f0976d7e5b5107c79e6=
+53?alert_id=3Demail-alert-daily-46681139-20250127&amp;qd=3DeyJxIjoicmVtb3Rl=
+IHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dalert&amp;sponsor=
+ed=3Dfalse&amp;sr=3D3&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recomm=
+ended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp=
+;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;display:block=
+;color:#808080"><div class=3D"job-title" style=3D"mso-line-height-rule:exac=
+tly;font-size:16px;font-weight:bold;color:#1c1c1c">AI Trainer - Developers<=
+/div><div class=3D"company-info"><span class=3D"company-name" style=3D"mso-=
+line-height-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;marg=
+in-right:4px">Ebit Co., Ltd</span>-<span class=3D"company-location" style=
+=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;color:#626=
+262;margin-left:4px">Kuala Lumpur, Kuala Lumpur</span></div><span class=3D"=
+extra-info-text" id=3D"work_type" style=3D"mso-line-height-rule:exactly;bor=
+der-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:=
+#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-alig=
+n:center">Part time</span><span class=3D"space">=C2=A0</span><div class=3D"=
+job-abstract" style=3D"line-height:24px">We are seeking experienced softwar=
+e engineers, coders, and language experts to be part of the artificial inte=
+lligence (AI) revolution. If...</div></a></div></td></tr><!--[if gt mso 9]>=
+ <table width=3D"100%"><tr><td height=3D"15"></td></tr></table> <![endif]--=
+><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 0;=
+ padding-bottom: 0"><div class=3D"sponsored_jobs"><div class=3D"table-max-w=
+idth job-item common-text result" style=3D"font-size:14px;font-weight:norma=
+l;font-stretch:normal;font-style:normal;letter-spacing:normal;padding:10px =
+0;display:block;line-height:20px;padding-bottom:20px;width:100% !important;=
+min-width:100% !important;max-width:560px !important;padding-bottom: 15px;"=
+><a class=3D"job" title=3D"(Remote Job) Live Chat workers" href=3D"https://=
+my.jora.com/job/Worker-59cd1d14950d97cfecbda0f43248cdaa?alert_id=3Demail-al=
+ert-daily-46681139-20250127&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZS=
+IsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dsalert&amp;sponsored=3Dtrue&amp;sr=3D3&=
+amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp=
+;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeke=
+r_emails" style=3D"text-decoration:none;display:block;color:#808080"><div c=
+lass=3D"job-title" style=3D"mso-line-height-rule:exactly;font-size:16px;fon=
+t-weight:bold;color:#1c1c1c">(Remote Job) Live Chat workers</div><div class=
+=3D"company-info"><span class=3D"company-name" style=3D"mso-line-height-rul=
+e:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">M=
+yraid Trading</span>-<span class=3D"company-location" style=3D"mso-line-hei=
+ght-rule:exactly;font-size:13px;line-height:20px;color:#626262;margin-left:=
+4px">Bayan Lepas, Penang</span></div><span class=3D"extra-info-text" id=3D"=
+work_type" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-=
+border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;f=
+ont-size:10px;line-height:25px;padding:3px;text-align:center">Part time</sp=
+an><span class=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D=
+"salary" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-bo=
+rder-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;fon=
+t-size:10px;line-height:25px;padding:3px;text-align:center">RM1,850 - RM1,8=
+50 per month</span><span class=3D"space">=C2=A0</span><span class=3D"extra-=
+info-text quick-apply" style=3D"mso-line-height-rule:exactly;border-radius:=
+4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;col=
+or:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center;co=
+lor:#ffffff;background:#0e8136">Quick apply</span><div class=3D"job-abstrac=
+t" style=3D"line-height:24px">What you will be doing: Live Chat workers are=
+ assigned a business that they are working with and your job is to log in t=
+o their social...</div></a></div><div class=3D"table-max-width job-item com=
+mon-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:no=
+rmal;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;l=
+ine-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !i=
+mportant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job"=
+ title=3D"AI Trainer - Developers" href=3D"https://my.jora.com/job/rd/e60cd=
+b9b402f0976d7e5b5107c79e653?alert_id=3Demail-alert-daily-46681139-20250127&=
+amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&a=
+mp;sp=3Dsalert&amp;sponsored=3Dtrue&amp;sr=3D4&amp;alid=3DYxiqcxPx9YNxnyvth=
+tmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&a=
+mp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-deco=
+ration:none;display:block;color:#808080"><div class=3D"job-title" style=3D"=
+mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#1c1c1c"=
+>AI Trainer - Developers</div><div class=3D"company-info"><span class=3D"co=
+mpany-name" style=3D"mso-line-height-rule:exactly;font-size:13px;line-heigh=
+t:20px;color:#1c1c1c;margin-right:4px">Ebit Co., Ltd</span>-<span class=3D"=
+company-location" style=3D"mso-line-height-rule:exactly;font-size:13px;line=
+-height:20px;color:#626262;margin-left:4px">Kuala Lumpur, Kuala Lumpur</spa=
+n></div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-=
+height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border=
+-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25p=
+x;padding:3px;text-align:center">Part time</span><span class=3D"space">=C2=
+=A0</span><div class=3D"job-abstract" style=3D"line-height:24px">We are see=
+king experienced software engineers, coders, and language experts to be par=
+t of the artificial intelligence (AI) revolution. If...</div></a></div></di=
+v></td></tr></table><!--[if gt mso 9]> <table width=3D"100%"><tr><td height=
+=3D"20"></td></tr></table> <![endif]--><table align=3D"center" border=3D"0"=
+ cellpadding=3D"20" cellspacing=3D"0" class=3D"table-max-width" id=3D"top_m=
+atch_job_container" role=3D"presentation" width=3D"100%" style=3D"border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !impor=
+tant;min-width:100% !important;max-width:560px !important"><tr><td style=3D=
+"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 10px; padding-botto=
+m: 0"><div class=3D"top-job-heading" id=3D"top_match_job_heading" style=3D"=
+font-size:16px;font-weight:bold;line-height:25px;color:#0e8136;padding-bott=
+om:20px">Jobs you may have missed</div><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-width" id=3D"top_ma=
+tch_job" role=3D"presentation" width=3D"100%" style=3D"border-collapse:coll=
+apse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !important;min-wi=
+dth:100% !important;max-width:560px !important"><tr><td style=3D"mso-table-=
+lspace:0pt;mso-table-rspace:0pt"><div class=3D"table-max-width job-item com=
+mon-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:no=
+rmal;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;l=
+ine-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !i=
+mportant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job"=
+ title=3D"Freelance Finance Analyst - AI Tutor" href=3D"https://my.jora.com=
+/job/Tutor-9a433068e24a12469ceb53aa22ecb866?alert_id=3Demail-alert-daily-46=
+681139-20250127&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLC=
+JsaWQiOm51bGx9&amp;sp=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D1&amp;=
+alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm=
+_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_em=
+ails" style=3D"text-decoration:none;display:block;color:#808080"><div class=
+=3D"job-title" style=3D"mso-line-height-rule:exactly;font-size:16px;font-we=
+ight:bold;color:#1c1c1c">Freelance Finance Analyst - AI Tutor</div><div cla=
+ss=3D"company-info"><span class=3D"company-name" style=3D"mso-line-height-r=
+ule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px"=
+>Mindrift</span>-<span class=3D"company-location" style=3D"mso-line-height-=
+rule:exactly;font-size:13px;line-height:20px;color:#626262;margin-left:4px"=
+>Malaysia</span></div><span class=3D"extra-info-text" id=3D"work_type" styl=
+e=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radius:4=
+px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;l=
+ine-height:25px;padding:3px;text-align:center">Freelance</span><span class=
+=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D"work_type" st=
+yle=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radius=
+:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px=
+;line-height:25px;padding:3px;text-align:center">Part time</span><span clas=
+s=3D"space">=C2=A0</span><div class=3D"job-abstract" style=3D"line-height:2=
+4px">In this role, you will develop complex question-answer pairs and creat=
+e scoring criteria (rubrics) to evaluate and grade the quality of...</div><=
+/a></div><div class=3D"table-max-width job-item common-text result" style=
+=3D"font-size:14px;font-weight:normal;font-stretch:normal;font-style:normal=
+;letter-spacing:normal;padding:10px 0;display:block;line-height:20px;paddin=
+g-bottom:20px;width:100% !important;min-width:100% !important;max-width:560=
+px !important;padding-bottom: 15px;"><a class=3D"job" title=3D"Freelance Ac=
+counting Consultant - AI Tutor" href=3D"https://my.jora.com/job/Accounting-=
+Consultant-beeb0a37c5bc21b35844d5723cbac8e0?alert_id=3Demail-alert-daily-46=
+681139-20250127&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLC=
+JsaWQiOm51bGx9&amp;sp=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D2&amp;=
+alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm=
+_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_em=
+ails" style=3D"text-decoration:none;display:block;color:#808080"><div class=
+=3D"job-title" style=3D"mso-line-height-rule:exactly;font-size:16px;font-we=
+ight:bold;color:#1c1c1c">Freelance Accounting Consultant - AI Tutor</div><d=
+iv class=3D"company-info"><span class=3D"company-name" style=3D"mso-line-he=
+ight-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-righ=
+t:4px">Mindrift</span>-<span class=3D"company-location" style=3D"mso-line-h=
+eight-rule:exactly;font-size:13px;line-height:20px;color:#626262;margin-lef=
+t:4px">Malaysia</span></div><span class=3D"extra-info-text" id=3D"work_type=
+" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-ra=
+dius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:=
+10px;line-height:25px;padding:3px;text-align:center">Freelance</span><span =
+class=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D"work_typ=
+e" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-r=
+adius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size=
+:10px;line-height:25px;padding:3px;text-align:center">Part time</span><span=
+ class=3D"space">=C2=A0</span><div class=3D"job-abstract" style=3D"line-hei=
+ght:24px">You=E2=80=99ll have the unique opportunity to contribute to AI de=
+velopment anywhere, at anytime. Flexible, community-focused, and...</div></=
+a></div><div class=3D"table-max-width job-item common-text result" style=3D=
+"font-size:14px;font-weight:normal;font-stretch:normal;font-style:normal;le=
+tter-spacing:normal;padding:10px 0;display:block;line-height:20px;padding-b=
+ottom:20px;width:100% !important;min-width:100% !important;max-width:560px =
+!important;padding-bottom: 15px;"><a class=3D"job" title=3D"Freelance Lingu=
+istics Consultant - AI Tutor" href=3D"https://my.jora.com/job/Consultant-61=
+006fc8aa7802b9aa62c7413d3c1460?alert_id=3Demail-alert-daily-46681139-202501=
+27&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx=
+9&amp;sp=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D3&amp;alid=3DYxiqcx=
+Px9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Dj=
+ob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=
+=3D"text-decoration:none;display:block;color:#808080"><div class=3D"job-tit=
+le" style=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;c=
+olor:#1c1c1c">Freelance Linguistics Consultant - AI Tutor</div><div class=
+=3D"company-info"><span class=3D"company-name" style=3D"mso-line-height-rul=
+e:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">M=
+indrift</span>-<span class=3D"company-location" style=3D"mso-line-height-ru=
+le:exactly;font-size:13px;line-height:20px;color:#626262;margin-left:4px">M=
+alaysia</span></div><span class=3D"extra-info-text" id=3D"work_type" style=
+=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radius:4p=
+x;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;li=
+ne-height:25px;padding:3px;text-align:center">Freelance</span><span class=
+=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D"work_type" st=
+yle=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radius=
+:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px=
+;line-height:25px;padding:3px;text-align:center">Part time</span><span clas=
+s=3D"space">=C2=A0</span><div class=3D"job-abstract" style=3D"line-height:2=
+4px">You=E2=80=99ll join the project as an AI Tutor in Linguistics where yo=
+u=E2=80=99ll have the opportunity to develop complex question-answer pairs =
+and...</div></a></div></td></tr></table></td></tr></table></td></tr></table=
+><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" c=
+lass=3D"table-max-width email-alert-footer" role=3D"presentation" style=3D"=
+border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:10=
+0% !important;min-width:100% !important;max-width:560px !important;backgrou=
+nd-color: #f7f7f7; border-collapse: separate; padding: 48px 24px;" width=3D=
+"100%"><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-b=
+ottom: 24px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" width=3D"288" style=3D"border-collapse:co=
+llapse;mso-table-lspace:0pt;mso-table-rspace:0pt"><tr><td align=3D"center" =
+class=3D"app-upsell-title" style=3D"mso-table-lspace:0pt;mso-table-rspace:0=
+pt;color:#1c1c1c;font-size:20px;line-height:24px;font-weight:700;padding-bo=
+ttom: 24px">Get all the job opportunities in your pocket.</td></tr><tr><td =
+align=3D"center" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><a cla=
+ss=3D"app_store_link" href=3D"https://itunes.apple.com/app/id917565665?alid=
+=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_cam=
+paign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails=
+" style=3D"text-decoration:none"><img alt=3D"Link to App Store" width=3D"46=
+%" src=3D"http://cdn1.jora.com/assets/app-store-logos/app-store-en-db23f610=
+9a00084902aab7eff6f70547b4fcb59525a7fc5bd56053369b5753cf.png" style=3D"-ms-=
+interpolation-mode:bicubic"></a>=C2=A0=C2=A0=C2=A0<a class=3D"play_store_li=
+nk" href=3D"https://play.google.com/store/apps/details?id=3Dcom.jora.androi=
+d&amp;referrer=3Dutm_source%3Djob_alerts%26utm_medium%3Demail&amp;alid=3DYx=
+iqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=
+=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" sty=
+le=3D"text-decoration:none"><img alt=3D"Link to Play Store" width=3D"46%" s=
+rc=3D"http://cdn1.jora.com/assets/app-store-logos/play-store-en-10cd668c5a1=
+91360de8701a2bca854b6babc1704b93e2a8e1b86b9d558362d7f.png" style=3D"-ms-int=
+erpolation-mode:bicubic"></a></td></tr></table></td></tr><tr><td style=3D"m=
+so-table-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 24px"><div class=
+=3D"footer-text" style=3D"color:#626262;font-size:14px;text-align:center">Y=
+ou elected to receive Job Alerts emails.<br> No longer interested? <a class=
+=3D"grey-link" href=3D"https://my.jora.com/email_alerts/YxiqcxPx9YNxnyvthtm=
+o/cancel?alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfals=
+e&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djob=
+seeker_emails" style=3D"text-decoration:none;color:#808080;text-decoration:=
+underline !important">Unsubscribe</a> or <a class=3D"grey-link" href=3D"htt=
+ps://my.jora.com/email_alerts/YxiqcxPx9YNxnyvthtmo/edit?alid=3DYxiqcxPx9YNx=
+nyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_ale=
+rts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text=
+-decoration:none;color:#808080;text-decoration:underline !important">edit y=
+our preferences</a></div></td></tr><tr><td style=3D"mso-table-lspace:0pt;ms=
+o-table-rspace:0pt"><div class=3D"footer-text" style=3D"color:#626262;font-=
+size:14px;text-align:center"><a class=3D"green-link" href=3D"https://my.jor=
+a.com?alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&a=
+mp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobsee=
+ker_emails" style=3D"text-decoration:none;color:#0e8136">Jora</a>=C2=A0- Mo=
+re jobs in real time.=C2=A0|=C2=A0Job Seeker Pty Ltd</div></td></tr></table=
+><img id=3D"itracker" role=3D"presentation" src=3D"https://my.jora.com/rpc/=
+tracking/email_open?alert_id=3Demail-alert-daily-46681139-20250127&amp;emai=
+l_alert_key=3DYxiqcxPx9YNxnyvthtmo&amp;frequency=3Ddaily&amp;query=3Dremote=
++work%2C+part+time&amp;site_id=3Dmy&amp;user_id=3D18701934" style=3D"-ms-in=
+terpolation-mode:bicubic"></td></tr></table><!--[if (gte mso 9)|(IE)]>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<![endif]--></td></tr></table><img alt=3D"" src=3D"https://p33qvtlw.r.us-we=
+st-1.awstrack.me/I0/01110194a616be42-b26a1fa2-b1fc-4eec-95a9-833c012498ad-0=
+00000/wFfHQHhiDbDxLkfj1av51kg6xxY=3D195" style=3D"display: none; width: 1px=
+; height: 1px;">
+</body></html>
+

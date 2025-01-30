@@ -1,0 +1,2095 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp2100815dye;
+        Sun, 26 Jan 2025 16:09:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFBiYWSnq5arLAU7+Hscvelije4qJGBtcas3mIHVRq9xN907pCqdSLqu9hdeVNpLkDV0zJZ
+X-Received: by 2002:a17:907:9405:b0:ab6:60b5:eaa2 with SMTP id a640c23a62f3a-ab660b5eb7amr1564848466b.22.1737936552139;
+        Sun, 26 Jan 2025 16:09:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737936552; cv=none;
+        d=google.com; s=arc-20240605;
+        b=gNYLIFhts/FnE2tGkN8XwlPBZTlMnS/BCIBT5BCnRZPZQfbsoB/Cx/RXj7Q2vnd3hL
+         X5RI8Zlu5RGBXyc0OsdMNi/rMwwJSHalll5gTx+I4k8T6FDh1Lhy5AeFXYXG0Tq4ycoe
+         4GgzzPhr2ylwGO+ZJ7FcNKJ8ASQ7ROb+zRHreRPbLdmIB9OrOVwCmOnJkTz1MXbYYnxJ
+         P3kiSq1L9seljFPplg6hANvdu4w8dtrVGtyCsMU6vHcE/pOFtqLInYBbBa6HTNFpGyhZ
+         vcc7v4PLGTKcP3Rvlm1Th3BGSsyL8+5jq50pvrrNfDG/Enw8C4T29NlP8881iL+zW5XT
+         rJJA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:message-id:list-unsubscribe-post:list-unsubscribe:list-id
+         :mime-version:from:subject:to:dkim-signature:dkim-signature;
+        bh=qsaLHJqvaeVghY0OKudCzkCSKQH4upJTf2unf1FG9Vg=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=VE1bCJM1vp8xSmBz9u8sMaxOQPBaktIza339bvBdktuBzKnBZ6I3napgiZVWr2q/B4
+         bvYeZBltaGwN3W02zey9Xr/jZlLeKU3Y/RL3JZJ/xAl9N34HGe7Vl12huQcVaSuLgbEO
+         V3aIZIUPUq/YwhUQ72psi5ygeaJ/RMX18w+GFnfJg/YpVYZQ7FABYTM2s/WrpmBdZdWG
+         wS45AlUJI6Ex6nddzo8XFaHinHZnxxneHUfCCcZ68MWsIHqjuIu3q+TECQz+A+JDKtq9
+         EH1NN3fQS3PIxYqDjjx2RvJwPaL8AxH7vVpvt9cAdkB790uidPeMK+m81OIcuqZ5qXnK
+         W9zQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@news.runtastic.com header.s=key2 header.b=lDvWFq6+;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=W1UfFHAR;
+       spf=pass (google.com: domain of suite14@rp.runtastic.com designates 217.175.194.27 as permitted sender) smtp.mailfrom=suite14@rp.runtastic.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=news.runtastic.com
+Return-Path: <suite14@rp.runtastic.com>
+Received: from uspmta194027.emarsys.net (uspmta194027.emarsys.net. [217.175.194.27])
+        by mx.google.com with ESMTPS id a640c23a62f3a-ab67ba0a394si428569366b.214.2025.01.26.16.09.11
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 26 Jan 2025 16:09:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of suite14@rp.runtastic.com designates 217.175.194.27 as permitted sender) client-ip=217.175.194.27;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@news.runtastic.com header.s=key2 header.b=lDvWFq6+;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=W1UfFHAR;
+       spf=pass (google.com: domain of suite14@rp.runtastic.com designates 217.175.194.27 as permitted sender) smtp.mailfrom=suite14@rp.runtastic.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=news.runtastic.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=news.runtastic.com;
+ h=To:Subject:From:MIME-Version:List-Id:X-CSA-Complaints:List-Unsubscribe:
+ List-Unsubscribe-Post:Content-Type:Message-ID:Date; i=info@news.runtastic.com;
+ bh=qsaLHJqvaeVghY0OKudCzkCSKQH4upJTf2unf1FG9Vg=;
+ b=lDvWFq6+Mi0F/COi7oSMocYwPSKpR3rWMjD9gWmVtX7sdFst1LQ1aEXPwueWxtwli0c6Km4Q1u6A
+   zjaXyLBo/it84hNtlfFiqLml8ZYx38KmhNWjK1D7OrPQipFFPR+w38sm3p1hNri4oVbXLurlzC4W
+   gNwXuUuSucWvOSovFdg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=emarsys.net;
+ h=To:Subject:From:MIME-Version:List-Id:X-CSA-Complaints:List-Unsubscribe:
+ List-Unsubscribe-Post:Content-Type:Message-ID:Date;
+ bh=qsaLHJqvaeVghY0OKudCzkCSKQH4upJTf2unf1FG9Vg=;
+ b=W1UfFHARRn6FLTI3GI7lEF9/IpLEVZnQGtjz+6Z3UsaeuweFWUSEMW9UlPhVlJUio8ywG4aLWfb4
+   /Rfnwlcg/nmPtq/8KTUbS7dbH9yfzllozzRItkK19gK4N2lUzUWlVjkuoc0bhMFKeExdOzHQNN6O
+   ZnIRut52HX5JhDAojZc=
+To: azri.mokhzani@gmail.com
+Subject: =?UTF-8?Q?=F0=9F=8F=86=20Azri=2C=20Your=20Week=20in=20Numbers?=
+X-Mailer: class SMTPMail
+From: "adidas Running app" <info@news.runtastic.com>
+MIME-Version: 1.0
+List-Id: 645781705 <adidas Running app>
+X-EMarSys-Identify: 645781705_2493842_30946
+X-EMarSys-Environment: suite14
+X-Report-Abuse: Please report abuse here: abuse-report@emarsys.com
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe: <mailto:list-unsubscribe+645781705_2493842_30946_Ak97c5C5Wf@emarsys.net>, <https://list-unsubscribe.eservice.emarsys.net/api/unsubscribe/645781705_2493842_30946_Ak97c5C5Wf>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative;
+ boundary="--=_---NextPart--=_-Kp8SnfbBu8"
+Message-ID: <0.0.8.7AC.1DB704FB0EC391E.0@uspmta194027.emarsys.net>
+Date: Mon, 27 Jan 2025 01:09:11 +0100
+
+
+----=_---NextPart--=_-Kp8SnfbBu8
+Content-Type: text/plain; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+Check out your stats from last week. We've compiled this handy report to
+give
+you a complete overview. It's always important to make sure you are
+making
+personal progress. Happy with your stats? Great! Not so impressed? No
+problem,
+you can see exactly which areas could use some improvement.
+
+View Web Version
+
+https://link.runtastic.com/u/gm.php?prm=3DAk97c5C5Wf_645781705_2493842_3094=
+6&_esuh=3D_11_2e024e794e6640ffc68a73e8447f58604b349ddcd912fb55a14bd1b185140=
+504
+
+
+runtastic
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_48&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1NTY%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+687bffa16221353dd8dfe14e79c918e9c3a434a8039eb1ab715d9306c9073b5c
+
+
+runtastic
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_50&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1NTg%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+7ae67f4a81391eb5f6b545ed45927dfd8fb2709e3388fa2bed826a23087aa4fd
+
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_52&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1NjA%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+54d6416940aecfcbcb48112cfe05041451f12a24be4508d022dd73f5ba3c5bc2
+
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_54&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1NjI%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+1023aceaa2fa74d5a8f977a43c2324e7247adcfd234d7ea79ac0be6def1fffcc
+
+
+https://www.runtastic.com/apps//open=20
+
+Hi, !
+
+This is your adidas Running Fitness Report for the week of:
+
+ to=20
+
+We missed you last week!
+
+Start fresh by tracking some activities this week and get excited about
+your
+weekly progress!
+
+1. Get ready
+
+Open your adidas Running app on your smartphone & start.
+
+2. Track it all
+
+Run, ride your bike or knock out some push ups - go, go, go!
+
+3. Improve yourself
+
+Analyze your activity details in your weekly fitness report.
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_56&ems_=
+l=3D1140114&i=3D1&d=3D%7CNTMzOTg1NjQ%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_=
+11_6c01bedf80de95f352ed33945eefde75085381d2d4b3c91dfa12255f84cbc2ba
+
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_58&ems_=
+l=3D1140114&i=3D1&d=3D%7CNTMzOTg1NjY%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_=
+11_e7a04ceb29ba7440d989c4f60d487c38d25673bf35a4f404dabb2ba3ba908caa
+
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_60&ems_=
+l=3D1140114&i=3D1&d=3D%7CNTMzOTg1Njg%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_=
+11_6ed70f0b8ca17656baf1f295b70cb7650954f331dc0f5ab5e40e40d5380a1aa5
+
+
+Overall Statistics
+
+Activities
+
+Duration
+
+Distance
+
+Calories
+
+
+
+Your week
+
+
+
+Week before
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Distance
+
+Calories
+
+Unlock with premium
+
+Unlock with premium
+
+Overall Statistics
+
+Activities
+
+Duration
+
+Distance
+
+Calories
+
+
+
+
+
+
+
+
+
+Your week
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Week before
+
+hh:mm:ss
+
+
+
+kcal
+
+Distance
+
+Calories
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kcal
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_62&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1NzA%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_bdeab0db3119=
+0824cdeb116d9d80893437f1baef44d789fc4a6fad31e12c6b8f
+
+
+Activity Details
+
+Running
+
+
+
+Your week
+
+
+
+Week before
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Activity Details
+
+Running
+
+
+
+
+
+
+
+
+
+Your week
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Week before
+
+hh:mm:ss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Biking
+
+
+
+Your week
+
+
+
+Week before
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Unlock with premium
+
+Biking
+
+
+
+
+
+
+
+
+
+Your week
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Week before
+
+hh:mm:ss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other Activities
+
+
+
+Your week
+
+
+
+Week before
+
+Duration
+
+Calories
+
+Unlock with premium
+
+Unlock with premium
+
+Other Activities
+
+Duration
+
+Calories
+
+
+
+
+
+
+
+Your week
+
+
+
+
+
+
+
+
+
+
+
+Week before
+
+hh:mm:ss
+
+kcal
+
+Duration
+
+Calories
+
+
+
+
+
+
+
+
+
+
+
+
+
+hh:mm:ss
+
+kcal
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_64&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1NzI%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_8c0b8d80d173=
+a8ed6441ab41fd8fce16e4c2fa4826a331fda2ff4c751a54d303
+
+
+Training Plans
+https://www.runtastic.com/training-plans/running?ut=3Dcedf7d43f6193d99a5e83=
+df596800bbba9805d99
+
+
+Challenge yourself and get the ideal plan for you.
+https://www.runtastic.com/apps//plan=20
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_66&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1NzQ%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_fbaefef6abf7=
+1f8e3cac4d619112e8ffb8fa12265ca0b862328670c37fd47108
+
+
+Invite Your Friends
+https://www.runtastic.com/apps/runtastic/open?utm_campaign=3DadiRUN-fitness=
+-report&amp;utm_content=3Dllnkcopy&amp;utm_medium=3Demail&amp;utm_source=3D=
+runtastic&amp;utm_term=3D202208&amp;ut=3Dcedf7d43f6193d99a5e83df596800bbba9=
+805d99&amp;instant_redirect=3D1
+
+
+And motivate each other to keep going.
+https://www.runtastic.com/apps/runtastic/open?utm_campaign=3DadiRUN-fitness=
+-report&amp;utm_content=3Dllnkcopy&amp;utm_medium=3Demail&amp;utm_source=3D=
+runtastic&amp;utm_term=3D202208&amp;ut=3Dcedf7d43f6193d99a5e83df596800bbba9=
+805d99&amp;instant_redirect=3D1
+
+
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_68&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1NzY%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_972a8b883f63=
+c06792c8ba46dfe48a93ede2a2e7f43553404c551a2e0dba27f9
+
+
+Running
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_70&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1Nzg%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_825e553d8c20=
+cc276e9ad6c95bfc520d8345ef950358ca211d6371147da5f464
+
+
+Run with adidas
+
+DISCOVER
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_72&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1ODA%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_61372822e921=
+f7bed142098f4c21c6f22d215dccab66440cf93c5575c29ced96
+
+
+
+F
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_74&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1ODI%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_77056382660b=
+58e312ff53723d7f5b82ce600c529d1682c196228b1b1d5cf255
+
+
+insta
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_76&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1ODQ%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_3efbef624066=
+db22ee1238ba97b780cec87c20ec57bb2b899850c10a2d220944
+
+
+
+linkedin
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_78&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1ODY%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_06f46d611478=
+66ef309c1d2a6e0837952def3ae0a6edc23776cc2cf11ac67fce
+
+
+Yt
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_80&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1ODg%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_4184c6f3bb1c=
+02e1b26bc078072d759f5aa68b2d18efabbf2e234d7822037862
+
+
+blog
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_82&ems_=
+l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5O=
+Q%3D%3D%7CNTMzOTg1OTA%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_6ed90a10e101=
+5f80dbd4257704e44f01ad602d13875aaa1d9f09289d7eab30ac
+
+
+Unsubscribe
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_84&ems_=
+l=3D1140114&i=3D1&d=3DQWs5N2M1QzVXZg%3D%3D%7CNTMzOTg1OTI%3D%7CQWs5N2M1QzVXZ=
+g%3D%3D%7C&_esuh=3D_11_308b1705bb367b2e38707206da0084f90344f55d272373ac8080=
+a5afcd98c065
+
+
+Legal
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_86&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1OTQ%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+7319703a4718293d01b9e5bc428ffa97ae02970c0c7df9347d4377c26b5ff3ae
+
+
+Privacy Policy
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_88&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1OTY%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+0b89a5bdab41cac89f1f553d6acbb945d503fdfbffb6d8223380d16c51b38844
+
+
+adidas Running app
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_90&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg1OTg%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+162ca22d71bb2b99ae9fd6c1e54aed6a948cb13aab6e51fe282a6fc7850b6169
+
+
+Help and Support
+https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_92&ems_=
+l=3D1140114&i=3D1&d=3DNTMzOTg2MDA%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_=
+e69fabde94f94069bdd594c775faecafb7267c0be9882a3a0143a3236c30d815
+
+
+ runtastic GmbH 2025,
+Pluskaufstra=C3=9Fe 7 =C2=B7 Business Center, 4061 Pasching bei Linz, Austr=
+ia
+FN 334397k | ATU 65197299
+
+
+----=_---NextPart--=_-Kp8SnfbBu8
+Content-Type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sc=
+hemas-microsoft-com:office:office" e-locale=3D"en" e-is-multilanguage=3D"tr=
+ue">
+<head>
+<title>adidas RUNTASTIC Fitness Report</title>
+<meta charset=3D"UTF-8">
+<meta name=3D"viewport" content=3D"initial-scale=3D1, user-scalable=3Dyes">
+<!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedg=
+e"><!--<![endif]-->
+<style type=3D"text/css">
+@font-face {
+font-family: 'AdihausDINMedium';
+src: url('https://d1freu9e2m80su.cloudfront.net/fonts/AdihausDIN-Medium.wof=
+f');
+}
+@font-face {
+font-family: 'AdihausDINRegular';
+src: url('https://d1freu9e2m80su.cloudfront.net/adiHaus_DIN-Webfont/Adihaus=
+DIN-Regular.woff');
+}
+@font-face {
+font-family: 'adineueTEXTRegular';
+src: url('https://d1freu9e2m80su.cloudfront.net/adineue_TEXT/adineueTEXT-Re=
+gular.ttf');
+}
+@font-face {
+font-family: 'adineue PRO Cond';
+src: url(https://d1freu9e2m80su.cloudfront.net/adineue_PRO/adineuePROCond-R=
+egular.otf) format('woff');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'AdihausDIN';
+src: url(https://d1freu9e2m80su.cloudfront.net/adiHaus_DIN-Webfont/AdihausD=
+IN-Regular.woff) format('woff');
+font-weight: normal;
+font-style: normal;
+}
+</style>
+<!--[if (gte mso 9)]>
+<style type=3D"text/css">
+table {border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt=
+; border:0;}
+table td, table th {border-collapse:collapse; font-size:1px; line-height:1p=
+x;}
+.inpl-not-mailing table {border-collapse:separate;}
+.lh {line-height:120% !important;}
+.inpl-not-mailing .lh, .inpl-not-mailing .lh font {line-height:1.2 !importa=
+nt;}
+.lh13p {line-height:108% !important;}
+.inpl-not-mailing .lh13p, .inpl-not-mailing .lh13p font {line-height:1.3 !i=
+mportant;}
+.lh20p {line-height:200% !important;}
+.inpl-not-mailing .lh20p, .inpl-not-mailing .lh20p font {line-height:2 !imp=
+ortant;}
+</style>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+font {font-family:
+.cta3a {padding:0 !important;}
+.olb {display:block !important;}
+.tcta3a {border-radius:0 !important; -webkit-border-radius:0 !important; -m=
+oz-border-radius:0 !important;}
+.inpl-not-mailing .tcta3a {border-radius:28px !important; -webkit-border-ra=
+dius:28px !important; -moz-border-radius:28px !important;}
+.lhp2 {line-height:100% !important; padding:0 12px;}
+.inpl-not-mailing .lhp2 {line-height:1.2 !important; padding:0 19px !import=
+ant;}
+.inpl-not-mailing .cta3a {padding:15px 47px !important;}
+.ol266 {width:266px !important;}
+.ol600 {width:600px;}
+.ol610 {width:610px;}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>.ff {font-family:AdihausDINRegular, 'Helvetica Neue', Helvetica, Ari=
+al, sans-serif;}
+.ff-cta {font-family:AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial,=
+ sans-serif;}
+.ff-hl {font-family:adineueTEXTRegular, 'Helvetica Neue', Helvetica, Arial,=
+ sans-serif;}
+.ff-cond {font-family: 'adineue PRO Cond', 'Helvetica Neue', Helvetica, Ari=
+al, sans-serif ;}
+.fs30 {font-size:30px;}
+.ln32 {line-height:32px;}
+.let15 {letter-spacing: 1.5px;}
+.lh40 {line-height: 40px;}
+.lh22 {line-height: 22px;}
+.fs12 {font-size:12px;}
+.fs13 {font-size:13px;}
+.fs14 {font-size:14px;}
+.fs15 {font-size:15px;}
+.fs16 {font-size:16px;}
+.fs18 {font-size:18px;}
+.fs24 {font-size:24px;}
+.fs26 {font-size:26px;}
+.fs40 {font-size:40px;}
+.lh, .lh font {line-height:1.2;}
+.lh13p, .lh13p font {line-height:1.3;}
+.upc {text-transform:uppercase;}
+.fc1 {color:#ffffff;}
+.fc2 {color:#000000;}
+.fc3 {color:#25282a;}
+.fc4 {color:#97999b;}
+.fc5 {color:#007aff;}
+.tdn {text-decoration:none;}
+.tdu {text-decoration:underline;}
+.fwn {font-weight:normal;}
+.fwb {font-weight:bold;}
+.vat {vertical-align:top;}
+.vam {vertical-align:middle;}
+.la1 font a {font-weight:normal; text-decoration:none; color:#ffffff;}
+.la1b font a {font-weight:bold; text-decoration:none; color:#ffffff;}
+.la1u font a {font-weight:normal; text-decoration:underline; color:#ffffff;=
+}
+.la2 font a {font-weight:normal; text-decoration:none; color:#000000;}
+.la2b font a {font-weight:bold; text-decoration:none; color:#000000;}
+.la2u font a {font-weight:normal; text-decoration:underline; color:#000000;=
+}
+.la3 font a {font-weight:normal; text-decoration:none; color:#25282a;}
+.la3b font a {font-weight:bold; text-decoration:none; color:#25282a;}
+.la3u font a {font-weight:normal; text-decoration:underline; color:#25282a;=
+}
+.la4 font a {font-weight:normal; text-decoration:none; color:#97999b;}
+.la4b font a {font-weight:bold; text-decoration:none; color:#97999b;}
+.la4u font a {font-weight:normal; text-decoration:underline; color:#97999b;=
+}
+.la5 font a {font-weight:normal; text-decoration:none; color:#007aff;}
+.la5b font a {font-weight:bold; text-decoration:none; color:#007aff;}
+.la5u font a {font-weight:normal; text-decoration:underline; color:#007aff;=
+}
+.db {display:block;}
+.dp10 {padding:10px;}
+.dn {display:none;}
+.tcta3a {border-radius:28px; -webkit-border-radius:28px; -moz-border-radius=
+:28px;}
+.lhp2, .lhp2 font {line-height:1.2;}
+.cta3a {font-size:16px; color:#ffffff; font-weight:normal; text-decoration:=
+none; display:block; padding:15px 47px;}
+.ctaf {font-family:AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, s=
+ans-serif; font-size:16px; color:#ffffff; font-weight:bold;}
+.displayrows {display: none}
+@media only screen and (max-width:414px) {
+.displayrows_mobile {display: none}
+.show_row {display: table-row !important}
+font { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !importa=
+nt; }
+.fl {display:block !important; width:100% !important;}
+.fw {width:100% !important; min-width:0 !important;}
+.sec {width:100% !important; float:none !important;}
+.mh {display:none !important;}
+.image {width:100% !important; height:auto !important;}
+.logom {width:150px !important; height:auto !important;}
+.comt {margin:0 auto !important;}
+.com {text-align:center !important;}
+.h1 {font-size:24px !important; font-size:6.67vw !important;}
+.h2 {font-size:22px !important; font-size:6.11vw !important;}
+.h3 {font-size:20px !important; font-size:5.55vw !important;}
+.gf { font-size:17px !important; font-size:4.72vw !important; }
+.small {font-size:15px !important; font-size:4.17vw !important;}
+.xsmall {font-size:13px !important; font-size:3.61vw !important;}
+.rhom {height:auto !important;}
+.rw10, .rw10 div {width:10px !important;}
+.rw15, .rw15 div {width:15px !important;}
+.rw50p {width:50% !important;}
+.rh10, .rh10 div {height:10px !important; height:2.78vw !important;}
+.rh20, .rh20 div {height:20px !important; height:5.55vw !important;}
+.rh30, .rh30 div {height:30px !important; height:8.33vw !important;}
+.rh40 {height:40px !important; width:auto !important;}
+.plr10 {padding:0 10px !important;}
+.pbot20 {padding-bottom:20px !important; padding-bottom:5.55vw !important;}
+.ptb20 {padding: 20px 0 !important; padding:5.55vw !important;}
+.pr5 {padding-right:5px !important;}
+.pr10 {padding-right:10px !important;}
+.pl5 {padding-left:5px !important;}
+.pl10 {padding-left:10px !important;}
+.line {border-bottom: 1px solid #cccccc !important;}
+.cntbg1 {background-size: cover !important; background-position: center !im=
+portant;}
+u + .body .gwfw { width:100% !important; width:100vw !important;}
+}
+@media only screen and (width:375px) {.iph {padding:0 8px 0 7px !important;=
+}}
+<!--
+body {margin:0; padding:0; background:#f2f2f2; -webkit-text-size-adjust:non=
+e; -ms-text-size-adjust:none;}
+a, a:active, a:visited, .yshortcuts, .yshortcuts span a {text-decoration:no=
+ne; font-weight:normal; color:#3a4855;}
+a[x-apple-data-detectors] {color: inherit !important; text-decoration: none=
+ !important; font-size: inherit !important; font-family: inherit !important=
+; font-weight: inherit !important; line-height: inherit !important;}
+[office365] td div, [office365] button {display:block !important;}
+table th {padding:0; Margin:0; border:0; font-weight:normal; vertical-align=
+:top;}
+-->
+</style>
+</head>
+<body class=3D"body"><div ems:preheader style=3D"display:none!important;fon=
+t-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opaci=
+ty:0;overflow:hidden;mso-hide:all">Check out your stats from last week. We'=
+ve compiled this handy report to give you a complete overview. It's always =
+important to make sure you are making personal progress. Happy with your st=
+ats? Great! Not so impressed? No problem, you can see exactly which areas c=
+ould use some improvement.</div>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" heig=
+ht=3D"100%" bgcolor=3D"white" class=3D"gwfw">
+<tr>
+<td width=3D"100%" align=3D"center" valign=3D"top">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"610" class=
+=3D"ol610 fw">
+<tr>
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<tr>
+<td style=3D"padding:0 5px;" class=3D"iph">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" class=
+=3D"ol600 fw">
+<!--
+-->
+<tr class=3D"mh" bgcolor=3D"white" e-block-id=3D"6193bd9c50a16a9413000001">=
+<td height=3D"20"></td></tr>
+<tr class=3D"mh" bgcolor=3D"white" e-block-id=3D"6193bd9c50a16a9413000001">
+<td align=3D"right" class=3D"lh" style=3D"line-height: 1.2; padding: 0 15px=
+; text-align: right; font-size: 14px; font-family: AdihausDINRegular, 'Helv=
+etica Neue', Helvetica, Arial, sans-serif; color: #767677;">
+<a href=3D"https://link.runtastic.com/u/gm.php?prm=3DAk97c5C5Wf_645781705_2=
+493842_30946&_esuh=3D_11_2e024e794e6640ffc68a73e8447f58604b349ddcd912fb55a1=
+4bd1b185140504" target=3D"_blank" class=3D"fc3 fwn tdn" style=3D"color: #25=
+282a; text-decoration: none; font-weight: normal;">
+<font class=3D"ff fs13 fc3" style=3D"font-family: AdihausDINRegular, 'Helve=
+tica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #25282a; =
+line-height: 1.2;">
+View Web Version </font>
+</a>
+</td>
+</tr>
+<tr class=3D"mh" bgcolor=3D"white" e-block-id=3D"6193bd9c50a16a9413000001">=
+<td height=3D"20"></td></tr>
+<!--
+-->
+<!--  -->
+<tr e-block-id=3D"6193bda150a16a9413000002">
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<tr e-block-id=3D"6193bda150a16a9413000002">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f">
+<tr>
+<td width=3D"30" class=3D"rw10"></td>
+<td align=3D"center" style=3D"vertical-align: middle; padding: 18px 0;" cla=
+ss=3D"vam" valign=3D"middle">
+<a href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_249384=
+2_1_47&ems_l=3D1140114&i=3D1&d=3DNTMzOTg1NTU%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_=
+esuh=3D_11_7ba32941f8948bce27a9830c13db76e764f4bea57d4699fb9be5d8c4ecf90849=
+" target=3D"_blank" style=3D"text-decoration: none; font-weight: normal; co=
+lor: #3a4855;">
+<img src=3D"https://link.runtastic.com/custloads/645781705/vce1/logo_new1.p=
+ng" width=3D"185" border=3D"0" style=3D"display:block; background-color: #f=
+fffff" alt=3D"runtastic">
+</a>
+</td>
+<td width=3D"30" class=3D"rw10"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bda150a16a9413000002"><td height=3D"2"></td></tr>
+<!--  -->
+<!--  -->
+<!--
+-->
+<tr e-block-id=3D"6193bda350a16a9413000003">
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<tr e-block-id=3D"6193bda350a16a9413000003">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff">
+<tr><td height=3D"24" class=3D"rh20"><div></div></td></tr>
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"fw">
+<tr>
+<th align=3D"left" class=3D"fl vam" style=3D"padding: 0; Margin: 0; border:=
+ 0; font-weight: normal; vertical-align: middle;" valign=3D"middle">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"fw">
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100">
+<tr>
+<td width=3D"100">
+<div style=3D"display: inline-block; position: relative; text-align: right;=
+">
+<a href=3D"https://www.runtastic.com/apps/runtastic/open?ems_dl=3D645781705=
+_Ak97c5C5Wf_30946_2493842_1_2000000" target=3D"blank" style=3D"text-decorat=
+ion: none; font-weight: normal; color: #3a4855;">
+<img src=3D"https://dxp86gw5pke1r.cloudfront.net/files___148264071___big.9c=
+04e692-0039-4425-b390-c433e287d9f5.jpg" width=3D"80" height=3D"80" border=
+=3D"0" style=3D"display:block;border-radius:100px;">
+<!--  -->
+</a>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</th>
+<th width=3D"20" class=3D"fl rh10" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top"><div></div></t=
+h>
+<th align=3D"left" class=3D"vam fl" style=3D"padding: 0; Margin: 0; border:=
+ 0; font-weight: normal; vertical-align: middle;" valign=3D"middle">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"left" class=3D"lh40 la3 com" style=3D"line-height: 40px;">
+<font e-editable=3D"hi_text" class=3D"ff-cond fs40 fc fwn h2 upc" style=3D"=
+font-family: 'adineue PRO Cond', 'Helvetica Neue', Helvetica, Arial, sans-s=
+erif; font-size: 40px; text-transform: uppercase; font-weight: normal;">Hi,=
+ Azri!</font>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"left" class=3D"lh22 la2u com" style=3D"line-height: 22px;">
+<font e-editable=3D"your_fitness_report_text" class=3D"ff fs16 fc2 fwn gf" =
+style=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial=
+, sans-serif; font-size: 16px; color: #000000; font-weight: normal;">This i=
+s your adidas Running Fitness Report for the week of:</font>
+</td>
+</tr>
+<tr><td height=3D"3"></td></tr>
+<tr>
+<td align=3D"left" class=3D"lh13 la3b com">
+<font e-editable=3D"from_to_text" class=3D"ff fs16 fc3 fwb gf" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; font-size: 16px; color: #25282a; font-weight: bold;">20 January to 26 Jan=
+uary</font>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height=3D"44" class=3D"rh20"><div></div></td></tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bda350a16a9413000003"><td height=3D"2"></td></tr>
+<tr e-block-id=3D"6193bda350a16a9413000003">
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<!--
+-->
+<!--  -->
+<tr e-block-id=3D"6193bda550a16a9413000004">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff">
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr><td height=3D"20" class=3D"rh20"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh13">
+<font class=3D"ff-cond fs30 fc2 fwb h3 upc" style=3D"font-family: 'adineue =
+PRO Cond', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 30px;=
+ text-transform: uppercase; color: #000000; font-weight: bold;">
+<span e-editable=3D"we_missed_you_text" class=3D"la2b h3 fs30 let15" style=
+=3D"letter-spacing: 1.5px; font-size: 30px;">We missed you last week!</span=
+>
+</font>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td> </tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2u com" style=3D"line-height: 22px;">
+<font e-editable=3D"start_fresh_text" class=3D"ff fs16 fc2 fwn gf" style=3D=
+"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-s=
+erif; font-size: 16px; color: #000000; font-weight: normal;">Start fresh by=
+ tracking some activities this week and get excited about your weekly progr=
+ess!</font>
+</td>
+</tr>
+<tr><td height=3D"48" class=3D"rh10"><div></div></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<th width=3D"164" valign=3D"top" class=3D"vat fl fw" style=3D"padding: 0; M=
+argin: 0; border: 0; font-weight: normal; vertical-align: top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<img e-editable=3D"app_link" src=3D"https://link.runtastic.com/custloads/64=
+5781705/md_12968.png" height=3D"48" border=3D"0" style=3D"display:block;">
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2b" style=3D"line-height: 22px;">
+<font e-editable=3D"get_ready_text" class=3D"ff fc2 fs16 fwb h3" style=3D"f=
+ont-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-ser=
+if; font-size: 16px; color: #000000; font-weight: bold;">1. Get ready</font=
+>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3" style=3D"line-height: 22px;">
+<font e-editable=3D"open_app_text" class=3D"ff fc3 fs16 fwn gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: normal;">Open your adidas =
+Running app on your smartphone &amp; start.</font>
+</td>
+</tr>
+</table>
+</th>
+<th width=3D"24" class=3D"fl rh10" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top"><div></div></t=
+h>
+<th width=3D"164" valign=3D"top" class=3D"vat fl fw" style=3D"padding: 0; M=
+argin: 0; border: 0; font-weight: normal; vertical-align: top;"> <table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<img e-editable=3D"app_link" src=3D"https://link.runtastic.com/custloads/64=
+5781705/md_12969.png" height=3D"48" border=3D"0" style=3D"display:block;">
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2b" style=3D"line-height: 22px;">
+<font e-editable=3D"track_it_text" class=3D"ff fc2 fs16 fwb h3" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #000000; font-weight: bold;">2. Track it all</fo=
+nt>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3" style=3D"line-height: 22px;">
+<font e-editable=3D"run_ride_text" class=3D"ff fc3 fs16 fwn gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: normal;">Run, ride your bi=
+ke or knock out some push ups - go, go, go!</font>
+</td>
+</tr>
+</table>
+</th>
+<th width=3D"24" class=3D"fl rh10" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top"><div></div></t=
+h>
+<th width=3D"164" valign=3D"top" class=3D"vat fl fw" style=3D"padding: 0; M=
+argin: 0; border: 0; font-weight: normal; vertical-align: top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<img e-editable=3D"app_link" src=3D"https://link.runtastic.com/custloads/64=
+5781705/md_12966.png" height=3D"48" border=3D"0" style=3D"display:block;">
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2b" style=3D"line-height: 22px;">
+<font e-editable=3D"improve_yourself_text" class=3D"ff fc2 fs16 fwb h3" sty=
+le=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, s=
+ans-serif; font-size: 16px; color: #000000; font-weight: bold;">3. Improve =
+yourself</font>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3" style=3D"line-height: 22px;">
+<font e-editable=3D"analyze_activity_text" class=3D"ff fc3 fs16 fwn gf" sty=
+le=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, s=
+ans-serif; font-size: 16px; color: #25282a; font-weight: normal;">Analyze y=
+our activity details in your weekly fitness report.</font>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr></table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+<tr>
+<td colspan=3D"3" height=3D"64" class=3D"rh20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bda550a16a9413000004">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f">
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"fw">
+<tr>
+<th align=3D"center" class=3D"vat fl" style=3D"padding: 0; Margin: 0; borde=
+r: 0; font-weight: normal; vertical-align: top;" valign=3D"top">
+<a e-editable=3D"ios_store_link" title=3D"App Store" href=3D"https://link.r=
+untastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_55&ems_l=3D1140114&i=
+=3D1&d=3DcnVudGFzdGlj%7CNTMzOTg1NjM%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_1=
+1_6d8bde7531451b71716d7c31d15c239102407f4074f67c92d4ce1e6026718045" target=
+=3D"_blank" style=3D"text-decoration: none; font-weight: normal; color: #3a=
+4855;">
+<img e-editable=3D"ios_store_image" src=3D"https://link.runtastic.com/custl=
+oads/645781705/FR3/badge/appstore/en.png" height=3D"43" border=3D"0" style=
+=3D"display:block;"> </a>
+</th>
+<th width=3D"24" class=3D"fl rh20" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top"><div></div></t=
+h>
+<th align=3D"center" class=3D"vat fl" style=3D"padding: 0; Margin: 0; borde=
+r: 0; font-weight: normal; vertical-align: top;" valign=3D"top">
+<a e-editable=3D"android_store_link" title=3D"Google Play" href=3D"https://=
+link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_57&ems_l=3D1140=
+114&i=3D1&d=3DcnVudGFzdGlj%7CNTMzOTg1NjU%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=
+=3D_11_4b5147971f7c800663f265bb9f94df3558adcd61dc1e09fe92a36d39dca1a963" ta=
+rget=3D"_blank" style=3D"text-decoration: none; font-weight: normal; color:=
+ #3a4855;">
+<img e-editable=3D"android_store_image" src=3D"https://link.runtastic.com/c=
+ustloads/645781705/md_13006.png" height=3D"43" border=3D"0" style=3D"displa=
+y:block;"> </a>
+</th>
+<th width=3D"24" class=3D"fl rh20" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top"><div></div></t=
+h>
+<th align=3D"center" class=3D"vat fl" style=3D"padding: 0; Margin: 0; borde=
+r: 0; font-weight: normal; vertical-align: top;" valign=3D"top">
+<a e-editable=3D"huawei_store_link" title=3D"Google Play" href=3D"https://l=
+ink.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_59&ems_l=3D11401=
+14&i=3D1&d=3DcnVudGFzdGlj%7CNTMzOTg1Njc%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=
+=3D_11_c9e8c2211a98af269728bc5aee3c45da2fe853396bde1cac0e4b7abba122b973" ta=
+rget=3D"_blank" style=3D"text-decoration: none; font-weight: normal; color:=
+ #3a4855;">
+<img e-editable=3D"huawei_store_image" src=3D"https://link.runtastic.com/cu=
+stloads/645781705/md_13024.png" height=3D"43" border=3D"0" style=3D"display=
+:block;"> </a>
+</th>
+</tr>
+</table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+<tr>
+<td colspan=3D"3" height=3D"30" class=3D"rh20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bda550a16a9413000004"><td height=3D"10" class=3D"rh10=
+"><div></div></td></tr>
+<!--  -->
+<!--
+-->
+<!--  -->
+<tr e-block-id=3D"6193bda950a16a9413000005">
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f">
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+<tr><td height=3D"40" class=3D"rh20"><div></div></td></tr>
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td align=3D"center" class=3D"lh32 la2b vam" style=3D"vertical-align: middl=
+e;" valign=3D"middle">
+<font e-editable=3D"overall_statistics_text" class=3D"ff-cond let15 fc2 fs3=
+0 fwb h3 upc" style=3D"font-family: 'adineue PRO Cond', 'Helvetica Neue', H=
+elvetica, Arial, sans-serif; letter-spacing: 1.5px; text-transform: upperca=
+se; color: #000000; font-weight: bold; font-size: 30px;">Overall Statistics=
+</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height=3D"64" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<th width=3D"260" class=3D"vat fl" style=3D"padding: 0; Margin: 0; border: =
+0; font-weight: normal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pr10" style=3D"vertic=
+al-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_12969.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;">
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pl10" style=3D"vertic=
+al-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_12970.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;"> </td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pr10 displayrows_mobi=
+le" style=3D"vertical-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_13055.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;">
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pl10 displayrows_mobi=
+le" style=3D"vertical-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_13054.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;">
+</td>
+</tr>
+<tr><td colspan=3D"3" height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" width=3D"25%" style=
+=3D"line-height: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"activities_text" class=3D"ff fc3 fs16 fwb gf" style=3D"=
+font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-se=
+rif; font-size: 16px; color: #25282a; font-weight: bold;">Activities</font>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pl10" width=3D"25%" style=
+=3D"line-height: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"duration_text" class=3D"ff fc3 fs16 fwb gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: bold;">Duration</font>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10 displayrows_mobile" =
+width=3D"25%" style=3D"line-height: 22px; vertical-align: top;" valign=3D"t=
+op">
+<font e-editable=3D"distance_text" class=3D"ff fc3 fs16 fwb gf displayrows_=
+mobile" style=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetic=
+a, Arial, sans-serif; font-size: 16px; color: #25282a; font-weight: bold;">=
+Distance</font>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pl10 displayrows_mobile" =
+width=3D"25%" style=3D"line-height: 22px; vertical-align: top;" valign=3D"t=
+op">
+<font e-editable=3D"calories_text" class=3D"ff fc3 fs16 fwb gf displayrows_=
+mobile" style=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetic=
+a, Arial, sans-serif; font-size: 16px; color: #25282a; font-weight: bold;">=
+Calories</font>
+</td>
+</tr>
+<tr><td colspan=3D"3" height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td height=3D"1" class=3D"rw50p pr10">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"1" bgcolor></td>
+</tr>
+</table>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td height=3D"1" class=3D"rw50p pl10">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"1" bgcolor></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan=3D"3" height=3D"15" class=3D"rh10"><div></div></td></tr>
+<tr> <td>
+<table align=3D"center">
+<tr>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" style=3D"line-heigh=
+t: 22px; vertical-align: top;" valign=3D"top">
+<font class=3D"ff fc3 fs18 fwb gf" style=3D"font-family: AdihausDINRegular,=
+ 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #2=
+5282a; font-weight: bold;">-</font>
+</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" style=3D"line-heigh=
+t: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"your_week_text" class=3D"ff fc3 fs16 small fwb" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;">Your week</fo=
+nt>
+</td>
+</tr>
+<tr>
+<td height=3D"15" class=3D"rh10">
+<img src=3D"https://link.runtastic.com/img/trans.gif" width=3D"1" style=3D"=
+display:block;">
+</td>
+</tr>
+<tr>
+<td height=3D"1" class=3D"rw50p pr10">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"1" bgcolor=3D"#eeeff1"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" style=3D"line-heigh=
+t: 22px; vertical-align: top;" valign=3D"top">
+<font class=3D"ff fc3 fs18 fwb small" style=3D"font-family: AdihausDINRegul=
+ar, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color:=
+ #25282a; font-weight: bold;">1</font>
+</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3 vat rw50p pr10" style=3D"line-height=
+: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"week_before_text" class=3D"ff fc3 fs16 fwb small" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;">Week before</=
+font>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"17" height=3D"144" class=3D"vam" align=3D"center" style=3D"ver=
+tical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; ">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"17" height=3D"144" class=3D"vam" align=3D"center" style=3D"ver=
+tical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; " class=3D"displayrows=
+_mobile">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"17" height=3D"144" class=3D"vam" align=3D"center" style=3D"ver=
+tical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; " class=3D"displayrows=
+_mobile">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+</tr> <tr height=3D"15"> </tr>
+<tr class=3D"displayrows show_row" style=3D"display: none;">
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pr10" style=3D"vertic=
+al-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_13055.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;">
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"120" align=3D"center" class=3D"vat rw50p pl10" style=3D"vertic=
+al-align: top;" valign=3D"top">
+<img e-editable=3D"activities_summary_link" src=3D"https://link.runtastic.c=
+om/custloads/645781705/md_13054.png" height=3D"48" border=3D"0" style=3D"di=
+splay:block;">
+</td>
+</tr>
+<tr class=3D"displayrows show_row" style=3D"display: none;">
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" width=3D"25%" style=
+=3D"line-height: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"distance_text" class=3D"ff fc3 fs16 fwb gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: bold;">Distance</font>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pl10" width=3D"25%" style=
+=3D"line-height: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"calories_text" class=3D"ff fc3 fs16 fwb gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: bold;">Calories</font>
+</td>
+</tr>
+<tr class=3D"displayrows show_row" style=3D"display: none;">
+<td width=3D"17" height=3D"144" class=3D"vam" align=3D"center" style=3D"ver=
+tical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 15px; margin-left: 15px; " class=3D"show_row">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px" class=3D"show_=
+row">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"17" height=3D"144" class=3D"vam" align=3D"center" style=3D"ver=
+tical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 15px; margin-left: 15px; " class=3D"show_row">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px" class=3D"show_=
+row">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+</tr>
+<tr><td colspan=3D"3" height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr><td colspan=3D"3" height=3D"30" class=3D"rh30"><div></div></td></tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bda950a16a9413000005"><td height=3D"1" class=3D"rh10"=
+><div></div></td></tr>
+<!--  -->
+<!--  -->
+<!--
+-->
+<!--  -->
+<!--  -->
+<tr e-block-id=3D"6193bdad50a16a9413000006">
+<td align=3D"center">
+<a href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_249384=
+2_1_61&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYm=
+JhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1Njk%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_6=
+e1c15e16be455682552cb2f48919fb8e1813d1e57be874b033e8ffc7a81c99b" target=3D"=
+_blank" style=3D"text-decoration: none; font-weight: normal; color: #3a4855=
+;">
+<img e-editable=3D"upsell_image" src=3D"https://link.runtastic.com/custload=
+s/645781705/md_12989.jpg" width=3D"600" border=3D"0" style=3D"display:block=
+;" class=3D"image"> </a>
+</td>
+</tr>
+<tr e-block-id=3D"6193bdad50a16a9413000006"><td height=3D"10" class=3D"rh10=
+"><div></div></td></tr>
+<!--  -->
+<!--  -->
+<!--
+-->
+<!---->
+<tr e-block-id=3D"6193bdb850a16a9413000009">
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" bgcolor=3D" #ffff=
+ff">
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+<tr><td height=3D"48" class=3D"rh20"><div></div></td></tr>
+<tr>
+<td align=3D"center">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td width=3D"7"></td>
+<td align=3D"center" class=3D"lh32 la2b vam" style=3D"vertical-align: middl=
+e;" valign=3D"middle">
+<font e-editable=3D"activity_details_text" class=3D"ff-cond fc2 let15 fwb h=
+3 upc" style=3D"font-family: 'adineue PRO Cond', 'Helvetica Neue', Helvetic=
+a, Arial, sans-serif; letter-spacing: 1.5px; text-transform: uppercase; col=
+or: #000000; font-weight: bold; font-size: 30px;">Activity Details</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td height=3D"48" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<th width=3D"20%" align=3D"center" class=3D"vam pb30 fl" style=3D"padding: =
+0; Margin: 0; border: 0; font-weight: normal; vertical-align: middle;" vali=
+gn=3D"middle">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center">
+<img e-editable=3D"running_link" src=3D"https://link.runtastic.com/custload=
+s/645781705/md_12969.png" width=3D"48" border=3D"0" style=3D"display:block;=
+">
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3b" style=3D"line-height: 22px;">
+<font e-editable=3D"running_text" class=3D"ff fc3 fs16 fwb gf" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; font-size: 16px; color: #25282a; font-weight: bold;">Running</font>
+</td>
+</tr>
+</table>
+</th>
+<th width=3D"200" class=3D"fl fw vat" style=3D"padding: 0; Margin: 0; borde=
+r: 0; font-weight: normal; vertical-align: top;" valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td width=3D"25%">
+<table>
+<tr>
+<td width=3D"90" align=3D"center" class=3D"lh22 la3b vat rw50p pr10" style=
+=3D"line-height: 22px; vertical-align: top;" valign=3D"top">
+<font class=3D"ff fc3 fs18 fwb gf" style=3D"font-family: AdihausDINRegular,=
+ 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color: #2=
+5282a; font-weight: bold;">-</font>
+</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3b vat rw50p pr10" style=3D"line-heigh=
+t: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"your_week_text" class=3D"ff fc3 fs16 fwb small" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;">Your week</fo=
+nt>
+</td>
+</tr>
+<tr><td colspan=3D"1" height=3D"15" class=3D"rh10"><div></div></td></tr>
+<tr align=3D"center">
+<td height=3D"1" class=3D"rw50p pr10">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"1" bgcolor=3D"#eeeff1"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td colspan=3D"1" height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3 vat rw50p pr10" style=3D"line-height=
+: 22px; vertical-align: top;" valign=3D"top">
+<font class=3D"ff fc3 fs18 fwb small" style=3D"font-family: AdihausDINRegul=
+ar, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; color:=
+ #25282a; font-weight: bold;">1</font>
+</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3 vat rw50p pr10" style=3D"line-height=
+: 22px; vertical-align: top;" valign=3D"top">
+<font e-editable=3D"week_before_text" class=3D"ff fc3 fs16 fwb small" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;">Week before</=
+font>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"25%" align=3D"center" class=3D"la3b vam rw50p pl10" style=3D"v=
+ertical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; ">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"25%" align=3D"center" class=3D"la3b vam rw50p pl10 displayrows=
+_mobile" style=3D"vertical-align: middle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; " class=3D"displayrows=
+_mobile">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh displayrows_mobile"></td>
+<td width=3D"25%" class=3D"vam" align=3D"center" style=3D"vertical-align: m=
+iddle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; " class=3D"displayrows=
+_mobile">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+</tr> <tr><td colspan=3D"3" height=3D"30" class=3D"rh30"><div></div></td></=
+tr>
+<tr class=3D"displayrows show_row" style=3D"display: none;">
+<td width=3D"50%" class=3D"vam" align=3D"center" style=3D"vertical-align: m=
+iddle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; ">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+<td width=3D"20" class=3D"mh"></td>
+<td width=3D"50%" class=3D"vam" align=3D"center" style=3D"vertical-align: m=
+iddle;" valign=3D"middle">
+<div style=3D"margin-right: 10px; margin-left: 10px; ">
+<img src=3D"https://link.runtastic.com/custloads/645781705/FR3/prem/star.pn=
+g" width=3D"20" style=3D"display:block; margin-bottom: 16px">
+<font e-editable=3D"unlock_text" class=3D"ff fc3 fs16 gf lh22" style=3D"fon=
+t-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif=
+; line-height: 22px; font-size: 16px; color: #25282a;"> Unlock with premium=
+ </font>
+</div>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr e-block-id=3D"6193bdb850a16a9413000009"><td height=3D"2"></td></tr>
+<!--  -->
+<!-- -->
+<!--
+-->
+<!--  -->
+<!--  -->
+<!--
+-->
+<!--  -->
+<!--  -->
+<tr e-block-id=3D"6193bdbf50a16a941300000b"><td height=3D"10" class=3D"rh10=
+"><div></div></td></tr>
+<!--
+-->
+<tr e-block-id=3D"6193bdc350a16a941300000c">
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff">
+<tr><td colspan=3D"3" height=3D"40" class=3D"rh20"><div></div></td></tr>
+<tr>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+<td align=3D"center">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"fw">
+<tr>
+<th width=3D"164" align=3D"center" valign=3D"top" class=3D"fw fl vat" style=
+=3D"padding: 0; Margin: 0; border: 0; font-weight: normal; vertical-align: =
+top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fw">
+<tr>
+<td align=3D"center">
+<a href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_249384=
+2_1_63&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYm=
+JhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1NzE%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_5=
+ed0e07e89d2d3ec0ff754440378c5245013899e19ea759d871f51c48d7aacb3" style=3D"t=
+ext-decoration: none; font-weight: normal; color: #3a4855;" target=3D"_blan=
+k">
+<img e-editable=3D"training_plans_link" src=3D"https://link.runtastic.com/c=
+ustloads/645781705/md_12960.png" height=3D"48" border=3D"0" style=3D"displa=
+y:block;">
+</a>
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2b" style=3D"line-height: 22px;">
+<font e-editable=3D"training_plans_text" class=3D"ff fs16 fc3 gf fwb" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;"><a href=3D"ht=
+tps://www.runtastic.com/training-plans/running?ut=3Dcedf7d43f6193d99a5e83df=
+596800bbba9805d99&ems_dl=3D645781705_Ak97c5C5Wf_30946_2493842_1_2000001" ta=
+rget=3D"_blank" rel=3D"noopener" style=3D"font-weight: bold; text-decoratio=
+n: none; color: #000000;">Training Plans</a></font>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3" style=3D"line-height: 22px;">
+<font e-editable=3D"challenge_yourself_text" class=3D"ff fs16 fc3 fwn gf" s=
+tyle=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial,=
+ sans-serif; font-size: 16px; color: #25282a; font-weight: normal;"><a href=
+=3D"https://www.runtastic.com/apps/runtastic/plan?ems_dl=3D645781705_Ak97c5=
+C5Wf_30946_2493842_1_2000002" style=3D"font-weight: normal; text-decoration=
+: none; color: #25282a;" target=3D"_blank">Challenge yourself and get the i=
+deal plan for you.</a></font>
+</td>
+</tr>
+<tr>
+<td height=3D"30" class=3D"rh30"><div></div></td>
+</tr>
+</table>
+</th>
+<th width=3D"24" class=3D"mh" style=3D"padding: 0; Margin: 0; border: 0; fo=
+nt-weight: normal; vertical-align: top;" valign=3D"top"></th>
+<th width=3D"164" align=3D"center" valign=3D"top" class=3D"fw fl vat" style=
+=3D"padding: 0; Margin: 0; border: 0; font-weight: normal; vertical-align: =
+top;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fw">
+<tr>
+<td align=3D"center">
+<a href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_249384=
+2_1_65&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYm=
+JhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1NzM%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_9=
+770b07b55b18e92caff0c4bc16507c14827dd5510414d44b761fdb15f222722" style=3D"t=
+ext-decoration: none; font-weight: normal; color: #3a4855;" target=3D"_blan=
+k">
+<img e-editable=3D"friends_link" src=3D"https://link.runtastic.com/custload=
+s/645781705/md_12958.png" height=3D"48" border=3D"0" style=3D"display:block=
+;">
+</a>
+</td>
+</tr>
+<tr><td height=3D"10" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la2b" style=3D"line-height: 22px;">
+<font e-editable=3D"invite_friends_text" class=3D"ff fs16 fc3 gf fwb" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 16px; color: #25282a; font-weight: bold;">I<a href=3D"h=
+ttps://www.runtastic.com/apps/runtastic/open?utm_campaign=3DadiRUN-fitness-=
+report&amp;utm_content=3Dllnkcopy&amp;utm_medium=3Demail&amp;utm_source=3Dr=
+untastic&amp;utm_term=3D202208&amp;ut=3Dcedf7d43f6193d99a5e83df596800bbba98=
+05d99&amp;instant_redirect=3D1&ems_dl=3D645781705_Ak97c5C5Wf_30946_2493842_=
+1_2000003" style=3D"font-weight: bold; text-decoration: none; color: #00000=
+0;" target=3D"_blank">nvite Your Friends</a></font>
+</td>
+</tr>
+<tr><td height=3D"16" class=3D"rh10"><div></div></td></tr>
+<tr>
+<td align=3D"center" class=3D"lh22 la3" style=3D"line-height: 22px;">
+<font e-editable=3D"motivate_text" class=3D"ff fs16 fc3 fwn gf" style=3D"fo=
+nt-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-seri=
+f; font-size: 16px; color: #25282a; font-weight: normal;"><a href=3D"https:=
+//www.runtastic.com/apps/runtastic/open?utm_campaign=3DadiRUN-fitness-repor=
+t&amp;utm_content=3Dllnkcopy&amp;utm_medium=3Demail&amp;utm_source=3Druntas=
+tic&amp;utm_term=3D202208&amp;ut=3Dcedf7d43f6193d99a5e83df596800bbba9805d99=
+&amp;instant_redirect=3D1&ems_dl=3D645781705_Ak97c5C5Wf_30946_2493842_1_200=
+0004" style=3D"font-weight: normal; text-decoration: none; color: #25282a;"=
+ target=3D"_blank">And motivate each other to keep going.</a></font>
+</td>
+</tr>
+<tr>
+<td height=3D"40" class=3D"rh30"><div></div></td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+<td width=3D"30" class=3D"rw10"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+<!--
+-->
+<!--  -->
+<tr e-block-id=3D"6193bdc650a16a941300000d">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolor=3D"#fffff=
+f">
+<tr>
+<td align=3D"center">
+<a href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk97c5C5Wf_30946_249384=
+2_1_67&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYm=
+JhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1NzU%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_3=
+cf704da78ae1369f28652e9ae8cbb1fc9902f1c1b0bbdec79a1ba6fb419290a" e-editable=
+=3D"banner_link" target=3D"_blank" style=3D"text-decoration: none; font-wei=
+ght: normal; color: #3a4855;">
+<img e-editable=3D"upsell_image" src=3D"https://link.runtastic.com/custload=
+s/645781705/md_12981.jpg" width=3D"600" border=3D"0" style=3D"display:block=
+;" class=3D"image"> </a>
+</td>
+</tr>
+<tr><td height=3D"30" class=3D"rh30"><div></div></td></tr>
+</table>
+</td>
+</tr>
+<!--  --><!--  -->
+<tr e-block-id=3D"637f9292a3e22d1c8e000002">
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<tr e-block-id=3D"637f9292a3e22d1c8e000002">
+<td align=3D"center" style=3D"padding:0 16px;" bgcolor=3D"white">
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"600" class=3D"ol600 fw"=
+ bgcolor=3D"white">
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"40" class=3D"rh15"><div></div></td>
+</tr>
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"fw">
+<tr>
+<th align=3D"left" class=3D"vam" style=3D"padding: 0; Margin: 0; border: 0;=
+ font-weight: normal; vertical-align: middle;" valign=3D"middle">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href6" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_69&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1Nzc%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_465a36de9763aeeed7e034026d567c5e71144389b8e174eae7da377=
+9d42d9122" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image6" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/ios_app-icon_running_logo.png" width=3D"=
+72" border=3D"0" style=3D"display:block;" alt=3D"Running"></a>
+</td></tr>
+</table>
+</th>
+<th width=3D"25" class=3D"rw15" style=3D"padding: 0; Margin: 0; border: 0; =
+font-weight: normal; vertical-align: top;" valign=3D"top"></th>
+<th align=3D"left" class=3D"vam" style=3D"padding: 0; Margin: 0; border: 0;=
+ font-weight: normal; vertical-align: middle;" valign=3D"middle">
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"fw">
+<tr>
+<td align=3D"left" class=3D"lh la6b" style=3D"line-height: 1.2;"><font e-ed=
+itable=3D"headline1" class=3D"ff-hl fs30 fc6 fwb ls1 gf upc" style=3D"font-=
+family: adineueTEXTRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif;=
+ font-size: 30px; text-transform: uppercase; font-weight: bold; line-height=
+: 1.2;">Run with adidas</font></td>
+</tr>
+<tr>
+<td height=3D"8"></td> </tr>
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"lh vam" style=3D"line-height: 1.2; vertical-align: middle;" va=
+lign=3D"middle"><a e-editable=3D"link_href1" href=3D"https://link.runtastic=
+.com/u/nrd.php?p=3DAk97c5C5Wf_30946_2493842_1_71&ems_l=3D1140114&i=3D1&d=3D=
+Y2VkZjdkNDNmNjE5M2Q5OWE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1Nzk%=
+3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_6b0a2b926405b4c9a65db0077bf514fcbb=
+f1755f6778bf64c935b1c1b7eb3c03" target=3D"_blank" class=3D"fc3 fwn tdn" sty=
+le=3D"color: #25282a; text-decoration: none; font-weight: normal;"><font e-=
+editable=3D"link1" class=3D"ff-cta fc3 fsl fwb tdu xsmall" style=3D"font-fa=
+mily: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; co=
+lor: #25282a; text-decoration: underline; font-weight: bold; line-height: 1=
+.2;">DISCOVER</font></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"40"></td>
+</tr>
+<tr>
+<td align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0">
+<tr>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href1" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_73&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1ODE%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_d7cd41e44ab8cc101204a4089548a922802d34d2a3e27c6137c4309=
+9f9c4a157" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image1" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/grey_social/facebook2x.png" width=3D"44"=
+ border=3D"0" style=3D"display:block;" alt=3D"F"></a>
+</td>
+<td width=3D"40" class=3D"rw20"></td>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href2" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_75&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1ODM%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_294345976c0a7031d89d7ae12bbcd611fce828ac0410948a56af07f=
+e7cbd71a5" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image2" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/grey_social/instagram2x.png" width=3D"44=
+" border=3D"0" style=3D"display:block;" alt=3D"insta"></a></td>
+<td width=3D"40" class=3D"rw20"></td>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href3" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_77&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1ODU%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_00528037aaccf98802634d6192e7d39ae97e65fa54841a7c878d938=
+20134a724" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image3" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/grey_social/linkedin2x.png" width=3D"44"=
+ border=3D"0" style=3D"display:block;" alt=3D"linkedin"></a></td>
+<td width=3D"40" class=3D"rw20"></td>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href4" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_79&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1ODc%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_bfbc5d8a187a50aa095b1e1389f70682a5d7c02ead35e50f52e8fc5=
+9a1f4ad56" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image4" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/grey_social/youtube2x.png" width=3D"44" =
+border=3D"0" style=3D"display:block;" alt=3D"Yt"></a></td>
+<td width=3D"40" class=3D"rw20"></td>
+<td class=3D"vam" style=3D"vertical-align: middle;" valign=3D"middle"><a e-=
+editable=3D"icon_href4" href=3D"https://link.runtastic.com/u/nrd.php?p=3DAk=
+97c5C5Wf_30946_2493842_1_81&ems_l=3D1140114&i=3D1&d=3DY2VkZjdkNDNmNjE5M2Q5O=
+WE1ZTgzZGY1OTY4MDBiYmJhOTgwNWQ5OQ%3D%3D%7CNTMzOTg1ODk%3D%7CQWs5N2M1QzVXZg%3=
+D%3D%7C&_esuh=3D_11_abfff0e7c9703cb80f8dc456dfc4c1f9d4f7067ef8fa5a246b28903=
+f9086d02d" target=3D"_blank" style=3D"text-decoration: none; font-weight: n=
+ormal; color: #3a4855;"><img e-editable=3D"image5" src=3D"https://link.runt=
+astic.com/custloads/645781705/vce1/grey_social/blog2x.png" width=3D"44" bor=
+der=3D"0" style=3D"display:block;" alt=3D"blog"></a></td>
+<td width=3D"40" class=3D"rw20"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"40" class=3D"rh20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--  --><tr e-block-id=3D"637f929ca3e22d1c8e000003">
+<td height=3D"1" bgcolor=3D"#d3d7da"></td>
+</tr>
+<tr e-block-id=3D"637f929ca3e22d1c8e000003">
+<td align=3D"center" style=3D"padding:0 16px;" bgcolor=3D"white">
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"600" class=3D"ol600 fw"=
+>
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tr>
+<td height=3D"40" class=3D"rh15"><div></div></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"lh14p">
+<font e-editable=3D"links" class=3D"ff fc1 fs14 xsmall" style=3D"font-famil=
+y: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-=
+size: 14px; color: black; text-decoration: underline;">
+<a e-editable=3D"un_href" href=3D"https://link.runtastic.com/u/nrd.php?p=3D=
+Ak97c5C5Wf_30946_2493842_1_83&ems_l=3D1140114&i=3D1&d=3DQWs5N2M1QzVXZg%3D%3=
+D%7CNTMzOTg1OTE%3D%7CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_05d1c4d8083ee9e46c=
+c012238e0c489a1d3ee9d93efd7b8540aaa78e205ae2c5" target=3D"_blank" class=3D"=
+fc1 fwn tdn" style=3D"color: #ffffff; text-decoration: none; font-weight: n=
+ormal;"><font e-editable=3D"un_text" class=3D"ff fc1 fs14 fwb xsmall" style=
+=3D"font-family: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, san=
+s-serif; font-size: 14px; font-weight: bold; color: #25282a;">Unsubscribe</=
+font></a> <img src=3D"https://link.runtastic.com/img/trans.gif" width=3D"10=
+" height=3D"1" border=3D"0">
+<a e-editable=3D"legal_href" href=3D"https://link.runtastic.com/u/nrd.php?p=
+=3DAk97c5C5Wf_30946_2493842_1_85&ems_l=3D1140114&i=3D1&d=3DNTMzOTg1OTM%3D%7=
+CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_f37aafebb5ad8a7e17be3c4513ac8d93bce59f=
+0c534f03ecd76c634461acf2bb" target=3D"_blank" class=3D"fc1 tdn fwn" style=
+=3D"color: #ffffff; text-decoration: none; font-weight: normal;"><font e-ed=
+itable=3D"legal_txt" class=3D"ff fc1 fs14 fwb xsmall" style=3D"font-family:=
+ AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-si=
+ze: 14px; font-weight: bold; color: #25282a;">Legal</font></a> <img src=3D"=
+https://link.runtastic.com/img/trans.gif" width=3D"10" height=3D"1" border=
+=3D"0">
+<a e-editable=3D"pp_link" href=3D"https://link.runtastic.com/u/nrd.php?p=3D=
+Ak97c5C5Wf_30946_2493842_1_87&ems_l=3D1140114&i=3D1&d=3DNTMzOTg1OTU%3D%7CQW=
+s5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_22c9de863c863528d4bb941f0de173b8a667676fe=
+eaa9c436abcf966e4dfc7cb" target=3D"_blank" class=3D"fc1 tdn fwn" style=3D"c=
+olor: #ffffff; text-decoration: none; font-weight: normal;"><font e-editabl=
+e=3D"pp_txt" class=3D"ff fc1 fs14 fwb xsmall" style=3D"font-family: Adihaus=
+DINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px=
+; font-weight: bold; color: #25282a;">Privacy Policy</font></a> <img src=3D=
+"https://link.runtastic.com/img/trans.gif" width=3D"10" height=3D"1" border=
+=3D"0">
+<a e-editable=3D"home_link" href=3D"https://link.runtastic.com/u/nrd.php?p=
+=3DAk97c5C5Wf_30946_2493842_1_89&ems_l=3D1140114&i=3D1&d=3DNTMzOTg1OTc%3D%7=
+CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_899c83d179a65b3a428b7da2e802d20bcaaa96=
+1baf55f66bb1fbd35a03a0d65e" target=3D"_blank" class=3D"fc1 tdn fwn" style=
+=3D"color: #ffffff; text-decoration: none; font-weight: normal;"><font e-ed=
+itable=3D"company_txt" class=3D"ff fc1 fs14 fwb xsmall" style=3D"font-famil=
+y: AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-=
+size: 14px; font-weight: bold; color: #25282a;">adidas Running app</font></=
+a> <img src=3D"https://link.runtastic.com/img/trans.gif" width=3D"10" heigh=
+t=3D"1" border=3D"0">
+<a e-editable=3D"help_href" href=3D"https://link.runtastic.com/u/nrd.php?p=
+=3DAk97c5C5Wf_30946_2493842_1_91&ems_l=3D1140114&i=3D1&d=3DNTMzOTg1OTk%3D%7=
+CQWs5N2M1QzVXZg%3D%3D%7C&_esuh=3D_11_ac6d357becf5182411b72179131357fccf4cca=
+d3cd1fae3057dcfcff3d01667e" target=3D"_blank" class=3D"fc1 tdn fwn" style=
+=3D"color: #ffffff; text-decoration: none; font-weight: normal;"><font e-ed=
+itable=3D"help_txt" class=3D"ff fc1 fs14 fwb xsmall" style=3D"font-family: =
+AdihausDINRegular, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-siz=
+e: 14px; font-weight: bold; color: #25282a;">Help and Support</font></a> </=
+font>
+</td>
+</tr>
+<tr>
+<td height=3D"40" class=3D"rh10"><div></div></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"lh14p la5"><font e-editable=3D"imprint" class=
+=3D"ff fc5 fs14 xsmall" style=3D"font-family: AdihausDINRegular, 'Helvetica=
+ Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #767677;">&co=
+py; runtastic GmbH 2025,<br>Pluskaufstra=C3=9Fe 7 =C2=B7 Business Center, 4=
+061 Pasching bei Linz, Austria<br>FN 334397k | ATU 65197299</font></td>
+</tr>
+<tr>
+<td height=3D"40" class=3D"rh20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"https://link.runtastic.com/mo/Ak97c5C5Wf_645781705_2493842_3094=
+6_1140114.gif" height=3D"2" width=3D"2" border=3D"0" alt=3D""></body>
+</html>
+
+----=_---NextPart--=_-Kp8SnfbBu8--

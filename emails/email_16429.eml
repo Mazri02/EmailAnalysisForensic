@@ -1,0 +1,162 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:4351:b0:14b:7925:ffac with SMTP id w17csp349019dye;
+        Thu, 30 Jan 2025 06:28:03 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEH11wwtdTSf0MR2dSfv18+ajGlZtbH22+m1vqDlGKQAHP/kCnHOk+7QAFbrsJ34VBymI3b
+X-Received: by 2002:ac8:5d43:0:b0:466:9824:16ef with SMTP id d75a77b69052e-46fd0a806c9mr124271331cf.3.1738247283427;
+        Thu, 30 Jan 2025 06:28:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738247283; cv=none;
+        d=google.com; s=arc-20240605;
+        b=AtCffqJWdONgXSxjYBascLJnXUCm9khPhU28lMnPaN10EB2T62IhyujrF0q6Sln72U
+         ctAI5gztmbgyLzN3ykOurz8AJCAj4vG6a3e/c199r744+yBBG0LpSGHgfX5wGRi07Ayo
+         bhVACCAl1iZ+jBLlIvBNyg4iVkqHCfvqAgZ+CgCmuXHGMBl4/l3wwERb1G12zdejgq61
+         7BuiN0Zjsm7xFoRuL8N5RHEXPKChnHLzBw2n9iPI5JqEHGMRWgV+S9zE9akzcVdLYWNE
+         psb4SOtKKoY3GNM85Y1x5DSlNt9XCsRuk8BCXZWfmPMULEfSHBjcusFM6ZmkkQabbAN1
+         BBKg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:date:content-transfer-encoding:message-id
+         :subject:reply-to:to:from:list-unsubscribe:dkim-signature
+         :dkim-signature;
+        bh=C+Die1mZgmLhCCbg8g7iXF+r6GVr4IKY3lIdN9RMVFg=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=kL/XoQURWekTrKP6D+yR6RPPXQ4KM39maZT3XXVVoHKFnqiNNv2ZBsngbhEplHWjvQ
+         kZ5hj10HPwOnniGtbBKJvwbvNJXNZ0URe1YpL8Hbu1BIPjOqBirthdGGd5vStBvDhaCp
+         cfYn90ahvdDfNZzUwPLLMXXQ03Tz3AMxJgWDcU6jSQUfI2I11o58Zshs2F7OGSC6E8du
+         q3j6Z/y6kEWwzFJks+iWnxn8YOzqXVlXXPqv3DkNbVFYAq9Tz6r4FxCgjOV0a206xnBC
+         inkB1wCqOgzA14M4IR5KdACbq2iU4GIGynrSjIPD/+05rbHzT/4zmXlzHIdMl7v6yrQa
+         aJBQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@superteamearn.com header.s=resend header.b=WN8otCQr;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b="J/Za7jJz";
+       spf=pass (google.com: domain of 01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com designates 54.240.9.68 as permitted sender) smtp.mailfrom=01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=superteamearn.com
+Return-Path: <01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com>
+Received: from a9-68.smtp-out.amazonses.com (a9-68.smtp-out.amazonses.com. [54.240.9.68])
+        by mx.google.com with ESMTPS id d75a77b69052e-46fdf1dfe6fsi16762781cf.500.2025.01.30.06.28.03
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 30 Jan 2025 06:28:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com designates 54.240.9.68 as permitted sender) client-ip=54.240.9.68;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@superteamearn.com header.s=resend header.b=WN8otCQr;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b="J/Za7jJz";
+       spf=pass (google.com: domain of 01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com designates 54.240.9.68 as permitted sender) smtp.mailfrom=01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@bounces.superteamearn.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=superteamearn.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=resend;
+	d=superteamearn.com; t=1738247283;
+	h=List-Unsubscribe:From:To:Reply-To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type;
+	bh=C+Die1mZgmLhCCbg8g7iXF+r6GVr4IKY3lIdN9RMVFg=;
+	b=WN8otCQr4Mk/YRZeKvom8PHri9tPqfClk2C6M9W3YmWJ0S9h3XJbCo4rpSWYCPjY
+	jWkigCb9BEZH8POzZPBvRzfO404XVCaiYzdGo/8mVJzBxSAKm9WNBcX5m+ndqnOqN1V
+	uGQ1MBggI8+1vGgrSo6TzJDv9FO5ZOaq+cMeUZQs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1738247283;
+	h=List-Unsubscribe:From:To:Reply-To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type:Feedback-ID;
+	bh=C+Die1mZgmLhCCbg8g7iXF+r6GVr4IKY3lIdN9RMVFg=;
+	b=J/Za7jJzFq7fQ8UP+FZe/aICSH4KekcYr6VGUlyoA+EJ77+z/nku86Emlo7kp7mx
+	U7C/0jrQUbFBYmnU2D1hMwqA5BBFW2ZH5/ZoV5teUCKJWgJ0n9VqQso+yjMB/sC2NgJ
+	uCQs5yRtIUoPqPHCAVjDx8HtElZ/QeGrP/08fqec=
+List-Unsubscribe:
+ <https://earn.superteam.fun/api/email/unsubscribe?email=azri.mokhzani%40gmail.com&signature=0ffdd6a6bf415c4edffeae9243841e247261a7b52ab1c38802be1c4320ba3e5a>
+From: Pratik from Earn <pratik@superteamearn.com>
+To: azri.mokhzani@gmail.com
+Reply-To: support@superteamearn.com
+Subject: Your Weekly Listing Roundup Is Here!
+Message-ID: <01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000@email.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 30 Jan 2025 14:28:02 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Feedback-ID: ::1.us-east-1.epbACCJLarUaEI78XZoGREJ9LamRjxMH5pM2kZb64rA=:AmazonSES
+X-SES-Outgoing: 2025.01.30-54.240.9.68
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--$--><div style=3D"font-fa=
+mily:Arial, sans-serif;color:#333;margin:0 auto;padding:20px"><p style=3D"f=
+ont-size:14px;line-height:20px;margin-bottom:16px">Hey there, <!-- -->MUHD =
+AZRI<!-- -->!</p><p style=3D"font-size:14px;line-height:20px;margin:10px 0"=
+>Here&#x27;s a weekly round-up of all live listings, curated just for you:<=
+/p><div><h2 style=3D"font-size:15px;line-height:18px;font-weight:semibold;m=
+argin-top:16px">Frontend</h2><ol><li style=3D"font-size:14px;line-height:20=
+px"><div><a href=3D"https://a.resend-ct.com/CL0/https:%2F%2Fearn.superteam.=
+fun%2Flisting%2Fbuild-a-cabal-swarm-of-agents-coordinating-a-token-pump-sim=
+ulation%2F%3Futm_source=3Dsuperteamearn%26utm_medium=3Demail%26utm_campaign=
+=3Dnotifications/1/01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-00=
+0000/tWV2niizEh7yEOthGQD4rpfNxNT86IAASS9CsCPztIg=3D390" style=3D"font-size:=
+14px;color:#007BFF">Build a cabal swarm of agents coordinating a token pump=
+ simulation</a> <!-- -->by <!-- -->SendAI<!-- --> (<!-- -->100,000<!-- --> =
+<!-- -->SEND<!-- --> <!-- -->Project<!-- -->)</div></li><li style=3D"font-s=
+ize:14px;line-height:20px"><div><a href=3D"https://a.resend-ct.com/CL0/http=
+s:%2F%2Fearn.superteam.fun%2Flisting%2Fbuild-an-on-chain-sleuth-like-zachxb=
+t%2F%3Futm_source=3Dsuperteamearn%26utm_medium=3Demail%26utm_campaign=3Dnot=
+ifications/1/01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000/C=
+PfDDoCLCuvR_1CBzfNQlOxYThhEnbdAHksL9JOYwug=3D390" style=3D"font-size:14px;c=
+olor:#007BFF">Build an on-chain sleuth like @zachxbt </a> <!-- -->by <!-- -=
+->SendAI<!-- --> (<!-- -->100,000<!-- --> <!-- -->SEND<!-- --> <!-- -->Proj=
+ect<!-- -->)</div></li><li style=3D"font-size:14px;line-height:20px"><div><=
+a href=3D"https://a.resend-ct.com/CL0/https:%2F%2Fearn.superteam.fun%2Flist=
+ing%2Freact-dev-for-on-chain-casino-project%2F%3Futm_source=3Dsuperteamearn=
+%26utm_medium=3Demail%26utm_campaign=3Dnotifications/1/01000194b79ca0d0-2a7=
+cb63c-28eb-4f99-945a-716cbe87b996-000000/IwcnJSKmWrlujVRomFB61j7pW28zJ78ytD=
+8RmbWQy9U=3D390" style=3D"font-size:14px;color:#007BFF">React Dev for on-ch=
+ain casino project</a> <!-- -->by <!-- -->Gameabit<!-- --> (<!-- -->2,000 -=
+ 4,000<!-- --> <!-- -->USDC<!-- --> <!-- -->Project<!-- -->)</div></li><li =
+style=3D"font-size:14px;line-height:20px"><div><a href=3D"https://a.resend-=
+ct.com/CL0/https:%2F%2Fearn.superteam.fun%2Flisting%2Fsmart-contract-develo=
+per-needed-protocol-integration-hub%2F%3Futm_source=3Dsuperteamearn%26utm_m=
+edium=3Demail%26utm_campaign=3Dnotifications/1/01000194b79ca0d0-2a7cb63c-28=
+eb-4f99-945a-716cbe87b996-000000/y5RX57xnNBux6cUMLVbH3r1_bGSkRr2z7tWnaVUZG8=
+k=3D390" style=3D"font-size:14px;color:#007BFF">Smart Contract Developer Ne=
+eded: Protocol Integration Hub</a> <!-- -->by <!-- -->Ultra Labs<!-- --> (<=
+!-- -->2,000<!-- --> <!-- -->USDC<!-- --> <!-- -->Project<!-- -->)</div></l=
+i><li style=3D"font-size:14px;line-height:20px"><div><a href=3D"https://a.r=
+esend-ct.com/CL0/https:%2F%2Fearn.superteam.fun%2Flisting%2Fmobilefrontend-=
+dev-intern%2F%3Futm_source=3Dsuperteamearn%26utm_medium=3Demail%26utm_campa=
+ign=3Dnotifications/1/01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996=
+-000000/FE2dOBxQoPkDOl1o4B4Ffg_9jyGf7g7XyrMFbOItyrk=3D390" style=3D"font-si=
+ze:14px;color:#007BFF">Mobile/Frontend Dev Intern</a> <!-- -->by <!-- -->Si=
+zzil<!-- --> (<!-- -->200 - 250<!-- --> <!-- -->USDC<!-- --> <!-- -->Projec=
+t<!-- -->)</div></li><li style=3D"font-size:14px;line-height:20px"><div><a =
+href=3D"https://a.resend-ct.com/CL0/https:%2F%2Fearn.superteam.fun%2Flistin=
+g%2Flead-full-stack-developer-react-native-web3-solana%2F%3Futm_source=3Dsu=
+perteamearn%26utm_medium=3Demail%26utm_campaign=3Dnotifications/1/01000194b=
+79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000/VQzGqkei8aoHf-UGZdTV4Oi=
+eM0S21UzA4TO_EDfCWMQ=3D390" style=3D"font-size:14px;color:#007BFF">Lead Ful=
+l-Stack Developer (React Native/ Web3/ Solana)</a> <!-- -->by <!-- -->Silve=
+rfox<!-- --> (<!-- -->Variable<!-- --> <!-- -->USDC<!-- --> <!-- -->Project=
+<!-- -->)</div></li></ol></div><div><h2 style=3D"font-size:15px;line-height=
+:18px;font-weight:semibold;margin-top:16px">Backend</h2><ol><li style=3D"fo=
+nt-size:14px;line-height:20px"><div><a href=3D"https://a.resend-ct.com/CL0/=
+https:%2F%2Fearn.superteam.fun%2Flisting%2Fbuild-an-ai-solution-to-supercha=
+rge-superteam-vietnams-communication%2F%3Futm_source=3Dsuperteamearn%26utm_=
+medium=3Demail%26utm_campaign=3Dnotifications/1/01000194b79ca0d0-2a7cb63c-2=
+8eb-4f99-945a-716cbe87b996-000000/ylzgiu9G97jXDLGvFCYpXHnC9F0evBxZsR7ZwTR-w=
+SY=3D390" style=3D"font-size:14px;color:#007BFF">Build an AI Solution to Su=
+percharge Superteam Vietnam=E2=80=99s Communication</a> <!-- -->by <!-- -->=
+Superteam Vietnam<!-- --> (<!-- -->1,500<!-- --> <!-- -->USDC<!-- --> <!-- =
+-->Bounty<!-- -->)</div></li><li style=3D"font-size:14px;line-height:20px">=
+<div><a href=3D"https://a.resend-ct.com/CL0/https:%2F%2Fearn.superteam.fun%=
+2Flisting%2Fsolana-developer-for-open-source-contribution-reward-system%2F%=
+3Futm_source=3Dsuperteamearn%26utm_medium=3Demail%26utm_campaign=3Dnotifica=
+tions/1/01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-716cbe87b996-000000/uMR5T9=
+m-cEXp4ULQYUgSaUVVVvRq7ac79TyNCudtrYc=3D390" style=3D"font-size:14px;color:=
+#007BFF">Solana Developer for Open-Source Contribution Reward System</a> <!=
+-- -->by <!-- -->AIxBlock<!-- --> (<!-- -->1,000<!-- --> <!-- -->USDC<!-- -=
+-> <!-- -->Bounty<!-- -->)</div></li></ol></div><p style=3D"font-size:14px;=
+line-height:20px">Hope to see you participate in (and hopefully win!) some =
+of these :)</p><p style=3D"font-size:14px;line-height:20px;margin-top:16px"=
+>Best,<br/>Superteam Earn</p><p style=3D"font-size:11px;line-height:20px;ma=
+rgin-top:16px"><a href=3D"https://a.resend-ct.com/CL0/https:%2F%2Fearn.supe=
+rteam.fun%2F%23emailPreferences/1/01000194b79ca0d0-2a7cb63c-28eb-4f99-945a-=
+716cbe87b996-000000/gVlZj4ZWMS7r0HicQEMjZUMSysQX50517W-N5ae0M4c=3D390" styl=
+e=3D"font-size:11px;color:#007BFF">Click here</a> <!-- -->to update your em=
+ail preferences on Earn (recommended) or<!-- --> <a href=3D"https://a.resen=
+d-ct.com/CL0/https:%2F%2Fearn.superteam.fun%2Fapi%2Femail%2Funsubscribe%3Fe=
+mail=3Dazri.mokhzani%2540gmail.com%26signature=3D0ffdd6a6bf415c4edffeae9243=
+841e247261a7b52ab1c38802be1c4320ba3e5a/1/01000194b79ca0d0-2a7cb63c-28eb-4f9=
+9-945a-716cbe87b996-000000/mmFTOa7eHpp9uLFC5TCvMeJgdXmeLI8lYuiDySGKVDg=3D39=
+0" style=3D"font-size:11px;color:#007BFF">click here</a> <!-- -->to unsubsc=
+ribe from all future emails from Superteam Earn</p></div><!--/$-->
+<img alt=3D"" src=3D"http://a.resend-ct.com/CI0/01000194b79ca0d0-2a7cb63c-2=
+8eb-4f99-945a-716cbe87b996-000000/b_TdBqt_i5F8ZGYAYsi_F9siEvKrITmnEQ_c54E_2=
+Io=3D390" style=3D"display: none; width: 1px; height: 1px;">

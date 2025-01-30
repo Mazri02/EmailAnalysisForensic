@@ -1,0 +1,1044 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp1933860dye;
+        Sun, 26 Jan 2025 07:51:51 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHNH+6DlZVRleZXGmFlMkBXi90BrTfgKIdsi4dYgOEZhOltFvIlQA0S/ipc80yNJktaUd2i
+X-Received: by 2002:a05:6214:2261:b0:6d8:80e8:d567 with SMTP id 6a1803df08f44-6e1b217d694mr643349206d6.18.1737906711343;
+        Sun, 26 Jan 2025 07:51:51 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737906711; cv=none;
+        d=google.com; s=arc-20240605;
+        b=DT5Vz+Cl8RdMsNWPg+GembDDWxllWLIvUI5c9Y92Ft+FPvntqP+2KZcMVbqs1hgKE3
+         UbWwOrxfxDJ1lTtYix4WoqsPFU/NPCGV36t67kK5tDzHG1kIH275PFr/K8nqNlB6wrTA
+         LlSe2pmE4oruGXhOln5/Yv2ngqa8WVh69OkfwteTnRTQxCivz8l/qztshzB+u3iI5Od0
+         MtGXCd0Vv28mOmGJfujJ8AoKx31wrxPh3vOUBKuSE4A/xHsNgyx/KnfgtQdPP2XqFy8i
+         laWakNFWTTQDIj4m76l/wyZdJ/Ir8JZb/HwMYSCHwtNeiQBr8D2Lymud3kM8w500atTD
+         mhxw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:dkim-signature:dkim-signature;
+        bh=oZYpl0VET87Ph13F//o4A0k/cFnqqZrmcSZUzDrEULo=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=RjUkeBmU8Hdds0ou+gv28H+yl5pkKD7HPngWLdPCP/v9+dxd+xHmOJfvsB+eJeJ9zv
+         pxGpPGRTlqgj1KyoqxzRJfzQsxPhZL0t9bGk7cZ9sWxfXC8g8HZ5BqjgoCEx8uDQGLPl
+         3BD5JR1troPHFJXpclFd/KEPjHzzpXlGWAfZkifHZqt9m39y8bEX9qvlrJmfmKWHen9a
+         SUh9IUbCmO/fjxJnept1g8scUYJsuwjcLyg9IcUX3HJGbsjJc+MnFCCa5PBjfgePG7n4
+         SykrPyuCU5Roxgk2cdaTcrPT0EmH4hDYKvAHrmkaMx61Rx+UPgK+cPOMq/QQzZXZ8igC
+         0kEA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notification-2.bybit.com header.s=mailo header.b=py5r2ABt;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=MZ8uVUug;
+       spf=pass (google.com: domain of bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com designates 159.135.232.19 as permitted sender) smtp.mailfrom="bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bybit.com
+Return-Path: <bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com>
+Received: from m232-19.mailgun.net (m232-19.mailgun.net. [159.135.232.19])
+        by mx.google.com with UTF8SMTPS id 6a1803df08f44-6e20601fa45si85283096d6.401.2025.01.26.07.51.51
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 26 Jan 2025 07:51:51 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com designates 159.135.232.19 as permitted sender) client-ip=159.135.232.19;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notification-2.bybit.com header.s=mailo header.b=py5r2ABt;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=MZ8uVUug;
+       spf=pass (google.com: domain of bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com designates 159.135.232.19 as permitted sender) smtp.mailfrom="bounce+f67ce9.34a623e-azri.mokhzani=gmail.com@notification-2.bybit.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bybit.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=notification-2.bybit.com; q=dns/txt; s=mailo; t=1737906710; x=1737913910;
+ h=Content-Transfer-Encoding: Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=oZYpl0VET87Ph13F//o4A0k/cFnqqZrmcSZUzDrEULo=;
+ b=py5r2ABtITATg4iI0jtvQdg2e7pXk4wZb5GhrJzZX0Q+WRyyS4dIrAZpIK2+DlKNd1d9V14HjK0+nxPJbsJ0mSZz6LOxBsusxThLDiSlF1ljcckh/XzHv2HMrSgjYCEyvpL/ncKa7fhRLYHefyJL9VIlUMeVbZao39qUnOdbf5M=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1737906710; x=1737913910;
+ h=Content-Transfer-Encoding: Content-Type: Message-Id: To: To: From: From: Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=oZYpl0VET87Ph13F//o4A0k/cFnqqZrmcSZUzDrEULo=;
+ b=MZ8uVUugSRo5Y0QKMwqQE51ObU/9GS36RPM8Po8Y99Q7xesaScK9DWOoDz9lj1G0BQuTn87kvohHaITwMlBWhAkB0/PnKomDVBpqYHT6DH8CXAgpGLaqLu7HnknHxsGopX+OxmYXQrqyiFwz5tIKD+ZH1CSLoSsErRZcNG+hFak=
+X-Feedback-Id: notification@notification-2.bybit.com::5d37cfd357a5227338f31a5d:mailgun
+X-Mailgun-Sending-Ip: 159.135.232.19
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyIzZWU2MyIsImF6cmkubW9raHphbmlAZ21haWwuY29tIiwiMzRhNjIzZSJd
+Received: by 29fc103787ca with HTTP id 67965a16090f1e6c87143b1f; Sun, 26 Jan 2025
+ 15:51:50 GMT
+Sender: notification@notification-2.bybit.com
+Date: Sun, 26 Jan 2025 15:51:50 +0000
+Mime-Version: 1.0
+Subject: [Bybit][Bybit] P2P Sell Order: Please Release Coins
+From: Bybit <notification@notification-2.bybit.com>
+To: azri.mokhzani@gmail.com
+X-Mailgun-Track: true
+X-Mailgun-Variables: {"my-var":
+ "{\"trace-id\":\"0000000000000000e123b6a8b8892705\",\"template-id\":\"1700010\"}"}
+Message-Id: <20250126155150.be897b150f5af28e@notification-2.bybit.com>
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<style>
+  p{ margin:10px 0; padding:0; }=20
+  table{ border-collapse:collapse; }=20
+  h1,h2,h3,h4,h5,h6{
+    display:block; margin:0; padding:0;=20
+  }=20
+  img,a img{=20
+    border:0; height:auto;
+    outline:none;=20
+    text-decoration:none;=20
+  }=20
+  body,#bodyTable,#bodyCell{=20
+    height:100%;
+    margin:0;=20
+    padding:0;=20
+    width:100%;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", =
+Roboto, Ubuntu;
+  }=20
+  .mcnPreviewText{=20
+    display:none !important;
+  }=20
+  #outlook a{ padding:0; }=20
+  img{ -ms-interpolation-mode:bicubic; }=20
+  table{
+    mso-table-lspace:0pt;=20
+    mso-table-rspace:0pt;
+   =20
+  }=20
+  table th, table tr td{
+  =20
+  }
+  .ReadMsgBody{=20
+    width:100%;
+  }=20
+  .ExternalClass{ width:100%; }=20
+  p,a,li,td,blockquote{=20
+    mso-line-height-rule:exactly;
+  }=20
+  a[href^=3Dtel],a[href^=3Dsms]{=20
+    color:inherit;=20
+    cursor:default;=20
+    text-decoration:none;
+  }=20
+  p,a,li,td,body,table,blockquote{=20
+    -ms-text-size-adjust:100%;=20
+    -webkit-text-size-adjust:100%;
+  }=20
+  .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.Ext=
+ernalClass span,.ExternalClass font{=20
+    line-height:100%;=20
+  }=20
+  a[x-apple-data-detectors]{
+    color:inherit !important;=20
+    text-decoration:none !important;=20
+    font-size:inherit !important;=20
+    font-family:inherit !important;=20
+    font-weight:inherit !important;=20
+    line-height:inherit !important;=20
+  }=20
+  .templateContainer{
+    max-width:600px !important;
+  }=20
+  a.mcnButton{ display:block; }=20
+  .mcnImage,.mcnRetinaImage{=20
+    vertical-align:bottom;
+  }=20
+  .mcnTextContent{ word-break:break-word; }=20
+  .mcnTextContent img{ height:auto!important; }=20
+  .mcnDividerBlock{ table-layout:fixed !important; }=20
+
+  /* @tab Page @section Heading 1 @style heading 1 */=20
+  h1{=20
+    /*@editable*/color:#3a2b2b;
+    /*@editable*/font-family:Helvetica;=20
+    /*@editable*/font-size:40px;=20
+    /*@editable*/font-style:normal;
+    /*@editable*/font-weight:bold;=20
+    /*@editable*/line-height:150%;=20
+    /*@editable*/letter-spacing:normal;
+    /*@editable*/text-align:left;=20
+  }=20
+  /* @tab Page @section Heading 2 @style heading 2 */=20
+  h2{=20
+    /*@editable*/color:#222222;=20
+    /*@editable*/font-family:Helvetica;
+    /*@editable*/font-size:34px;=20
+    /*@editable*/font-style:normal;=20
+    /*@editable*/font-weight:bold;
+    /*@editable*/line-height:150%;=20
+    /*@editable*/letter-spacing:normal;=20
+    /*@editable*/text-align:left;
+  }=20
+  /* @tab Page @section Heading 3 @style heading 3 */=20
+  h3{=20
+    /*@editable*/color:#444444;
+    /*@editable*/font-family:Helvetica;=20
+    /*@editable*/font-size:22px;=20
+    /*@editable*/font-style:normal;
+    /*@editable*/font-weight:bold;=20
+    /*@editable*/line-height:150%;=20
+    /*@editable*/letter-spacing:normal;
+    /*@editable*/text-align:left;=20
+  }=20
+  /* @tab Page @section Heading 4 @style heading 4 */=20
+  h4{=20
+    /*@editable*/color:#949494;=20
+    /*@editable*/font-family:Georgia;
+    /*@editable*/font-size:20px;=20
+    /*@editable*/font-style:italic;=20
+    /*@editable*/font-weight:normal;
+    /*@editable*/line-height:125%;=20
+    /*@editable*/letter-spacing:normal;=20
+    /*@editable*/text-align:left;
+  }=20
+  /* @tab Header @section Header Container Style */=20
+  #templateHeader{=20
+  =20
+    /*@editable*/background-repeat:no-repeat;=20
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover;=20
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;
+  =20
+  }=20
+  /* @tab Header @section Header Interior Style */=20
+  .headerContainer{=20
+    /*@editable*/background-color:transparent;
+    /*@editable*/background-image:none;=20
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center;=20
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;=20
+    /*@editable*/padding-top:0;
+    /*@editable*/padding-bottom:0;=20
+  }=20
+  /* @tab Header @section Header Text */
+  .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{=20
+    /*@editable*/color:#757575;
+    /*@editable*/font-family:Helvetica;=20
+    /*@editable*/font-size:16px;=20
+    /*@editable*/line-height:150%;
+    /*@editable*/text-align:left;=20
+  }=20
+  /* @tab Header @section Header Link */
+  .headerContainer .mcnTextContent a,.headerContainer .mcnTextContent p a{
+    /*@editable*/color:#007C89;=20
+    /*@editable*/font-weight:normal;=20
+    /*@editable*/text-decoration:underline;
+  }=20
+  /* @tab Body @section Body Container Style */=20
+  #templateBody{=20
+    /*@editable*/
+    /*@editable*/background-image:none;=20
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center;=20
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;=20
+  }
+  /* @tab Body @section Body Interior Style */=20
+  .bodyContainer{=20
+    /*@editable*/background-color:transparent;=20
+    /*@editable*/background-image:none;
+    /*@editable*/background-repeat:no-repeat;=20
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover;=20
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;
+    /*@editable*/padding-top:0;=20
+    /*@editable*/padding-bottom:0;=20
+  }=20
+  /* @tab Body @section Body Text */=20
+  .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{=20
+    /*@editable*/color:#757575;=20
+    /*@editable*/font-family:Helvetica;=20
+    /*@editable*/font-size:16px;
+    /*@editable*/line-height:150%;=20
+    /*@editable*/text-align:left;=20
+  }=20
+  /* @tab Body @section Body Link */=20
+  .bodyContainer .mcnTextContent a,.bodyContainer .mcnTextContent p a{=20
+    /*@editable*/color:#007C89;=20
+    /*@editable*/font-weight:normal;
+    /*@editable*/text-decoration:underline;=20
+  }=20
+  /* @tab Footer @section Footer Style */=20
+  #templateFooter{=20
+    /*@editable*/
+    /*@editable*/background-image:none;
+    /*@editable*/background-repeat:no-repeat;=20
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover;=20
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;
+    /*@editable*/padding-bottom:20px;
+  }=20
+  /*=20
+  @tab Footer @section Footer Interior Style */=20
+  .footerContainer{=20
+    /*@editable*/background-color:transparent;
+    /*@editable*/background-image:none;=20
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center;=20
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0;=20
+    /*@editable*/border-bottom:0;=20
+    /*@editable*/padding-top:0;
+    /*@editable*/padding-bottom:0;=20
+  }=20
+  /* @tab Footer @section Footer Text */
+  .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{=20
+    /*@editable*/color:#FFFFFF;
+    /*@editable*/font-family:Helvetica;=20
+    /*@editable*/font-size:12px;=20
+    /*@editable*/line-height:150%;
+    /*@editable*/text-align:center;=20
+  }
+  /* @tab Footer @section Footer Link */
+  .footerContainer .mcnTextContent a,.footerContainer .mcnTextContent p a{
+    /*@editable*/color:#FFFFFF;=20
+    /*@editable*/font-weight:normal;=20
+    /*@editable*/text-decoration:underline;
+  }=20
+  @media only screen and (min-width:768px){=20
+    .templateContainer{ width:600px !important; }=20
+  }=20
+  @media only screen and (max-width: 480px){=20
+    body,table,td,p,a,li,blockquote{
+      -webkit-text-size-adjust:none !important;=20
+    }=20
+  }
+  @media only screen and (max-width: 480px){=20
+    body{ width:100% !important; min-width:100% !important; }=20
+  }=20
+  @media only screen and (max-width: 480px){=20
+    .mcnRetinaImage{ max-width:100% !important;}=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCap=
+tionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.m=
+cnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptio=
+nRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaption=
+RightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageC=
+ardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnIma=
+geCardRightImageContentContainer{
+      max-width:100% !important;=20
+      width:100% !important;=20
+    }=20
+  }=20
+  @media only screen and (max-width: 480px){=20
+    .mcnBoxedTextContentContainer{=20
+      min-width:100% !important;
+    }
+  }=20
+  @media only screen and (max-width: 480px){=20
+    .mcnImageGroupContent{ padding:9px !important; }=20
+  }=20
+  @media only screen and (max-width: 480px){ .mcnCaptionLeftContentOuter
+    .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{=20
+      padding-top:9px !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCa=
+ptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-ch=
+ild .mcnTextContent{=20
+      padding-top:18px !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnImageCardBottomImageContent{ padding-bottom:9px !important; }
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnImageGroupBlockInner{ padding-top:0 !important; padding-bottom:0 !i=
+mportant; }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnImageGroupBlockOuter{=20
+      padding-top:9px !important;=20
+      padding-bottom:9px !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnTextContent,.mcnBoxedTextContentColumn{=20
+      padding-right:18px !important;=20
+      padding-left:18px !important;=20
+    }
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{=20
+      padding-right:18px !important;=20
+      padding-bottom:0 !important;=20
+      padding-left:18px !important;
+    }=20
+  }=20
+  @media only screen and (max-width: 480px){=20
+    .mcpreview-image-uploader{
+      display:none !important;=20
+      width:100% !important;=20
+    }
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Heading 1 @tip Make the first-level head=
+ings larger in size for better readability on small screens. */=20
+    h1{=20
+      /*@editable*/font-size:30px !important;=20
+      /*@editable*/line-height:125% !important;=20
+    }=20
+  }=20
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Heading 2 @tip Make the second-level hea=
+dings larger in size for better readability on small screens. */=20
+    h2{=20
+      /*@editable*/font-size:26px !important;=20
+      /*@editable*/line-height:125% !important;=20
+    }
+  }=20
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Heading 3 @tip Make the third-level head=
+ings larger in size for better readability on small screens. */=20
+    h3{=20
+      /*@editable*/font-size:20px !important;=20
+      /*@editable*/line-height:150% !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Heading 4 @tip Make the fourth-level hea=
+dings larger in size for better readability on small screens. */=20
+    h4{=20
+      /*@editable*/font-size:18px !important;=20
+      /*@editable*/line-height:150% !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Boxed Text @tip Make the boxed text larg=
+er in size for better readability on small screens. We recommend a font siz=
+e of at least 16px. */=20
+    .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentConta=
+iner .mcnTextContent p{=20
+      /*@editable*/font-size:14px !important;=20
+      /*@editable*/line-height:150% !important;=20
+    }
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Header Text @tip Make the header text la=
+rger in size for better readability on small screens.*/=20
+    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      /*@editable*/font-size:16px !important;=20
+      /*@editable*/line-height:150% !important;
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Body Text @tip Make the body text larger=
+ in size for better readability on small screens. We recommend a font size =
+of at least 16px. */=20
+    .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{=20
+      /*@editable*/font-size:16px !important;=20
+      /*@editable*/line-height:150% !important;=20
+    }=20
+  }=20
+
+  @media only screen and (max-width: 480px){=20
+    /* @tab Mobile Styles @section Footer Text @tip Make the footer content=
+ text larger in size for better readability on small screens. */=20
+    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{=20
+      /*@editable*/font-size:14px !important;=20
+      /*@editable*/line-height:150% !important;=20
+    }=20
+  }
+</style>
+<center>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" he=
+ight=3D"100%" width=3D"100%" id=3D"bodyTable">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"bodyCell"><!-- BEGIN TEMPLATE // =
+-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"templateHeader" data-template-con=
+tainer=3D""><!-- [if (gte mso 9)|(IE)]>
+                  <table align=3D"center" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                  <tr>
+                  <td align=3D"center" valign=3D"top" width=3D"600" style=
+=3D"width:600px;">
+                  <![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"max-width: 640px; margin: 0px auto; background: #fff;" width=3D"100%=
+" class=3D"templateContainer">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"headerContainer">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"mcnImageBlock" style=3D"min-width: 100%;">
+<tbody class=3D"mcnImageBlockOuter">
+<tr>
+<td valign=3D"top" style=3D"padding: 0px;" class=3D"mcnImageBlockInner">
+<table align=3D"left" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"mcnImageContentContainer" style=3D"min-width: 100%;">
+<tbody>
+<tr>
+<td class=3D"mcnImageContent" valign=3D"top" style=3D"text-align: center; p=
+adding: 20px 0px;"><img align=3D"center" alt=3D"" src=3D"https://prod-infra=
+-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/f354a305-ccb3-4b43-bb5c-=
+39b08c0ac9707a1f37228082bb6ce81088e3980e6213.png" width=3D"221" style=3D"wi=
+dth: 221px; border-radius: 0%;" class=3D"mcnImage" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"templateBody" data-template-conta=
+iner=3D""><!-- [if (gte mso 9)|(IE)]>
+                  <table align=3D"center" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                  <tr>
+                  <td align=3D"center" valign=3D"top" width=3D"600" style=
+=3D"width:600px;">
+                  <![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"templateContainer">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bodyContainer">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"mcnTextBlock" style=3D"min-width: 100%;">
+<tbody class=3D"mcnTextBlockOuter">
+<tr>
+<td valign=3D"top" class=3D"mcnTextBlockInner" style=3D"padding-top: 0px;">=
+<!-- [if mso]>
+                                  <table align=3D"left" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"width:100%;">
+                                  <tr>
+                                  <![endif]--> <!-- [if mso]>
+                                  <td valign=3D"top" width=3D"600" style=3D=
+"width:600px;">
+                                  <![endif]-->
+<table align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" class=3D"mcnTextContentContainer">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding: 0px 0px 0px;">
+<div id=3D"contentContainer" style=3D"box-sizing: border-box; text-align: l=
+eft; max-width: 640px; width: 100%; margin: auto; background: #fff; padding=
+: 20px 40px; line-height: 200%; font-size: 16px;"><p>Dear Trader,</p>
+<p>You have submitted a P2P Sell Order, and your buyer has indicated that p=
+ayment has already been made. Please confirm receipt of the full payment be=
+fore heading to the P2P order page to release coins. If you have any concer=
+ns, you can click on the "Chat" icon to communicate with the buyer in real-=
+time.</p>
+<p>Your order details are as follows:<br />- Order ID: ******4944<br />- Or=
+der Creation Time: 2025-01-26 15:48:20 (UTC+0)<br />- Fiat Amount: 36.615 M=
+YR<br />- Crypto Quantity: 8.4955 USDT</p>
+<p>To ensure a smooth transaction and avoid having your assets or account b=
+eing frozen, please take note of the following:<br />1. Before releasing th=
+e tokens, carefully verify the buyer's payment to ensure the correct amount=
+=2E Otherwise, you may incur asset loss=
+es.<br />2. Thoroughly verify the buye=
+r's information to prevent fraud and minimize account risks.<br />3. Engage=
+ in active and polite communication with the buyer, showing mutual respect.=
+ It is prohibited to use abusive language or attack the other party.</p>
+<p>If you have any doubts about the buyer's identity or the payment receive=
+d, do not release the coins and promptly engage in a discussion with the bu=
+yer. You can refund the buyer and request them to cancel the order. Alterna=
+tively, you can choose to file a dispute and seek assistance from our P2P c=
+ustomer service representative. For detailed steps on filing a dispute for =
+your P2P order, please refer to "<a href=3D"http://email.notification-2.byb=
+it.com/c/eJxcjzGPozAUhH-N6YyenzGGwkXuTui6i3TVls_4sVgLGDlOUPLrV0mz2p1uNPNpNM=
+HphlrUXLFTVtseWqugmh017UTBaE8cFEy6NboJwGR4pLbvQxUdAhpQ2CpjlIHac9dbrwxMhibsW=
+DSwpRKnOFKJaZNY-7uPpR7TWi1uLmW_CH0SOAgcjuP4SgUOvAkcZl52OfJWOAscLgIHyiWOCwsc=
+_qZDliT_X_0ai6RNnvadaZFTyvItXbM841n-y4Fztd7ljbIT9pdALJlGljEIxNc4wg-xQu1b6nz=
+X9WjBPIv4-0nyui9UvsHKAoCCp7d_quzokWO9po_5QVsUDbyvFJfX4ZvDzwAAAP__4yxqwA">Ho=
+w to Submit a Dispute for Your P2P Order</a>".</p>
+<p>If you discover any discrepancies in the received payment amount after r=
+eleasing the coins, please immediately contact our Customer Service via Liv=
+e Chat and provide the order ID and valid evidence. We will do our best to =
+assist you in intercepting asset withdrawals, but we cannot guarantee the r=
+ecovery of the assets.</p>
+<p><br />If you have any further inquiries, please consult our "<a href=3D"=
+http://email.notification-2.bybit.com/c/eJxckM2umzAQhZ9m2IHGY4xh4QUJQl2mave=
+RbQawyl-Jkyh5-opsqntnN_rOJx2dzsjcFiQ5YSO01BUWWmAyGsxV5X2V555JaC9l17PXfW5lrz=
+xSlQRDSAoFFUIpoTBzXFbaCYW9sj2VDDkuawx98DaGdUkpcy8XYubXOZnMGON2A1kDtUDt8_n8T=
+4FaXoDakact9bxE3oHaD_5xvv66u7ONPKx74BvIdrLLcLcDg2wOqwgdyMYiqgERUZ7i3zHW9Qmo=
+uN3d73ULHmRzocu1rX8m8yt92N2APgFR3K3nNHRA9ClG-O1YkHSFLV1ZVqRRHUE6HybP22TjF1l=
+oRBR4_LpJdmPfe8jm9c_4tkuAHIfZhukzxsPQvwAAAP__Wbxx4w">P2P Frequently Asked Q=
+uestions</a>". Thank you for your support!</p>
+<p>Regards,<br />The Bybit Team</p></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if mso]>
+                                  </td>
+                                  <![endif]--> <!-- [if mso]>
+                                  </tr>
+                                  </table>
+                                  <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" id=3D"templateFooter" data-template-con=
+tainer=3D""><!-- [if (gte mso 9)|(IE)]>
+                  <table align=3D"center" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                  <tr>
+                  <td align=3D"center" valign=3D"top" width=3D"600" style=
+=3D"width:600px;">
+                  <![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" class=3D"templateContainer">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"footerContainer">
+<table border=3D"0" style=3D"max-width: 640px; margin: 0px auto; background=
+: #fff;" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"present=
+ation">
+<tbody>
+<tr>
+<td style=3D"background-color: transparent; padding: 0px 24px 20px 24px; bo=
+rder-top: 1px solid #ddd !important;" class=3D"mceBlockContainer" valign=3D=
+"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"background-color: transparent;" role=3D"presentation" data-block-id=3D=
+"64">
+<tbody></tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 12px 0 0px 0;" class=3D"mceBlockContainer" align=3D"c=
+enter" valign=3D"top"><img data-block-id=3D"126" width=3D"95" height=3D"aut=
+o" style=3D"height: auto; max-width: 100%; display: block;" alt=3D"" src=3D=
+"https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/6a63e=
+23a-b9b0-4637-8221-4d94b530acea3836c84f172151f52d2d6410443e3768.png" role=
+=3D"presentation" class=3D"imageDropZone" /></td>
+</tr>
+<tr>
+<td style=3D"padding: 32px 24px 0 24px;" class=3D"mceBlockContainer" valign=
+=3D"top">
+<div data-block-id=3D"27" class=3D"mceText" id=3D"dataBlockId-27" style=3D"=
+width: 100%;">
+<p style=3D"text-align: center; margin: 0px;" class=3D"last-child">Never mi=
+ss a beat on our latest product updates and events.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 16px 0px 0 0;" class=3D"mceLayoutContainer" valign=3D=
+"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" data-block-id=3D"7">
+<tbody>
+<tr class=3D"mceRow">
+<td style=3D"background-position: center; background-repeat: no-repeat; bac=
+kground-size: cover; padding-top: 0px; padding-bottom: 0px;" valign=3D"top"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td style=3D"margin-bottom: 0px;" class=3D"mceColumn" data-block-id=3D"-11"=
+ valign=3D"top" colspan=3D"12" width=3D"100%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"" role=3D"=
+presentation" class=3D"mceClusterLayout" data-block-id=3D"-10">
+<tbody>
+<tr>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 8px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxcjs1uwyAQhJ8GbrGWBQw-cGha5dpHqBa81Kv6=
+J3JRquTpK-fWzm003yfNmKyjHi1rTibYMEAfDOgpMfPgsx1iyZhdrdWVCOwzm9EU54KWhIAeDPb=
+Ge-OhyxyHkI2H6qliZOVg3ZpUKdRkW0_Y5XuW1pVt0XOaWrt-K_ui8KLw0n6kNd6PTeHlfHAf77=
+VKEZr1cj_daE8qnBVi26nwSUaF-LQR_oUN2txTzDEOGMAfIL4eJi_Xmdof2QQAMHD08Kb3RI9du=
+mX7mh60inLwuZDMz8e3hL8BAAD__0S6VeQ" style=3D"display: block;" target=3D"_bl=
+ank" data-block-id=3D"-5" rel=3D"noopener"> <img height=3D"auto" style=3D"b=
+order: 0; width: 40px; height: auto; max-width: 100%; display: block;" alt=
+=3D"Twitter icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southea=
+st-1.amazonaws.com/966e7680-8f83-492b-b02f-a0360dea2c5f1eaba4ae14c4e9b5a88d=
+2df88eb00aeb.png" class=3D"" /> </a></td>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 8px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxcjsFuqzAURL_G7IKuBxubhRfvteI3qmuwk6ti=
+iIiVKPn6iuza2Y10zmjm0Bnu0aUmBe06N1DvNDWXkOPsDBw89XME5mgGqycYDybtJ9NIAMGSRq-=
+t1ZbamPzgoraULWf4pAytW5UsE1fZ1hPa-IxS22krzRIutV5vqvunMCqMj8ejlfVW-bxzOQiF8U=
+1_bTnLJLwojE15nu68B-X-K6DuPKWTzAp4z4D-JGl0sWcfvR_gyB4gPg4zlevC9ZesHRFpOrr7b=
+PbAr13asn1fXryKMnQuLMv7-j3gJwAA__99I1fU" style=3D"display: block;" target=
+=3D"_blank" data-block-id=3D"-7" rel=3D"noopener"> <img height=3D"auto" sty=
+le=3D"border: 0; width: 40px; height: auto; max-width: 100%; display: block=
+;" alt=3D"Instagram icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap=
+-southeast-1.amazonaws.com/873a047d-4d6c-41fa-b42c-a71aa1afc703b262cc27ee8d=
+dcaa8704b6725755b4a7.png" class=3D"" /> </a></td>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 8px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxcjstuxCAMRb8GdhMZAzEsWPSh-Y0KEuhYeTBK=
+0UQzX18lu9Y72-dc3TFoE3vUWeagSJOHnhTIW_DFOgVU7GgsZU-EypRMIzptUHsrOSCgBYW9slZ=
+Z6FJ2npKyUGws6LIwsNbGhYfYuK4X7NIzceuGusg53Fq7_wj9JvAq8Lrve9d4anU63sfNwEl_1V=
+J44DjL5Xl5xC0IeheIbYtDvvAoEM8MhH-TFerUR5ec80hgDxA_DjMv9zm2P7IiAFBw7PQptxBfG=
+3dLnW6vuLIw8L1Ens_ej4C_AQAA__-_JVYp" style=3D"display: block;" target=3D"_b=
+lank" data-block-id=3D"-6" rel=3D"noopener"> <img width=3D"40" height=3D"au=
+to" style=3D"border: 0; height: auto; max-width: 100%; display: block;" alt=
+=3D"Email icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southeast=
+-1.amazonaws.com/9338e802-8753-4cab-ba90-020942731d57d541e47624222f95a15135=
+f5ec2dde01.png" class=3D"" /> </a></td>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 8px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxcjstuqzAYhJ_G3oF-j_Ft4cXJqXgP25hilUtE=
+nSDy9BXZtbMbzfdJM3jZBQ2ZefbCSONIG0F88sm6UY_WOTl0cnBWmg7CaaUGJ5N0ihcPgiIBLZQ=
+SitqYrTNRKBpVGGEz62jdahlLCrVsa4M2nrHUNm0Ln_1U6_2byX8MPUN_HEd7bo_6iPnaGfrE0N=
+8uni9n8wy7Z-bGgLqHlJsyMOAtg_4kC8iog43WOhhSF4j_l5mX-xzqL1kYIhJ0dfPBdx9ee2mX7=
+Wt6hbWwjj6XUOb34afHTwAAAP__BS9TbA" style=3D"display: block;" target=3D"_bla=
+nk" data-block-id=3D"-8" rel=3D"noopener"> <img width=3D"40" height=3D"auto=
+" style=3D"border: 0; height: auto; max-width: 100%; display: block;" alt=
+=3D"YouTube icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southea=
+st-1.amazonaws.com/97fb4364-df15-4b61-8f18-685d002eb7ed06944bef98b56ea368fa=
+34b9ef456e90.png" class=3D"" /> </a></td>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 8px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxczkFugzAQheHT2Lug8TPGZuFF0yr3mAHTWAEc=
+USsoOX1Fdu3sRvo_6Y3RttzBJp2i8db31HlD-hpHti0C-wlJpPUjgrWmZ-ngxY2GdY4gODLojHP=
+GUSMp9F6Mo8nxhJBUS2upecoD11zWExp5Sq7NUBY9x2ut9x9lPxQuCpd935uJhySl3I5A4XI-Yr=
+08Tw_eovJnBdSNh3TKowLeEvTvkoGVjoOE0MOTO0J8HjIt95nrH2w8ERk6fv-lt8ivLTdLuV1fv=
+GbV0vfCeX6vfUT8BgAA___qkVN_" style=3D"display: block;" target=3D"_blank" da=
+ta-block-id=3D"-9" rel=3D"noopener"> <img width=3D"40" height=3D"auto" styl=
+e=3D"border: 0; height: auto; max-width: 100%; display: block;" alt=3D"Face=
+book icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southeast-1.am=
+azonaws.com/602922a7-31ab-4a90-84e9-aa375b154cf6ac1d1a7ed1fb224e6d9abe55aea=
+6f3d5.png" class=3D"" /> </a></td>
+<td style=3D"padding-left: 0px; padding-top: 0; padding-right: 0px;" data-b=
+reakpoint=3D"203" valign=3D"top" class=3D"mobileClass-203"><a href=3D"http:=
+//email.notification-2.bybit.com/c/eJxczk1ugzAQhuHT2DvQzPgPL7xo2nKPMdjBKoaI=
+WJGS01dk185upPeRvjkozZZUkimgU86DdQhyCTqzyeyTj95Oc2INOivttEeH2oCVJRCQASSLxqC=
+BPqbBu4gGsuFMQxIatr2VXCZuZd866uMzltZPe5VrWFq73YX6EDQKGltfk6Dxcgbf23Ut90XWZ_=
+fgIwh3EUTt4Cl1ZRZEb0Tw7xKSipaHOAyeHJgzpM9Tpnpbuf3B6AAA4fzdlzwCv47S1_1nefFWh=
+IZr5bK-hz4C_QYAAP__sFhROQ" style=3D"display: block;" target=3D"_blank" data=
+-block-id=3D"-6" rel=3D"noopener"> <img width=3D"40" height=3D"auto" style=
+=3D"border: 0; height: auto; max-width: 100%; display: block;" alt=3D"Email=
+ icon" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazon=
+aws.com/3f19498d-8d85-421d-856c-9541c7b506e6b7134be5734d1368439928f9ceb4050=
+3.png" class=3D"" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 32px 24px 16px 24px;" class=3D"mceBlockContainer" val=
+ign=3D"top">
+<div data-block-id=3D"27" class=3D"mceText" id=3D"dataBlockId-27" style=3D"=
+width: 100%;">
+<p style=3D"text-align: center;" class=3D"last-child">Trade on the go with =
+Bybit</p>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 0 0px 0;" class=3D"mceLayoutContainer" valign=3D"=
+top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" data-block-id=3D"127" id=3D"section_86a8=
+f86d89835859ad27f46ca345f2fa" class=3D"mceLayout">
+<tbody>
+<tr class=3D"mceRow">
+<td style=3D"background-position: center; background-repeat: no-repeat; bac=
+kground-size: cover;" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td class=3D"mceColumn" data-block-id=3D"-18" valign=3D"top" colspan=3D"12"=
+ width=3D"100%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" data-block-id=3D"-15">
+<tbody>
+<tr class=3D"mceRow">
+<td style=3D"background-position: center; background-repeat: no-repeat; bac=
+kground-size: cover;" valign=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td class=3D"mceColumn" data-block-id=3D"-21" valign=3D"top" colspan=3D"12"=
+ width=3D"100%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" data-block-id=3D"132">
+<tbody>
+<tr class=3D"mceRow">
+<td style=3D"background-position: center; background-repeat: no-repeat; bac=
+kground-size: cover; padding-top: 0px; padding-bottom: 0px;" valign=3D"top"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"table-layout: fixed;" role=3D"presentation"><colgroup> <col span=3D"1"=
+ width=3D"8.333333333333332%" /> <col span=3D"1" width=3D"8.333333333333332=
+%" /> <col span=3D"1" width=3D"8.333333333333332%" /> <col span=3D"1" width=
+=3D"8.333333333333332%" /> <col span=3D"1" width=3D"8.333333333333332%" /> =
+<col span=3D"1" width=3D"8.333333333333332%" /> <col span=3D"1" width=3D"8.=
+333333333333332%" /> <col span=3D"1" width=3D"8.333333333333332%" /> <col s=
+pan=3D"1" width=3D"8.333333333333332%" /> <col span=3D"1" width=3D"8.333333=
+333333332%" /> <col span=3D"1" width=3D"8.333333333333332%" /> <col span=3D=
+"1" width=3D"8.333333333333332%" /> </colgroup>
+<tbody>
+<tr>
+<td style=3D"padding-top: 0; padding-bottom: 0;" class=3D"mceColumn" data-b=
+lock-id=3D"129" valign=3D"top" colspan=3D"6" width=3D"50%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td style=3D"padding: 0 8px 0 0px;" class=3D"mceBlockContainer" align=3D"ri=
+ght" valign=3D"top"><a href=3D"http://email.notification-2.bybit.com/c/eJxc=
+j8GO6yAMRb-G7BIZE8BZsHhvRv0PE0iLJgmIokrt14_orGa8s32Pjm5wamaDKg7RSavsAsZKGG4=
+OWHkiGyUY8lZprdAQexVsJAjRDMkhoAaJRmotNUw-0mK91LBp3pCimOHMLW1p5ZbyOeLknz61ac=
+3HsLtba-Uu1D-BF4EXLuU-cSl77O-fg8DLGxjX-iwtj61ySOd1LDu3LdeeSkHORLiYhWA4nuODq=
+xP2v0Bsldc4piAQ3xKEPxMlKm-YPNGCFnQP4kcn49ENv2BpAUBC3-3nUB2_apqO_HV78ZnEDNeD=
+0_4u9nD4HQAA___422Eb" style=3D"display: block;" target=3D"_blank" data-bloc=
+k-id=3D"74" rel=3D"noopener"> <img width=3D"142" height=3D"auto" style=3D"b=
+order: 0; height: auto; max-width: 100%; display: block;" alt=3D"App  Store=
+" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.c=
+om/c4a80c80-9f85-4efa-96d1-991fe69e9001b04ba90a0ec2841cdeb1ae9741ffd98a.png=
+" class=3D"" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style=3D"padding-top: 0; padding-bottom: 0;" class=3D"mceColumn" data-b=
+lock-id=3D"131" valign=3D"top" colspan=3D"6" width=3D"50%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td style=3D"padding: 0 0 0 8px;" class=3D"mceBlockContainer" align=3D"left=
+" valign=3D"top"><a href=3D"http://email.notification-2.bybit.com/c/eJxcj8F=
+uhDAMRL_G3BbZDkngkEPbFf9hICxRA4kgWon9-opVL61v1syb0UxONWJY-co7ssp2aCxhtbhGq1=
+nzzI2QmdkaMspSgx12ahTsxio4RtZIbEhr0lgPvu3sQBpnLTO3HhrcUglzGKWEtN24Hs4hlHpMa=
+xXdUko-QH0A98B9jnLWj5Qe0V86cH-UtHvgXnI-gPvJFwnxANWHCdR9TOtvmuQMbJYI6u63aj1v=
+T9kd2E9gLruM_hYmYH4XMf47T6wGI-3Qth1b1JeRvy7SrzlK-QOTRUTC67f3anfy2kO9pu_lJVu=
+ABh-rhPge93T8EwAA___Y9WHN" style=3D"display: block;" target=3D"_blank" data=
+-block-id=3D"75" rel=3D"noopener"> <img width=3D"164" height=3D"auto" style=
+=3D"border: 0; height: auto; max-width: 100%; display: block;" alt=3D"Googl=
+e Play" src=3D"https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazo=
+naws.com/494cdd37-a457-4514-93f9-1d9020cabddecdd67f1e6a0ff92a160c9d46514a35=
+0b.png" class=3D"" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 32px 0px 0 0;" class=3D"mceBlockContainer" align=3D"c=
+enter" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" data-block-id=3D"76">
+<tbody>
+<tr class=3D"mceStandardButton">
+<td style=3D"border-radius: 0; text-align: center;" class=3D"mceButton" val=
+ign=3D"top"><a href=3D"http://email.notification-2.bybit.com/c/eJxcjs1uwyAQ=
+hJ8GbraWBYx94NAf-T0WvNSoBkcOjZQ8feVcqmZuI33faBavDQ2oWbJXTrsJBqdArn7RkR1Ht5h=
+IFK1xySBMgCkx6ASDzB4BLSgclLXKQh94nFxQFpKlhCMLA3VvOeVILe-1wz7cQ2593Ivc_Nra5S=
+r0m8BZ4Ey17j81cuHarn-cwJmrwFmWe3ejwwv3LhDbQZG7vAjE5wDCS1ihDgONYRwndGBPED9Ok=
+8tlo_ZPVg4AFJzdfcrD0-PIfdm_1wfVLAx8Fcrb8_TN428AAAD__wCHVlM" target=3D"_blan=
+k" style=3D"border-radius: 0; color: #000000; display: block; font-size: 12=
+px; font-weight: normal; font-style: normal; padding: 0px 28px; text-decora=
+tion: underline; min-width: 30px; text-align: center; direction: ltr; lette=
+r-spacing: 0px;" rel=3D"noopener"> Latest Promotions </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 0 0px 0 0;" class=3D"mceBlockContainer" align=3D"cent=
+er" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" data-block-id=3D"77">
+<tbody>
+<tr class=3D"mceStandardButton">
+<td style=3D"border-radius: 0; text-align: center;" class=3D"mceButton" val=
+ign=3D"top"><a href=3D"http://email.notification-2.bybit.com/c/eJxcj0FugzAQ=
+RU9jdqCZMcZm4UXbiHuMYRysgomoG5ScviKbqp3d6L_3pT953XJHWirxaLXtobMI1ewnZMSpxR5=
+CF9ro3BjR9laLCW5qo6mSJyADSB0agwaaIK63AQ1Ew5GcqBbyVlJMI5e05Zqa8AipNOO2VoufS7=
+l9Kf2maFA0HMfxmyoaJCsaZllu9Si5yH5Selg4X7_5KkpfJFfro77z7pV9V0Rl51HqNCmiVynBv=
+xMkHTp2wbmeLJgTpI_TlPW2cPkjowUAhPO3l2r3_NxTs26f85NzUi1cV07La8jd008AAAD__7tO=
+W_w" target=3D"_blank" style=3D"color: #000000; display: block; font-size: =
+12px; font-weight: normal; font-style: normal; padding: 12px 28px; text-dec=
+oration: underline; min-width: 30px; text-align: center; direction: ltr; le=
+tter-spacing: 0px;" rel=3D"noopener"> Help Center </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 0px 0 0;" class=3D"mceBlockContainer" align=3D"ce=
+nter" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" data-block-id=3D"77">
+<tbody>
+<tr class=3D"mceStandardButton">
+<td style=3D"border-radius: 0; text-align: center;" class=3D"mceButton" val=
+ign=3D"top"><a href=3D"&lt;%asm_group_unsubscribe_raw_url%&gt;" target=3D"_=
+blank" style=3D"color: #000000; display: none; font-size: 12px; font-weight=
+: normal; height: 0px; overflow: hidden; font-style: normal; padding: 0px 2=
+8px; text-decoration: underline; min-width: 30px; text-align: center; direc=
+tion: ltr; letter-spacing: 0px;" rel=3D"noopener"> Unsubscribe </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 20px 8px;" class=3D"mceLayoutContainer" valign=3D"top=
+">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" data-block-id=3D"11" id=3D"section_f1849=
+ed0ac3d950d92480254966870e8" class=3D"mceFooterSection">
+<tbody>
+<tr class=3D"mceRow">
+<td style=3D"background-position: center; background-repeat: no-repeat; bac=
+kground-size: cover; padding-top: 0px; padding-bottom: 0px;" valign=3D"top"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td style=3D"padding-top: 0; padding-bottom: 0; margin-bottom: 0px;" class=
+=3D"mceColumn" data-block-id=3D"-3" valign=3D"top" colspan=3D"12" width=3D"=
+100%">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 16px 0px 10px;" class=3D"mceBlockContainer" align=
+=3D"center" valign=3D"top">
+<div data-block-id=3D"9" class=3D"mceText" id=3D"dataBlockId-9" style=3D"di=
+splay: inline-block; width: 100%;">
+<p style=3D"text-align: center; margin: 0px;" class=3D"last-child"><span st=
+yle=3D"color: #adb1b8;"> <span style=3D"font-size: 12px;"> Copyright @2018 =
+- 2025 Bybit. All rights reserved. </span> </span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!-- // END TEMPLATE --></td>
+</tr>
+</tbody>
+</table>
+</center><img width=3D"1" height=3D"1" alt=3D"" src=3D"http://email.notific=
+ation-2.bybit.com/o/eJxczkFu7CAQBNDTwM5W09A0LFj8n1ykwZBBGezIQiPNnD5ydkntSqo=
+n1ZasE4-26poMW47g2YC-JWBosZSA1pdGMWzgXCyRAKnEwl73hIAEBr0hMgRrriFyNgSNpGGoys=
+F-zN56kdmPfcE1P3OfazmGHs_lIWdS_F8hzlNKXfqmEJX9pxDhT6pBm72EHEJEBrqG-HbJOr7uM=
+n9hwwBg4Or8rs8kr7Ov4_i8vWTvysHHkH7_OfFI-B0AAP__vAZFOQ">

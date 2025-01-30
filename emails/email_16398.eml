@@ -1,0 +1,2175 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp2765918dye;
+        Mon, 27 Jan 2025 18:46:17 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFtOtv7rIs/rW4ylkBbcXS4ZxHTy/IlL4UBXmQT6sHXbk8sWu3NBBOmeuhNOVw7p4Q6hMKz
+X-Received: by 2002:a05:620a:1902:b0:7b1:51df:117f with SMTP id af79cd13be357-7be6325c411mr7459876085a.56.1738032377019;
+        Mon, 27 Jan 2025 18:46:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738032377; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Uo7MnZP5PBXmgg0VJ1HnkkNou5j4EaVIzj5WVBXbEJoWvAULxO74LrpwEK1bd52T0o
+         nrYZtBuCqnue65MJVIQnfTOFkl9wqd4I4wB9NMCy33XIyWVgiSkbdviYWjQf/m/vF6sS
+         8Rt+lWJOfvhCCQB+2lJRcYyhnDRDkeoLZtd2h4N6uETvDesK62ynWPSUHHDpmeQdvDPv
+         ukuEAQ+MT2mfY+PhRiL4Q/9pm+3fpJvb5vjqVLSLQU8NvsWLURegNqiEIfFvLb28uO2B
+         cH95JO/55ovj8i+Edmrggf90Kwjx68sVqxh1ieodhDhNA6GCb1Lo1kT0I7j2PnbUat7f
+         kHcg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe:date:subject:from:message-id:mime-version
+         :list-unsubscribe-post:feedback-id:dkim-signature:dkim-signature;
+        bh=5KbnZLYi3HOGAYGSat5cWkWfaAi+dA4J9jeCjJtzTLs=;
+        fh=e8nKUajEkN79o8ChzJkuiTFNmBXxctpy35JVZ5gAbkE=;
+        b=Mn6F4HbvKQje1gqA64LbwgC3hMfQ/gZMxiiZDzQv0N2lVk0QnZFC3r9Ti16SXG4rLS
+         70zXmDLfyLb7ztt42xFlkIeiy4B3Qvr2EBSeFA1OI3a/IWZKyOneh6tVoq+Rq0eDFYFT
+         +FZMB+EyKQYniYgSt10Io5+O/Qd7kIvjHkrKVqyqvScApr1GnCPAnYeZA2Kpd6WSHuCi
+         6kXLf3zGYXWG5f1oxWQ0DA0BED38X3xs2MrlELq+QGJK1G0KryYiasxSinfnl5QFUcq1
+         W2zit1MiLwE/SWWfVm+ec5ArlTcah2fcJC+w517zhCzepQQP1+kfENgtx9ORGBSk5QkS
+         I+IQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@search.jobstreet.com header.s=t header.b=qfz3a4bI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YdskPbNX;
+       spf=pass (google.com: domain of bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com designates 149.72.138.23 as permitted sender) smtp.mailfrom="bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jobstreet.com
+Return-Path: <bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com>
+Received: from o23.sgrid.jobstreet.com (o23.sgrid.jobstreet.com. [149.72.138.23])
+        by mx.google.com with ESMTPS id af79cd13be357-7be9aee13adsi1108597885a.285.2025.01.27.18.46.16
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Jan 2025 18:46:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com designates 149.72.138.23 as permitted sender) client-ip=149.72.138.23;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@search.jobstreet.com header.s=t header.b=qfz3a4bI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YdskPbNX;
+       spf=pass (google.com: domain of bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com designates 149.72.138.23 as permitted sender) smtp.mailfrom="bounces+23398672-238d-azri.mokhzani=gmail.com@noti.search.jobstreet.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jobstreet.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=search.jobstreet.com;
+	h=list-unsubscribe-post:mime-version:from:subject:list-unsubscribe:
+	x-feedback-id:to:content-type:cc:content-type:from:subject:to;
+	s=t; bh=5KbnZLYi3HOGAYGSat5cWkWfaAi+dA4J9jeCjJtzTLs=;
+	b=qfz3a4bIPEFV0HagBhEZzY/F0mDmIi0INSv9OTnAgOtc1O//7FFPwoO4s44BV+sGQvkW
+	4xOZ6QVdTz/N5EYYF6gGjSO/wwujCnCycv0ju0zlFvkxTaWpiYRtkXR/HEYEpwq9Wy02Tq
+	Bbon73ZW5clGiv2FNjdSb3JI62GOu5W5SJ/fTtiDBEVUStxA2iLsqFC+fbD9fUxymQE6hE
+	2Joqhrk8K7V/orY6hJIdQ44SCf7ri08A2XIK0MFJx1VdjOfvnIlYHzyFFqJ1oYbzFu5jJi
+	v80yB+onnXmvtkkCuJhOzjv8NhDfQH5IDGNvilJh0R1qYKuyFHb3TXYRkVS2KcfA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=list-unsubscribe-post:mime-version:from:subject:list-unsubscribe:
+	x-feedback-id:to:content-type:cc:content-type:from:subject:to;
+	s=smtpapi; bh=5KbnZLYi3HOGAYGSat5cWkWfaAi+dA4J9jeCjJtzTLs=;
+	b=YdskPbNXW0vMyKGOY9FKdh66xbJXmkY58zROCFfwyBfo3jgeI9B9iyrmgl39NsBF/zTq
+	T9zDIuSPJk8j6tTC9yYFK/+3FKGh5HgmrR2tRLnyf/BkrhCcxRmbZZQFEXIYmQV4QPaiZq
+	EouwDpE10lNwfXEQWui2fyyBxrvk4KuHg=
+Received: by recvd-596846f94d-qmtp8 with SMTP id recvd-596846f94d-qmtp8-1-6797C257-41
+	2025-01-27 17:28:55.567931074 +0000 UTC m=+6379550.242440993
+Received: from [169.254.86.43] (unknown)
+	by geopod-ismtpd-5 (SG) with ESMTP
+	id oOa082KSQCy1y8mMdO-19A
+	for <azri.mokhzani@gmail.com>;
+	Mon, 27 Jan 2025 17:28:55.287 +0000 (UTC)
+Feedback-ID: saved-search:noti-x:seekasia
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-ID:
+ <ce0cc261-8f24-4635-ac1c-6d267c8c1c32-20250128-my-asia-5.jobalert@noti.outfra.xyz>
+From: Jobstreet Job Alerts <no-reply@search.jobstreet.com>
+Subject: 14 new jobs for Information & Communication Technology in Malaysia
+Date: Tue, 28 Jan 2025 02:46:15 +0000 (UTC)
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fnoti-platform-list-unsubscribe-api=2Ecloud=2Eseek=2Ecom=2Eau=2F?=
+ =?us-ascii?Q?list-unsubscribe=2Fsaved-search=2FeyJpZCI6I?=
+ =?us-ascii?Q?mNlMGNjMjYxLThmMjQtNDYzNS1hYzFjLTZkMjY3?=
+ =?us-ascii?Q?YzhjMWMzMiIsImVuY3J5cHRlZElkIjoiZGRjNjk?=
+ =?us-ascii?Q?4YmVlOTg0MWY5OGNkMDI1MzJmNGM1NWIwMTE0Nj?=
+ =?us-ascii?Q?BjMWQ2MSJ9=3FmessageId=3D%3Cce0cc261-8f24-4?=
+ =?us-ascii?Q?635-ac1c-6d267c8c1c32-20250128-my-asia-?=
+ =?us-ascii?Q?5=2Ejobalert%40noti=2Eoutfra=2Exyz%3E=3E?=
+X-Feedback-ID: 23398672:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EyelXkpUWaffs2VACRUC1O6rbwtSxBONnoDJntDDVWFwrBuQwyM=2F4fLuB7?=
+ =?us-ascii?Q?KQ2b62Y9LdQjKh=2FmVw2L2LPcETlVHKOrYYOVhtc?=
+ =?us-ascii?Q?QICkvFkioOptJMhJSjqzhSJns9u5uA9kfnHJ81U?=
+ =?us-ascii?Q?j8+7EP5GMMC06Qfm6YquzRi0rVHMaH4z7=2FRCJ5B?=
+ =?us-ascii?Q?NGBEqtWaM50ZM5FUlQxN7me8XQpHWLbabXaP8=2FZ?=
+ =?us-ascii?Q?CFMmEZ=2FF3V94rojKm2ROGgZ+qytuauEfeaDHzc7?=
+ =?us-ascii?Q?HXfiqGVWzu2Zllf2omqAFK5UfQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BhlIae1d6Cnpcr3Bqu3yyh+Brdh8CldAkP9hV?=
+ =?us-ascii?Q?zqzhVxFyOj46z3=2Fm0bReFzas2w7YQnPyEJKYKIv?=
+ =?us-ascii?Q?GrpxzjhkXtzpKZQddyhcRMjl9MQOuvXyYawg61N?=
+ =?us-ascii?Q?bRxhf5VyGJvjycUJs0rzVjgOmWny+E3+nuWSSsE?=
+ =?us-ascii?Q?avtC7v2tTsHJCNqR3jd8NiERLhlSL8C2hB5dxpm?=
+ =?us-ascii?Q?ZwYIGRxrYG9aZyNnfJZioPBfXC6RpanqpBTAuQK?=
+ =?us-ascii?Q?wCl9+clDybo7JtPrRJCd4srK01=2FcAfQSuQ=2FTUcr?=
+ =?us-ascii?Q?yhf4sotB1z7DZflgnr4HAM2SLZShaCzaPml5LYq?=
+ =?us-ascii?Q?MyPz3QRcaap7AXfO0VE0tTDVXzBXfcS9oNjFsIA?=
+ =?us-ascii?Q?jxgAIFmc1S8dUdGizJAdWpXVqfZhSQSOO8R+PKx?=
+ =?us-ascii?Q?dRGaOckY7uylvelAM2rbSCyvxboOSGkbPMdAAYP?=
+ =?us-ascii?Q?Vpv+3qZH+O=2FQr=2FN1YJcxczk5tZWsQ8lCEkuuzPG?=
+ =?us-ascii?Q?44EY3qOo7jLs3OsOQImiMsPECj?=
+To: Muhammad Azri Mokhzani <azri.mokhzani@gmail.com>
+X-Entity-ID: u001.dFbAtp0aszlQbU7YNhFgfw==
+Content-Type: multipart/alternative;
+ boundary="--_NmP-89a77a2922f07e23-Part_1"
+
+----_NmP-89a77a2922f07e23-Part_1
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Morph Digital Sdn. Bhd., Hyped Mind Sdn Bhd, MICRO TECHNOLOGY SOLUTION SDN =
+BHD
+and other companies have new roles for you.
+%%str_to_replace_open_tracking%%
+
+Logo
+[https://url.search.jobstreet.com/ss/c/u001.N6lh3b0eqZrXLjWojYfziYhxRmnWQCU=
+5MwwwsckFMaEWMtSFotgIAB3SPvj1Aau50oFr-_jHDKsisR5SK3ZNyK6xHL5TUVf8XXQd2-dxfi=
+WCDQdonq_dquw6J9HsBsKd/4di/UGoarg5lS2GpAP59-q1kpQ/t0/h001.n6IDa3ocbTqX-RXv1=
+Xthhuo_zx00ocP9GOqbjUO-wOk]https://url.search.jobstreet.com/ss/c/u001.PZ_Nr=
+VXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393nN7uWGrWMo6W-Tu6aG_sm-vJq6CYrnWg70R55=
+KJhDE4kKwx-c8uF5-_bzGQq1IAE/4di/UGoarg5lS2GpAP59-q1kpQ/t1/h001.mRv-rreiYIcD=
+21I9gb4EVxvs-Asmv-Ay_6wwSPduqi8
+
+=E2=80=8A
+
+Hi Muhammad Azri,
+Based on your saved search for Information & Communication Technology in
+Malaysia, we=E2=80=99ve found 14 new jobs that could be right for you.
+
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHWLmXWmlKRte5Mw1D0DPKIEBdeWvn9nBDJEli5euz7y=
+NKC-gNpR8kaufAJKjF8CILZAthzYS_-1t_zEYEjPR0tA/4di/UGoarg5lS2GpAP59-q1kpQ/t2/=
+h001.GvsesWMtCTaHQBxCtybqD-xKmZV0kv2QuWH-k0wrGns]
+
+Front End Developer
+Morph Digital Sdn. Bhd.
+Bandar Utama, Selangor
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393sDhgvfNZJyyzs2XsOeygeoiLNaMCGHzSd9hZ9fvtw6LnwbsbYhlAr5V1KjQIGhg=
+KGYtpkFUXGif0Q-cDOqzXvIxuaEXUYiLMyXuM0F-2d05kEYcjZxwCQMX0F7XX8P28/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t3/h001.7SUqbi8MJjY5ZbyKyw52RPS4ZfHpfD7bSD9tV4ss8PY]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHWYu-K7zBnA53oKQY4F4A_W7PXcphdKv5Phj-XED2y0=
+brHWMM0Pwk4UrdCyTTrSCavNcBMZN0gGPt8nRPvq3zcw/4di/UGoarg5lS2GpAP59-q1kpQ/t4/=
+h001.NSI0bAkYK8jIqW5xWmkjQCfO26p7Ex4uZgJSILLiYo8]
+
+Software Developer (Backend & Frontend)
+Hyped Mind Sdn Bhd
+Kuala Lumpur
+RM=C2=A05,000 =E2=80=93 RM=C2=A07,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392_Bw8J6cuVkBTPcxpg0KcIUIxhjQryQP-EjlPlMv99J1qAdPsN_Gg6KxxGt-J5r3=
+N2nNLt0L_RiV9Ofrzvn1Zy-CSem-hml7l_IrX03NtLOkwkh9UUAQbVp88hVTL3gX0/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t5/h001.2reGi0U6YHipfRsfbGMSIdpbBIdgrIV3WryKrBbPQpE]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHhCcUDTRIQp5ykV82IvOpH9jkqorUxysdcIOtPynfzB=
+jdlygzE3Uilf_iYNkSwN9YeGPSuWwxfU00NpRvCvev0g/4di/UGoarg5lS2GpAP59-q1kpQ/t6/=
+h001.oRFyqIXNr-76PTxoYMpvO67HO1egvX-bqAkHBTP6zro]
+
+IT Helpdesk (Immediate Hiring / 2 weeks notice)
+MICRO TECHNOLOGY SOLUTION SDN BHD
+Kuala Lumpur
+RM=C2=A02,800 =E2=80=93 RM=C2=A04,200 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO390-mr_Sn_AxVBlqntTU4fLxlLE9LxivH46UL4aRBPnzjkQSKWtSR-s4mIGSbaVgY5=
+1xjrKj2mmYIFb8APhOOnguDrnRfY4xCE2GToU0AZewl19_E4ARgJaTXhV78XNvdw0/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t7/h001.GaGQArMZDJto2OJ8xcJVhTdPVCA77BLUsTQqyMropAA]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHAZ3lVcZlHXmFhpfyFtb7dlcoISZyHrWxB-voi4uh_r=
+e6o6f5tjXbZwhz4j6LJ1gfsmtJqu75bhytcpYUngvygQ/4di/UGoarg5lS2GpAP59-q1kpQ/t8/=
+h001.O2JdUU-XGDw7rDbvTD9YgiQ2le_yGybdHO0XKq1_Nv8]
+
+Network Engineer
+University of Wollongong Malaysia
+Shah Alam, Selangor
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393LsWC-fRYIuXS0K53sUcL8REmNtVIYTIgrPEYxqxYI2ebWAqeOXB_QnQ5ga76e8b=
+vBcxit3B_Q54mX7Qqe53ESofjJdHAEk_A-y8rltwl6AvqfdTVSpdMWCKpOUEYH5rM/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t9/h001.5hCUBFXIekLPLEuSt4Kma98qTwdZFHHulvsXLKr9r3Q]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHeIY0dl8VnI3uGWjk6nx3cGORXCrW37ZPbwX5APtFLk=
+UYTm4UcEOqFlpJtBd4kh3ZHKIhDXRnYacgLrT4u17PGg/4di/UGoarg5lS2GpAP59-q1kpQ/t10=
+/h001.6RYdgBXU-N7la1nrmyrrOL1mVMBO6iUHbyYqzK4t4xc]
+
+IT Support Specialist L2 - Malaysia (Contract - Hybrid)
+Intellipro Singapore Pte. Ltd.
+Kuala Lumpur
+RM=C2=A08,000 =E2=80=93 RM=C2=A010,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393lUR-NDMvEJi7r3e2W_sxNjCHaVaQuZYsJkYxHpqxbsskrfQFVF4fn5y8yLaAScp=
+nbGAGjDzEAwF2D19VaBMiZ09H3r3fBSmc32zICNJY-6MpjCCOJ-LIK-aLSBROx6so/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t11/h001.2s-o2Gf6IUsMDRLf4E7E8KCdTq3TPbyZkBWYvHIce0g]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHAZ3lVcZlHXmFhpfyFtb7dlcoISZyHrWxB-voi4uh_r=
+e6o6f5tjXbZwhz4j6LJ1gfsmtJqu75bhytcpYUngvygQ/4di/UGoarg5lS2GpAP59-q1kpQ/t12=
+/h001.dKvu63oDT_qVkbMwJQxNPiKWz4vi7JOQ0HQBiEYcn80]
+
+IT Business Analyst
+University of Wollongong Malaysia
+Shah Alam, Selangor
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO390Skl0c6wOBrWx1yW_ESSgLGkcsFkAIjqB3yT1_zryE1ffCDEICZCEIqMh3excEXb=
+FxegNqM9-TJBe91Jd3ONuVvd133JMQSZy-U795ows6LIpLlQMPcYWm44a0ev7Svko/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t13/h001.0DqEgpsVgQROD0KDjywZ-dwkpTXJyNGHYENG0RVF7oA]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHo1pgYZx1EAotK8ffbao1kMKnqR4bbg1E7bQC0Zxggl=
+3XC13i8uykHi94luSLJC8QV5unyhf-o4hwA-iq4oUAAA/4di/UGoarg5lS2GpAP59-q1kpQ/t14=
+/h001.qvlV1Pwc-aCSN5D7VT8ELlaHiFGQ97TOjVKE2jnjolw]
+
+Automation Tester Engineer
+Hexamatics Servcomm Sdn. Bhd.
+Petaling Jaya, Selangor
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO390F_EUh5qitTaHV_HlMX3Mte8BfAeGzG2PrKLtplLrWD_mNHP13MLG5hAUc3Vyc6e=
+tdd73_z8XxfW3NrGUMbLRcCufWlUs7SFYAcJqGeDzk18sxKh_XA1ieRK9ms-IRKNo/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t15/h001.3At9H5KHS00D5Fe2IAXIcXr-mkZTs6Nc5OhPCO4VLvM]
+=E2=80=8A
+
+=E2=80=8A
+Junior Test Analyst
+Verinon Technology Solutions Sdn Bhd
+Kuala Lumpur
+RM=C2=A03,500 =E2=80=93 RM=C2=A05,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO390zY_NjWAFj8852eR5XPyb8J29QGqFfuwgqzQNDLwTF6cQGoZ-LWA6H8iCO15vlC8=
+49sPn5fpDy4aIAX_4UDoX8RvxVhpEIcjw4nxEAgySPfKPGjgfSR1GwOcUvMOk4or8/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t16/h001.q-oJ7xM_fpZPgrNV92WS5tHQv12Zw2oT1ygHuHnaYp0]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHM4k-YR1hhoILMu0ex6z145KncSwpUgW5ONH8Hwvkmm=
+N88N06zjfq2iwwMHKjO5Vvx1TsHWp3FV_kUV87ABqJEQ/4di/UGoarg5lS2GpAP59-q1kpQ/t17=
+/h001.U1buCHQChw6FK9EDcIsvLVEMRnH7Xs03DUQwRqcD3i8]
+
+Oracle Database Administrator (DBA) Extendable contract
+PERSOLKELLY Workforce Solutions Malaysia Sdn Bhd
+Kuala Lumpur
+RM=C2=A04,000 =E2=80=93 RM=C2=A06,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393oJOhfxkY4j0t-x4H3JFthFI2neiLwnxRryFQ_0RoE3tg0_rrmBBdvrV-rVvTKEJ=
+zMjiDd9qYd6RPFKoqK7rNQ07YGFD4uZwzDpQanFQUzrHnE8u8Cu6gujFrDB8mJxQU/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t18/h001.661afgK-BB-PIROR0f7CmSfSaWhGCq5PYugG6UP54Lc]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUH0GEeb2OZZYXSac47Uo9jcgAbvdHoJKQx6u8JcORywK=
+zQwGKaSDST5cCLwSPJLA1X3gn3FDiu2Y-giO27mIxFTw/4di/UGoarg5lS2GpAP59-q1kpQ/t19=
+/h001.H-6hIWofna2fDc-lpvedeXOyYv_s5p58kfisWVAefio]
+
+Middleware Support Engineer (Up to RM6,400) [JO-25377]
+Agensi Pekerjaan BGC Group (Malaysia) Sdn Bhd
+Kuala Lumpur
+RM=C2=A05,000 =E2=80=93 RM=C2=A06,400 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393j0HzQGa2Vn-RBhDzNxuJhllg0MeRMzPTgCykL6Rv5rOTnfMDZTMwEjjAz8jyNH0=
+xZDwOFkV4rYzjSAbxYEgniDxuGTkHoNAWuwwnX1lAy5inYEIMuHOXMPOQSQCJx0no/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t20/h001.OMeDPUK9MUSxkh5cRMx_mdm_NCX4aZS5YqR7HHBBMFo]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHM4k-YR1hhoILMu0ex6z145KncSwpUgW5ONH8Hwvkmm=
+N88N06zjfq2iwwMHKjO5Vvx1TsHWp3FV_kUV87ABqJEQ/4di/UGoarg5lS2GpAP59-q1kpQ/t21=
+/h001.4wLp3d1vHrf0ljd_zTXM-sHfy5M3moMjgf2WZTRPuUQ]
+
+Project Coordinator cum Network Support role (Renewable contract)
+PERSOLKELLY Workforce Solutions Malaysia Sdn Bhd
+Kuala Lumpur
+RM=C2=A04,000 =E2=80=93 RM=C2=A06,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392zbOG1HQVBANg0bzrXZv877bLrzZbQAEvdt8kpCyVRWN59vqXVgHE7tVVIGhQTsA=
+y19rCA829Q-_nirVXC-BkHdJVNtmKY2y5ooi_YBr7rjzuZFf8h4oMRyzdlu_Iexjw/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t22/h001.dAqelKyP1yfHvF9TGyx2pVJ19kDM3aIVyaMxkSnscj4]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHTUD_RlEy4iBpF08IcgPCWh4mEdDCfCLR8tq0N-VrPJ=
+kL36mPY0baH0pestdkHm6HKJnvW6-WnPgiJ04AMlyNQA/4di/UGoarg5lS2GpAP59-q1kpQ/t23=
+/h001.KJF4vTm64-Aih5MppzTEGw_xPwPGpXwbtJ34xzZWu6k]
+
+Telecommunication Outside Plant Project Manager
+RED Technologies (S) Pte Ltd
+Johor
+RM=C2=A09,000 =E2=80=93 RM=C2=A012,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO390vyq95otHML1iMxa4sW-ctKtQ5alkphasUR5fKDvOxKrIqYltj70atezE0aKYoO2=
+Gii-DpZ2Ra8A0Kc6CR1guaaVCFDhxNw9-fWutaiwS91injt_ae81tKjrGG_YHSuCk/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t24/h001.k7bYnwnhjoGrOOAQEtLsd77xkSpRMWqSGIUVVwEkiOI]
+=E2=80=8A
+
+=E2=80=8A
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHAZ3lVcZlHXmFhpfyFtb7dlcoISZyHrWxB-voi4uh_r=
+e6o6f5tjXbZwhz4j6LJ1gfsmtJqu75bhytcpYUngvygQ/4di/UGoarg5lS2GpAP59-q1kpQ/t25=
+/h001.Iw1SKW2Ms0uAyVPM0Whd1-iY5FxrIxgFZuVZAA-chfo]
+
+Senior Software Engineer
+University of Wollongong Malaysia
+Shah Alam, Selangor
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392W7I1zroxPiEhgnlBN7KuPFdTLBhQm2Jbukq0OsShTTaN925ZN54NiLzjUXU_rza=
+sbgnZIYE5zRZOcr6eyknyLzFsy6sZbbI_a3N2htc_b7aLPmLRmB5pjCqdKSrN1FO8/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t26/h001.1sFLI9j28e02rcaWrNagIfRXMbz6ggqy4AquCKYmhic]
+=E2=80=8A
+
+=E2=80=8A
+News Analyst( MANDARIN SPEAKER)
+Private Advertiser
+Kuala Lumpur
+RM=C2=A03,000 =E2=80=93 RM=C2=A04,000 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392gs91WRaWVX3sut7Ze4y_OmUywjidEcd9mk_IKOtFzIxzc9rr50nI5y0XtY8XuLq=
+ibI667wAjpQ3N3gmRjxH9ia6YOx9HYRIByLtXJVfXNckijHwVKBGOOGf9G1s8Ccew/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t27/h001.ho_OSvIb1zT1mc3bVBahAA3obupyd71KWx9rkGMhpTY]
+=E2=80=8A
+
+Jobs you may have missed
+Matches your preference, posted few days ago
+Posted on 24 Jan 2025
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHhyOoasMCvYl0B9DGLAuVRAn7Zj0pCJ-iY03Nj6nQ2V=
+jotjtpB7KJDoXBhQJ3SSD5AXqcG3C-waQqNu5cGm7D_A/4di/UGoarg5lS2GpAP59-q1kpQ/t28=
+/h001.Rv3m-qTZLNouavVDxrTyNKny6WYAik1itcFhMabx3W0]
+
+Assistant Executive, Quality Monitoring and Assignment (Perak State Office)
+Malaysian Communications and Multimedia Commission
+Ipoh, Perak
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392zZHmgrbcjLitXm4_4-mzxF7s7fi7HWbYXc1yasMNh0Pv6Eeoi0YRINTwQFNJT5I=
+m5_qSuEbJpfvXMcvXbKkOOW7gPy2qbzaBy8Xm12pn0LaUfO-OLweQUgwUkESPJnosa9u71BoGgU=
+81sKtp3MAbx/4di/UGoarg5lS2GpAP59-q1kpQ/t29/h001.mdtNyt47NxKm5FaSG4qbdSTJh3n=
+ZK-gaCTie2hmcu-U]
+=E2=80=8A
+Posted on 24 Jan 2025
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHJ19nsaibkd_0PeeA4GUb7YH3O1X_fSekmVf12Ipbst=
+h4otsq3UQGY4mQDXYAW7KIqz5dQuPBucEouj_4DexMng/4di/UGoarg5lS2GpAP59-q1kpQ/t30=
+/h001.C9PumY4arcFIx_saz2DAiGsC2YrsP6FmYXw-mMn8jKE]
+
+Technical Support Executive
+AFJ CAREERS RESOURCES
+Ara Damansara, Selangor
+RM=C2=A02,800 =E2=80=93 RM=C2=A04,200 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO391e_WlprQEa-Sa1bKMmpRMjJ9TuBC7dCZj8-hoGgcU-nIqczKMxEMWlqfkCg0WutW=
+88C8CEzGocue9YzYwk05W0UZUEpF08Y8ryRScTHKIYKetBXmAoSOhYxmpRnTcWwHOWkxOedxbqq=
+3jv1PWH2bpG/4di/UGoarg5lS2GpAP59-q1kpQ/t31/h001.0QK4XmGDvNq57aj5g271aOSa-_G=
+nv-tfhH_Vlx4JPGo]
+=E2=80=8A
+Posted on 24 Jan 2025
+
+logo
+[https://url.search.jobstreet.com/ss/c/u001.pAAYQFYBWry9sXNmxL-mfqWFMY_WXRN=
+scSZ99DPWQZpxnWk9SmnBc4gguf2LDzUHELpifubgp06LRyRa7Hdotp--yfLim7T0CH6F4BynTI=
+-DHz1TL8X5lnizjdzFBE1XIqOTB2xiFRP48o0LJVLOcw/4di/UGoarg5lS2GpAP59-q1kpQ/t32=
+/h001.XHuqyH2JXCGFVrbxn_1fmcSWVULwh4iuxRxovupw7YU]
+
+System Developer
+NSC GLOBALTECH SDN. BHD.
+Seremban, Negeri Sembilan
+RM=C2=A03,500 =E2=80=93 RM=C2=A04,500 per month
+=E2=80=8A
+
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO392dJO2gGbyJOaeWFOYrLV44JVzlyegNeN6vnAEonf-6Of76Tmz8DBEbQ8SxJBGwVR=
+txdtgPHSfVdwltpd5h25ATxAQo2Kjm7M2TDdr0iqrROV-rK3FyKj44sWNeXc-xjgEowGyPTDfWz=
+4i8XA45wmxq/4di/UGoarg5lS2GpAP59-q1kpQ/t33/h001.2d2U_IZdLnawkbdMt6ksoPzXtCq=
+ffyRwGwHGcZgEVHg]
+=E2=80=8A
+
+View all matching jobs
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO391sbdu0jJGoktwcbaZ90OGGvKvXLt7lT8cwg2NXyO48YbDw7O9N55NtgO4w_20CO5=
+de4jiFK-5HxuaI6RYzQEDiyD31oza9KoWDTuPH1gQqzorOBN23oRmrWGEj8mx_xYXPTvfZt22Z7=
+wHDJI4EX9IArLzZPOcfgbb6N7n8i8n5xAstMd41Zlf8AofqManHvoUrzYILBDDZ6_RjZpzxzD44=
+tyDcXs6lVSmEumKUs9eyV1n7K7mRh35UU2eg6oRlszJOMbSRarg7JKoZBmq4qmc6Qiyi6bJvojs=
+SYn-mFG1A8rtHcbOJqpRfpMiTSFDh9Jzsm0gxLfQPog8E4HMqcz-m/4di/UGoarg5lS2GpAP59-=
+q1kpQ/t34/h001.9IAlR4WXcWUJB8FbCNzHjtwyyYJRQVpt_c-CwN4rnFk]
+
+=E2=80=8A
+
+=E2=80=8A
+
+banner
+[https://url.search.jobstreet.com/ss/c/u001.N6lh3b0eqZrXLjWojYfziYhxRmnWQCU=
+5MwwwsckFMaEWMtSFotgIAB3SPvj1Aau5fbJ3aNvHPJ3uGZ9Gf53uBnJ-BWbjIIAGTpm47Wqr5C=
+BJqkKFsC2niXcL2JC3H3uT/4di/UGoarg5lS2GpAP59-q1kpQ/t35/h001.yNQFucBHf1L_15NM=
+uXaME3wIWsspZNnHfX8cHj8wxNw]https://url.search.jobstreet.com/ss/c/u001.PZ_N=
+rVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390iuaiiDkeQhM2Lnb7AdtB2jpf9nqoN3EeDocL=
+Zp2z9UI8gqmWVn5kOfkReykTHrHaolQi84dzuFUvUrnvI2O83/4di/UGoarg5lS2GpAP59-q1kp=
+Q/t36/h001.EtDRgbIHWGITGLo6kTgYBwOsYlIDnt7dHixtseArEYU
+
+=E2=80=8A
+
+Edit this alert
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393Au_9y2rMPLFZ72TypkkJ5LAi06Fo5GacW0GjokS3hIdrPMZopc4QZAVPb-dXbaW=
+-Y6L8zb5KGeEx9XWIXtKhBDFuciemBtseq9E6hqzxkUag94wK-rQnPyhDu2qX359SiDZvpMoqUy=
+ibbhlo7gvZM/4di/UGoarg5lS2GpAP59-q1kpQ/t37/h001.pG2NZBezJ4MZYLV_Dp1pzfRcGQT=
+IlCEBJpd5nceI4w0]
+Unsubscribe from this alert
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO3908swX5dmRWkvFWojh9y4kYTRhRoLmmRPqG1D198JP_Ig4EFsOAK1ztDmzWfmhiH_=
+Hrg0vilCQp0hJTavLNr5scSqXpaodX8sr4m6lnz9aiLXyOsseuVP7I1MPvjT0tT0clxGg9cUL5B=
+xICPnhTmJCk2_MJoU-NSalOce21Rd6muR9-6Hshe23k5baYteBIGB5FrIEsA0ZpXHOHJKviIqQH=
+IJC6hF2DdpC9UWiIATwgpOCWXxxvpIQOL-aHwDUdr22ttFMSUUFtvyYJZgKfPeqhSHmJg6SpeUA=
+N5F6atsPq2IX5_a_ikF8h2vcRKqWeq9E/4di/UGoarg5lS2GpAP59-q1kpQ/t38/h001.RvKJQI=
+vEslFRu5kB8H8hIuVa7Z4xZFJJ8_A5oTjVzP0]
+Privacy
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO391-qXgVqLfdZBUcS-zM1HGL1YZz2lTw7MCP5W9Xi8m_gSl1-I4hemNx0x35x1anc1=
+AbomnqhR74MxGzbUGxDd2Sbw45T4r8YUNxGFkenzyi_xiSroUFk2Xv7vSalQokiHM/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t39/h001.GaCbafk4Hpobrzj0J1OmCyq9ONlXW6azfnQE1MrXm-I]
+Contact us
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO391_CJgaAMGccYI9IEZm7OGdpuVwF-Ep4hqtyjdJrlfxOl2X3_kpe1YLpc0aeaasso=
+97AuiO_rrElryXu-GwWt4_6hai2iEe_Da2ih8pLU7rYO5OJNwYmZ5mHVnjSJnQPf0/4di/UGoar=
+g5lS2GpAP59-q1kpQ/t40/h001.wbJ6b5IQPZxAr6xJgrgPGeqEqMU9FYbTBFnV7UAh-mU]
+
+Download Jobstreet App
+
+apple-store
+[https://url.search.jobstreet.com/ss/c/u001.N6lh3b0eqZrXLjWojYfziYhxRmnWQCU=
+5MwwwsckFMaEWMtSFotgIAB3SPvj1Aau5qZeEr52dEJYZZ6Tg_Pohau85irYJUru5YPRjkSFXTm=
+Q/4di/UGoarg5lS2GpAP59-q1kpQ/t41/h001.qu6zO-GU_o3G_dOBvkPMK5kgMMV4vIsOWFMBm=
+5uoPRU]https://url.search.jobstreet.com/ss/c/u001.5XLLYaA_YQVfsiQ2aac9HX6JB=
+bVzOmNU-E2cvFXolm1SmY7uaxMxypPTNXz2Tx110V8_51FYXOnr0i-ahbRCqg/4di/UGoarg5lS=
+2GpAP59-q1kpQ/t42/h001.ilaJGskXBC45ue3R9Bfk1LTU05e-I7UoPMQhwBZeGKw
+
+google-play
+[https://url.search.jobstreet.com/ss/c/u001.N6lh3b0eqZrXLjWojYfziYhxRmnWQCU=
+5MwwwsckFMaEWMtSFotgIAB3SPvj1Aau5r66ITO98RWgOC1DuDbleg0vhC1TxV9FNFLw2c9ZvN2=
+g/4di/UGoarg5lS2GpAP59-q1kpQ/t43/h001.sjDI2EPv80MTzSFqghTsTVMvrha4ylEVmCoiH=
+XuyTlw]https://url.search.jobstreet.com/ss/c/u001.LItEdquMUTh4SX5SkWriaAJEm=
+BieiZHBq2KIFFJVjVEs8QTCWwFIRTTNeTAEFGfp4qO9V22nK52K-T2yO7Qdmn2Cl3WuJP_N2dPZ=
+q2prHT0/4di/UGoarg5lS2GpAP59-q1kpQ/t44/h001.rMB7rVAGu4Rq1QK6HclWZRJ7QOdOyQy=
+RP5Zjc6jhFW0
+
+This email was sent to you as a registered user of my.jobstreet.com
+[https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2=
+DUq-Kl_LO393nN7uWGrWMo6W-Tu6aG_sm-vJq6CYrnWg70R55KJhDEzmkPcrO_m3aBkWDUQe1IE=
+Y/4di/UGoarg5lS2GpAP59-q1kpQ/t45/h001.7P6H4yZQevZxcaDiBGje-0gAqwnQUVIcirBi_=
+AUNlMo]
+=C2=A9 Jobstreet 2025
+----_NmP-89a77a2922f07e23-Part_1
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html lang=3D"und" dir=3D"auto" xmlns=3D"http://www.w3.org/1=
+999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas=
+-microsoft-com:office:office"><head><title></title><!--[if !mso]><!--><meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><!--<![endif]--><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"><meta n=
+ame=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><style =
+type=3D"text/css">#outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }</style><!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]--><!--[if lte mso 11]>
+    <style type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]--><!--[if !mso]><!--><link href=3D"https://fonts.googleapis.c=
+om/css?family=3DRoboto:300,400,500,700" rel=3D"stylesheet" type=3D"text/css=
+"><link href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:300,400,50=
+0,700" rel=3D"stylesheet" type=3D"text/css"><link href=3D"https://fonts.goo=
+gleapis.com/css?family=3DRoboto" rel=3D"stylesheet" type=3D"text/css"><styl=
+e type=3D"text/css">@import url(https://fonts.googleapis.com/css?family=3DR=
+oboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=3DUbuntu:300,400,500,70=
+0);
+@import url(https://fonts.googleapis.com/css?family=3DRoboto);</style><!--<=
+![endif]--><style type=3D"text/css">@media only screen and (min-width:480px=
+) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.mj-column-per-50 { width:50% !important; max-width: 50%; }
+      }</style><style media=3D"screen and (min-width:480px)">.moz-text-html=
+ .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.moz-text-html .mj-column-per-50 { width:50% !important; max-width: 50%; }<=
+/style><style type=3D"text/css">@media only screen and (max-width:479px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+ =20
+
+      noinput.mj-menu-checkbox { display:block!important; max-height:none!i=
+mportant; visibility:visible!important; }
+
+      @media only screen and (max-width:479px) {
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-inline-links { display:n=
+one!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-inline-links,
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-menu-trigger { display:b=
+lock!important; max-width:none!important; max-height:none!important; font-s=
+ize:inherit!important; }
+        .mj-menu-checkbox[type=3D"checkbox"] ~ .mj-inline-links > a { displ=
+ay:block!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-menu-trigger .mj=
+-menu-icon-close { display:block!important; }
+        .mj-menu-checkbox[type=3D"checkbox"]:checked ~ .mj-menu-trigger .mj=
+-menu-icon-open { display:none!important; }
+      }</style><style type=3D"text/css">.brand-logo-hack img { max-width: 2=
+00px !important }
+        @media (min-width: 480px) { .icon-align { padding-left: 37.5px !imp=
+ortant;
+          padding-right: 12.5px !important; } }</style></head><body style=
+=3D"word-spacing:normal;background-color:#eeeeee;"><div style=3D"display:no=
+ne;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px=
+;opacity:0;overflow:hidden;">Morph Digital Sdn. Bhd., Hyped Mind Sdn Bhd, M=
+ICRO TECHNOLOGY SOLUTION SDN BHD and other companies have new roles for you=
+.</div><div style=3D"background-color:#eeeeee;" lang=3D"und" dir=3D"auto"><=
+img src=3D"https://url.search.jobstreet.com/ss/o/u001.u0hX9NeZr1Ajhjs9acvKr=
+g/4di/UGoarg5lS2GpAP59-q1kpQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" bord=
+er=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0=
+ !important;margin-top:0 !important;margin-bottom:0 !important;margin-right=
+:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bot=
+tom:0 !important;padding-right:0 !important;padding-left:0 !important;"/><!=
+--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=
+=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;=
+mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:white;b=
+ackground-color:white;margin:0px auto;max-width:600px;"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"background:white;background-color:white;width:100%;"><tbody><tr><=
+td style=3D"border-top:4px solid #FB0079;direction:ltr;font-size:0px;paddin=
+g:20px 0;padding-bottom:8px;padding-top:8px;text-align:left;"><!--[if mso |=
+ IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0"><tr><td class=3D"" style=3D"vertical-align:middle;width:600px;" ><!=
+[endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"fo=
+nt-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-ali=
+gn:middle;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"vertical-align:middle;" width=3D"100%"><=
+tbody><tr><td align=3D"left" class=3D"universal-mj-image brand-logo-hack" s=
+tyle=3D"font-size:0px;padding:10px 25px;word-break:break-word;"><table bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"widt=
+h:200px;"><a href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVX=
+mV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393nN7uWGrWMo6W-Tu6aG_sm-vJq6CYrnWg70R55KJ=
+hDE4kKwx-c8uF5-_bzGQq1IAE/4di/UGoarg5lS2GpAP59-q1kpQ/h46/h001.3n2sc3EnflkUp=
+iaWPNkZpRLR15EDjw9krSl8UTp7baQ" target=3D"_blank" universal=3D"true" style=
+=3D"text-decoration: none;"><img alt=3D"Logo" src=3D"https://seekcdn.com/no=
+tifications/apac-mail/shared/jobstreet-logo-expanded-white-bg.png" style=3D=
+"border:0;display:block;outline:none;text-decoration:none;height:auto;width=
+:100%;font-size:13px;" width=3D"200" height=3D"auto"></a></td></tr></tbody>=
+</table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table=
+><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></=
+table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" >=
+<tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-si=
+ze:0px;padding:0;text-align:center;"><!--[if mso | IE]><table role=3D"prese=
+ntation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"=
+" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-c=
+olumn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;=
+direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:=
+#f3f3f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px;line=
+-height:4px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"backgro=
+und:white;background-color:white;margin:0px auto;max-width:600px;"><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"background:white;background-color:white;width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:20px 0;padding-l=
+eft:25px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:575px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"f=
+ont-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:7px;padding-l=
+eft:0;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-=
+size:16px;line-height:24px;text-align:left;color:#1c1c1c;">Hi Muhammad Azri=
+,</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px=
+ 25px;padding-top:0px;padding-bottom:0px;padding-left:0px;word-break:break-=
+word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:2=
+4px;text-align:left;color:#1c1c1c;">Based on your saved search for <b>Infor=
+mation &amp; Communication Technology in Malaysia</b>, we=E2=80=99ve found =
+<b>14</b> new jobs that could be right for you.</div></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"present=
+ation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0=
+px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"m=
+argin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;">=
+<tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:ce=
+nter;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;=
+width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group=
+-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-b=
+lock;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=
+=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:0px;word-bre=
+ak:break-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--> <a style=3D"text-decoration: none; display: block;" href=3D"https:/=
+/url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-=
+Kl_LO393sDhgvfNZJyyzs2XsOeygeoiLNaMCGHzSd9hZ9fvtw6LnwbsbYhlAr5V1KjQIGhgKGYt=
+pkFUXGif0Q-cDOqzXvIxuaEXUYiLMyXuM0F-2d05kEYcjZxwCQMX0F7XX8P28/4di/UGoarg5lS=
+2GpAP59-q1kpQ/h47/h001.qGdugxzDl3bbkvmU4cgMvm9shlsofm8We11L9iZO1nY" univers=
+al=3D"true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width=
+:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;=
+font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"back=
+ground:white;background-color:white;margin:0px auto;max-width:600px;"><tabl=
+e align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"background:white;background-color:white;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0px;text-alig=
+n:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:=
+top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" w=
+idth=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-break:break-word;"=
+><div style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;=
+word-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Ar=
+ial, sans-serif;font-size:13px;line-height:1;table-layout:auto;width:100px;=
+border:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.=
+cloud.seek.com.au/c6518825-797e-4b79-8c86-4600e1c24036.1/serpLogo" alt=3D"l=
+ogo" style=3D"border:0;display:block;outline:none;text-decoration:none;heig=
+ht:auto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]=
+><!--><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/c6518825-79=
+7e-4b79-8c86-4600e1c24036.1/serpLogo" alt=3D"logo" style=3D"border:0;displa=
+y:block;outline:none;text-decoration:none;max-height:65px;max-width:100px;h=
+eight:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td><=
+/tr></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding=
+:10px 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;"><di=
+v style=3D"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-h=
+eight:20px;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=
+=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyu=
+qu2DUq-Kl_LO393sDhgvfNZJyyzs2XsOeygeoiLNaMCGHzSd9hZ9fvtw6LnwbsbYhlAr5V1KjQI=
+GhgKGYtpkFUXGif0Q-cDOqzXvIxuaEXUYiLMyXuM0F-2d05kEYcjZxwCQMX0F7XX8P28/4di/UG=
+oarg5lS2GpAP59-q1kpQ/h48/h001.E2LY1gf5q5sptiHtX8vrURpP0IWoA65lPbiLFr1NCFE" =
+style=3D"color: #2765cf; text-decoration: none;"><![endif]-->Front End Deve=
+loper<!--[if mso | IE]></a></table><![endif]--></div></div></td></tr><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;pad=
+ding-bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, =
+Arial;font-size:14px;line-height:18px;text-align:left;color:#747474;">Morph=
+ Digital Sdn. Bhd.</div></td></tr><tr><td align=3D"left" style=3D"font-size=
+:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-w=
+ord;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18=
+px;text-align:left;color:#1c1c1c;">Bandar Utama, Selangor</div></td></tr><t=
+r><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:1=
+0px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!=
+--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td styl=
+e=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]=
+--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddi=
+ng:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical=
+-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font=
+-size:0px;word-break:break-word;"><div style=3D"height:4px;line-height:4px;=
+">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr>=
+</table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td>=
+</tr></table><![endif]--> <a style=3D"text-decoration: none; display: block=
+;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jh=
+yQskt2hJyyuqu2DUq-Kl_LO392_Bw8J6cuVkBTPcxpg0KcIUIxhjQryQP-EjlPlMv99J1qAdPsN=
+_Gg6KxxGt-J5r3N2nNLt0L_RiV9Ofrzvn1Zy-CSem-hml7l_IrX03NtLOkwkh9UUAQbVp88hVTL=
+3gX0/4di/UGoarg5lS2GpAP59-q1kpQ/h49/h001.K2grc4H1Iv4NH-xdhzW7rEgVde90U9eTeF=
+hpczVaWUY" universal=3D"true"><!--[if mso | IE]><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentati=
+on" style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"background:white;background-color:white;margin:0px auto;max=
+-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"background:white;background-col=
+or:white;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;p=
+adding:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" styl=
+e=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-=
+per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direct=
+ion:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;wo=
+rd-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;<=
+/div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 2=
+5px;padding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-family:=
+Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;table-lay=
+out:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"https:/=
+/bx-branding-gateway.cloud.seek.com.au/f6914e64-9398-4e6b-9d03-463603f46b5e=
+.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text=
+-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"><![en=
+dif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cloud.se=
+ek.com.au/f6914e64-9398-4e6b-9d03-463603f46b5e.1/serpLogo" alt=3D"logo" sty=
+le=3D"border:0;display:block;outline:none;text-decoration:none;max-height:6=
+5px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"auto"><=
+!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" style=3D"=
+font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-b=
+reak:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;fo=
+nt-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[i=
+f mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV=
+2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392_Bw8J6cuVkBTPcxpg0KcIUIxhjQryQP-EjlPlMv99=
+J1qAdPsN_Gg6KxxGt-J5r3N2nNLt0L_RiV9Ofrzvn1Zy-CSem-hml7l_IrX03NtLOkwkh9UUAQb=
+Vp88hVTL3gX0/4di/UGoarg5lS2GpAP59-q1kpQ/h50/h001.qf3gQG33wh6IX2roGZguYuVpLR=
+-wT0IEqN4I-eyVO80" style=3D"color: #2765cf; text-decoration: none;"><![endi=
+f]-->Software Developer (Backend &amp; Frontend)<!--[if mso | IE]></a></tab=
+le><![endif]--></div></div></td></tr><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:brea=
+k-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height=
+:18px;text-align:left;color:#747474;">Hyped Mind Sdn Bhd</div></td></tr><tr=
+><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;=
+padding-bottom:10px;word-break:break-word;"><div style=3D"font-family:robot=
+o, Arial;font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">Ku=
+ala Lumpur</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;pad=
+ding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><d=
+iv style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-=
+align:left;color:#1c1c1c;">RM=C2=A05,000 =E2=80=93 RM=C2=A07,000 per month<=
+/div></td></tr><tr><td style=3D"font-size:0px;word-break:break-word;"><div =
+style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if=
+ mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"6=
+00" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;fo=
+nt-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><table role=3D"=
+presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td clas=
+s=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D=
+"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:=
+left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"backgr=
+ound:#f3f3f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px=
+;line-height:4px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[i=
+f mso | IE]></td></tr></table><![endif]--> <a style=3D"text-decoration: non=
+e; display: block;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.=
+PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390-mr_Sn_AxVBlqntTU4fLxlLE9LxivH46=
+UL4aRBPnzjkQSKWtSR-s4mIGSbaVgY51xjrKj2mmYIFb8APhOOnguDrnRfY4xCE2GToU0AZewl1=
+9_E4ARgJaTXhV78XNvdw0/4di/UGoarg5lS2GpAP59-q1kpQ/h51/h001._D_wRBBQU6kIJtbei=
+zbFJLeoGBkXqlGxfzgQrTaT51M" universal=3D"true"><!--[if mso | IE]><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" r=
+ole=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"white"=
+ ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exact=
+ly;"><![endif]--><div style=3D"background:white;background-color:white;marg=
+in:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:white=
+;background-color:white;width:100%;"><tbody><tr><td style=3D"direction:ltr;=
+font-size:0px;padding:0px;text-align:center;"><!--[if mso | IE]><table role=
+=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div clas=
+s=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"=
+><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"fo=
+nt-size:0px;word-break:break-word;"><div style=3D"height:10px;line-height:1=
+0px;">&#8202;</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;=
+padding:10px 25px;padding-bottom:0;word-break:break-word;"><table cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#00000=
+0;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-heig=
+ht:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img =
+src=3D"https://bx-branding-gateway.cloud.seek.com.au/856b7872-cfc5-436c-96b=
+6-2a9ff867eacc.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;out=
+line:none;text-decoration:none;height:auto;width:auto" width=3D"65" height=
+=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-g=
+ateway.cloud.seek.com.au/856b7872-cfc5-436c-96b6-2a9ff867eacc.1/serpLogo" a=
+lt=3D"logo" style=3D"border:0;display:block;outline:none;text-decoration:no=
+ne;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"100" he=
+ight=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"=
+left" style=3D"font-size:0px;padding:10px 25px;padding-top:10px;padding-bot=
+tom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;fo=
+nt-size:16px;font-weight:bold;line-height:20px;text-align:left;color:#2765c=
+f;"><div><!--[if mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c=
+/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390-mr_Sn_AxVBlqntTU4fLxlLE9L=
+xivH46UL4aRBPnzjkQSKWtSR-s4mIGSbaVgY51xjrKj2mmYIFb8APhOOnguDrnRfY4xCE2GToU0=
+AZewl19_E4ARgJaTXhV78XNvdw0/4di/UGoarg5lS2GpAP59-q1kpQ/h52/h001.V82Pi7dxsj-=
+zihobxg9CjbTOar1FZ8fvdhwWwUOfVgA" style=3D"color: #2765cf; text-decoration:=
+ none;"><![endif]-->IT Helpdesk (Immediate Hiring / 2 weeks notice)<!--[if =
+mso | IE]></a></table><![endif]--></div></div></td></tr><tr><td align=3D"le=
+ft" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:1=
+0px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-si=
+ze:14px;line-height:18px;text-align:left;color:#747474;">MICRO TECHNOLOGY S=
+OLUTION SDN BHD</div></td></tr><tr><td align=3D"left" style=3D"font-size:0p=
+x;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word=
+;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;=
+text-align:left;color:#1c1c1c;">Kuala Lumpur</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bo=
+ttom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;f=
+ont-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">RM=C2=A02,80=
+0 =E2=80=93 RM=C2=A04,200 per month</div></td></tr><tr><td style=3D"font-si=
+ze:0px;word-break:break-word;"><div style=3D"height:10px;line-height:10px;"=
+>&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr><=
+/table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--> </a><!--[if mso | IE]><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentatio=
+n" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;f=
+ont-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margi=
+n:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbo=
+dy><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center=
+;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fi=
+x" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D=
+"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:0px;word-break:=
+break-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div></td><=
+/tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--><=
+/td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif=
+]--> <a style=3D"text-decoration: none; display: block;" href=3D"https://ur=
+l.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_=
+LO393LsWC-fRYIuXS0K53sUcL8REmNtVIYTIgrPEYxqxYI2ebWAqeOXB_QnQ5ga76e8bvBcxit3=
+B_Q54mX7Qqe53ESofjJdHAEk_A-y8rltwl6AvqfdTVSpdMWCKpOUEYH5rM/4di/UGoarg5lS2Gp=
+AP59-q1kpQ/h53/h001.09Zn0hAW__tfJEtc2B4RikNB9CYOvYc9iWw-v3_AW9w" universal=
+=3D"true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:6=
+00px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;fo=
+nt-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"backgr=
+ound:white;background-color:white;margin:0px auto;max-width:600px;"><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"background:white;background-color:white;width:100%;">=
+<tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:=
+center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:to=
+p;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-gro=
+up-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline=
+-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" wid=
+th=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-break:break-word;"><=
+div style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr><tr><td =
+align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;wo=
+rd-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Aria=
+l, sans-serif;font-size:13px;line-height:1;table-layout:auto;width:100px;bo=
+rder:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.cl=
+oud.seek.com.au/b1797034-18d7-459b-b980-d343c7a16101.1/serpLogo" alt=3D"log=
+o" style=3D"border:0;display:block;outline:none;text-decoration:none;height=
+:auto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><=
+!--><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/b1797034-18d7=
+-459b-b980-d343c7a16101.1/serpLogo" alt=3D"logo" style=3D"border:0;display:=
+block;outline:none;text-decoration:none;max-height:65px;max-width:100px;hei=
+ght:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td></t=
+r></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:1=
+0px 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;"><div =
+style=3D"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-hei=
+ght:20px;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=3D"=
+https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2D=
+Uq-Kl_LO393LsWC-fRYIuXS0K53sUcL8REmNtVIYTIgrPEYxqxYI2ebWAqeOXB_QnQ5ga76e8bv=
+Bcxit3B_Q54mX7Qqe53ESofjJdHAEk_A-y8rltwl6AvqfdTVSpdMWCKpOUEYH5rM/4di/UGoarg=
+5lS2GpAP59-q1kpQ/h54/h001.T01ZitnqcFKcw5epkX6LHKwwvH5fM6q8zZ4D2v8H9RU" styl=
+e=3D"color: #2765cf; text-decoration: none;"><![endif]-->Network Engineer<!=
+--[if mso | IE]></a></table><![endif]--></div></div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bo=
+ttom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;f=
+ont-size:14px;line-height:18px;text-align:left;color:#747474;">University o=
+f Wollongong Malaysia</div></td></tr><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:brea=
+k-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height=
+:18px;text-align:left;color:#1c1c1c;">Shah Alam, Selangor</div></td></tr><t=
+r><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:1=
+0px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!=
+--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]><table=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D=
+"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td styl=
+e=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]=
+--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddi=
+ng:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"v=
+ertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-10=
+0 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:lt=
+r;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical=
+-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font=
+-size:0px;word-break:break-word;"><div style=3D"height:4px;line-height:4px;=
+">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr>=
+</table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td>=
+</tr></table><![endif]--> <a style=3D"text-decoration: none; display: block=
+;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jh=
+yQskt2hJyyuqu2DUq-Kl_LO393lUR-NDMvEJi7r3e2W_sxNjCHaVaQuZYsJkYxHpqxbsskrfQFV=
+F4fn5y8yLaAScpnbGAGjDzEAwF2D19VaBMiZ09H3r3fBSmc32zICNJY-6MpjCCOJ-LIK-aLSBRO=
+x6so/4di/UGoarg5lS2GpAP59-q1kpQ/h55/h001.n_rPhhFQ6z3Vrh7wSBdi3w1XvoCXUDEPtj=
+TbGYvm4OI" universal=3D"true"><!--[if mso | IE]><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentati=
+on" style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"background:white;background-color:white;margin:0px auto;max=
+-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"background:white;background-col=
+or:white;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;p=
+adding:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" styl=
+e=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-=
+per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direct=
+ion:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;wo=
+rd-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;<=
+/div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 2=
+5px;padding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-family:=
+Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;table-lay=
+out:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"https:/=
+/bx-branding-gateway.cloud.seek.com.au/56a22b8b-cad7-4adb-ae76-4f76ac8c5a10=
+.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text=
+-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"><![en=
+dif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cloud.se=
+ek.com.au/56a22b8b-cad7-4adb-ae76-4f76ac8c5a10.1/serpLogo" alt=3D"logo" sty=
+le=3D"border:0;display:block;outline:none;text-decoration:none;max-height:6=
+5px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"auto"><=
+!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" style=3D"=
+font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-b=
+reak:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;fo=
+nt-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[i=
+f mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV=
+2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393lUR-NDMvEJi7r3e2W_sxNjCHaVaQuZYsJkYxHpqxb=
+sskrfQFVF4fn5y8yLaAScpnbGAGjDzEAwF2D19VaBMiZ09H3r3fBSmc32zICNJY-6MpjCCOJ-LI=
+K-aLSBROx6so/4di/UGoarg5lS2GpAP59-q1kpQ/h56/h001.-80QKiZA5W2enIlSVoxG4cjiK1=
+FwJ6KGWBZEOyUoyao" style=3D"color: #2765cf; text-decoration: none;"><![endi=
+f]-->IT Support Specialist L2 - Malaysia (Contract - Hybrid)<!--[if mso | I=
+E]></a></table><![endif]--></div></div></td></tr><tr><td align=3D"left" sty=
+le=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;wor=
+d-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:14px=
+;line-height:18px;text-align:left;color:#747474;">Intellipro Singapore Pte.=
+ Ltd.</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:=
+10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div st=
+yle=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-align=
+:left;color:#1c1c1c;">Kuala Lumpur</div></td></tr><tr><td align=3D"left" st=
+yle=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;wo=
+rd-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:14p=
+x;line-height:18px;text-align:left;color:#1c1c1c;">RM=C2=A08,000 =E2=80=93 =
+RM=C2=A010,000 per month</div></td></tr><tr><td style=3D"font-size:0px;word=
+-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</d=
+iv></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![e=
+ndif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table=
+><![endif]--> </a><!--[if mso | IE]><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D=
+"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0p=
+x;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;=
+max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td =
+style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if =
+mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" >=
+<![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"=
+font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-a=
+lign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbod=
+y><tr><td style=3D"background:#f3f3f3;font-size:0px;word-break:break-word;"=
+><div style=3D"height:4px;line-height:4px;">&#8202;</div></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></t=
+body></table></div><!--[if mso | IE]></td></tr></table><![endif]--> <a styl=
+e=3D"text-decoration: none; display: block;" href=3D"https://url.search.job=
+street.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390Skl0c6w=
+OBrWx1yW_ESSgLGkcsFkAIjqB3yT1_zryE1ffCDEICZCEIqMh3excEXbFxegNqM9-TJBe91Jd3O=
+NuVvd133JMQSZy-U795ows6LIpLlQMPcYWm44a0ev7Svko/4di/UGoarg5lS2GpAP59-q1kpQ/h=
+57/h001.Dvw6ZYL7HVq11srtM8ym57EBcEy2pkKLOI4ulBS7OpE" universal=3D"true"><!-=
+-[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=
+=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;=
+mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:white;b=
+ackground-color:white;margin:0px auto;max-width:600px;"><table align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"background:white;background-color:white;width:100%;"><tbody><tr><=
+td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;"><!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600p=
+x;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" styl=
+e=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;verti=
+cal-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">=
+<tbody><tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D=
+"height:10px;line-height:10px;">&#8202;</div></td></tr><tr><td align=3D"lef=
+t" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;word-break:bre=
+ak-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100" border=
+=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-se=
+rif;font-size:13px;line-height:1;table-layout:auto;width:100px;border:none;=
+"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.cloud.seek.c=
+om.au/b1797034-18d7-459b-b980-d343c7a16101.1/serpLogo" alt=3D"logo" style=
+=3D"border:0;display:block;outline:none;text-decoration:none;height:auto;wi=
+dth:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!--><img=
+ src=3D"https://bx-branding-gateway.cloud.seek.com.au/b1797034-18d7-459b-b9=
+80-d343c7a16101.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;ou=
+tline:none;text-decoration:none;max-height:65px;max-width:100px;height:auto=
+;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td></tr></tabl=
+e></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px=
+;padding-top:10px;padding-bottom:10px;word-break:break-word;"><div style=3D=
+"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-height:20px=
+;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=3D"https://=
+url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO=
+390Skl0c6wOBrWx1yW_ESSgLGkcsFkAIjqB3yT1_zryE1ffCDEICZCEIqMh3excEXbFxegNqM9-=
+TJBe91Jd3ONuVvd133JMQSZy-U795ows6LIpLlQMPcYWm44a0ev7Svko/4di/UGoarg5lS2GpAP=
+59-q1kpQ/h58/h001.xlR8RDG-FSvdY9abrsbhjIKP-Jm2Tk1t_eCxqRi3ggM" style=3D"col=
+or: #2765cf; text-decoration: none;"><![endif]-->IT Business Analyst<!--[if=
+ mso | IE]></a></table><![endif]--></div></div></td></tr><tr><td align=3D"l=
+eft" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:=
+10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-s=
+ize:14px;line-height:18px;text-align:left;color:#747474;">University of Wol=
+longong Malaysia</div></td></tr><tr><td align=3D"left" style=3D"font-size:0=
+px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-wor=
+d;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px=
+;text-align:left;color:#1c1c1c;">Shah Alam, Selangor</div></td></tr><tr><td=
+ style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:10px;l=
+ine-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso =
+| IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if=
+ mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" ro=
+le=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"=
+line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><d=
+iv style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;=
+text-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vert=
+ical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 m=
+j-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;d=
+isplay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-al=
+ign:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-si=
+ze:0px;word-break:break-word;"><div style=3D"height:4px;line-height:4px;">&=
+#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></t=
+r></table><![endif]--> <a style=3D"text-decoration: none; display: block;" =
+href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQs=
+kt2hJyyuqu2DUq-Kl_LO390F_EUh5qitTaHV_HlMX3Mte8BfAeGzG2PrKLtplLrWD_mNHP13MLG=
+5hAUc3Vyc6etdd73_z8XxfW3NrGUMbLRcCufWlUs7SFYAcJqGeDzk18sxKh_XA1ieRK9ms-IRKN=
+o/4di/UGoarg5lS2GpAP59-q1kpQ/h59/h001.VuYEE-h24eubNR-xIdw8w4hoDkttzZvUqCKKa=
+s35P1k" universal=3D"true"><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"background:white;background-color:white;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background:white;background-color:wh=
+ite;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"=
+vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-1=
+00 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:l=
+tr;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertica=
+l-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-bre=
+ak:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div><=
+/td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;pa=
+dding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-family:Ubuntu=
+, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;table-layout:au=
+to;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"https://bx-br=
+anding-gateway.cloud.seek.com.au/99627d7c-8972-4c84-b1c5-78aaa60646e5.1/ser=
+pLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text-decor=
+ation:none;height:auto;width:auto" width=3D"65" height=3D"auto"><![endif]--=
+> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cloud.seek.com=
+.au/99627d7c-8972-4c84-b1c5-78aaa60646e5.1/serpLogo" alt=3D"logo" style=3D"=
+border:0;display:block;outline:none;text-decoration:none;max-height:65px;ma=
+x-width:100px;height:auto;width:auto" width=3D"100" height=3D"auto"><!--<![=
+endif]--></td></tr></table></td></tr><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-break:b=
+reak-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;font-wei=
+ght:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[if mso =
+| IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4=
+jhyQskt2hJyyuqu2DUq-Kl_LO390F_EUh5qitTaHV_HlMX3Mte8BfAeGzG2PrKLtplLrWD_mNHP=
+13MLG5hAUc3Vyc6etdd73_z8XxfW3NrGUMbLRcCufWlUs7SFYAcJqGeDzk18sxKh_XA1ieRK9ms=
+-IRKNo/4di/UGoarg5lS2GpAP59-q1kpQ/h60/h001.1olfhS1cbhULo4xtwj5hwEZIJgfe7VZm=
+Dln6g_cjsfo" style=3D"color: #2765cf; text-decoration: none;"><![endif]-->A=
+utomation Tester Engineer<!--[if mso | IE]></a></table><![endif]--></div></=
+div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25=
+px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"=
+font-family:roboto, Arial;font-size:14px;line-height:18px;text-align:left;c=
+olor:#747474;">Hexamatics Servcomm Sdn. Bhd.</div></td></tr><tr><td align=
+=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bo=
+ttom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;f=
+ont-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">Petaling Jay=
+a, Selangor</div></td></tr><tr><td style=3D"font-size:0px;word-break:break-=
+word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr>=
+</tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td>=
+</tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-->=
+ </a><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;=
+" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-he=
+ight-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-width:600=
+px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=3D"dire=
+ction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso | IE]><ta=
+ble role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">=
+<tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><=
+div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td sty=
+le=3D"background:#f3f3f3;font-size:0px;word-break:break-word;"><div style=
+=3D"height:4px;line-height:4px;">&#8202;</div></td></tr></tbody></table></d=
+iv><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td></tr></table><![endif]--> <a style=3D"text-d=
+ecoration: none; display: block;" href=3D"https://url.search.jobstreet.com/=
+uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390zY_NjWAFj8852eR5XP=
+yb8J29QGqFfuwgqzQNDLwTF6cQGoZ-LWA6H8iCO15vlC849sPn5fpDy4aIAX_4UDoX8RvxVhpEI=
+cjw4nxEAgySPfKPGjgfSR1GwOcUvMOk4or8/4di/UGoarg5lS2GpAP59-q1kpQ/h61/h001.seZ=
+9lC-7tpw0wGKvgk5IAdScu2kFsyFc69_Y7_mKNcM" universal=3D"true"><!--[if mso | =
+IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgc=
+olor=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-hei=
+ght-rule:exactly;"><![endif]--><div style=3D"background:white;background-co=
+lor:white;margin:0px auto;max-width:600px;"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ackground:white;background-color:white;width:100%;"><tbody><tr><td style=3D=
+"direction:ltr;font-size:0px;padding:0px;text-align:center;"><!--[if mso | =
+IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![end=
+if]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr>=
+<td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:10p=
+x;line-height:10px;">&#8202;</div></td></tr><tr><td align=3D"left" style=3D=
+"font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-=
+break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;f=
+ont-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[=
+if mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXm=
+V2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO390zY_NjWAFj8852eR5XPyb8J29QGqFfuwgqzQNDLwT=
+F6cQGoZ-LWA6H8iCO15vlC849sPn5fpDy4aIAX_4UDoX8RvxVhpEIcjw4nxEAgySPfKPGjgfSR1=
+GwOcUvMOk4or8/4di/UGoarg5lS2GpAP59-q1kpQ/h62/h001.VxK4sgwBPNHsXs16ZS8pW97j-=
+Cwas7o4MpK6dejFxT4" style=3D"color: #2765cf; text-decoration: none;"><![end=
+if]-->Junior Test Analyst<!--[if mso | IE]></a></table><![endif]--></div></=
+div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25=
+px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"=
+font-family:roboto, Arial;font-size:14px;line-height:18px;text-align:left;c=
+olor:#747474;">Verinon Technology Solutions Sdn Bhd</div></td></tr><tr><td =
+align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;paddi=
+ng-bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Ar=
+ial;font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">Kuala L=
+umpur</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:=
+10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div st=
+yle=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-align=
+:left;color:#1c1c1c;">RM=C2=A03,500 =E2=80=93 RM=C2=A05,000 per month</div>=
+</td></tr><tr><td style=3D"font-size:0px;word-break:break-word;"><div style=
+=3D"height:10px;line-height:10px;">&#8202;</div></td></tr></tbody></table><=
+/div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso =
+| IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" >=
+<tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-si=
+ze:0px;padding:0;text-align:center;"><!--[if mso | IE]><table role=3D"prese=
+ntation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"=
+" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-c=
+olumn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;=
+direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:=
+#f3f3f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px;line=
+-height:4px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><![endif]--> <a style=3D"text-decoration: none; di=
+splay: block;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_Nr=
+VXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393oJOhfxkY4j0t-x4H3JFthFI2neiLwnxRryFQ_=
+0RoE3tg0_rrmBBdvrV-rVvTKEJzMjiDd9qYd6RPFKoqK7rNQ07YGFD4uZwzDpQanFQUzrHnE8u8=
+Cu6gujFrDB8mJxQU/4di/UGoarg5lS2GpAP59-q1kpQ/h63/h001.ct2hAJkc6iRO-yu6Et9x5h=
+OHccdqp6nOwx734GBcig4" universal=3D"true"><!--[if mso | IE]><table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=
+=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><=
+tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;=
+"><![endif]--><div style=3D"background:white;background-color:white;margin:=
+0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:white;ba=
+ckground-color:white;width:100%;"><tbody><tr><td style=3D"direction:ltr;fon=
+t-size:0px;padding:0px;text-align:center;"><!--[if mso | IE]><table role=3D=
+"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td cla=
+ss=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=
+=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-ali=
+gn:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">=
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"fon=
+t-size:0px;word-break:break-word;"><div style=3D"height:10px;line-height:10=
+px;">&#8202;</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;p=
+adding:10px 25px;padding-bottom:0;word-break:break-word;"><table cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000=
+;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-heigh=
+t:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img s=
+rc=3D"https://bx-branding-gateway.cloud.seek.com.au/b1bf4c5f-858f-49dc-9429=
+-05c420947b7c.2/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outl=
+ine:none;text-decoration:none;height:auto;width:auto" width=3D"65" height=
+=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-g=
+ateway.cloud.seek.com.au/b1bf4c5f-858f-49dc-9429-05c420947b7c.2/serpLogo" a=
+lt=3D"logo" style=3D"border:0;display:block;outline:none;text-decoration:no=
+ne;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"100" he=
+ight=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"=
+left" style=3D"font-size:0px;padding:10px 25px;padding-top:10px;padding-bot=
+tom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;fo=
+nt-size:16px;font-weight:bold;line-height:20px;text-align:left;color:#2765c=
+f;"><div><!--[if mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c=
+/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393oJOhfxkY4j0t-x4H3JFthFI2ne=
+iLwnxRryFQ_0RoE3tg0_rrmBBdvrV-rVvTKEJzMjiDd9qYd6RPFKoqK7rNQ07YGFD4uZwzDpQan=
+FQUzrHnE8u8Cu6gujFrDB8mJxQU/4di/UGoarg5lS2GpAP59-q1kpQ/h64/h001.JbXhCjM14gO=
+MdQn3NDyjMPBWj3JQDikox-PTGXmQ3Kk" style=3D"color: #2765cf; text-decoration:=
+ none;"><![endif]-->Oracle Database Administrator (DBA) Extendable contract=
+<!--[if mso | IE]></a></table><![endif]--></div></div></td></tr><tr><td ali=
+gn=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-=
+bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial=
+;font-size:14px;line-height:18px;text-align:left;color:#747474;">PERSOLKELL=
+Y Workforce Solutions Malaysia Sdn Bhd</div></td></tr><tr><td align=3D"left=
+" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10p=
+x;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size=
+:14px;line-height:18px;text-align:left;color:#1c1c1c;">Kuala Lumpur</div></=
+td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;pad=
+ding-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"font-f=
+amily:roboto, Arial;font-size:14px;line-height:18px;text-align:left;color:#=
+1c1c1c;">RM=C2=A04,000 =E2=80=93 RM=C2=A06,000 per month</div></td></tr><tr=
+><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height:10=
+px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[if =
+mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div><!-=
+-[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]><table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-=
+-><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"ve=
+rtical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100=
+ mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr=
+;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-=
+align:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-=
+size:0px;word-break:break-word;"><div style=3D"height:4px;line-height:4px;"=
+>&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr><=
+/table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--> <a style=3D"text-decoration: none; display: block;=
+" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhy=
+Qskt2hJyyuqu2DUq-Kl_LO393j0HzQGa2Vn-RBhDzNxuJhllg0MeRMzPTgCykL6Rv5rOTnfMDZT=
+MwEjjAz8jyNH0xZDwOFkV4rYzjSAbxYEgniDxuGTkHoNAWuwwnX1lAy5inYEIMuHOXMPOQSQCJx=
+0no/4di/UGoarg5lS2GpAP59-q1kpQ/h65/h001.DC3tJIqfCKfO7uTG1wSv68K5QUyvGjCUQ1z=
+TPlwd1kc" universal=3D"true"><!--[if mso | IE]><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentatio=
+n" style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><=
+div style=3D"background:white;background-color:white;margin:0px auto;max-wi=
+dth:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"background:white;background-color:=
+white;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padd=
+ing:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0px;wo=
+rd-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;<=
+/div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 2=
+5px;padding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-family:=
+Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;table-lay=
+out:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"https:/=
+/bx-branding-gateway.cloud.seek.com.au/ff9a310d-5748-4d36-a195-b60bd241f325=
+.2/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text=
+-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"><![en=
+dif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cloud.se=
+ek.com.au/ff9a310d-5748-4d36-a195-b60bd241f325.2/serpLogo" alt=3D"logo" sty=
+le=3D"border:0;display:block;outline:none;text-decoration:none;max-height:6=
+5px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"auto"><=
+!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" style=3D"=
+font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-b=
+reak:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;fo=
+nt-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[i=
+f mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV=
+2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO393j0HzQGa2Vn-RBhDzNxuJhllg0MeRMzPTgCykL6Rv5=
+rOTnfMDZTMwEjjAz8jyNH0xZDwOFkV4rYzjSAbxYEgniDxuGTkHoNAWuwwnX1lAy5inYEIMuHOX=
+MPOQSQCJx0no/4di/UGoarg5lS2GpAP59-q1kpQ/h66/h001.7PVj1bvEQcPshS40z3MB3dgu3U=
+KE45Sc7lPwh6UxSIU" style=3D"color: #2765cf; text-decoration: none;"><![endi=
+f]-->Middleware Support Engineer (Up to RM6,400) [JO-25377]<!--[if mso | IE=
+]></a></table><![endif]--></div></div></td></tr><tr><td align=3D"left" styl=
+e=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word=
+-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;=
+line-height:18px;text-align:left;color:#747474;">Agensi Pekerjaan BGC Group=
+ (Malaysia) Sdn Bhd</div></td></tr><tr><td align=3D"left" style=3D"font-siz=
+e:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-=
+word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:1=
+8px;text-align:left;color:#1c1c1c;">Kuala Lumpur</div></td></tr><tr><td ali=
+gn=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-=
+bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial=
+;font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">RM=C2=A05,=
+000 =E2=80=93 RM=C2=A06,400 per month</div></td></tr><tr><td style=3D"font-=
+size:0px;word-break:break-word;"><div style=3D"height:10px;line-height:10px=
+;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr=
+></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td=
+></tr></table><![endif]--> </a><!--[if mso | IE]><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentat=
+ion" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px=
+;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"mar=
+gin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><t=
+body><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:cent=
+er;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wi=
+dth:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-f=
+ix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=
+=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:0px;word-bre=
+ak:break-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--> <a style=3D"text-decoration: none; display: block;" href=3D"https:/=
+/url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-=
+Kl_LO392zbOG1HQVBANg0bzrXZv877bLrzZbQAEvdt8kpCyVRWN59vqXVgHE7tVVIGhQTsAy19r=
+CA829Q-_nirVXC-BkHdJVNtmKY2y5ooi_YBr7rjzuZFf8h4oMRyzdlu_Iexjw/4di/UGoarg5lS=
+2GpAP59-q1kpQ/h67/h001.RdLOr12_YK4o8n5YPO-fu7parNhfpy6PdwAo_9v8vjg" univers=
+al=3D"true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width=
+:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;=
+font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"back=
+ground:white;background-color:white;margin:0px auto;max-width:600px;"><tabl=
+e align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"background:white;background-color:white;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0px;text-alig=
+n:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:=
+top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-g=
+roup-fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inli=
+ne-block;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" w=
+idth=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-break:break-word;"=
+><div style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr><tr><t=
+d align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;=
+word-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Ar=
+ial, sans-serif;font-size:13px;line-height:1;table-layout:auto;width:100px;=
+border:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.=
+cloud.seek.com.au/b1bf4c5f-858f-49dc-9429-05c420947b7c.2/serpLogo" alt=3D"l=
+ogo" style=3D"border:0;display:block;outline:none;text-decoration:none;heig=
+ht:auto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]=
+><!--><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/b1bf4c5f-85=
+8f-49dc-9429-05c420947b7c.2/serpLogo" alt=3D"logo" style=3D"border:0;displa=
+y:block;outline:none;text-decoration:none;max-height:65px;max-width:100px;h=
+eight:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td><=
+/tr></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding=
+:10px 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;"><di=
+v style=3D"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-h=
+eight:20px;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=
+=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyu=
+qu2DUq-Kl_LO392zbOG1HQVBANg0bzrXZv877bLrzZbQAEvdt8kpCyVRWN59vqXVgHE7tVVIGhQ=
+TsAy19rCA829Q-_nirVXC-BkHdJVNtmKY2y5ooi_YBr7rjzuZFf8h4oMRyzdlu_Iexjw/4di/UG=
+oarg5lS2GpAP59-q1kpQ/h68/h001.D6PifrefOcwWkVQYLEuNwGomqXEFQQ_ALU8eLqJxf4U" =
+style=3D"color: #2765cf; text-decoration: none;"><![endif]-->Project Coordi=
+nator cum Network Support role (Renewable contract)<!--[if mso | IE]></a></=
+table><![endif]--></div></div></td></tr><tr><td align=3D"left" style=3D"fon=
+t-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:b=
+reak-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-hei=
+ght:18px;text-align:left;color:#747474;">PERSOLKELLY Workforce Solutions Ma=
+laysia Sdn Bhd</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px=
+;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;=
+"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;t=
+ext-align:left;color:#1c1c1c;">Kuala Lumpur</div></td></tr><tr><td align=3D=
+"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-botto=
+m:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font=
+-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">RM=C2=A04,000 =
+=E2=80=93 RM=C2=A06,000 per month</div></td></tr><tr><td style=3D"font-size=
+:0px;word-break:break-word;"><div style=3D"height:10px;line-height:10px;">&=
+#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></t=
+r></table><![endif]--> </a><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"margin:=
+0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody=
+><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"=
+><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:=
+600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" =
+style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;v=
+ertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"10=
+0%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:0px;word-break:bre=
+ak-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div></td></tr=
+></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--=
+> <a style=3D"text-decoration: none; display: block;" href=3D"https://url.s=
+earch.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO3=
+90vyq95otHML1iMxa4sW-ctKtQ5alkphasUR5fKDvOxKrIqYltj70atezE0aKYoO2Gii-DpZ2Ra=
+8A0Kc6CR1guaaVCFDhxNw9-fWutaiwS91injt_ae81tKjrGG_YHSuCk/4di/UGoarg5lS2GpAP5=
+9-q1kpQ/h69/h001.7uIst7qD9jsBaNHPJYhkqypbdwuW7LpR2Rt6corWMrI" universal=3D"=
+true"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px=
+;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-s=
+ize:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"background=
+:white;background-color:white;margin:0px auto;max-width:600px;"><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"background:white;background-color:white;width:100%;"><tbo=
+dy><tr><td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:cent=
+er;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wi=
+dth:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-f=
+ix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=
+=3D"100%"><tbody><tr><td style=3D"font-size:0px;word-break:break-word;"><di=
+v style=3D"height:10px;line-height:10px;">&#8202;</div></td></tr><tr><td al=
+ign=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;word=
+-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial,=
+ sans-serif;font-size:13px;line-height:1;table-layout:auto;width:100px;bord=
+er:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.clou=
+d.seek.com.au/3251773f-05b7-41ad-857b-3456da056a0e.1/serpLogo" alt=3D"logo"=
+ style=3D"border:0;display:block;outline:none;text-decoration:none;height:a=
+uto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!-=
+-><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/3251773f-05b7-4=
+1ad-857b-3456da056a0e.1/serpLogo" alt=3D"logo" style=3D"border:0;display:bl=
+ock;outline:none;text-decoration:none;max-height:65px;max-width:100px;heigh=
+t:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td></tr>=
+</table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10p=
+x 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;"><div st=
+yle=3D"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-heigh=
+t:20px;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=3D"ht=
+tps://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq=
+-Kl_LO390vyq95otHML1iMxa4sW-ctKtQ5alkphasUR5fKDvOxKrIqYltj70atezE0aKYoO2Gii=
+-DpZ2Ra8A0Kc6CR1guaaVCFDhxNw9-fWutaiwS91injt_ae81tKjrGG_YHSuCk/4di/UGoarg5l=
+S2GpAP59-q1kpQ/h70/h001.4XvmtS9Q1h8bVhyws-FLBDr1JEqJooNTnpxKkGhvrXc" style=
+=3D"color: #2765cf; text-decoration: none;"><![endif]-->Telecommunication O=
+utside Plant Project Manager<!--[if mso | IE]></a></table><![endif]--></div=
+></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px=
+ 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div style=
+=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-align:le=
+ft;color:#747474;">RED Technologies (S) Pte Ltd</div></td></tr><tr><td alig=
+n=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-b=
+ottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;=
+font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">Johor</div>=
+</td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;p=
+adding-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"font=
+-family:roboto, Arial;font-size:14px;line-height:18px;text-align:left;color=
+:#1c1c1c;">RM=C2=A09,000 =E2=80=93 RM=C2=A012,000 per month</div></td></tr>=
+<tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"height=
+:10px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><!--[=
+if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></div>=
+<!--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso | IE]><tab=
+le align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td s=
+tyle=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![end=
+if]--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3=
+f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px;line-heig=
+ht:4px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></t=
+d></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--> <a style=3D"text-decoration: none; display=
+: block;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2=
+sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392W7I1zroxPiEhgnlBN7KuPFdTLBhQm2Jbukq0OsShTT=
+aN925ZN54NiLzjUXU_rzasbgnZIYE5zRZOcr6eyknyLzFsy6sZbbI_a3N2htc_b7aLPmLRmB5pj=
+CqdKSrN1FO8/4di/UGoarg5lS2GpAP59-q1kpQ/h71/h001.0JEnYrEaEih1pEAPl-enqz4hnlp=
+mMCSwsSheSFPFY0U" universal=3D"true"><!--[if mso | IE]><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"pre=
+sentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td =
+style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![en=
+dif]--><div style=3D"background:white;background-color:white;margin:0px aut=
+o;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"background:white;backgroun=
+d-color:white;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:=
+0px;padding:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D""=
+ style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-co=
+lumn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;d=
+irection:ltr;display:inline-block;vertical-align:top;width:100%;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"font-size:0=
+px;word-break:break-word;"><div style=3D"height:10px;line-height:10px;">&#8=
+202;</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:1=
+0px 25px;padding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-fa=
+mily:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;tabl=
+e-layout:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"ht=
+tps://bx-branding-gateway.cloud.seek.com.au/b1797034-18d7-459b-b980-d343c7a=
+16101.1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none=
+;text-decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto">=
+<![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.clo=
+ud.seek.com.au/b1797034-18d7-459b-b980-d343c7a16101.1/serpLogo" alt=3D"logo=
+" style=3D"border:0;display:block;outline:none;text-decoration:none;max-hei=
+ght:65px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"au=
+to"><!--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" styl=
+e=3D"font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;w=
+ord-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16=
+px;font-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><=
+!--[if mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_N=
+rVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392W7I1zroxPiEhgnlBN7KuPFdTLBhQm2Jbukq0=
+OsShTTaN925ZN54NiLzjUXU_rzasbgnZIYE5zRZOcr6eyknyLzFsy6sZbbI_a3N2htc_b7aLPmL=
+RmB5pjCqdKSrN1FO8/4di/UGoarg5lS2GpAP59-q1kpQ/h72/h001.cyF9k5rvjHixo-sJTxxXU=
+I6VEX7-H2G1mYkp43yRwSY" style=3D"color: #2765cf; text-decoration: none;"><!=
+[endif]-->Senior Software Engineer<!--[if mso | IE]></a></table><![endif]--=
+></div></div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;paddin=
+g:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div =
+style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-ali=
+gn:left;color:#747474;">University of Wollongong Malaysia</div></td></tr><t=
+r><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0=
+;padding-bottom:10px;word-break:break-word;"><div style=3D"font-family:robo=
+to, Arial;font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">S=
+hah Alam, Selangor</div></td></tr><tr><td style=3D"font-size:0px;word-break=
+:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--> </a><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width=
+:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px;mso-=
+line-height-rule:exactly;"><![endif]--><div style=3D"margin:0px auto;max-wi=
+dth:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"width:100%;"><tbody><tr><td style=
+=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso |=
+ IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![en=
+dif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-=
+size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:=
+top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr=
+><td style=3D"background:#f3f3f3;font-size:0px;word-break:break-word;"><div=
+ style=3D"height:4px;line-height:4px;">&#8202;</div></td></tr></tbody></tab=
+le></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><![endif]--> <a style=3D"=
+text-decoration: none; display: block;" href=3D"https://url.search.jobstree=
+t.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392gs91WRaWVX3s=
+ut7Ze4y_OmUywjidEcd9mk_IKOtFzIxzc9rr50nI5y0XtY8XuLqibI667wAjpQ3N3gmRjxH9ia6=
+YOx9HYRIByLtXJVfXNckijHwVKBGOOGf9G1s8Ccew/4di/UGoarg5lS2GpAP59-q1kpQ/h73/h0=
+01.OUmkNIvZECCMi7rXWEiAldxT7Gxy0wKA_JHmNbvunD4" universal=3D"true"><!--[if =
+mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"60=
+0" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;mso-li=
+ne-height-rule:exactly;"><![endif]--><div style=3D"background:white;backgro=
+und-color:white;margin:0px auto;max-width:600px;"><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"background:white;background-color:white;width:100%;"><tbody><tr><td sty=
+le=3D"direction:ltr;font-size:0px;padding:0px;text-align:center;"><!--[if m=
+so | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><=
+![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"f=
+ont-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody=
+><tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"heigh=
+t:10px;line-height:10px;">&#8202;</div></td></tr><tr><td align=3D"left" sty=
+le=3D"font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;=
+word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:1=
+6px;font-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div>=
+<!--[if mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_=
+NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392gs91WRaWVX3sut7Ze4y_OmUywjidEcd9mk_=
+IKOtFzIxzc9rr50nI5y0XtY8XuLqibI667wAjpQ3N3gmRjxH9ia6YOx9HYRIByLtXJVfXNckijH=
+wVKBGOOGf9G1s8Ccew/4di/UGoarg5lS2GpAP59-q1kpQ/h74/h001.WxGf5xlck8R_ySsXXbjc=
+MTXdTeM7egftlDO4Mnnw0Fc" style=3D"color: #2765cf; text-decoration: none;"><=
+![endif]-->News Analyst( MANDARIN SPEAKER)<!--[if mso | IE]></a></table><![=
+endif]--></div></div></td></tr><tr><td align=3D"left" style=3D"font-size:0p=
+x;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word=
+;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;=
+text-align:left;color:#747474;">Private Advertiser</div></td></tr><tr><td a=
+lign=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:0;paddin=
+g-bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Ari=
+al;font-size:14px;line-height:18px;text-align:left;color:#1c1c1c;">Kuala Lu=
+mpur</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:1=
+0px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div sty=
+le=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;text-align:=
+left;color:#1c1c1c;">RM=C2=A03,000 =E2=80=93 RM=C2=A04,000 per month</div><=
+/td></tr><tr><td style=3D"font-size:0px;word-break:break-word;"><div style=
+=3D"height:10px;line-height:10px;">&#8202;</div></td></tr></tbody></table><=
+/div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></ta=
+ble></div><!--[if mso | IE]></td></tr></table><![endif]--> </a><!--[if mso =
+| IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" >=
+<tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly=
+;"><![endif]--><div style=3D"margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-si=
+ze:0px;padding:0;text-align:center;"><!--[if mso | IE]><table role=3D"prese=
+ntation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"=
+" style=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-c=
+olumn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;=
+direction:ltr;display:inline-block;vertical-align:top;width:100%;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td style=3D"background:=
+#f3f3f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px;line=
+-height:4px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE=
+]></td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso=
+ | IE]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:60=
+0px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;fon=
+t-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"backgro=
+und:white;background-color:white;margin:0px auto;max-width:600px;"><table a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"background:white;background-color:white;width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:20px 0;padding-b=
+ottom:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"f=
+ont-size:0px;padding:10px 25px;padding-bottom:0px;word-break:break-word;"><=
+div style=3D"font-family:roboto, Arial;font-size:16px;line-height:24px;text=
+-align:left;color:#1c1c1c;">Jobs you may have missed</div></td></tr><tr><td=
+ align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:8px;pa=
+dding-bottom:0px;word-break:break-word;"><div style=3D"font-family:roboto, =
+Arial;font-size:14px;line-height:24px;text-align:left;color:#747474;">Match=
+es your preference, posted few days ago</div></td></tr><tr><td align=3D"lef=
+t" style=3D"font-size:0px;padding:10px 25px;padding-top:20px;padding-bottom=
+:0px;word-break:break-word;"><div style=3D"font-family:roboto, Arial;font-s=
+ize:12px;line-height:24px;text-align:left;color:#747474;">Posted on 24 Jan =
+2025</div></td></tr><tr><td style=3D"font-size:0px;word-break:break-word;">=
+<a style=3D"text-decoration: none; display: block;" href=3D"https://url.sea=
+rch.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392=
+zZHmgrbcjLitXm4_4-mzxF7s7fi7HWbYXc1yasMNh0Pv6Eeoi0YRINTwQFNJT5Im5_qSuEbJpfv=
+XMcvXbKkOOW7gPy2qbzaBy8Xm12pn0LaUfO-OLweQUgwUkESPJnosa9u71BoGgU81sKtp3MAbx/=
+4di/UGoarg5lS2GpAP59-q1kpQ/h75/h001.SGpmV8kzrGthcNP0LJagzlPcscsC6uzc8RmhmMu=
+Xp5I" universal=3D"true"><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"background:white;background-color:white;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background:white;background-color:wh=
+ite;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:0px;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"=
+vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-1=
+00 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;direction:l=
+tr;display:inline-block;vertical-align:top;width:100%;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertica=
+l-align:top;" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-si=
+ze:0px;padding:10px 25px;padding-bottom:0;word-break:break-word;"><table ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100" border=3D"0" style=3D"color=
+:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;li=
+ne-height:1;table-layout:auto;width:100px;border:none;"><tr><td><!--[if mso=
+]><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/6d67fb26-deb0-4=
+dd2-aa4b-0d65b27af217.1/serpLogo" alt=3D"logo" style=3D"border:0;display:bl=
+ock;outline:none;text-decoration:none;height:auto;width:auto" width=3D"65" =
+height=3D"auto"><![endif]--> <!--[if !mso]><!--><img src=3D"https://bx-bran=
+ding-gateway.cloud.seek.com.au/6d67fb26-deb0-4dd2-aa4b-0d65b27af217.1/serpL=
+ogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text-decorat=
+ion:none;max-height:65px;max-width:100px;height:auto;width:auto" width=3D"1=
+00" height=3D"auto"><!--<![endif]--></td></tr></table></td></tr><tr><td ali=
+gn=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-top:10px;paddi=
+ng-bottom:10px;word-break:break-word;"><div style=3D"font-family:roboto, Ar=
+ial;font-size:16px;font-weight:bold;line-height:20px;text-align:left;color:=
+#2765cf;"><div><!--[if mso | IE]><a href=3D"https://url.search.jobstreet.co=
+m/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO392zZHmgrbcjLitXm4_4-mz=
+xF7s7fi7HWbYXc1yasMNh0Pv6Eeoi0YRINTwQFNJT5Im5_qSuEbJpfvXMcvXbKkOOW7gPy2qbza=
+By8Xm12pn0LaUfO-OLweQUgwUkESPJnosa9u71BoGgU81sKtp3MAbx/4di/UGoarg5lS2GpAP59=
+-q1kpQ/h76/h001.iOsasjeRBV_a7sC6_v_EBiay60EehZqdjtlYMvXr-ME" style=3D"color=
+: #2765cf; text-decoration: none;"><![endif]-->Assistant Executive, Quality=
+ Monitoring and Assignment (Perak State Office)<!--[if mso | IE]></a></tabl=
+e><![endif]--></div></div></td></tr><tr><td align=3D"left" style=3D"font-si=
+ze:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break=
+-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-height:=
+18px;text-align:left;color:#747474;">Malaysian Communications and Multimedi=
+a Commission</div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;p=
+adding:10px 25px;padding-top:0;padding-bottom:10px;word-break:break-word;">=
+<div style=3D"font-family:roboto, Arial;font-size:14px;line-height:18px;tex=
+t-align:left;color:#1c1c1c;">Ipoh, Perak</div></td></tr><tr><td style=3D"fo=
+nt-size:0px;word-break:break-word;"><div style=3D"height:10px;line-height:1=
+0px;">&#8202;</div></td></tr></tbody></table></div><!--[if mso | IE]></td><=
+/tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><![endif]--></a></td></tr><tr><td style=3D"background:#f3f=
+3f3;font-size:0px;word-break:break-word;"><div style=3D"height:4px;line-hei=
+ght:4px;">&#8202;</div></td></tr><tr><td align=3D"left" style=3D"font-size:=
+0px;padding:10px 25px;padding-top:20px;padding-bottom:0px;word-break:break-=
+word;"><div style=3D"font-family:roboto, Arial;font-size:12px;line-height:2=
+4px;text-align:left;color:#747474;">Posted on 24 Jan 2025</div></td></tr><t=
+r><td style=3D"font-size:0px;word-break:break-word;"><a style=3D"text-decor=
+ation: none; display: block;" href=3D"https://url.search.jobstreet.com/uni/=
+ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO391e_WlprQEa-Sa1bKMmpRMjJ=
+9TuBC7dCZj8-hoGgcU-nIqczKMxEMWlqfkCg0WutW88C8CEzGocue9YzYwk05W0UZUEpF08Y8ry=
+RScTHKIYKetBXmAoSOhYxmpRnTcWwHOWkxOedxbqq3jv1PWH2bpG/4di/UGoarg5lS2GpAP59-q=
+1kpQ/h77/h001.5H2Oh0uWHazaocK7Q1rS7CUiX1g6Q2zIhsBWanFNIOc" universal=3D"tru=
+e"><!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" =
+width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:wh=
+ite;background-color:white;margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:white;background-color:white;width:100%;"><tbod=
+y><tr><td style=3D"direction:ltr;font-size:0px;padding:0px;text-align:cente=
+r;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fi=
+x" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D=
+"100%"><tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25=
+px;padding-bottom:0;word-break:break-word;"><table cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100" border=3D"0" style=3D"color:#000000;font-family:U=
+buntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:1;table-layo=
+ut:auto;width:100px;border:none;"><tr><td><!--[if mso]><img src=3D"https://=
+bx-branding-gateway.cloud.seek.com.au/9c835f8b-684f-4727-a7ae-18f592eef3e2.=
+1/serpLogo" alt=3D"logo" style=3D"border:0;display:block;outline:none;text-=
+decoration:none;height:auto;width:auto" width=3D"65" height=3D"auto"><![end=
+if]--> <!--[if !mso]><!--><img src=3D"https://bx-branding-gateway.cloud.see=
+k.com.au/9c835f8b-684f-4727-a7ae-18f592eef3e2.1/serpLogo" alt=3D"logo" styl=
+e=3D"border:0;display:block;outline:none;text-decoration:none;max-height:65=
+px;max-width:100px;height:auto;width:auto" width=3D"100" height=3D"auto"><!=
+--<![endif]--></td></tr></table></td></tr><tr><td align=3D"left" style=3D"f=
+ont-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-br=
+eak:break-word;"><div style=3D"font-family:roboto, Arial;font-size:16px;fon=
+t-weight:bold;line-height:20px;text-align:left;color:#2765cf;"><div><!--[if=
+ mso | IE]><a href=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2=
+sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO391e_WlprQEa-Sa1bKMmpRMjJ9TuBC7dCZj8-hoGgcU-n=
+IqczKMxEMWlqfkCg0WutW88C8CEzGocue9YzYwk05W0UZUEpF08Y8ryRScTHKIYKetBXmAoSOhY=
+xmpRnTcWwHOWkxOedxbqq3jv1PWH2bpG/4di/UGoarg5lS2GpAP59-q1kpQ/h78/h001.cOJe2S=
+E2StKfMbol8_2z1cua4faKs8_LGr-A-SgdU1o" style=3D"color: #2765cf; text-decora=
+tion: none;"><![endif]-->Technical Support Executive<!--[if mso | IE]></a><=
+/table><![endif]--></div></div></td></tr><tr><td align=3D"left" style=3D"fo=
+nt-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-break:=
+break-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line-he=
+ight:18px;text-align:left;color:#747474;">AFJ CAREERS RESOURCES</div></td><=
+/tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding=
+-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"font-famil=
+y:roboto, Arial;font-size:14px;line-height:18px;text-align:left;color:#1c1c=
+1c;">Ara Damansara, Selangor</div></td></tr><tr><td align=3D"left" style=3D=
+"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word-bre=
+ak:break-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;line=
+-height:18px;text-align:left;color:#1c1c1c;">RM=C2=A02,800 =E2=80=93 RM=C2=
+=A04,200 per month</div></td></tr><tr><td style=3D"font-size:0px;word-break=
+:break-word;"><div style=3D"height:10px;line-height:10px;">&#8202;</div></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![en=
+dif]--></a></td></tr><tr><td style=3D"background:#f3f3f3;font-size:0px;word=
+-break:break-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div=
+></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;=
+padding-top:20px;padding-bottom:0px;word-break:break-word;"><div style=3D"f=
+ont-family:roboto, Arial;font-size:12px;line-height:24px;text-align:left;co=
+lor:#747474;">Posted on 24 Jan 2025</div></td></tr><tr><td style=3D"font-si=
+ze:0px;word-break:break-word;"><a style=3D"text-decoration: none; display: =
+block;" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sU=
+yY4jhyQskt2hJyyuqu2DUq-Kl_LO392dJO2gGbyJOaeWFOYrLV44JVzlyegNeN6vnAEonf-6Of7=
+6Tmz8DBEbQ8SxJBGwVRtxdtgPHSfVdwltpd5h25ATxAQo2Kjm7M2TDdr0iqrROV-rK3FyKj44sW=
+NeXc-xjgEowGyPTDfWz4i8XA45wmxq/4di/UGoarg5lS2GpAP59-q1kpQ/h79/h001.T__MP0O0=
+WAnqTpF_ihTkELb4h8Jvfyk8yfcNtgQ5Bfw" universal=3D"true"><!--[if mso | IE]><=
+table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=
+=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-=
+rule:exactly;"><![endif]--><div style=3D"background:white;background-color:=
+white;margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"backgr=
+ound:white;background-color:white;width:100%;"><tbody><tr><td style=3D"dire=
+ction:ltr;font-size:0px;padding:0px;text-align:center;"><!--[if mso | IE]><=
+table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![endif]--=
+><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0=
+px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wi=
+dth:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody><tr><td a=
+lign=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bottom:0;wor=
+d-break:break-word;"><table cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0" border=3D"0" style=3D"color:#000000;font-family:Ubuntu, Helvetica, Arial=
+, sans-serif;font-size:13px;line-height:1;table-layout:auto;width:100px;bor=
+der:none;"><tr><td><!--[if mso]><img src=3D"https://bx-branding-gateway.clo=
+ud.seek.com.au/0118cc92-08f0-4153-bd4d-7e93af8ffe21.1/serpLogo" alt=3D"logo=
+" style=3D"border:0;display:block;outline:none;text-decoration:none;height:=
+auto;width:auto" width=3D"65" height=3D"auto"><![endif]--> <!--[if !mso]><!=
+--><img src=3D"https://bx-branding-gateway.cloud.seek.com.au/0118cc92-08f0-=
+4153-bd4d-7e93af8ffe21.1/serpLogo" alt=3D"logo" style=3D"border:0;display:b=
+lock;outline:none;text-decoration:none;max-height:65px;max-width:100px;heig=
+ht:auto;width:auto" width=3D"100" height=3D"auto"><!--<![endif]--></td></tr=
+></table></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10=
+px 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;"><div s=
+tyle=3D"font-family:roboto, Arial;font-size:16px;font-weight:bold;line-heig=
+ht:20px;text-align:left;color:#2765cf;"><div><!--[if mso | IE]><a href=3D"h=
+ttps://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DU=
+q-Kl_LO392dJO2gGbyJOaeWFOYrLV44JVzlyegNeN6vnAEonf-6Of76Tmz8DBEbQ8SxJBGwVRtx=
+dtgPHSfVdwltpd5h25ATxAQo2Kjm7M2TDdr0iqrROV-rK3FyKj44sWNeXc-xjgEowGyPTDfWz4i=
+8XA45wmxq/4di/UGoarg5lS2GpAP59-q1kpQ/h80/h001.OEdFOQnMQTWKDm_8TtA1iTIDX6q2q=
+TS7V_MNK0j6lYE" style=3D"color: #2765cf; text-decoration: none;"><![endif]-=
+->System Developer<!--[if mso | IE]></a></table><![endif]--></div></div></t=
+d></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padd=
+ing-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D"font-fa=
+mily:roboto, Arial;font-size:14px;line-height:18px;text-align:left;color:#7=
+47474;">NSC GLOBALTECH SDN. BHD.</div></td></tr><tr><td align=3D"left" styl=
+e=3D"font-size:0px;padding:10px 25px;padding-top:0;padding-bottom:10px;word=
+-break:break-word;"><div style=3D"font-family:roboto, Arial;font-size:14px;=
+line-height:18px;text-align:left;color:#1c1c1c;">Seremban, Negeri Sembilan<=
+/div></td></tr><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 2=
+5px;padding-top:0;padding-bottom:10px;word-break:break-word;"><div style=3D=
+"font-family:roboto, Arial;font-size:14px;line-height:18px;text-align:left;=
+color:#1c1c1c;">RM=C2=A03,500 =E2=80=93 RM=C2=A04,500 per month</div></td><=
+/tr><tr><td style=3D"font-size:0px;word-break:break-word;"><div style=3D"he=
+ight:10px;line-height:10px;">&#8202;</div></td></tr></tbody></table></div><=
+!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table></=
+div><!--[if mso | IE]></td></tr></table><![endif]--></a></td></tr><tr><td s=
+tyle=3D"background:#f3f3f3;font-size:0px;word-break:break-word;"><div style=
+=3D"height:4px;line-height:4px;">&#8202;</div></td></tr></tbody></table></d=
+iv><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></tabl=
+e></div><!--[if mso | IE]></td></tr></table><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation"=
+ style=3D"width:600px;" width=3D"600" bgcolor=3D"white" ><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"background:white;background-color:white;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background:white;background-color:wh=
+ite;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;paddin=
+g:20px 0;padding-bottom:10px;padding-top:30px;text-align:center;"><!--[if m=
+so | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><=
+![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"f=
+ont-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"><tbody=
+><tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;word-bre=
+ak:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"border-collapse:separate;width:248px;line-heigh=
+t:100%;"><tbody><tr><td align=3D"center" bgcolor=3D"#FB0079" role=3D"presen=
+tation" style=3D"border:none;border-radius:3px;cursor:auto;mso-padding-alt:=
+10px 25px;background:#FB0079;" valign=3D"middle"><a href=3D"https://url.sea=
+rch.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO391sbdu=
+0jJGoktwcbaZ90OGGvKvXLt7lT8cwg2NXyO48YbDw7O9N55NtgO4w_20CO5de4jiFK-5HxuaI6R=
+YzQEDiyD31oza9KoWDTuPH1gQqzorOBN23oRmrWGEj8mx_xYXPTvfZt22Z7wHDJI4EX9IArLzZP=
+Ocfgbb6N7n8i8n5xAstMd41Zlf8AofqManHvoUrzYILBDDZ6_RjZpzxzD44tyDcXs6lVSmEumKU=
+s9eyV1n7K7mRh35UU2eg6oRlszJOMbSRarg7JKoZBmq4qmc6Qiyi6bJvojsSYn-mFG1A8rtHcbO=
+JqpRfpMiTSFDh9Jzsm0gxLfQPog8E4HMqcz-m/4di/UGoarg5lS2GpAP59-q1kpQ/h81/h001.6=
+XsM0JGpn9P2i9k3KzY0Bw476Ah_fucpj5eQ1UkNU1k" style=3D"display: inline-block;=
+ width: 198px; background: #FB0079; color: white; font-family: roboto, Aria=
+l; font-size: 16px; font-weight: normal; line-height: 120%; margin: 0; text=
+-decoration: none; text-transform: none; padding: 10px 25px; mso-padding-al=
+t: 0px; border-radius: 3px;" target=3D"_blank">View all matching jobs</a></=
+td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]><=
+/td></tr></table><![endif]--></td></tr></tbody></table></div><!--[if mso | =
+IE]></td></tr></table><table align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;"=
+ width=3D"600" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-siz=
+e:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"background:w=
+hite;background-color:white;margin:0px auto;max-width:600px;"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"background:white;background-color:white;width:100%;"><tbod=
+y><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;=
+"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;wid=
+th:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fi=
+x" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bloc=
+k;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D=
+"100%"><tbody><tr><td style=3D"font-size:0px;word-break:break-word;"><div s=
+tyle=3D"height:20px;line-height:20px;">&#8202;</div></td></tr></tbody></tab=
+le></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody>=
+</table></div><!--[if mso | IE]></td></tr></table><table align=3D"center" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presenta=
+tion" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-height:0p=
+x;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div style=3D"ma=
+rgin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;"><=
+tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:cen=
+ter;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;w=
+idth:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-=
+fix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-bl=
+ock;vertical-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=
+=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:0px;word-bre=
+ak:break-word;"><div style=3D"height:4px;line-height:4px;">&#8202;</div></t=
+d></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]-=
+-></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><tabl=
+e align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td s=
+tyle=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![end=
+if]--><div style=3D"margin:0px auto;max-width:600px;"><table align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:0;text-align:center;"><!--[if mso | IE]><table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=
+=3D"vertical-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-p=
+er-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;directi=
+on:ltr;display:inline-block;vertical-align:top;width:100%;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"v=
+ertical-align:top;" width=3D"100%"><tbody><tr><td align=3D"center" style=3D=
+"font-size:0px;padding:0;word-break:break-word;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collaps=
+e:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px;"><a hr=
+ef=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJy=
+yuqu2DUq-Kl_LO390iuaiiDkeQhM2Lnb7AdtB2jpf9nqoN3EeDocLZp2z9UI8gqmWVn5kOfkRey=
+kTHrHaolQi84dzuFUvUrnvI2O83/4di/UGoarg5lS2GpAP59-q1kpQ/h82/h001.eVHm7HkSTMU=
+AktXpJW-LJIXrp_iptofUUT7LmZqkBws" target=3D"_blank" style=3D"text-decoratio=
+n: none;"><img alt=3D"banner" src=3D"https://seekcdn.com/notifications/apac=
+-mail/shared/career-advice-onsite-desktop.png" style=3D"border:0;display:bl=
+ock;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px=
+;" width=3D"600" height=3D"auto"></a></td></tr></tbody></table></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></=
+tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" rol=
+e=3D"presentation" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"l=
+ine-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><di=
+v style=3D"margin:0px auto;max-width:600px;"><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"w=
+idth:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;t=
+ext-align:center;"><!--[if mso | IE]><table role=3D"presentation" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0"><tr><td class=3D"" style=3D"vertica=
+l-align:top;width:600px;" ><![endif]--><div class=3D"mj-column-per-100 mj-o=
+utlook-group-fix" style=3D"font-size:0px;text-align:left;direction:ltr;disp=
+lay:inline-block;vertical-align:top;width:100%;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"vertical-align=
+:top;" width=3D"100%"><tbody><tr><td style=3D"background:#f3f3f3;font-size:=
+0px;word-break:break-word;"><div style=3D"height:4px;line-height:4px;">&#82=
+02;</div></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></tabl=
+e><![endif]--></td></tr></tbody></table></div><!--[if mso | IE]></td></tr><=
+/table><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"" role=3D"presentation" style=3D"width:600px;" width=3D"600=
+" bgcolor=3D"white" ><tr><td style=3D"line-height:0px;font-size:0px;mso-lin=
+e-height-rule:exactly;"><![endif]--><div style=3D"background:white;backgrou=
+nd-color:white;margin:0px auto;max-width:600px;"><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"background:white;background-color:white;width:100%;"><tbody><tr><td sty=
+le=3D"direction:ltr;font-size:0px;padding:0;text-align:center;"><!--[if mso=
+ | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600px;" ><![=
+endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"fon=
+t-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-alig=
+n:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D"vertical-align=
+:top;padding-left:5px;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td align=3D"left" s=
+tyle=3D"font-size:0px;padding:15px 0;word-break:break-word;"><div class=3D"=
+mj-inline-links"><!--[if mso | IE]><table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" align=3D"left"><tr><td style=3D"paddi=
+ng:5px 20px;" class=3D"" ><![endif]--> <a class=3D"mj-link" href=3D"https:/=
+/url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_L=
+O393Au_9y2rMPLFZ72TypkkJ5LAi06Fo5GacW0GjokS3hIdrPMZopc4QZAVPb-dXbaW-Y6L8zb5=
+KGeEx9XWIXtKhBDFuciemBtseq9E6hqzxkUag94wK-rQnPyhDu2qX359SiDZvpMoqUyibbhlo7g=
+vZM/4di/UGoarg5lS2GpAP59-q1kpQ/h83/h001.yh0sendYXPEALLiwPYM1YABNSUKsKMoj7Q6=
+E7VUjvgI" target=3D"_blank" style=3D"display: inline-block; color: #2765cf;=
+ font-family: roboto, Arial; font-size: 14px; font-weight: normal; line-hei=
+ght: 22px; text-decoration: none; text-transform: none; padding: 5px 20px;"=
+>Edit this alert </a><!--[if mso | IE]></td><td style=3D"padding:5px 20px;"=
+ class=3D"" ><![endif]--> <a class=3D"mj-link" href=3D"https://url.search.j=
+obstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO3908swX5dmRW=
+kvFWojh9y4kYTRhRoLmmRPqG1D198JP_Ig4EFsOAK1ztDmzWfmhiH_Hrg0vilCQp0hJTavLNr5s=
+cSqXpaodX8sr4m6lnz9aiLXyOsseuVP7I1MPvjT0tT0clxGg9cUL5BxICPnhTmJCk2_MJoU-NSa=
+lOce21Rd6muR9-6Hshe23k5baYteBIGB5FrIEsA0ZpXHOHJKviIqQHIJC6hF2DdpC9UWiIATwgp=
+OCWXxxvpIQOL-aHwDUdr22ttFMSUUFtvyYJZgKfPeqhSHmJg6SpeUAN5F6atsPq2IX5_a_ikF8h=
+2vcRKqWeq9E/4di/UGoarg5lS2GpAP59-q1kpQ/h84/h001.mDjTFhNc1svzJj-E69KtgHYP7Nb=
+zw-hPV-UlDGb06Lw" target=3D"_blank" style=3D"display: inline-block; color: =
+#2765cf; font-family: roboto, Arial; font-size: 14px; font-weight: normal; =
+line-height: 22px; text-decoration: none; text-transform: none; padding: 5p=
+x 20px;">Unsubscribe from this alert </a><!--[if mso | IE]></td><td style=
+=3D"padding:5px 20px;" class=3D"" ><![endif]--> <a class=3D"mj-link" href=
+=3D"https://url.search.jobstreet.com/ss/c/u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyu=
+qu2DUq-Kl_LO391-qXgVqLfdZBUcS-zM1HGL1YZz2lTw7MCP5W9Xi8m_gSl1-I4hemNx0x35x1a=
+nc1AbomnqhR74MxGzbUGxDd2Sbw45T4r8YUNxGFkenzyi_xiSroUFk2Xv7vSalQokiHM/4di/UG=
+oarg5lS2GpAP59-q1kpQ/h85/h001.gr10joxQzTNz6cE7KVGdipfqo2LUbOer3k9a6YY8uk8" =
+target=3D"_blank" style=3D"display: inline-block; color: #2765cf; font-fami=
+ly: roboto, Arial; font-size: 14px; font-weight: normal; line-height: 22px;=
+ text-decoration: none; text-transform: none; padding: 5px 20px;">Privacy <=
+/a><!--[if mso | IE]></td><td style=3D"padding:5px 20px;" class=3D"" ><![en=
+dif]--> <a class=3D"mj-link" href=3D"https://url.search.jobstreet.com/ss/c/=
+u001.PZ_NrVXmV2sUyY4jhyQskt2hJyyuqu2DUq-Kl_LO391_CJgaAMGccYI9IEZm7OGdpuVwF-=
+Ep4hqtyjdJrlfxOl2X3_kpe1YLpc0aeaasso97AuiO_rrElryXu-GwWt4_6hai2iEe_Da2ih8pL=
+U7rYO5OJNwYmZ5mHVnjSJnQPf0/4di/UGoarg5lS2GpAP59-q1kpQ/h86/h001.mhQR3eGk1KBq=
+tsXFdm77FoPyY925r5iMAmOLzjpUhl4" target=3D"_blank" style=3D"display: inline=
+-block; color: #2765cf; font-family: roboto, Arial; font-size: 14px; font-w=
+eight: normal; line-height: 22px; text-decoration: none; text-transform: no=
+ne; padding: 5px 20px;">Contact us </a><!--[if mso | IE]></td></tr></table>=
+<![endif]--></div></td></tr></tbody></table></td></tr></tbody></table></div=
+><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></tbody></table>=
+</div><!--[if mso | IE]></td></tr></table><table align=3D"center" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" role=3D"presentation" st=
+yle=3D"width:600px;" width=3D"600" bgcolor=3D"#f3f3f3" ><tr><td style=3D"li=
+ne-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]--><div=
+ style=3D"background:#f3f3f3;background-color:#f3f3f3;margin:0px auto;max-w=
+idth:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"background:#f3f3f3;background-col=
+or:#f3f3f3;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px=
+;padding:20px 0;padding-top:10px;text-align:center;"><!--[if mso | IE]><tab=
+le role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><=
+tr><td class=3D"" style=3D"vertical-align:top;width:300px;" ><![endif]--><d=
+iv class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px;t=
+ext-align:left;direction:ltr;display:inline-block;vertical-align:top;width:=
+100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding=
+-top:10px;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" width=3D"100%"><tbody><tr><td align=3D"left" style=3D"font-s=
+ize:0px;padding:10px 25px;word-break:break-word;"><div style=3D"font-family=
+:roboto, Arial;font-size:16px;line-height:24px;text-align:left;color:#1c1c1=
+c;">Download Jobstreet App</div></td></tr></tbody></table></td></tr></tbody=
+></table></div><!--[if mso | IE]></td><td class=3D"" style=3D"width:300px;"=
+ ><![endif]--><div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D=
+"font-size:0;line-height:0;text-align:left;display:inline-block;width:100%;=
+direction:ltr;"><!--[if mso | IE]><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" ><tr><td style=3D"vertical-align:top;w=
+idth:150px;" ><![endif]--><div class=3D"mj-column-per-50 mj-outlook-group-f=
+ix" style=3D"font-size:0px;text-align:left;direction:ltr;display:inline-blo=
+ck;vertical-align:top;width:50%;"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td style=3D=
+"vertical-align:top;padding-top:10px;"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" width=3D"100%"><tbody><tr><td ali=
+gn=3D"center" style=3D"font-size:0px;padding:10px 25px;padding-top:0;paddin=
+g-right:7px;padding-bottom:0;word-break:break-word;"><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-col=
+lapse:collapse;border-spacing:0px;" class=3D"mj-full-width-mobile"><tbody><=
+tr><td style=3D"width:118px;" class=3D"mj-full-width-mobile"><a href=3D"htt=
+ps://url.search.jobstreet.com/ss/c/u001.5XLLYaA_YQVfsiQ2aac9HX6JBbVzOmNU-E2=
+cvFXolm1SmY7uaxMxypPTNXz2Tx110V8_51FYXOnr0i-ahbRCqg/4di/UGoarg5lS2GpAP59-q1=
+kpQ/h87/h001.N7fMhMeeU4CeIUyiaD97pZoNLCzFJefa3Ecy9vA5-3I" target=3D"_blank"=
+ style=3D"text-decoration: none;"><img alt=3D"apple-store" src=3D"https://s=
+eekcdn.com/notifications/apac-mail/shared/apple-store.png" style=3D"border:=
+0;display:block;outline:none;text-decoration:none;height:auto;width:100%;fo=
+nt-size:13px;" width=3D"118" height=3D"auto"></a></td></tr></tbody></table>=
+</td></tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]=
+></td><td style=3D"vertical-align:top;width:150px;" ><![endif]--><div class=
+=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px;text-alig=
+n:left;direction:ltr;display:inline-block;vertical-align:top;width:50%;"><t=
+able border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ width=3D"100%"><tbody><tr><td style=3D"vertical-align:top;padding-top:10px=
+;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" width=3D"100%"><tbody><tr><td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-top:0;padding-bottom:0;padding-left:7px;word-bre=
+ak:break-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0px;" c=
+lass=3D"mj-full-width-mobile"><tbody><tr><td style=3D"width:118px;" class=
+=3D"mj-full-width-mobile"><a href=3D"https://url.search.jobstreet.com/ss/c/=
+u001.LItEdquMUTh4SX5SkWriaAJEmBieiZHBq2KIFFJVjVEs8QTCWwFIRTTNeTAEFGfp4qO9V2=
+2nK52K-T2yO7Qdmn2Cl3WuJP_N2dPZq2prHT0/4di/UGoarg5lS2GpAP59-q1kpQ/h88/h001.F=
+aDIodV5cmItfOWjZ5MG4o6njrG2K9mGfFrClHn-T1w" target=3D"_blank" style=3D"text=
+-decoration: none;"><img alt=3D"google-play" src=3D"https://seekcdn.com/not=
+ifications/apac-mail/shared/google-play.png" style=3D"border:0;display:bloc=
+k;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"=
+ width=3D"118" height=3D"auto"></a></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></div><!--[if mso | IE]></td></tr></t=
+able><![endif]--></div><!--[if mso | IE]></td></tr></table><![endif]--></td=
+></tr></tbody></table></div><!--[if mso | IE]></td></tr></table><table alig=
+n=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"" ro=
+le=3D"presentation" style=3D"width:600px;" width=3D"600" bgcolor=3D"#f3f3f3=
+" ><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;"><![endif]--><div style=3D"background:#f3f3f3;background-color:#f3f3f3=
+;margin:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:=
+#f3f3f3;background-color:#f3f3f3;width:100%;"><tbody><tr><td style=3D"direc=
+tion:ltr;font-size:0px;padding:20px 0;padding-top:0;text-align:center;"><!-=
+-[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td class=3D"" style=3D"vertical-align:top;width:600p=
+x;" ><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" styl=
+e=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;verti=
+cal-align:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">=
+<tbody><tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padd=
+ing-top:0;padding-bottom:0;word-break:break-word;"><div style=3D"font-famil=
+y:roboto, Arial;font-size:12px;line-height:24px;text-align:left;color:#7474=
+74;">This email was sent to you as a registered user of <a universal=3D"tru=
+e" href=3D"https://url.search.jobstreet.com/uni/ss/c/u001.PZ_NrVXmV2sUyY4jh=
+yQskt2hJyyuqu2DUq-Kl_LO393nN7uWGrWMo6W-Tu6aG_sm-vJq6CYrnWg70R55KJhDEzmkPcrO=
+_m3aBkWDUQe1IEY/4di/UGoarg5lS2GpAP59-q1kpQ/h89/h001.8E77tBFFOrQw6jwEleL-Ktj=
+tyLqHazYietlx2-0seck" target=3D"_blank" style=3D"color: #2765cf; text-decor=
+ation: none;">my.jobstreet.com</a></div></td></tr><tr><td align=3D"left" st=
+yle=3D"font-size:0px;padding:10px 25px;padding-top:0;word-break:break-word;=
+"><div style=3D"font-family:roboto, Arial;font-size:12px;line-height:24px;t=
+ext-align:left;color:#747474;">=C2=A9 Jobstreet 2025</div></td></tr></tbody=
+></table></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></=
+tbody></table></div><!--[if mso | IE]></td></tr></table><![endif]--></div><=
+/body></html>
+----_NmP-89a77a2922f07e23-Part_1--

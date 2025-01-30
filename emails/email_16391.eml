@@ -1,0 +1,1414 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp2278058dye;
+        Mon, 27 Jan 2025 02:02:47 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH8PxEmrWHViCmmSnbX5KyTWo82693T8kMTDwYZdYZ+thVpq/dC7ZxHDu9x9lS3xRcr2gaA
+X-Received: by 2002:ac8:538d:0:b0:46e:25ed:1601 with SMTP id d75a77b69052e-46e25ed17cbmr442318901cf.14.1737972167446;
+        Mon, 27 Jan 2025 02:02:47 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737972167; cv=none;
+        d=google.com; s=arc-20240605;
+        b=OIzLkd4J+ujlURNeSxWDYZ64UDKY3ytRE4BT4VzcEQtwZqU86vYDPpcRDPB9yoiJbk
+         FMQjBENWwHugoDK+5zm95wOvW3XnC/pZaIbhoHLExa8e71E5Ls+2/B08+Ug4M7AF64tA
+         nZgL05omNWhV49kzKogYRHe1XvMDDNdGinQmuf/rba74MacBv7NZL0Ae5azgB0NXzr+T
+         gtLDiI3ReQoC7TpvtYfjTB42NRIMoaKq7Zos9VAHNDisj7liJ8GVSsL0FZEwP413vzNf
+         QRpaPCCTAER/2RAfpsAmI30f69wsecxlWj3Ac0SCPfWL8jdTnZm6jfMPcQD6Rgzg5dB1
+         UbmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=671K7Rde8P7w5qbV1E74DdAukMqSFslWzkeBx78K62Q=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=Mi2QjOrqpQgSdx5Cm4q+97H/AMb0piUMUA4MFOwvW4iiTEmXx1qFM5DjebsKbUiKMB
+         V1Vsqv0Qm16UAy/D9RfrbOT2wYM4hXGXkt/2yLJ3HkYO1YWAynvNMKNDX8BU5FoHC3ZT
+         LLMGjNiRbwKspG74eKeawiqF/9L1Esi34dJeS+TCKmb3mAV/giK1xFf/RZ6udSXCi2an
+         1yqO/TrC63qJX5IYbvbx7ZClRmW7uPF91URAzrDVPYD4h7FqGKe2nPsbY4c6Yc51wzJb
+         D88uua9EgAjzGXmg+0q9tlZfiNdMyu5FsZzSsMk9wWBaUHpWfp0AXpj6AtfZ6fSyapZL
+         sG1w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@lalamove.com header.s=mkt header.b=NdWVsdwZ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YutWLCUU;
+       spf=pass (google.com: domain of bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com designates 149.72.249.75 as permitted sender) smtp.mailfrom="bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lalamove.com
+Return-Path: <bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com>
+Received: from o1.sendgrid.lalamove.com (o1.sendgrid.lalamove.com. [149.72.249.75])
+        by mx.google.com with ESMTPS id d75a77b69052e-46e6686becasi95101981cf.39.2025.01.27.02.02.46
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Jan 2025 02:02:47 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com designates 149.72.249.75 as permitted sender) client-ip=149.72.249.75;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@lalamove.com header.s=mkt header.b=NdWVsdwZ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=YutWLCUU;
+       spf=pass (google.com: domain of bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com designates 149.72.249.75 as permitted sender) smtp.mailfrom="bounces+16687471-4177-azri.mokhzani=gmail.com@em2305.lalamove.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=lalamove.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lalamove.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:
+	list-unsubscribe:list-unsubscribe-post:cc:content-type:from:subject:to;
+	s=mkt; bh=671K7Rde8P7w5qbV1E74DdAukMqSFslWzkeBx78K62Q=;
+	b=NdWVsdwZEhZ2oI+jENl2ropaeq1QOLZ/WhA9JPL8DlSWXt1sRIQzLCxbL3WH+59xlMNd
+	jKp5wBX/tI33ObwevMFEjMuO6ULqna8/cHJMywMQFp1oDnBS6TZmTnjUoLaWjziJYrCvIb
+	SF1RGGAcikixs6mquxIkZFBetl67GZbzbux1jJGROFkBBfSojCUN9PVhytWZGHMpSqd4je
+	hEIj4SeUllYgn17cqKvbKeVW0sL2acTq9XEB3RLBIhi0JE2PiaYMUXIVWgdzfNP5owhZZb
+	bYpHnfGTDW1ZrcpOz+0pNUJnT8aYae2B7fQKcbtNNO7xgaHlM6DiVRqgNY+zU3WA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:
+	list-unsubscribe:list-unsubscribe-post:cc:content-type:from:subject:to;
+	s=smtpapi; bh=671K7Rde8P7w5qbV1E74DdAukMqSFslWzkeBx78K62Q=;
+	b=YutWLCUU64Awua3S1m4boXju2hcV9EMeiJq7rvd41PyHQMLpjP6jUA2DJzKMqan7K8MJ
+	OcYmabnXAPnB16Iu0PxNuwPOO1EMlnEs7WC+fniu0TEqiGTVeufZF1tOCD/WuRCRhkuorj
+	Nl+nhCNup7RBakPkWrPI6lozwq9TR0NlM=
+Received: by recvd-545dc77d9b-bc6zb with SMTP id recvd-545dc77d9b-bc6zb-1-679759C4-31
+	2025-01-27 10:02:44.76108638 +0000 UTC m=+6352722.237895413
+Received: from MTY2ODc0NzE (unknown)
+	by geopod-ismtpd-0 (SG) with HTTP
+	id jT2xMhc0Tde5fi8zzDWqJg
+	Mon, 27 Jan 2025 10:02:44.531 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e38c0e12a20412d5b7dbcd660b39b948b2f8b1c5551f8fadca54037e38c9
+Date: Mon, 27 Jan 2025 10:02:46 +0000 (UTC)
+From: Lalamove <hello@lalamove.com>
+Mime-Version: 1.0
+Message-ID: <jT2xMhc0Tde5fi8zzDWqJg@geopod-ismtpd-0>
+Subject: Extra sweet deal for Lalamove users!
+X-Feedback-ID: 16687471:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EgbOSweWaAojBji4c1YG82fgczIXRh74YA2Cq7JWPktvZEkGW7PK6fnlGZ?=
+ =?us-ascii?Q?QQD4Q+mfC1ma2V0L1OQ0dh68xAEigfnZKFIUHll?=
+ =?us-ascii?Q?jK9hNq34jSyGeHowEZehXIVdvGSkD6yFwQgFJfR?=
+ =?us-ascii?Q?CoS2C5dYrCGVM59j7X1SDfGdXEbKPXrtP5eucGv?=
+ =?us-ascii?Q?7peGk2aWak41lGKOSZxwL3fVzBMBJFmXA4OVHvf?=
+ =?us-ascii?Q?unPw5lDlZiiJV=2Ff4VfvdrmurFLckP+ndDQBXLF4?= =?us-ascii?Q?Gszg?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprBOxB=2FnZ9XKS0EIl?=
+ =?us-ascii?Q?ubwSQtydy1535037J085IEZK639YGgS=2FRVdXWoF?=
+ =?us-ascii?Q?ZCXVbWxIu2jZHjfmMfBZ6+aYxy20YojzIwpMc0H?=
+ =?us-ascii?Q?t2zVAS=2F5gTic02g0Sl5HuMH=2F2ssV9q4Ox6tHJme?=
+ =?us-ascii?Q?7k4yUfPuzV9052rBoWO5C5ptZfwvaUON8cVX=2F7B?=
+ =?us-ascii?Q?ENsKLdOeT6np7719aYMikwNHZZVdEtZBb7yLQNX?=
+ =?us-ascii?Q?Kr=2FIyVaPkUWETfYwGKwEO0S2A56fZaCBnnAKuSS?=
+ =?us-ascii?Q?hWxkd=2FvyobSMWE=2FuZV5+b6B2TiOXFlS5LH3eeUB?=
+ =?us-ascii?Q?fzMchXFnzBesIS8GW6Tgy8ZfrCj1ep6mycNjTaH?=
+ =?us-ascii?Q?fz7BJV7yH80Bj5340cwME0N0yAgP1BZ3NDjHgsb?=
+ =?us-ascii?Q?9d4rmuWQoyf9NgrkieUBM=2FwpeOJl7526UDpDEUl?=
+ =?us-ascii?Q?jAxW5w8YEP0FArNabTTY1dT6BUpgCQTzBcrSOiO?=
+ =?us-ascii?Q?Liq8=2FjVuqg9KeQdkBTDgoMAmnW?=
+To: azri.mokhzani@gmail.com
+X-Entity-ID: u001.A6pRsVr3kEfpN2xXhA0iaQ==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em2305=2Elalamove=2Ecom=3Fsubject=3D16687471=2EXONoP?=
+ =?us-ascii?Q?OBJm2K033pIbtnEb8LdXH-d6ncbvFR11gjlJ59o?=
+ =?us-ascii?Q?MDAwdTAwMFcpyNsk=5F5=5FQihJqEOTj2PyUp2YDi9u?=
+ =?us-ascii?Q?N5YYw5=5F0a1giOJgW99B7E0V=5FKed50qekkhZ4RRQ?=
+ =?us-ascii?Q?S2Yowt=5F44lc=5FGL=5Fm2uYv1l0DmsQ9ldN5XlMjHUZ?=
+ =?us-ascii?Q?GGaUYEVPlbj4owQM2mdyw=3D=3D=2E44qC-FO3z8JGRBX?=
+ =?us-ascii?Q?IlRCCuKC0xIrItEJH3Fi8hmFAvnJoMDAwdTAwMI?=
+ =?us-ascii?Q?=5F-IAK24oBhOnqMZrG0HfN7Y-RikuOnMHJbSTNS8?=
+ =?us-ascii?Q?eVAn0RKeVHHApT9A=5F6tHTq3b5f608NTXxGKdBe8?=
+ =?us-ascii?Q?zVA3g91bkKWibYu04f1ixm2M-WmshNaWoRQezWD?=
+ =?us-ascii?Q?U=5FckDUyKBYuAqSPDor=5FcOIwYWzhsFGmiZfQuXWV?=
+ =?us-ascii?Q?83=5FkYbK7aV66zxQ3ZjYRn8maVdLiym9OmwCsI6y?=
+ =?us-ascii?Q?ganoJERD6Yyu5KseqUknQ49yaMJ2HL0I-Cn0M55?=
+ =?us-ascii?Q?JSuozZUHXb4Mu3-rEaRoxQ2Ou2cMkUc8uhlD13b?=
+ =?us-ascii?Q?oNjDde-0dZmsenqKsbAxCDjn6YNGYesH1Z1kF6z?=
+ =?us-ascii?Q?NCTDjuXH0f6zGZAuS5quVjA57bg=5FNdGMEzEFFOZ?=
+ =?us-ascii?Q?ojEG1eSMadR0zvEq-cRSZlRaP7vKMz8radzVJRc?=
+ =?us-ascii?Q?B95X7q80MLtZHWXHmCMzQ-F7dERO9oq57O0Jkc6?=
+ =?us-ascii?Q?Te3SmjkRBUNptwqJgPmXNhJ91WSGYLU0fPc2i2B?=
+ =?us-ascii?Q?sM5kN4ui5hCHmYwjYPBtImpOv6VjZI=5FpIGi7qNX?=
+ =?us-ascii?Q?jbbVoZw1NtTOECj3yHsku=5F33D7QELkATBMKhWHx?=
+ =?us-ascii?Q?jQ6KA01lknUR6m6v8-8UgYIYjc1n9iTFxqYqOPu?=
+ =?us-ascii?Q?RAj=5FsHhK1SZSYQDHzcRs02QaXRLN03G8=5Ft9Yt9D?=
+ =?us-ascii?Q?2JZLJna5BA3u=5FEhdHGogxv5hwPmWAemOg9DNcCv?=
+ =?us-ascii?Q?sqbwXlaFfhzYDLv3wim=3E=2C=3Chttps=3A=2F=2Fu16687471?=
+ =?us-ascii?Q?=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001?=
+ =?us-ascii?Q?=2Ew45TDWBEWoV5f9GTn6RgrFtvS6qydvynGr0x5i?=
+ =?us-ascii?Q?hj3xxdOne3JarY3lMbqJ6RcRTRTk4WkLNBuyL4U?=
+ =?us-ascii?Q?gRCbku7hGAoGdjkv4KyLJF2PD8ADNvGfDhDembE?=
+ =?us-ascii?Q?b0tRBuMinwJz25kHs-3B457CRiu0Txw=5FuWLhGYG?=
+ =?us-ascii?Q?Tx9H6VgRxbT7uIawxPQL6GPkiaH2BgX72Nnlh9O?=
+ =?us-ascii?Q?QUCS=5FSO6ZoaP7hmlF-0EQh9TpOMESip5Fdhf71B?=
+ =?us-ascii?Q?JTB0w7F=5F7ax1lEF682nhiVF6FAkAWDk2xvvUzyE?=
+ =?us-ascii?Q?5J7sKuA0kTj6L7GCkpzsafqtb1VPWN8sFDFwhZU?=
+ =?us-ascii?Q?LSO0eebymo8=5FzSeOkyeqi=5Fx-gm6obxX4B0hcvd0?=
+ =?us-ascii?Q?vjPMumrqou6YMlx54hig3MKGa=5FL4ISgogmsjeDV?=
+ =?us-ascii?Q?15Fltikpl2IDhN4uRxUgNWvpf1mbbvQR7FNYQSm?=
+ =?us-ascii?Q?duzdKUiDg8NuRHkvR=5FjbMWoiuAJGR3eTOFjHHHp?=
+ =?us-ascii?Q?=5FKHp2-I4uEEB6EaPWVwEyxidSuef7j4wri9nVOi?=
+ =?us-ascii?Q?BCgY9PuQY2oDK5pkZLOfZKt=5F4Ny0649mepTyUFH?=
+ =?us-ascii?Q?wn7pFPOq4Oe7zXkGagGl=5FfVFOe6pxSG0eMSQqL5?=
+ =?us-ascii?Q?i0lAI8OtqGXmoeQiolc2VNHvNiPq1vMeiXSdTrA?=
+ =?us-ascii?Q?5engJ6RGINJaXNvdSD1n2Nivhb8GMab1=5FEQWojx?=
+ =?us-ascii?Q?ybVRj4sT8Gvk1KkTLd5Tm4JnqSVC5EDrVPDuqq1?=
+ =?us-ascii?Q?-0rNb1hcj0opkf0ZapGbGJgkcl8FZ2tdDqa5hjN?=
+ =?us-ascii?Q?JzdOI-j0QSiJ59=5FTTtJDq1exmeFgztVKAGUGqNW?=
+ =?us-ascii?Q?h2dom7YY3Rm3Ql3MI0cH1xAhYhFGlShreE2H-Rt?=
+ =?us-ascii?Q?6t2nt-ECdrU-7IvvUeiNAQ5rRcsw=5FdAOXAyVrfa?=
+ =?us-ascii?Q?j=5FT=5Fkq0LGL3eq7p1zXR9qUobwCk7uAA7RZgmR15?=
+ =?us-ascii?Q?l6pCI=5FM7Z5Njylaic=5FMmDZZlmD6mMQPNDV7j3ga?=
+ =?us-ascii?Q?bknaajwRXNW8ttw7Mj9JunyuJGy2uoKEOPu2-KR?=
+ =?us-ascii?Q?Nk0aJXU87xo-HIf33KXG8az0OxTreijLZBDkvBg?=
+ =?us-ascii?Q?gd2PUImMRSXaxHcTwcfPsN6UMVzmW7KX3sldhAg?=
+ =?us-ascii?Q?MeM=5Fj7JUKNjJhjlfDNDc5omvgUEkZ6hjhydlMzx?=
+ =?us-ascii?Q?7uqYXDR-zjzxsrUpu0Kcc-jr5jL3hMuqDaLllFU?=
+ =?us-ascii?Q?GPZsbYDi6Z-28YqFvTWJDMoxccwVu2C7EoA7D5r?=
+ =?us-ascii?Q?-sE-lBBKNOIzAVou9E5oghvgFj7ioI9X1m4SxPJ?=
+ =?us-ascii?Q?wPy7EYyr3-Ay4XzfUCVjdV5=5F7ZOo5bfA2iUdBEy?=
+ =?us-ascii?Q?ZPEEy2y=5F7pm0JmZzVkNCmauzQoFvmv2XVQhFAY1?=
+ =?us-ascii?Q?dd0EtV76LFNTaB0Uy-VO9ERlysaRd6n3baMKk=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+--e38c0e12a20412d5b7dbcd660b39b948b2f8b1c5551f8fadca54037e38c9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Tap here for more info.
+
+( http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorciki-2Bi-2=
+BrMnPkbOPtcvYGjUL5o-2FBDFqTf5IPdShTr9yrDXyYv8-2FB7WUK4iwv1whndFvzFn8w-3D-3D=
+26XA_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaT=
+SFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRzn=
+MM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3=
+jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuw=
+dXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4y=
+x9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsK=
+SkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947=
+lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECG=
+bDS3QkivPdnbnAmvgyovydTTWniNgsxaHUe2fjWZYOzXEa6XXdbtt6-2BpYM-2FmTrYtgq0JtgO=
+UuGuFsvHs-2BA9RAr1eUSMZljqbPOfm10-2B-2BqxZ6RL4cjzEoVIktvAezAg-2FFsVe89rXvLH=
+vZMWvGk-2Fks0dB9uPdYnjlXW9IrplmzDEvLJp8eg-3D-3D )
+
+Chinese New Year Madnessss *=F0=9F=90=8D=F0=9F=98=B2*
+Only a few days until Chinese New Year!
+To make the most out of your celebration, let's sign up as a Lalamove Rewar=
+ds member to redeem amazing rewards!
+
+*How To Sign Up As A Lalamove Rewards Member:*
+1. Sign up as a Lalamove Rewards member. Then, you'll receive your RM3 deli=
+very coupon and 500 LalaPoints immediately.
+2. Earn another 500 LalaPoints when you placed your first delivery order as=
+ a Lalamove Rewards member.
+3. Use the LalaPoints to redeem an RM5 coupon.
+For every RM1 spent on delivery =3D 1 LalaPoint.
+With the accumulated LalaPoints, you can redeem coupons or e-vouchers from =
+selected merchants:
+
+Now you can redeem Lalamove coupons for 20% less LalaPoints for your CNY pr=
+eparation!
+
+=F0=9F=A7=A7 RM 5 off Coupon =3D 1250 1000 LalaPoints
+=F0=9F=A7=A7 RM10 off Coupon =3D 2500 2000 LalaPoints
+=F0=9F=A7=A7 RM15 off Coupon =3D 3750 3000 LalaPoints
+=F0=9F=A7=A7 RM20 off Coupon =3D 1250 1000 LalaPoints
+
+Redeem Coupons At 20% Less LalaPoints Today ( http://url1725.lalamove.com/l=
+s/click?upn=3Du001.Q18Pl5S9k4eRcorciki-2BiwjSLCHn4-2FhMqnZJ5QOsW686D1PmQt5z=
+rNaQnFnRsc2xAwfsjAvERsg3yGPNPIj5yg-3D-3DTsca_mSC9HnDOBZ-2F1jigkI-2Bjayfe718=
+diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2=
+FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsL=
+P3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mB=
+Y16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2B=
+OiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYT=
+QYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0=
+DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK=
+-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECGbDS3QkJOCuxSIYzHjQQfx7lye0egVQNmUBe=
+TLqIZA4riiXXcxQsJtZRzZU3PnMko28n8UlEOayDGRrNZMpB1sNvqPV3QU2Ve-2BJbmlkYigy5-=
+2BDzzugr2-2F4DRNHWaQfKvSWjyhM-2Fxzrpm4fUGcBERp3QEbr4m7E5MWoi1wTaFjrrOENDYpA=
+-3D-3D )
+
+Terms and Conditions:
+
+1. This promotion is valid from 24th January 2025 to 30th January 2025.
+2. This promotion is valid for Lalamove delivery coupons only.
+3. The coupon can be used in Klang Valley, Penang, Malacca, Johor Bahru and=
+ Kuching.
+4. The coupon only applies to order placed via mobile or web app.
+5. The coupon is only applicable if the order value is the same or higher t=
+han the discount value.
+6. The coupon can be stored in the Lalamove wallet if the users decide to u=
+se it later.
+7. The stored coupon has a 14-day validity period. The coupon will expire i=
+n 14 days from the day it is claimed.
+8. The coupon is not refundable or transferable.
+9. Lalamove reserves the right to amend the Terms & Conditions without prio=
+r notice.
+10. In case of any disputes, Lalamove reserves the right to the final decis=
+ion.
+
+Facebook ( http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorc=
+iki-2Bi3V2-2BSaWXsBydgoBbWnjfB9b9OI-2Fpx7Vq51b20MnG1NdlFbN_mSC9HnDOBZ-2F1ji=
+gkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJ=
+bpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c=
+7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxo=
+odGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPW=
+N-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC=
+1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2B=
+bcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR4=
+5-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECGbDS3QlKQbnl9ePL9VLasD=
+JXBoKaDfn46Da1zKxQMqWY4RuSgbAvPkSat7-2F1fCiWdsWNIfQibaDnB84nGbkqJHiI2QSUdhw=
+gPXVeoQw9b-2BTOE4jcsHtg-2B7Q3K1iZqJ1SkJCkorPM-2FgqXtXJxRb89777yUFzTKozbBNHp=
+DeatyxQ5zJ-2FXKA-3D-3D ) Instgram ( http://url1725.lalamove.com/ls/click?up=
+n=3Du001.Q18Pl5S9k4eRcorciki-2Bi1v9YXmI7OXcc6ixYYVlHh-2F9I8n9uQFF-2FmA3NFWB=
+DYd1k-ME_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgA=
+PNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7F=
+wRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby=
+1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075=
+uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZi=
+Uw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZ=
+FVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4=
+T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaII=
+NECGbDS3QnSRv5CfHar2ixUf1LjDnP3E3D5kVKK6NOuJ8h5nF-2BAcjlLkeiAJpDQYUtoAtAJzI=
+1BKeqWPO7wMQqevbWUzzz7JnF06O01XuWd0ily48jGcwhJ93a5uuNbyd1FkWUSFoddhdc7X6GXT=
+FvYI-2FMoA7FaZoX9-2BLmZE6D2mxvipr2ZWA-3D-3D ) ( http://url1725.lalamove.com=
+/ls/click?upn=3Du001.Q18Pl5S9k4eRcorciki-2Bi6VI-2BaMlrHeL-2BO4aTMZT95NX1dNG=
+imRDbsQ7QbF-2F2s0EDh_G_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7=
+KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yK=
+eDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxg=
+E8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcL=
+FvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXW=
+Ijfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-=
+2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLu=
+ZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwF=
+BRoT7475OIyaIINECGbDS3QnW2rDquYrWgDskBTl-2B1w-2Bb0Wm8azXPyebKv11im26CC0LTP-=
+2FLHcmFCCwsb3gYCFi-2Bpp-2Bg4Nkm0i2NQXKYOQuCdxv5BYcT9ZVcY3yGkgdNIGDa2lPe4GGu=
+mAO74EbuRbYhiY-2BqHFqfQHtpFN7OSl3A1heRLj7qsueh1zlVz44HISA-3D-3D ) Linkedin =
+( http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorciki-2Bi0k=
+01e1-2F28Htj9DEp3-2FZ-2BEoKrOQY2bDhDOGdbhekcQw1F-mI_mSC9HnDOBZ-2F1jigkI-2Bj=
+ayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfR=
+XR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tI=
+ZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4=
+bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yi=
+Msl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6=
+O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIv=
+zp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJ=
+CWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECGbDS3QkYa-2FAMa8HTrONieHE6dMV=
+xrEadcIywvVgORoPHQBSS-2BID31YDFawhNXrp-2BDx1AuXSqTjlakYNwhpvIV3a5DvI1VPyTff=
+YHNlQGsdOFT6h1Oy3BKWR6AzwmcwSCk5bVwXaRRkhE0IzOXULt-2Fni1OySnkHICsrV725m89N5=
+FId6AFA-3D-3D )
+
+App Store ( http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcor=
+ciki-2BiwjSLCHn4-2FhMqnZJ5QOsW6-2BCXckaTzOPAqIwSxMeHxZGWGdhfXIObC15Z7Ge6Ah9=
+Pw-3D-3D9OtE_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQ=
+drgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGgg=
+Ra7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0D=
+Fqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPT=
+R075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB=
+9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R=
+8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKH=
+uqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OI=
+yaIINECGbDS3QmQNU0XpYpZH7dIyv36QTpr5GsNLs8-2FkBkhFQwRZbImJ-2BNZMCX-2BRQcpvX=
+mLyiwMY-2BTWWynvrHTB6oAi22R1KP6FT67tAzEqOtwCxsjEdCS2qoqEXTPlSjzesqkpmP8g2nr=
+1ESJDJGTaEPBRCzaVBqxG2DlMEGn4HRQRA67zUvz-2BkA-3D-3D ) Google Play ( http://=
+url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorciki-2BiwjSLCHn4-2F=
+hMqnZJ5QOsW6-2BCXckaTzOPAqIwSxMeHxZGWGdhfXIObC15Z7Ge6Ah9Pw-3D-3DYCb9_mSC9Hn=
+DOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb=
+1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2Bgso=
+F2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQV=
+hjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpX=
+H-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2F=
+rM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4z=
+y5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4=
+pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECGbDS3Qlyqz-2=
+Ffecm2qqj0WcyyTWuTrVgHHTp-2Fwr6TxfHQAp-2FFIck35TUdAfzAGWzxZPYW5t-2BJ8tjcE0q=
+8mtZVO-2FxxqDj26jp4F04syKpJJlZvhLJeCNCgpS6LHazk4AwrYI9jr-2B-2FxLzM-2FRuSAjI=
+Kna3sAzpydDGrbJSVxXDZw-2FkxrneoF3A-3D-3D )
+
+Unsubscribe ( http://url1725.lalamove.com/asm/?user_id=3D16687471&data=3DqL=
+AjWEX12-cH4cqh7cqADlDY_VAydUYZW_BJfsf4ru5oMDAwdTAwMOWtSH3caHZ4s38kFIVpH9I6J=
+5BeAzszts1I-EEu8FNtDt4bKBjjk-FjTwEwIQ060CKhGrt0C_9Oki0MUHJGQuk-tdhkfP_4rmbY=
+HCjaQEPnpCYI6zxDFjQ2e9vFWVCh9ll3Ll_Ql_YZv2yzHi3uDcN-X0jYvp-20A-s2AURWMb1k6N=
+AHf6DrPYPcq0zSmJP8HWPe_J0nef9c1UQW_Guzml5NfY9O8hvPRwzGS90SBKRmPSx5jJG_-pg3h=
+Xx4ud4xsTI169jPG49-Fam3jdrJgnuS-BMq2u-5AO3ZXCmi1YcYYm8fqEcI4YRJRJQE_3z_rxjh=
+RxeXV-N3wHguihV-Y1gmNvjlf8jP2j-BB1lHQs9wpFQXtd1DSmQ0uO7QgUENC4Q7GnkJS-f7mKj=
+DJ7LmZoTf9-rCqXT3P6bW8n3VA460BM0LQuKrMk9PqGgN04-f7rvANNP3i5NevBtbXoUwKoxzWH=
+wB6kCRsvcRmK7aFa9F4zWQ_QUHD09QLeyd-8Xp26cKKY4hWIJGmF0DsaT44UWo6Owtf_YZGQy1F=
+kvnOqMRvI8JHrr2liLbTeogcehDqqAhIFGOKozb4Uur_hBxnurrP1CTjcibu-IgoTs3KVrhGIoN=
+VOe-pqwyErHe9S8N3sn80J8rnJ33_Tyvpxd9qbFMA85H1Txbnl0DLclj5oRBdqxKRKlV6PHDFCk=
+gLyDcIr9BDKZfHwdzZ-6lewO4ekjhqNJ4CRBA2sO_OKj7tx7dxzINHMgi2o6aSyXdk_z5fvxzdg=
+EC-Ih1BbboOT9zSqRCfGA3e4nIJrJhG3tiwQ85ULtNiHb_6fx7DaNa65M4w=3D=3D ) | Conta=
+ct Us ( http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorciki=
+-2Bi-2BrMnPkbOPtcvYGjUL5o-2FBAmL4gyHeEs-2BiuwcKhId3UdORRo_mSC9HnDOBZ-2F1jig=
+kI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJb=
+pZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7=
+TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoo=
+dGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN=
+-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1=
+S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2Bb=
+cpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45=
+-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRoT7475OIyaIINECGbDS3QkuMOXxbl51EPWIS05=
+wk3g10fCGowmn5vFr59pGsfFisVMyLnoov5Ldo3gsj46Kiu485PJ1LH4kL3MAzV6SNnsixcgch3=
+h976uLd-2BHyAkbvU-2BfshY-2FA233TWhk-2BuXSPpi5Td-2Bux-2BdzdYr3cyfJeSSCtd-2BZ=
+-2B74yQJbL4qF6regStHQ-3D-3D )
+2025 =C2=A9 All rights reserved
+--e38c0e12a20412d5b7dbcd660b39b948b2f8b1c5551f8fadca54037e38c9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, minimum-scale=3D1, maximum-scale=3D1">
+      <!--[if !mso]><!-->
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+      <style type=3D"text/css">
+    body, p, div {
+      font-family: arial,helvetica,sans-serif;
+      font-size: 14px;
+    }
+    body {
+      color: #000000;
+    }
+    body a {
+      color: #1188E6;
+      text-decoration: none;
+    }
+    p { margin: 0; padding: 0; }
+    table.wrapper {
+      width:100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    img.max-width {
+      max-width: 100% !important;
+    }
+    .column.of-2 {
+      width: 50%;
+    }
+    .column.of-3 {
+      width: 33.333%;
+    }
+    .column.of-4 {
+      width: 25%;
+    }
+    ul ul ul ul  {
+      list-style-type: disc !important;
+    }
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
+  </style>
+      <!--user entered Head Start--><!--End Head user entered-->
+    </head>
+    <body>
+      <center class=3D"wrapper" data-link-color=3D"#1188E6" data-body-style=
+=3D"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; =
+background-color:#E6E6E6;">
+        <div class=3D"webkit">
+          <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%" class=3D"wrapper" bgcolor=3D"#E6E6E6">
+            <tr>
+              <td valign=3D"top" bgcolor=3D"#E6E6E6" width=3D"100%">
+                <table width=3D"100%" role=3D"content-container" class=3D"o=
+uter" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                  <tr>
+                    <td width=3D"100%">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+                        <tr>
+                          <td>
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width=3D"600">
+  <![endif]-->
+                                    <table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%; max-width:600px;" alig=
+n=3D"center">
+                                      <tr>
+                                        <td role=3D"modules-container" styl=
+e=3D"padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor=3D"#=
+FFFFFF" width=3D"100%" align=3D"left"><table class=3D"module preheader preh=
+eader-hide" role=3D"module" data-type=3D"preheader" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"display: none !important;=
+ mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height:=
+ 0; width: 0;">
+    <tr>
+      <td role=3D"module-content">
+        <p>Tap here for more info.</p>
+      </td>
+    </tr>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"f1397930-47c4-4763-be40-48005bf94705">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 0px 0=
+px;" valign=3D"top" align=3D"center">
+         =20
+        <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9=
+k4eRcorciki-2Bi-2BrMnPkbOPtcvYGjUL5o-2FBDFqTf5IPdShTr9yrDXyYv8-2FB7WUK4iwv1=
+whndFvzFn8w-3D-3DgVkY_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7K=
+bU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKe=
+DkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE=
+8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLF=
+vxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWI=
+jfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2=
+BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZ=
+wC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFB=
+RtRrzY2kPri7VMx7C7lnUzHT2Wv7gMGFExKVm3V6lVD6N9I5tVXMOFsMy1spHPG9R-2FpmmBuM6=
+n2YlfQAl3Xi3flLgCu5YZa8qghGhDvZcWUAZrz14Lyl1Uek2PRAPUGOqEbwaJhpLoTMd6-2FFj9=
+VChvVIpdaGB12CpOZyvf9oFXRt9xvWk0hlK-2FHVU5WmZWJoNg-3D-3D"><img class=3D"max=
+-width" border=3D"0" style=3D"display:block; color:#000000; text-decoration=
+:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:=
+100% !important; width:100%; height:auto !important;" width=3D"600" alt=3D"=
+" data-proportionally-constrained=3D"true" data-responsive=3D"true" src=3D"=
+http://cdn.mcauto-images-production.sendgrid.net/3aa6fb08b969e6a9/d42ab805-=
+1333-4aa9-a59d-8238c6c6ae4c/2500x376.png"></a></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"725f8161-83ae-4d59-b2d0-0c58b48e9a9b">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 0px 0=
+px;" valign=3D"top" align=3D"center">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block; col=
+or:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif;=
+ font-size:16px; max-width:100% !important; width:100%; height:auto !import=
+ant;" width=3D"600" alt=3D"" data-proportionally-constrained=3D"true" data-=
+responsive=3D"true" src=3D"http://cdn.mcauto-images-production.sendgrid.net=
+/3aa6fb08b969e6a9/907ef329-b7b3-4799-977c-47b39a79c6d0/1200x628.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"29334f73-666f-4a79-bf77-dd764d6d186d" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:30px 25px 10px 25px; line-height:35px; text-al=
+ign:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-co=
+ntent"><div><div style=3D"font-family: inherit; text-align: center"><br></d=
+iv>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 20pt; font-family: Arial, sans-serif; color: #f16622; background-c=
+olor: transparent; font-weight: 700; font-style: normal; font-variant-ligat=
+ures: normal; font-variant-caps: normal; font-variant-numeric: normal; font=
+-variant-east-asian: normal; font-variant-alternates: normal; font-variant-=
+position: normal; font-variant-emoji: normal; text-decoration-line: none; t=
+ext-decoration-thickness: initial; text-decoration-style: initial; text-dec=
+oration-color: initial; vertical-align: baseline; white-space-collapse: pre=
+serve; text-wrap-mode: wrap">Chinese New Year Madnessss </span><span style=
+=3D"font-size: 19pt; font-family: Arial, sans-serif; color: #ff6700; backgr=
+ound-color: transparent; font-weight: 700; font-style: normal; font-variant=
+-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal=
+; font-variant-east-asian: normal; font-variant-alternates: normal; font-va=
+riant-position: normal; font-variant-emoji: normal; text-decoration-line: n=
+one; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial; vertical-align: baseline; white-space-collaps=
+e: preserve; text-wrap-mode: wrap"><strong>=F0=9F=90=8D=F0=9F=98=B2</strong=
+></span>&nbsp;</div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">Only a few days until Chinese New Year!</span>=
+</div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">To make the most out of your celebration, let'=
+s sign up as a Lalamove Rewards member to redeem amazing rewards!</span></d=
+iv>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"font=
+-family: Arial, sans-serif; font-size: 14.6667px; font-style: normal; font-=
+variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; let=
+ter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text=
+-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: =
+0px; white-space-collapse: preserve; text-wrap-mode: wrap; background-color=
+: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-s=
+tyle: initial; text-decoration-color: initial; float: none; display: inline=
+; color: #f16622"><strong>How To Sign Up As A Lalamove Rewards Member:</str=
+ong></span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">1. Sign up as a Lalamove Rewards member. Then,=
+ you'll receive your RM3 delivery coupon and 500 LalaPoints immediately.</s=
+pan></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">2. Earn another 500 LalaPoints when you placed=
+ your first delivery order as a Lalamove Rewards member.</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">3. Use the LalaPoints to redeem an RM5 coupon.=
+</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">For every RM1 spent on delivery =3D 1 LalaPoin=
+t.</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"line=
+-height: 1.8; text-align: center; margin-top: 10pt; margin-bottom: 10pt; fo=
+nt-size: 11pt; font-family: Arial, sans-serif; background-color: transparen=
+t; font-weight: 400; font-style: normal; font-variant-ligatures: normal; fo=
+nt-variant-caps: normal; font-variant-numeric: normal; font-variant-east-as=
+ian: normal; font-variant-alternates: normal; font-variant-position: normal=
+; font-variant-emoji: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+-mode: wrap; color: #585858">With the accumulated LalaPoints, you can redee=
+m coupons or e-vouchers from selected merchants:</span></div><div></div></d=
+iv></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"725f8161-83ae-4d59-b2d0-0c58b48e9a9b.2">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 0px 0=
+px;" valign=3D"top" align=3D"center">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block; col=
+or:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif;=
+ font-size:16px; max-width:100% !important; width:100%; height:auto !import=
+ant;" width=3D"600" alt=3D"" data-proportionally-constrained=3D"true" data-=
+responsive=3D"true" src=3D"http://cdn.mcauto-images-production.sendgrid.net=
+/3aa6fb08b969e6a9/2e469604-0dc3-4a83-8f80-4c1386f64bc2/1200x767.jpeg">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"d4e328c5-c3de-4ff3-9ad5-c5057dd8efcc" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:30px 25px 30px 25px; line-height:22px; text-al=
+ign:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-co=
+ntent"><div><div style=3D"font-family: inherit; text-align: center"><span s=
+tyle=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; paddi=
+ng-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; marg=
+in-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatur=
+es: inherit; font-variant-caps: inherit; font-variant-alternates: inherit; =
+font-variant-numeric: inherit; font-variant-east-asian: inherit; font-varia=
+nt-position: inherit; font-variant-emoji: inherit; font-weight: inherit; fo=
+nt-stretch: inherit; line-height: inherit; font-family: inherit; font-optic=
+al-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-=
+feature-settings: inherit; font-variation-settings: inherit; font-size: 14.=
+6667px; vertical-align: baseline; border-top-width: 0px; border-right-width=
+: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: =
+initial; border-right-style: initial; border-bottom-style: initial; border-=
+left-style: initial; border-top-color: initial; border-right-color: initial=
+; border-bottom-color: initial; border-left-color: initial; border-image-so=
+urce: initial; border-image-slice: initial; border-image-width: initial; bo=
+rder-image-outset: initial; border-image-repeat: initial; letter-spacing: n=
+ormal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-=
+spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserv=
+e; text-wrap-mode: wrap; background-color: transparent; text-decoration-lin=
+e: none; text-decoration-thickness: initial; text-decoration-style: initial=
+; text-decoration-color: initial; text-align: center; color: #585858">Now y=
+ou can redeem Lalamove coupons for 20% less LalaPoints for your CNY prepara=
+tion!</span></div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-alternates: inherit; font-variant=
+-numeric: inherit; font-variant-east-asian: inherit; font-variant-position:=
+ inherit; font-variant-emoji: inherit; font-weight: inherit; font-stretch: =
+inherit; line-height: inherit; font-family: inherit; font-optical-sizing: i=
+nherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-sett=
+ings: inherit; font-variation-settings: inherit; font-size: 14.6667px; vert=
+ical-align: baseline; border-top-width: 0px; border-right-width: 0px; borde=
+r-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; bor=
+der-right-style: initial; border-bottom-style: initial; border-left-style: =
+initial; border-top-color: initial; border-right-color: initial; border-bot=
+tom-color: initial; border-left-color: initial; border-image-source: initia=
+l; border-image-slice: initial; border-image-width: initial; border-image-o=
+utset: initial; border-image-repeat: initial; letter-spacing: normal; orpha=
+ns: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px=
+; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap=
+-mode: wrap; background-color: transparent; text-decoration-line: none; tex=
+t-decoration-thickness: initial; text-decoration-style: initial; text-decor=
+ation-color: initial; text-align: center; color: #585858">=F0=9F=A7=A7 RM 5=
+ off Coupon =3D </span><span style=3D"box-sizing: border-box; padding-top: =
+0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top=
+: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style:=
+ inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font=
+-variant-alternates: inherit; font-variant-numeric: inherit; font-variant-e=
+ast-asian: inherit; font-variant-position: inherit; font-variant-emoji: inh=
+erit; font-weight: inherit; font-stretch: inherit; line-height: inherit; fo=
+nt-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit=
+; font-kerning: inherit; font-feature-settings: inherit; font-variation-set=
+tings: inherit; font-size: 14px; vertical-align: baseline; border-top-width=
+: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width=
+: 0px; border-top-style: initial; border-right-style: initial; border-botto=
+m-style: initial; border-left-style: initial; border-top-color: initial; bo=
+rder-right-color: initial; border-bottom-color: initial; border-left-color:=
+ initial; border-image-source: initial; border-image-slice: initial; border=
+-image-width: initial; border-image-outset: initial; border-image-repeat: i=
+nitial; color: #000000; letter-spacing: normal; orphans: 2; text-indent: 0p=
+x; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-=
+width: 0px; white-space-collapse: preserve; text-wrap-mode: wrap; text-deco=
+ration-thickness: initial; text-decoration-style: initial; text-decoration-=
+color: initial; text-align: center; background-color: rgb(255, 255, 255)">&=
+nbsp;</span><span style=3D"box-sizing: border-box; padding-top: 0px; paddin=
+g-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; marg=
+in-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; f=
+ont-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-al=
+ternates: inherit; font-variant-numeric: inherit; font-variant-east-asian: =
+inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-=
+weight: inherit; font-stretch: inherit; line-height: inherit; font-family: =
+inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kern=
+ing: inherit; font-feature-settings: inherit; font-variation-settings: inhe=
+rit; font-size: 14.6667px; vertical-align: baseline; border-top-width: 0px;=
+ border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;=
+ border-top-style: initial; border-right-style: initial; border-bottom-styl=
+e: initial; border-left-style: initial; border-top-color: initial; border-r=
+ight-color: initial; border-bottom-color: initial; border-left-color: initi=
+al; border-image-source: initial; border-image-slice: initial; border-image=
+-width: initial; border-image-outset: initial; border-image-repeat: initial=
+; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: non=
+e; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-spac=
+e-collapse: preserve; text-wrap-mode: wrap; background-color: transparent; =
+text-decoration-line: line-through; text-decoration-thickness: initial; tex=
+t-decoration-style: initial; text-decoration-color: initial; text-align: ce=
+nter; color: #585858; text-decoration-skip-ink: none">1250</span><span styl=
+e=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-=
+bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-=
+bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures:=
+ inherit; font-variant-caps: inherit; font-variant-alternates: inherit; fon=
+t-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-=
+position: inherit; font-variant-emoji: inherit; font-weight: inherit; font-=
+stretch: inherit; line-height: inherit; font-family: inherit; font-optical-=
+sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-fea=
+ture-settings: inherit; font-variation-settings: inherit; font-size: 14px; =
+vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; b=
+order-bottom-width: 0px; border-left-width: 0px; border-top-style: initial;=
+ border-right-style: initial; border-bottom-style: initial; border-left-sty=
+le: initial; border-top-color: initial; border-right-color: initial; border=
+-bottom-color: initial; border-left-color: initial; border-image-source: in=
+itial; border-image-slice: initial; border-image-width: initial; border-ima=
+ge-outset: initial; border-image-repeat: initial; letter-spacing: normal; o=
+rphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing:=
+ 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-=
+wrap-mode: wrap; text-decoration-thickness: initial; text-decoration-style:=
+ initial; text-decoration-color: initial; text-align: center; color: #58585=
+8; background-color: rgb(255, 255, 255)"> 1000 LalaPoints</span><span style=
+=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-b=
+ottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-b=
+ottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: =
+inherit; font-variant-caps: inherit; font-variant-alternates: inherit; font=
+-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-p=
+osition: inherit; font-variant-emoji: inherit; font-weight: inherit; font-s=
+tretch: inherit; line-height: inherit; font-family: inherit; font-optical-s=
+izing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feat=
+ure-settings: inherit; font-variation-settings: inherit; font-size: 14px; v=
+ertical-align: baseline; border-top-width: 0px; border-right-width: 0px; bo=
+rder-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; =
+border-right-style: initial; border-bottom-style: initial; border-left-styl=
+e: initial; border-top-color: initial; border-right-color: initial; border-=
+bottom-color: initial; border-left-color: initial; border-image-source: ini=
+tial; border-image-slice: initial; border-image-width: initial; border-imag=
+e-outset: initial; border-image-repeat: initial; color: #000000; letter-spa=
+cing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2=
+; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: =
+preserve; text-wrap-mode: wrap; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial; text-align: center=
+; background-color: rgb(255, 255, 255)">&nbsp;</span>&nbsp;</div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-variant-alternates: inherit; font-variant-position:=
+ inherit; font-variant-emoji: inherit; font-weight: inherit; font-stretch: =
+inherit; line-height: inherit; font-family: inherit; font-optical-sizing: i=
+nherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-sett=
+ings: inherit; font-variation-settings: inherit; font-size: 14.6667px; vert=
+ical-align: baseline; border-top-width: 0px; border-right-width: 0px; borde=
+r-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; bor=
+der-right-style: initial; border-bottom-style: initial; border-left-style: =
+initial; border-top-color: initial; border-right-color: initial; border-bot=
+tom-color: initial; border-left-color: initial; border-image-source: initia=
+l; border-image-slice: initial; border-image-width: initial; border-image-o=
+utset: initial; border-image-repeat: initial; text-align: center; color: #5=
+85858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform=
+: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white=
+-space-collapse: preserve; text-wrap-mode: wrap; background-color: transpar=
+ent; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial; text-decoration-line: none">=F0=9F=A7=A7 RM10=
+ off Coupon =3D </span><span style=3D"box-sizing: border-box; padding-top: =
+0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top=
+: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style:=
+ inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font=
+-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-a=
+lternates: inherit; font-variant-position: inherit; font-variant-emoji: inh=
+erit; font-weight: inherit; font-stretch: inherit; line-height: inherit; fo=
+nt-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit=
+; font-kerning: inherit; font-feature-settings: inherit; font-variation-set=
+tings: inherit; font-size: 14px; vertical-align: baseline; border-top-width=
+: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width=
+: 0px; border-top-style: initial; border-right-style: initial; border-botto=
+m-style: initial; border-left-style: initial; border-top-color: initial; bo=
+rder-right-color: initial; border-bottom-color: initial; border-left-color:=
+ initial; border-image-source: initial; border-image-slice: initial; border=
+-image-width: initial; border-image-outset: initial; border-image-repeat: i=
+nitial; text-align: center; color: #000000; letter-spacing: normal; orphans=
+: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-m=
+ode: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness:=
+ initial; text-decoration-style: initial; text-decoration-color: initial">&=
+nbsp;</span><span style=3D"box-sizing: border-box; padding-top: 0px; paddin=
+g-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; marg=
+in-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; f=
+ont-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-nu=
+meric: inherit; font-variant-east-asian: inherit; font-variant-alternates: =
+inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-=
+weight: inherit; font-stretch: inherit; line-height: inherit; font-family: =
+inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kern=
+ing: inherit; font-feature-settings: inherit; font-variation-settings: inhe=
+rit; font-size: 14.6667px; vertical-align: baseline; border-top-width: 0px;=
+ border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;=
+ border-top-style: initial; border-right-style: initial; border-bottom-styl=
+e: initial; border-left-style: initial; border-top-color: initial; border-r=
+ight-color: initial; border-bottom-color: initial; border-left-color: initi=
+al; border-image-source: initial; border-image-slice: initial; border-image=
+-width: initial; border-image-outset: initial; border-image-repeat: initial=
+; text-align: center; color: #585858; letter-spacing: normal; orphans: 2; t=
+ext-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webki=
+t-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-mode: w=
+rap; background-color: transparent; text-decoration-thickness: initial; tex=
+t-decoration-style: initial; text-decoration-color: initial; text-decoratio=
+n-line: line-through; text-decoration-skip-ink: none">2500</span><span styl=
+e=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-=
+bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-=
+bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures:=
+ inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-v=
+ariant-east-asian: inherit; font-variant-alternates: inherit; font-variant-=
+position: inherit; font-variant-emoji: inherit; font-weight: inherit; font-=
+stretch: inherit; line-height: inherit; font-family: inherit; font-optical-=
+sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-fea=
+ture-settings: inherit; font-variation-settings: inherit; font-size: 14px; =
+vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; b=
+order-bottom-width: 0px; border-left-width: 0px; border-top-style: initial;=
+ border-right-style: initial; border-bottom-style: initial; border-left-sty=
+le: initial; border-top-color: initial; border-right-color: initial; border=
+-bottom-color: initial; border-left-color: initial; border-image-source: in=
+itial; border-image-slice: initial; border-image-width: initial; border-ima=
+ge-outset: initial; border-image-repeat: initial; text-align: center; color=
+: #585858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-trans=
+form: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+hite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(=
+255, 255, 255); text-decoration-thickness: initial; text-decoration-style: =
+initial; text-decoration-color: initial"> 2000 LalaPoints</span><span style=
+=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-b=
+ottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-b=
+ottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: =
+inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-va=
+riant-east-asian: inherit; font-variant-alternates: inherit; font-variant-p=
+osition: inherit; font-variant-emoji: inherit; font-weight: inherit; font-s=
+tretch: inherit; line-height: inherit; font-family: inherit; font-optical-s=
+izing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feat=
+ure-settings: inherit; font-variation-settings: inherit; font-size: 14px; v=
+ertical-align: baseline; border-top-width: 0px; border-right-width: 0px; bo=
+rder-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; =
+border-right-style: initial; border-bottom-style: initial; border-left-styl=
+e: initial; border-top-color: initial; border-right-color: initial; border-=
+bottom-color: initial; border-left-color: initial; border-image-source: ini=
+tial; border-image-slice: initial; border-image-width: initial; border-imag=
+e-outset: initial; border-image-repeat: initial; text-align: center; color:=
+ #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; wh=
+ite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(2=
+55, 255, 255); text-decoration-thickness: initial; text-decoration-style: i=
+nitial; text-decoration-color: initial">&nbsp;</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-variant-alternates: inherit; font-variant-position:=
+ inherit; font-variant-emoji: inherit; font-weight: inherit; font-stretch: =
+inherit; line-height: inherit; font-family: inherit; font-optical-sizing: i=
+nherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-sett=
+ings: inherit; font-variation-settings: inherit; font-size: 14.6667px; vert=
+ical-align: baseline; border-top-width: 0px; border-right-width: 0px; borde=
+r-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; bor=
+der-right-style: initial; border-bottom-style: initial; border-left-style: =
+initial; border-top-color: initial; border-right-color: initial; border-bot=
+tom-color: initial; border-left-color: initial; border-image-source: initia=
+l; border-image-slice: initial; border-image-width: initial; border-image-o=
+utset: initial; border-image-repeat: initial; text-align: center; color: #5=
+85858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform=
+: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white=
+-space-collapse: preserve; text-wrap-mode: wrap; background-color: transpar=
+ent; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial; text-decoration-line: none">=F0=9F=A7=A7 RM15=
+ off Coupon =3D </span><span style=3D"box-sizing: border-box; padding-top: =
+0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top=
+: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style:=
+ inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font=
+-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-a=
+lternates: inherit; font-variant-position: inherit; font-variant-emoji: inh=
+erit; font-weight: inherit; font-stretch: inherit; line-height: inherit; fo=
+nt-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit=
+; font-kerning: inherit; font-feature-settings: inherit; font-variation-set=
+tings: inherit; font-size: 14px; vertical-align: baseline; border-top-width=
+: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width=
+: 0px; border-top-style: initial; border-right-style: initial; border-botto=
+m-style: initial; border-left-style: initial; border-top-color: initial; bo=
+rder-right-color: initial; border-bottom-color: initial; border-left-color:=
+ initial; border-image-source: initial; border-image-slice: initial; border=
+-image-width: initial; border-image-outset: initial; border-image-repeat: i=
+nitial; text-align: center; color: #000000; letter-spacing: normal; orphans=
+: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-m=
+ode: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness:=
+ initial; text-decoration-style: initial; text-decoration-color: initial">&=
+nbsp;</span><span style=3D"box-sizing: border-box; padding-top: 0px; paddin=
+g-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; marg=
+in-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; f=
+ont-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-nu=
+meric: inherit; font-variant-east-asian: inherit; font-variant-alternates: =
+inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-=
+weight: inherit; font-stretch: inherit; line-height: inherit; font-family: =
+inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kern=
+ing: inherit; font-feature-settings: inherit; font-variation-settings: inhe=
+rit; font-size: 14.6667px; vertical-align: baseline; border-top-width: 0px;=
+ border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;=
+ border-top-style: initial; border-right-style: initial; border-bottom-styl=
+e: initial; border-left-style: initial; border-top-color: initial; border-r=
+ight-color: initial; border-bottom-color: initial; border-left-color: initi=
+al; border-image-source: initial; border-image-slice: initial; border-image=
+-width: initial; border-image-outset: initial; border-image-repeat: initial=
+; text-align: center; color: #585858; letter-spacing: normal; orphans: 2; t=
+ext-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webki=
+t-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-mode: w=
+rap; background-color: transparent; text-decoration-thickness: initial; tex=
+t-decoration-style: initial; text-decoration-color: initial; text-decoratio=
+n-line: line-through; text-decoration-skip-ink: none">3750</span><span styl=
+e=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-=
+bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-=
+bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures:=
+ inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-v=
+ariant-east-asian: inherit; font-variant-alternates: inherit; font-variant-=
+position: inherit; font-variant-emoji: inherit; font-weight: inherit; font-=
+stretch: inherit; line-height: inherit; font-family: inherit; font-optical-=
+sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-fea=
+ture-settings: inherit; font-variation-settings: inherit; font-size: 14px; =
+vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; b=
+order-bottom-width: 0px; border-left-width: 0px; border-top-style: initial;=
+ border-right-style: initial; border-bottom-style: initial; border-left-sty=
+le: initial; border-top-color: initial; border-right-color: initial; border=
+-bottom-color: initial; border-left-color: initial; border-image-source: in=
+itial; border-image-slice: initial; border-image-width: initial; border-ima=
+ge-outset: initial; border-image-repeat: initial; text-align: center; color=
+: #585858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-trans=
+form: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+hite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(=
+255, 255, 255); text-decoration-thickness: initial; text-decoration-style: =
+initial; text-decoration-color: initial"> 3000 LalaPoints</span><span style=
+=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-b=
+ottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-b=
+ottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: =
+inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-va=
+riant-east-asian: inherit; font-variant-alternates: inherit; font-variant-p=
+osition: inherit; font-variant-emoji: inherit; font-weight: inherit; font-s=
+tretch: inherit; line-height: inherit; font-family: inherit; font-optical-s=
+izing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feat=
+ure-settings: inherit; font-variation-settings: inherit; font-size: 14px; v=
+ertical-align: baseline; border-top-width: 0px; border-right-width: 0px; bo=
+rder-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; =
+border-right-style: initial; border-bottom-style: initial; border-left-styl=
+e: initial; border-top-color: initial; border-right-color: initial; border-=
+bottom-color: initial; border-left-color: initial; border-image-source: ini=
+tial; border-image-slice: initial; border-image-width: initial; border-imag=
+e-outset: initial; border-image-repeat: initial; text-align: center; color:=
+ #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; wh=
+ite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(2=
+55, 255, 255); text-decoration-thickness: initial; text-decoration-style: i=
+nitial; text-decoration-color: initial">&nbsp;</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-variant-alternates: inherit; font-variant-position:=
+ inherit; font-variant-emoji: inherit; font-weight: inherit; font-stretch: =
+inherit; line-height: inherit; font-family: inherit; font-optical-sizing: i=
+nherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-sett=
+ings: inherit; font-variation-settings: inherit; font-size: 14.6667px; vert=
+ical-align: baseline; border-top-width: 0px; border-right-width: 0px; borde=
+r-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; bor=
+der-right-style: initial; border-bottom-style: initial; border-left-style: =
+initial; border-top-color: initial; border-right-color: initial; border-bot=
+tom-color: initial; border-left-color: initial; border-image-source: initia=
+l; border-image-slice: initial; border-image-width: initial; border-image-o=
+utset: initial; border-image-repeat: initial; text-align: center; color: #5=
+85858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform=
+: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white=
+-space-collapse: preserve; text-wrap-mode: wrap; background-color: transpar=
+ent; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial; text-decoration-line: none">=F0=9F=A7=A7 RM20=
+ off Coupon =3D </span><span style=3D"box-sizing: border-box; padding-top: =
+0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top=
+: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style:=
+ inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font=
+-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-a=
+lternates: inherit; font-variant-position: inherit; font-variant-emoji: inh=
+erit; font-weight: inherit; font-stretch: inherit; line-height: inherit; fo=
+nt-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit=
+; font-kerning: inherit; font-feature-settings: inherit; font-variation-set=
+tings: inherit; font-size: 14px; vertical-align: baseline; border-top-width=
+: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width=
+: 0px; border-top-style: initial; border-right-style: initial; border-botto=
+m-style: initial; border-left-style: initial; border-top-color: initial; bo=
+rder-right-color: initial; border-bottom-color: initial; border-left-color:=
+ initial; border-image-source: initial; border-image-slice: initial; border=
+-image-width: initial; border-image-outset: initial; border-image-repeat: i=
+nitial; text-align: center; color: #000000; letter-spacing: normal; orphans=
+: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-m=
+ode: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness:=
+ initial; text-decoration-style: initial; text-decoration-color: initial">&=
+nbsp;</span><span style=3D"box-sizing: border-box; padding-top: 0px; paddin=
+g-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; marg=
+in-right: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; f=
+ont-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-nu=
+meric: inherit; font-variant-east-asian: inherit; font-variant-alternates: =
+inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-=
+weight: inherit; font-stretch: inherit; line-height: inherit; font-family: =
+inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kern=
+ing: inherit; font-feature-settings: inherit; font-variation-settings: inhe=
+rit; font-size: 14.6667px; vertical-align: baseline; border-top-width: 0px;=
+ border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;=
+ border-top-style: initial; border-right-style: initial; border-bottom-styl=
+e: initial; border-left-style: initial; border-top-color: initial; border-r=
+ight-color: initial; border-bottom-color: initial; border-left-color: initi=
+al; border-image-source: initial; border-image-slice: initial; border-image=
+-width: initial; border-image-outset: initial; border-image-repeat: initial=
+; text-align: center; color: #585858; letter-spacing: normal; orphans: 2; t=
+ext-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webki=
+t-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap-mode: w=
+rap; background-color: transparent; text-decoration-thickness: initial; tex=
+t-decoration-style: initial; text-decoration-color: initial; text-decoratio=
+n-line: line-through; text-decoration-skip-ink: none">1250</span><span styl=
+e=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-=
+bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-=
+bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures:=
+ inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-v=
+ariant-east-asian: inherit; font-variant-alternates: inherit; font-variant-=
+position: inherit; font-variant-emoji: inherit; font-weight: inherit; font-=
+stretch: inherit; line-height: inherit; font-family: inherit; font-optical-=
+sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-fea=
+ture-settings: inherit; font-variation-settings: inherit; font-size: 14px; =
+vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; b=
+order-bottom-width: 0px; border-left-width: 0px; border-top-style: initial;=
+ border-right-style: initial; border-bottom-style: initial; border-left-sty=
+le: initial; border-top-color: initial; border-right-color: initial; border=
+-bottom-color: initial; border-left-color: initial; border-image-source: in=
+itial; border-image-slice: initial; border-image-width: initial; border-ima=
+ge-outset: initial; border-image-repeat: initial; text-align: center; color=
+: #585858; letter-spacing: normal; orphans: 2; text-indent: 0px; text-trans=
+form: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+hite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(=
+255, 255, 255); text-decoration-thickness: initial; text-decoration-style: =
+initial; text-decoration-color: initial"> 1000 LalaPoints</span><span style=
+=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-b=
+ottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-b=
+ottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligatures: =
+inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-va=
+riant-east-asian: inherit; font-variant-alternates: inherit; font-variant-p=
+osition: inherit; font-variant-emoji: inherit; font-weight: inherit; font-s=
+tretch: inherit; line-height: inherit; font-family: inherit; font-optical-s=
+izing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feat=
+ure-settings: inherit; font-variation-settings: inherit; font-size: 14px; v=
+ertical-align: baseline; border-top-width: 0px; border-right-width: 0px; bo=
+rder-bottom-width: 0px; border-left-width: 0px; border-top-style: initial; =
+border-right-style: initial; border-bottom-style: initial; border-left-styl=
+e: initial; border-top-color: initial; border-right-color: initial; border-=
+bottom-color: initial; border-left-color: initial; border-image-source: ini=
+tial; border-image-slice: initial; border-image-width: initial; border-imag=
+e-outset: initial; border-image-repeat: initial; text-align: center; color:=
+ #000000; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; wh=
+ite-space-collapse: preserve; text-wrap-mode: wrap; background-color: rgb(2=
+55, 255, 255); text-decoration-thickness: initial; text-decoration-style: i=
+nitial; text-decoration-color: initial">&nbsp;</span>&nbsp;</div><div></div=
+></div></td>
+      </tr>
+    </tbody>
+  </table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+module" data-role=3D"module-button" data-type=3D"button" role=3D"module" st=
+yle=3D"table-layout:fixed;" width=3D"100%" data-muid=3D"9bdf54d4-8f5b-48d9-=
+b69b-74f2752c7267">
+      <tbody>
+        <tr>
+          <td align=3D"center" bgcolor=3D"" class=3D"outer-td" style=3D"pad=
+ding:0px 0px 0px 0px;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"wrapper-mobile" style=3D"text-align:center;">
+              <tbody>
+                <tr>
+                <td align=3D"center" bgcolor=3D"#F16622" class=3D"inner-td"=
+ style=3D"border-radius:6px; font-size:16px; text-align:center; background-=
+color:inherit;">
+                  <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du00=
+1.Q18Pl5S9k4eRcorciki-2BiwjSLCHn4-2FhMqnZJ5QOsW686D1PmQt5zrNaQnFnRsc2xAwfsj=
+AvERsg3yGPNPIj5yg-3D-3DHeAt_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92=
+ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuT=
+SR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLs=
+AptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7=
+zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX=
+-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6=
+Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCW=
+duaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-=
+2FNwFBRtRrzY2kPri7VMx7C7lnUzE874jGAt5SDhY0jAjG3Yy-2BuZydQQy1VANTSUFjtaz5M07=
+IlDPkrt9fekr7RVqfnWM3EmwZxZY3esnAShkQEz36KDLwGqrbZhBOaFDLq6K6A6yLUh3GE7jplc=
+2j-2FMS3CR84xJx3VvQB9BsTouhMJYghAWPfcOtupzqY96mD-2Bdl8Kg-3D-3D" style=3D"ba=
+ckground-color:#F16622; border:1px solid #F16622; border-color:#F16622; bor=
+der-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font=
+-weight:bold; letter-spacing:0px; line-height:normal; padding:12px 18px 12p=
+x 18px; text-align:center; text-decoration:none; border-style:solid; font-s=
+ize:20px;" target=3D"_blank">Redeem Coupons At 20% Less LalaPoints Today</a=
+>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table><table class=3D"module" role=3D"module" data-type=3D"text" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"d4e328c5-c3de-4ff3-9ad5-c5057dd8efcc.1" data-m=
+c-module-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:30px 25px 30px 25px; line-height:22px; text-al=
+ign:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-co=
+ntent"><div><div style=3D"font-family: inherit; text-align: left"><span sty=
+le=3D"color: #585858">Terms and Conditions:</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858"><br>
+1. This promotion is valid from 24th January 2025 to 30th January 2025.</sp=
+an></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">2. This promotion is valid for Lalamove delivery coupons only.</s=
+pan></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">3. The coupon can be used in Klang Valley, Penang, Malacca, Johor=
+ Bahru and Kuching.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">4. The coupon only applies to order placed via mobile or web app.=
+</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">5. The coupon is only applicable if the order value is the same o=
+r higher than the discount value.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">6. The coupon can be stored in the Lalamove wallet if the users d=
+ecide to use it later.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">7. The stored coupon has a 14-day validity period. The coupon wil=
+l expire in 14 days from the day it is claimed.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">8. The coupon is not refundable or transferable.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">9. Lalamove reserves the right to amend the Terms &amp; Condition=
+s without prior notice.</span></div>
+<div style=3D"font-family: inherit; text-align: left"><span style=3D"color:=
+ #585858">10. In case of any disputes, Lalamove reserves the right to the f=
+inal decision.</span></div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"725f8161-83ae-4d59-b2d0-0c58b48e9a9b.1">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:0px 0px 0px 0=
+px;" valign=3D"top" align=3D"center">
+          <img class=3D"max-width" border=3D"0" style=3D"display:block; col=
+or:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif;=
+ font-size:16px; max-width:100% !important; width:100%; height:auto !import=
+ant;" width=3D"600" alt=3D"" data-proportionally-constrained=3D"true" data-=
+responsive=3D"true" src=3D"http://cdn.mcauto-images-production.sendgrid.net=
+/3aa6fb08b969e6a9/00d4f708-81a1-4071-aa8c-c957ab06260f/2500x643.png">
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"code" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"7b6a0503-db38-40c6-bdd1-46f3ec1a99b4">
+    <tbody>
+      <tr>
+        <td height=3D"100%" valign=3D"top" role=3D"module-content"><html>
+<body>
+<div id=3D"div1" style=3D"background-color:#f16622; width:100%; padding-bot=
+tom:10px; margin: 0 auto;">
+<div id=3D"row" style=3D"justify-content:center; align-items: center; margi=
+n: 0 auto; display:flex; padding-left:20px; padding-right:20px; padding-top=
+:15px;">
+<div id=3D"column1" style=3D"text-align:left; vertical-align:top; margin:5p=
+x; max-width:300px; width:100%; display:inline-block; margin: 0 auto;">
+<p><a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRc=
+orciki-2Bi3V2-2BSaWXsBydgoBbWnjfB9b9OI-2Fpx7Vq51b20MnG1Nd0YNh_mSC9HnDOBZ-2F=
+1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH=
+3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6b=
+l4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEi=
+WxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2Bhxf=
+nPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeT=
+uBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U=
+-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9Rfdm=
+bR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRtRrzY2kPri7VMx7C7lnUzGQimlAepwSagw=
+cTWeXIf58VuQHTdLYym5ktaO5OCf72npfJi2nnJ6RPbtQrFCY8PHXOuerrME5HmLs7MWStODPdu=
+QpcRJ5hKLG-2FOScTZsIxahjI-2FhocG2ZVB1XxYE2HsDncv1BaMFsUidc-2FO3xmxX8HZ-2FY6=
+rX-2BmU41pVMoshJIdA-3D-3D"><img width=3D"100%" height=3D"100%" alt=3D"Faceb=
+ook" src=3D"https://i.imgur.com/0tzNgwx.png" style=3D"max-width: 28px; heig=
+ht: 28px; text-align: left;"></a>
+<a href=3D" https://www.instagram.com/lalamovemy/"><img width=3D"100%" heig=
+ht=3D"100%" alt=3D"Instgram" src=3D"https://i.imgur.com/F0bdhcS.png" style=
+=3D"max-width: 28px; height: 28px; text-align: left;"></a>
+<a href=3D" https://www.youtube.com/@Lalamove"> <img width=3D"100%" height=
+=3D"100%" alt=3D"Youtube" src=3D"https://i.imgur.com/95T1OQC.png" style=3D"=
+max-width: 28px; height: 28px; text-align: left;"></a>
+<a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorc=
+iki-2Bi0k01e1-2F28Htj9DEp3-2FZ-2BEoKrOQY2bDhDOGdbhekcQw1-zRa_mSC9HnDOBZ-2F1=
+jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3=
+KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl=
+4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiW=
+xoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2Bhxfn=
+PWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTu=
+BC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-=
+2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9Rfdmb=
+R45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRtRrzY2kPri7VMx7C7lnUzGST7Y8xiUd10Tq=
+AnofrxVptn5R3LrWUJtm8Q-2FNzDqG7-2BS3s2gDhLiZuM6qXEB4bqGkILCVkIEMOiYFsLFwwcD=
+-2FoVtAeT7Nhk31DYgfBJqldH-2FML2wFtABoMBZF-2B-2B9h7RVdDROAZ2Q3y5uSbhRTyw-2FV=
+irVsiElCxrINg72l2pEYlg-3D-3D"><img width=3D"100%" height=3D"100%" alt=3D"Li=
+nkedin" src=3D"https://i.imgur.com/pmjaFRC.png" style=3D"max-width: 28px; h=
+eight: 28px; text-align: left;"></a></p>
+</div>
+<div id=3D"space" style=3D"width:50px;"></div>
+<div id=3D"column2" style=3D"text-align: right; vertical-align: top; max-wi=
+dth:300px; width:100%; display:inline-block;">
+<a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorc=
+iki-2BiwjSLCHn4-2FhMqnZJ5QOsW6-2BCXckaTzOPAqIwSxMeHxZGWGdhfXIObC15Z7Ge6Ah9P=
+w-3D-3Db7EU_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQd=
+rgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggR=
+a7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DF=
+qby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR=
+075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9=
+wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8=
+ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHu=
+qA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRtRrzY2kPr=
+i7VMx7C7lnUzF9JSUi4J-2FNELoidwFa0nQ225ABXw3PzJfmQq7TI4ChzmnWm5dFvzr-2FQ76BI=
+kDXaFETVEG2q5knPSVwW-2BqChK8GzGhDQvcSgBJc7SU7pdRIn-2F-2Bty4ku2gIAIpoI51ta-2=
+Bkeob2NtXZwbF4AozHfibpEgh7Ej4UBi-2FUZAIFl6dd4bGw-3D-3D"><img width=3D"100%"=
+ height=3D"100%" alt=3D"App Store" src=3D"https://i.imgur.com/on1SbT9.png" =
+style=3D"border: 0; max-width: 97px; max-height: 29px;"></a>
+<a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorc=
+iki-2BiwjSLCHn4-2FhMqnZJ5QOsW6-2BCXckaTzOPAqIwSxMeHxZGWGdhfXIObC15Z7Ge6Ah9P=
+w-3D-3DoCFH_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQd=
+rgAPNaTSFmJzJa7mPb1RtWquH3KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggR=
+a7FwRznMM-2B-2BgsoF2Prv6bl4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DF=
+qby1tB3jTSCBa7hNQVhjXkkEiWxoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR=
+075uQuwdXWy3fv1UpXH-2BhxfnPWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9=
+wZiUw4yx9QuCYVr-2FrM1bJeTuBC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8=
+ZTZFVsKSkOrjG4Xt4zy5gQ24U-2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHu=
+qA4T947lBCu-2BYwa4pz9RfdmbR45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRtRrzY2kPr=
+i7VMx7C7lnUzGJHXLeLyBN94ut-2Fkz6Yn48uvpjUefy6SrFGx2p14F1WTB6348Zx9vOmQFVHCm=
+-2BoNpHco5GTqUMPhlPz6cBrGzL2EFDPRHXY3wNuITlmn0kUnDMzVp04BJqvLkDV5fVpFqleIR3=
+WKX-2FTGmulUgKqLhyXyogMfnvIyAYnUZkMiHwdQ-3D-3D"><img width=3D"100%" height=
+=3D"100%" alt=3D"Google Play" src=3D"https://i.imgur.com/XF4NU6k.png" style=
+=3D"border: 0;  max-width: 97px; max-height: 29px;"></a></div>
+</div>
+<hr class=3D"solid" style=3D"border: none; height:1px; background-color:whi=
+te; margin-left:20px; margin-right:20px; margin-top:10px; margin-bottom:15p=
+x;">
+<p style=3D"text-align:center;font-size:9px; color:white; padding-bottom:5p=
+x; line-height:1.4;">
+<a href=3D"http://url1725.lalamove.com/asm/?user_id=3D16687471&amp;data=3Dq=
+LAjWEX12-cH4cqh7cqADlDY_VAydUYZW_BJfsf4ru5oMDAwdTAwMOWtSH3caHZ4s38kFIVpH9I6=
+J5BeAzszts1I-EEu8FNtDt4bKBjjk-FjTwEwIQ060CKhGrt0C_9Oki0MUHJGQuk-tdhkfP_4rmb=
+YHCjaQEPnpCYI6zxDFjQ2e9vFWVCh9ll3Ll_Ql_YZv2yzHi3uDcN-X0jYvp-20A-s2AURWMb1k6=
+NAHf6DrPYPcq0zSmJP8HWPe_J0nef9c1UQW_Guzml5NfY9O8hvPRwzGS90SBKRmPSx5jJG_-pg3=
+hXx4ud4xsTI169jPG49-Fam3jdrJgnuS-BMq2u-5AO3ZXCmi1YcYYm8fqEcI4YRJRJQE_3z_rxj=
+hRxeXV-N3wHguihV-Y1gmNvjlf8jP2j-BB1lHQs9wpFQXtd1DSmQ0uO7QgUENC4Q7GnkJS-f7mK=
+jDJ7LmZoTf9-rCqXT3P6bW8n3VA460BM0LQuKrMk9PqGgN04-f7rvANNP3i5NevBtbXoUwKoxzW=
+HwB6kCRsvcRmK7aFa9F4zWQ_QUHD09QLeyd-8Xp26cKKY4hWIJGmF0DsaT44UWo6Owtf_YZGQy1=
+FkvnOqMRvI8JHrr2liLbTeogcehDqqAhIFGOKozb4Uur_hBxnurrP1CTjcibu-IgoTs3KVrhGIo=
+NVOe-pqwyErHe9S8N3sn80J8rnJ33_Tyvpxd9qbFMA85H1Txbnl0DLclj5oRBdqxKRKlV6PHDFC=
+kgLyDcIr9BDKZfHwdzZ-6lewO4ekjhqNJ4CRBA2sO_OKj7tx7dxzINHMgi2o6aSyXdk_z5fvxzd=
+gEC-Ih1BbboOT9zSqRCfGA3e4nIJrJhG3tiwQ85ULtNiHb_6fx7DaNa65M4w=3D=3D" target=
+=3D"_blank" class=3D"Unsubscribe--unsubscribePreferences" style=3D"color:wh=
+ite;font-size:10px;">Unsubscribe</a> |=20
+<a href=3D"http://url1725.lalamove.com/ls/click?upn=3Du001.Q18Pl5S9k4eRcorc=
+iki-2Bi-2BrMnPkbOPtcvYGjUL5o-2FBAmL4gyHeEs-2BiuwcKhId3UdHIB6_mSC9HnDOBZ-2F1=
+jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTSFmJzJa7mPb1RtWquH3=
+KJbpZmnfRXR7vY-2FeHi3yMDkgCvGgZuTSR6yKeDkV8bRGggRa7FwRznMM-2B-2BgsoF2Prv6bl=
+4c7TAD0tIZEX4HsLP3WxEtraoUa-2BKLsAptxgE8E3Q2yO0DFqby1tB3jTSCBa7hNQVhjXkkEiW=
+xoodGsaQ4bS9U6mBY16oOF8R4bYPSNST7zsUcLFvxY-2FnPTR075uQuwdXWy3fv1UpXH-2Bhxfn=
+PWN-2F7yiMsl5-2BOiUUt7vUsP485nyQX-2FXWIjfps81FAB9wZiUw4yx9QuCYVr-2FrM1bJeTu=
+BC1S5u1D6O3uvEYTQYCUHqinBeO2a37N6Z-2F-2BXZb7p85R8ZTZFVsKSkOrjG4Xt4zy5gQ24U-=
+2BbcpotIvzp-2BC0DghitvvpfIzU-2BCWduaLuZwC5m7AdKHuqA4T947lBCu-2BYwa4pz9Rfdmb=
+R45-2FkoJCWe9igK-2Fcjz-2Fo0UMHM5-2FNwFBRtRrzY2kPri7VMx7C7lnUzF6HXxVwO1hJxs8=
+Z3PvKYjEzSbAN3QbHXU7wjIcmJ4EKxtoaqtG-2FMcWfxtEBrYzzHMsRzbMKqo-2F-2FE9Fn2MVf=
+iwhsZnNCHpcjDtPjGhN8jYG2UQHF-2BvaFMZ3OXDZPnPz7w3Fk5xrdCFt-2FSjuJeJsT-2BOiNE=
+66z1i6jHqA3vlDSnTfrQ-3D-3D" style=3D"color:white;font-size:10px;text-decora=
+tion: none;">Contact Us</a><br>
+2025 =C2=A9 All rights reserved</p>
+</div>
+</body>
+</html></td>
+      </tr>
+    </tbody>
+  </table></td>
+                                      </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    <img src=3D"http://url1725.lalamove.com/wf/open?upn=3Du001.yVOT3pz6PVJP=
+t79QhyfNDDU6-2FLhEoHzhKuXPlv8eRk1q7WqOOPXUkJecRr3vyqWHJUKenjttOSPzzTL8tD8tm=
+Q4f2BQh9-2FSZSq6U57ZBHMWCujEece-2F4A7VKJr6NKCGfN7KpOeAHeyJhf1tBAQQQsBJmWfTP=
+2pzuCobo9IdlceO5KP-2Fg4EZJQFQGN7CfLZIiqrjeI-2Bg-2BLnryrB-2BUGUfhP-2BCReRDIT=
+91nFfwJMd8vsPxAEbaOHFfR7vEZCg3Ve53iZza57FYL4XUsiCQ4NUL-2F2LNAhscjjLxqR9SReD=
+Vd3zEGe8-2BPejhoZkUxkEWNwL0roH-2BTzXce-2B0UfthA6nvIQAp-2FGIyCt6-2BNQIPPLqt9=
+KGSrs9vWdLN3Mu-2BXKy5BYV1PKPRkRfbzMwC9V7o98N19UyYFGX3kdPybFitU65zBG4Sk2oWKu=
+R-2FgfYRcjh8n-2BoetTfDixocJNEiLWFdrAwBupVHcISE2G9hzMwnnqZn9sKK1eLqiM-2FzlHG=
+WACIicKywqMwspMqpcndb-2BHkLFJsLecFd6x0HwlsdY-2F3vmnVZIvxDv5Cl1pkqRUR7CO9vEC=
+icA4gpKVAx6PmxKHsYaOCHOECugv0SLW72aUlfuOGZcx6toN1cRo1K9TsPkndaAgf5bUXYn4fM4=
+2IxoWxzByJHXl-2Bs7kq1zlt2EZqicXQTlStrgRSRnWPuUQ-2B4C1GQ4HOnsheE2x3GrbjeQSh7=
+X9TuBQ7A-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"hei=
+ght:1px !important;width:1px !important;border-width:0 !important;margin-to=
+p:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-=
+left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padd=
+ing-right:0 !important;padding-left:0 !important;"/></body>
+  </html>
+--e38c0e12a20412d5b7dbcd660b39b948b2f8b1c5551f8fadca54037e38c9--

@@ -1,0 +1,782 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:4351:b0:14b:7925:ffac with SMTP id w17csp67490dye;
+        Wed, 29 Jan 2025 18:04:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH00DtWcyZIQtSACrE7gkgIHpTPp9Grsj6cNRNYrcZCuf+hF4I4ROcadg/GrnowK8be46IC
+X-Received: by 2002:a05:622a:5814:b0:46b:cf12:884e with SMTP id d75a77b69052e-46fd0acdf1cmr101333751cf.27.1738202695326;
+        Wed, 29 Jan 2025 18:04:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738202695; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Uf+cU58ep8BX4AOVhBUCxdQYWMM6cggXgKNDeC0cUBPDWaRwkA2oO9/cmrO2g17YBA
+         HyNbH+TWe7tbCuOILfS8d2d21JD/kTPPNKm11AxAAdSa7bThVeos0ml5kb46j+bgZgcj
+         lLhvjbv1yoWMJcG1wramo6hxryoXmXu9+/UZ7Fuw6m6+5aYZAAyxEEJGYZzLJWtreY0b
+         6KMmPcI3KFz5wGqA768RzozrOQuHkDgG9q9vSfNj4zEpV0ANc8sjmOK7l5QcnMpjK1Bj
+         r/UJD80NO53I0TC60K3796NM83ak/stk+iDujnCpXQr05aUHobU5Zz06iqI8ThUrmGSv
+         KlaQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=zMroJJhZi+obrqdU1EPAR6lHBTCkvYPKEAlnNwFnUJI=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=kixI/019KIHts3b8XbGT+599txdRiFAESIG8mzFErs0q9yv+N1PXZBQlzD+GdUjgMz
+         yPcV0CC5IR9I/Vc7X1A3VO/WPaLtWxo+d+LyF+iPs292yuWPao1kMAqbAX1DOod0DoON
+         Vzrjjfp4hyagpWY/TQY4ZkrnWu7sPHNUngTLsj3Tr9qBhEVjbyFtx0KcNt35Q8gxpy9M
+         GMAV8YcUXcilxUghHz/T7FIIkd/YNdEUeiqa0Nei0swRjNfEdmrHvF5vqiWUIatOF3Lq
+         ddw+0mpx2itHVgEOSSrdOnhiw+m4MRBfVIGy3NaTdWT4dQbrTpig+o0RfJ/TMfnNQJmE
+         ylEQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@promo.bitget.com header.s=s1 header.b=Q9NI4x9t;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CR68xFMe;
+       spf=pass (google.com: domain of bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com designates 159.183.216.241 as permitted sender) smtp.mailfrom="bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bitget.com
+Return-Path: <bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com>
+Received: from o2.ptr8722.promo.bitget.com (o2.ptr8722.promo.bitget.com. [159.183.216.241])
+        by mx.google.com with ESMTPS id d75a77b69052e-46fdf1e0055si6813831cf.592.2025.01.29.18.04.55
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 29 Jan 2025 18:04:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com designates 159.183.216.241 as permitted sender) client-ip=159.183.216.241;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@promo.bitget.com header.s=s1 header.b=Q9NI4x9t;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CR68xFMe;
+       spf=pass (google.com: domain of bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com designates 159.183.216.241 as permitted sender) smtp.mailfrom="bounces+28645785-04fd-azri.mokhzani=gmail.com@em318.promo.bitget.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bitget.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=promo.bitget.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=zMroJJhZi+obrqdU1EPAR6lHBTCkvYPKEAlnNwFnUJI=;
+	b=Q9NI4x9t/k2RBb4CQ9Q8b2NTMrbco59Lo2dDZaqlt8hAvBdRj3zQR7Oya9LMvswsWhwg
+	VLI5yyGMeGCFbHHRRDxBRydbSmSOyOEI+Ffv8ebm5YU06cMjFt0oQov7oWJvW5IozxNjPW
+	eph+n2eZf7uTmWDAE2S9p33BmkbOksmnu0M/Qxp24leMBtQzyeF86xnKFfv7SAP1hGBYtI
+	lsbsdfFhq3wLpzvua0G8/Y0rWzRpyTFhmxWZ0grXLQ6+pGRXGvtY3WeQCn57kxAuCT3XNA
+	PkLAii6wWX+tWgHeHAubXZhN8E70cOvtSBfall4aIt9CgD9xsqgyWMMP06SOsfLQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=zMroJJhZi+obrqdU1EPAR6lHBTCkvYPKEAlnNwFnUJI=;
+	b=CR68xFMe95znrwt8sBtg+O8hXhmOua5GfUWgENNDY6OAsDYyQFN7L9D8QSAQ6Crqz8bG
+	oolxHPuiXVTpWuIImVJLHsqBgZxtPUP6SXGyfaJsLkAXpRgSDDXs7ih14/Yz2TUcYaJtIT
+	Q638lUuYTw0GMCEjWPFzGoQVIljTOF9kw=
+Received: by recvd-758ffcb645-7l6zs with SMTP id recvd-758ffcb645-7l6zs-1-679ADE42-2
+	2025-01-30 02:04:50.145979463 +0000 UTC m=+6583409.076733033
+Received: from Mjg2NDU3ODU (unknown)
+	by geopod-ismtpd-canary-0 (SG)
+	with HTTP
+	id wldGKMZXRdKXHQ9Mfb_cfg
+	Thu, 30 Jan 2025 02:04:50.036 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=4e358df49a00e80ee1e21e13ba6466effccf252e7747bba413a9bbd0565e
+Date: Thu, 30 Jan 2025 02:04:54 +0000 (UTC)
+From: Bitget <notification@promo.bitget.com>
+Mime-Version: 1.0
+Message-ID: <wldGKMZXRdKXHQ9Mfb_cfg@geopod-ismtpd-canary-0>
+Subject: Hot coins giveaway: Trade to win TRUMP, MELANIA and ELON!
+Reply-To: support@bitget.com
+X-Feedback-ID: 28645785:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Es8GvX+YfIYVBFw2wt59Zzej8ULuyXCdImCGvX0slgDHpWLABC+RLR4EIw?=
+ =?us-ascii?Q?N4cPwhGbiHjHKMYG7pKVAtPnpaK5=2FcBFhTDCykD?=
+ =?us-ascii?Q?zADyxYlegFJk0EwC2q3dUnrsl5Vg1rHf8e7Y5Li?=
+ =?us-ascii?Q?xqgCK=2F4nMK0ZbpdLI8=2FoaYUiqRloDBK+wghjtLK?=
+ =?us-ascii?Q?XTN63qlBT2QQjP241pcotyN8isO+Zr7vngR0hWT?=
+ =?us-ascii?Q?+fk=2FAf3f97GUI+O+IWi2OkW7okErbQ3q9Qoqf7c?= =?us-ascii?Q?1anH?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3Bone6QdXbAWCl1co5GpE3Vhd8Unw89PqtxFt+?=
+ =?us-ascii?Q?T0wv+KE8ROVQGymHyTNWnPKBQXS3+03aGHoYpYj?=
+ =?us-ascii?Q?OVGWDTVIhIANnESBihHfkuFv2RDjZqHWxH9s+KP?=
+ =?us-ascii?Q?jpLuoGi8FNZeGdnHHesYwfuv6j7JtipLP8tttcA?=
+ =?us-ascii?Q?LyKg6V5HT66EyNwN1bDjKzTOuz1bQoDoO2Jok9T?=
+ =?us-ascii?Q?vm3bal3FUY+8umUQJQRMFySy=2Fut8Vjzisp8dbvR?=
+ =?us-ascii?Q?IvgKoRZ7Ab43XJFapSk9WwMutg=3D=3D?=
+To: azri.mokhzani@gmail.com
+X-Entity-ID: u001.7Pisisxytv5V4of5+uqECw==
+
+--4e358df49a00e80ee1e21e13ba6466effccf252e7747bba413a9bbd0565e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+
+--4e358df49a00e80ee1e21e13ba6466effccf252e7747bba413a9bbd0565e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<head>
+    <title>
+     =20
+    </title>
+   =20
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <style type=3D"text/css">
+      #outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }
+    </style>
+   =20
+   =20
+   =20
+     =20
+
+   =20
+   =20
+    <style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-50 { width:50% !important; max-width: 50%; }
+.mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }
+    </style>
+    <style media=3D"screen and (min-width:480px)">
+      .moz-text-html .mj-column-per-50 { width:50% !important; max-width: 5=
+0%; }
+.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%;=
+ }
+    </style>
+   =20
+ =20
+    <style type=3D"text/css">
+   =20
+   =20
+
+    @media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }
+ =20
+    </style>
+    <style type=3D"text/css">
+    .red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+.activityText div {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+table {
+  /* border-collapse: separate; */
+  text-indent: initial;
+  white-space: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-size: medium;
+  font-style: normal;
+  color: -internal-quirk-inherit;
+  text-align: start;
+  border-spacing: 2px;
+  font-variant: normal;
+}
+a {
+  color: #009db2;
+}
+p {
+  margin: 16px 0;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: "HarmonyOS_Sans_Bold";
+  font-style: normal;
+  /* font-weight: 700; */
+  src: url("https://img.bgstatic.com/image/emailTemplate/HarmonyOS_Sans_Bol=
+d.ttf");
+  /* format("truetype"); */
+}
+
+@font-face {
+  font-family: "HarmonyOS_Sans_Medium";
+  font-style: normal;
+  /* font-weight: 400; */
+  src: url("https://img.bgstatic.com/image/emailTemplate/HarmonyOS_Sans_Med=
+ium.ttf")
+    format("truetype");
+  /* unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A=
+69F,
+    U+FE2E-FE2F; */
+}
+
+@font-face {
+  font-family: "HarmonyOS_Sans_Regular";
+  font-style: normal;
+  /* font-weight: 500; */
+  src: url("https://img.bgstatic.com/image/emailTemplate/HarmonyOS_Sans_Reg=
+ular.ttf")
+    format("truetype");
+  /* unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A=
+69F,
+    U+FE2E-FE2F; */
+}
+    </style>
+   =20
+  </head><div style=3D"margin:0px auto;max-width:720px;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;padding-=
+top:30px;text-align:center;">
+               =20
+           =20
+      <div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-si=
+ze:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:to=
+p;width:100%;">
+       =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"100%">
+        <tbody>
+          <tr>
+            <td style=3D"vertical-align:top;padding-bottom:25px;">
+             =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"" width=3D"100%">
+        <tbody>
+         =20
+              <tr>
+                <td align=3D"center" style=3D"font-size:0px;padding:0px;wor=
+d-break:break-word;">
+                 =20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"border-collapse:collapse;border-spacing:0px;">
+        <tbody>
+          <tr>
+            <td style=3D"width:138px;">
+             =20
+      <img height=3D"45" src=3D"https://img.bgstatic.com/image/emailTemplat=
+e/bitget-logo-rebrand-0803.png" style=3D"border:0;display:block;outline:non=
+e;text-decoration:none;height:45px;width:100%;font-size:13px;" width=3D"138=
+">
+   =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+                </td>
+              </tr>
+           =20
+        </tbody>
+      </table>
+   =20
+            </td>
+          </tr>
+        </tbody>
+      </table>
+   =20
+      </div>
+   =20
+         =20
+           =20
+      <p style=3D"border-top:solid 4px #009DB2;font-size:1px;margin:0px aut=
+o;width:100%;">
+      </p>
+     =20
+     =20
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div><body style=3D"word-spacing:normal;background-color:#f5f4f4;"><=
+div style=3D"background-color:#f5f4f4;"><body>
+ <div style=3D"background: #FFFFFF; background-color: #ffffff; margin: 0px =
+auto; max-width: 720px;">=20
+  <table style=3D"background: #FFFFFF; background-color: #ffffff; width: 10=
+0%;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=20
+   <tbody>=20
+    <tr>=20
+     <td style=3D"direction: ltr; font-size: 0px; padding: 0px; padding-bot=
+tom: 48px; text-align: center;">=20
+      <div style=3D"margin: 0px auto; max-width: 720px;">=20
+       <table style=3D"width: 100%;" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0">=20
+        <tbody>=20
+         <tr>=20
+          <td style=3D"direction: ltr; font-size: 0px; padding: 0px; text-a=
+lign: center;">=20
+           <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"f=
+ont-size: 0px; text-align: left; direction: ltr; display: inline-block; ver=
+tical-align: top; width: 100%;">=20
+            <table style=3D"vertical-align: top;" border=3D"0" width=3D"100=
+%" cellspacing=3D"0" cellpadding=3D"0">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"font-size: 0px; padding: 0px; word-break: break=
+-word;" align=3D"center">=20
+                <table style=3D"border-collapse: collapse; border-spacing: =
+0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=20
+                 <tbody>=20
+                  <tr>=20
+                   <td style=3D"width: 720px;"><a href=3D"https://u28645785=
+.ct.sendgrid.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcPZFEXQoW7PdG-2BIL=
+46GK-2Bzv0Pe0j-2BkxjtE0wJDXaLHbZYAH8jH3vwgf96vKwfw4PvyVhw-2FxgPCM6hdVP2tXKb=
+V49UD5617MzuwH2T5vL94b65UO7-2BwDm4sIw24leUKPlPg-3D-3Dc1zB_mSC9HnDOBZ-2F1jig=
+kI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDA=
+QyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq=
+2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGg=
+sDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy=
+-2FnK6ZrP0oPT44GQ6VHzbiWVoynnGag3uyYAQXZHY6RtGWXfjy4CoXb3w9h4XvYMAhjf4TFpJP=
+jQMvSEk-2F614L5papMq9elnYAV9-2F2b2QYH4Y43zJM20LM5FjJ3d53RPgxAN4gIBQ8wiE6r-2=
+Fu9yEJ2l7rsheUrriV-2B8933-2F0sqfNVLIA-3D-3D"><img style=3D"border: 0; displ=
+ay: block; outline: none; text-decoration: none; height: auto; width: 100%;=
+ font-size: 13px;" src=3D"https://img.bgstatic.com/image/emailTemplate/bann=
+er_email_operate_0818_1.png" width=3D"720"></a></td>=20
+                  </tr>=20
+                 </tbody>=20
+                </table> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+           </div> </td>=20
+         </tr>=20
+        </tbody>=20
+       </table>=20
+      </div>=20
+      <div style=3D"margin: 0px auto; max-width: 720px;">=20
+       <table style=3D"width: 100%;" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0">=20
+        <tbody>=20
+         <tr>=20
+          <td style=3D"direction: ltr; font-size: 0px; padding: 0px; paddin=
+g-left: 32px; padding-right: 32px; padding-top: 32px; text-align: center;">=
+=20
+           <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"f=
+ont-size: 0px; text-align: left; direction: ltr; display: inline-block; ver=
+tical-align: top; width: 100%;">=20
+            <table style=3D"vertical-align: top; height: 154px;" border=3D"=
+0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">=20
+             <tbody>=20
+              <tr style=3D"height: 30px;">=20
+               <td style=3D"font-size: 0px; padding: 0px; word-break: break=
+-word; height: 30px;" align=3D"left">=20
+                <div style=3D"font-family: Noto Sans, sans-serif; font-size=
+: 24px; font-weight: bold; line-height: 30px; text-align: left; color: #1e1=
+e1e;">=20
+                 <div style=3D"direction: ltr;">
+                  Dear Bitgetter,
+                 </div>=20
+                </div> </td>=20
+              </tr>=20
+              <tr style=3D"height: 72px;">=20
+               <td style=3D"font-size: 0px; padding: 48px 0px 32px; word-br=
+eak: break-word; height: 72px;" align=3D"left">=20
+                <div style=3D"font-family: Noto Sans, sans-serif; font-size=
+: 16px; font-weight: 400; line-height: 1.5; text-align: left; color: #1e1e1=
+e;">=20
+                 <div style=3D"direction: ltr;">=20
+                  <div class=3D"ace-line ace-line old-record-id-Yl2bdeDQjo6=
+B8Ix19F0uGlRqstf">
+                   Complete tasks and trade, you'll have chances to spin th=
+e wheel and win hot coins!
+                  </div>=20
+                  <div class=3D"ace-line ace-line old-record-id-ULYFd56ndok=
+sR5xPMzhuaPlHsac">
+                   The more you trade, the more chances you get to win priz=
+es!
+                  </div>=20
+                  <div class=3D"ace-line ace-line old-record-id-O7gddxFHkol=
+SxJxuLc0uScNAsKg">
+                   Rewards are limited, first come, first served!
+                  </div>=20
+                 </div>=20
+                </div> </td>=20
+              </tr>=20
+              <tr style=3D"height: 52px;">=20
+               <td style=3D"font-size: 0px; padding: 0px; word-break: break=
+-word; height: 52px;">=20
+                <div style=3D"margin: 0px auto; max-width: 656px;">=20
+                 <table style=3D"width: 100%;" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">=20
+                  <tbody>=20
+                   <tr>=20
+                    <td style=3D"direction: ltr; font-size: 0px; padding: 0=
+px; text-align: center;">=20
+                     <div class=3D"mj-column-per-100 mj-outlook-group-fix" =
+style=3D"font-size: 0px; text-align: left; direction: ltr; display: inline-=
+block; vertical-align: top; width: 100%;">=20
+                      <table border=3D"0" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0">=20
+                       <tbody>=20
+                        <tr>=20
+                         <td style=3D"vertical-align: top; padding: 0px;">=20
+                          <table border=3D"0" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0">=20
+                           <tbody>=20
+                            <tr>=20
+                             <td style=3D"font-size: 0px; padding: 0px; wor=
+d-break: break-word;" align=3D"center">=20
+                              <table style=3D"border-collapse: separate; li=
+ne-height: 100%;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=20
+                               <tbody>=20
+                                <tr>=20
+                                 <td style=3D"border: 1px solid #1F1F1F; bo=
+rder-radius: 28px; cursor: auto; height: 42px; mso-padding-alt: 6px 36px; b=
+ackground: #1F1F1F;" align=3D"center" valign=3D"middle"> <p style=3D"displa=
+y: inline-block; background: #1F1F1F; color: #ffffff; font-family: Noto San=
+s, sans-serif; font-size: 16px; font-weight: 500px; line-height: 22px; marg=
+in: 0; text-decoration: none; text-transform: none; padding: 6px 36px; mso-=
+padding-alt: 0px; border-radius: 28px;"><span style=3D"color: rgb(255, 255,=
+ 255);"><a style=3D"color: rgb(255, 255, 255);" href=3D"https://u28645785.c=
+t.sendgrid.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcPZFEXQoW7PdG-2BIL46=
+GK-2Bzv0Pe0j-2BkxjtE0wJDXaLHbZYAH8jH3vwgf96vKwfw4PvyVhw-2FxgPCM6hdVP2tXKbV4=
+9UD5617MzuwH2T5vL94b65UO7-2BwDm4sIw24leUKPlPg-3D-3DWryk_mSC9HnDOBZ-2F1jigkI=
+-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQy=
+xTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2v=
+qWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsD=
+Vw-2BADB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2=
+FnK565jIQqyr8BsLTL2WUClUOdpUyZ5kzEsRRsJ2-2FtPEvKd2adNDn7Y53qwuenfnlbxh-2Fi4=
+oHmJ2gp8bjyn3-2BuZ-2B8cq-2BvzJD51rTZMj0X6XpzJvT7-2FQfMxErya5vJWp4SCQyWT13Kg=
+ZsSLVauWTYTJ2fFpy38w-2BbJVNVY01Xrf-2F3Nog-3D-3D">Join Now</a></span></p> </=
+td>=20
+                                </tr>=20
+                               </tbody>=20
+                              </table> </td>=20
+                            </tr>=20
+                           </tbody>=20
+                          </table> </td>=20
+                        </tr>=20
+                       </tbody>=20
+                      </table>=20
+                     </div> </td>=20
+                   </tr>=20
+                  </tbody>=20
+                 </table>=20
+                </div> </td>=20
+              </tr>=20
+              <tr style=3D"height: 0px;">=20
+               <td style=3D"font-size: 0px; padding: 32px 0px 0px; word-bre=
+ak: break-word; height: 0px;" align=3D"left">&nbsp;</td>=20
+              </tr>=20
+              <tr style=3D"height: 0px;">=20
+               <td style=3D"font-size: 0px; padding: 24px 0px 0px; word-bre=
+ak: break-word; height: 0px;" align=3D"left">&nbsp;</td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+           </div> </td>=20
+         </tr>=20
+        </tbody>=20
+       </table>=20
+      </div>=20
+      <div style=3D"margin: 0px auto; max-width: 720px;">=20
+       <table style=3D"width: 100%;" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0">=20
+        <tbody>=20
+         <tr>=20
+          <td style=3D"direction: ltr; font-size: 0px; padding: 0px; paddin=
+g-left: 32px; padding-right: 32px; padding-top: 32px; text-align: center;">=
+=20
+           <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"f=
+ont-size: 0px; text-align: left; direction: ltr; display: inline-block; ver=
+tical-align: top; width: 100%;">=20
+            <table style=3D"vertical-align: top;" border=3D"0" width=3D"100=
+%" cellspacing=3D"0" cellpadding=3D"0">=20
+             <tbody>=20
+              <tr>=20
+               <td style=3D"font-size: 0px; padding: 0px; word-break: break=
+-word;" align=3D"left">=20
+                <div style=3D"font-family: Noto Sans, sans-serif; font-size=
+: 16px; font-weight: 400; line-height: 1.5; text-align: left; color: #1e1e1=
+e;">=20
+                 <div style=3D"direction: ltr;">
+                  Bitget Team
+                 </div>=20
+                </div> </td>=20
+              </tr>=20
+             </tbody>=20
+            </table>=20
+           </div> </td>=20
+         </tr>=20
+        </tbody>=20
+       </table>=20
+      </div> </td>=20
+    </tr>=20
+   </tbody>=20
+  </table>=20
+ </div>
+</body><div style=3D"background:#ffffff;background-color:#ffffff;margin:0px=
+ auto;max-width:720px;">                   <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ackground:#ffffff;background-color:#ffffff;width:100%;">           <tbody> =
+            <tr>               <td style=3D"direction:ltr;font-size:0px;pad=
+ding:0px;text-align:center;">                                     <div clas=
+s=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-al=
+ign:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"=
+>                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%">         <tbody>           <tr>         =
+    <td style=3D"vertical-align:top;padding:0px;">                      <ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"" width=3D"100%">         <tbody>                          <tr>   =
+              <td align=3D"left" style=3D"font-size:0px;padding:0 32px 28px=
+;word-break:break-word;">                          <table cellpadding=3D"0"=
+ cellspacing=3D"0" width=3D"324" border=3D"0" style=3D"color:#000000;font-f=
+amily:Noto Sans, sans-serif;font-size:13px;line-height:22px;table-layout:au=
+to;width:324px;border:1px solid #03AAC7;">         <tbody><tr><td style=3D"=
+background-color:#05C3DD;padding:2px 0;width:139px"><span style=3D"text-ali=
+gn:center;display:inline-block;width:100%;color:#1e1e1e;font-weight:400;fon=
+t-size:12px;word-break:break-word;direction:ltr"> Anti-Phishing Code</span>=
+</td><td style=3D"background-color:#fff;padding:1px 12px;width:185px"><span=
+ style=3D"text-align:center;display:inline-block;width:100%;color:#05C3DD;f=
+ont-weight:500;font-size:12px;line-height:18px;word-break:break-word;direct=
+ion:ltr"></span></td></tr>       </tbody></table>                      </td=
+>               </tr>                      </tbody>       </table>         =
+         </td>           </tr>         </tbody>       </table>            <=
+/div>                               </td>             </tr>           </tbo=
+dy>         </table>                </div><div style=3D"background:#ffffff;=
+background-color:#ffffff;margin:0px auto;max-width:720px;">                =
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"background:#ffffff;background-color:#ffffff;=
+width:100%;">           <tbody>             <tr>               <td style=3D=
+"direction:ltr;font-size:0px;padding:20px 0;text-align:center;">           =
+                         <div style=3D"background:#ffffff;background-color:=
+#ffffff;margin:0px auto;max-width:720px;">                  <table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"background:#ffffff;background-color:#ffffff;width:100%;">    =
+       <tbody>             <tr>               <td style=3D"direction:ltr;fo=
+nt-size:0px;padding:0px;text-align:center;">                               =
+      <div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-s=
+ize:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:t=
+op;width:100%;">                <table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"1=
+00%">         <tbody>                          <tr>                 <td sty=
+le=3D"font-size:0px;padding:0px;word-break:break-word;">                   =
+                                 <div style=3D"margin:0px auto;max-width:72=
+0px;">                  <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%;">         =
+  <tbody>             <tr>               <td style=3D"direction:ltr;font-si=
+ze:0px;padding:0px;text-align:center;">                                    =
+ <div style=3D"font-family:Noto Sans, sans-serif;font-size:16px;font-weight=
+:700;line-height:1.5;text-align:center;color:#1e1e1e;"><div style=3D"direct=
+ion:ltr">Download the Bitget App now</div></div>                           =
+         <div style=3D"font-family:Noto Sans, sans-serif;font-size:16px;fon=
+t-weight:400;line-height:1.5;text-align:center;color:#1e1e1e;"><div style=
+=3D"direction:ltr">Stay updated on the go!</div></div>                     =
+               <div style=3D"height:22px;line-height:22px;">=E2=80=8A</div>=
+                                    <table cellpadding=3D"16px" cellspacing=
+=3D"0" width=3D"100%" border=3D"0" style=3D"color:#000000;font-family:Noto =
+Sans, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:10=
+0%;border:none;">         <tbody><tr><td style=3D"text-align:right"><a href=
+=3D"https://u28645785.ct.sendgrid.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRc=
+jUbcBu8fXP5aZCge7XUg1jjwUUkJUeC141mcyULs-2FFw4h7hBKUl782dBEOQMAxDaaLXtIHObo=
+Egg3E-2BbnIXbZqUbgY-3DvPyX_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92o=
+b3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPT=
+p2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUx=
+rVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aA=
+nVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK4VF0ipkAa2dw70h5bVeaTFqy4X=
+hsGUi0xQYXZzRmnCKpoNWAz-2BizKQJ0Eb-2F1gp2WkFiGfi0Y6kUgwMSa-2FbtAQW-2FDNv4kI=
+w8UDM-2BmRifOD95vkBifDRohrSE3LCcUjhekUHbN-2FZthSIhLA9RJQ26bJ3LJjRiJGXyoQ3T-=
+2FPRgKh7Ag-3D-3D"><img src=3D"https://img.bgstatic.com/image/emailTemplate/=
+new_goole_play.png" style=3D"width:162px;height:48px"></a></td><td style=3D=
+"text-align:left"><a href=3D"https://u28645785.ct.sendgrid.net/ls/click?upn=
+=3Du001.8TuxOarP5wUfx4GRcjUbcJJvYz1Dl-2BRMgwWq0rj-2BxkLrV8s791Dn9yDJtmUpG6Z=
+g-2BRyUEO-2BPg0wKTKKAxgp-2BwUnspMB1jx01lgCKlrdHbEg-3DHVq-_mSC9HnDOBZ-2F1jig=
+kI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDA=
+QyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq=
+2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGg=
+sDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy=
+-2FnK6iZNC6PhUHEbl2hksLPkYJa0bg2vG-2BPiIuTFFvQMt2sNsxYE7YPTAuZ2QU1uDIy8PrVQ=
+TcvvjCns97EYrkGXJpLUByFV7peDcHrsECwda6L6UDN1VOGs2FuQzGF2a3PeDxKpsveuIw6bW3c=
+hQpCMWCwcTRfI6vgKomUAGlhg56Uw-3D-3D"><img src=3D"https://img.bgstatic.com/i=
+mage/emailTemplate/new_app_store.png" style=3D"width:162px;height:48px"></a=
+></td></tr>       </tbody></table>                               </td>     =
+        </tr>           </tbody>         </table>                </div>    =
+                                          </td>               </tr>        =
+                    <tr>                 <td style=3D"font-size:0px;word-br=
+eak:break-word;">                          <div style=3D"height:32px;line-h=
+eight:32px;">=E2=80=8A</div>                      </td>               </tr>=
+                            <tr>                 <td align=3D"center" style=
+=3D"font-size:0px;padding:0px;word-break:break-word;">                     =
+     <div style=3D"font-family:Noto Sans, sans-serif;font-size:13px;line-he=
+ight:1;text-align:center;color:#000000;"><img src=3D"https://img.bgstatic.c=
+om/image/emailTemplate/messi_bitget_rebrand_1024.jpg" style=3D"width:100%;h=
+eight:auto;max-width:720px"></div>                      </td>              =
+ </tr>                      </tbody>       </table>            </div>      =
+                         </td>             </tr>           </tbody>        =
+ </table>                </div>                                      <div s=
+tyle=3D"background:#ffffff;background-color:#ffffff;margin:0px auto;max-wid=
+th:720px;">                  <table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#fffff=
+f;background-color:#ffffff;width:100%;">           <tbody>             <tr>=
+               <td style=3D"direction:ltr;font-size:0px;padding:0px;padding=
+-bottom:28px;text-align:center;">                                    <div s=
+tyle=3D"margin:0px auto;max-width:720px;">                  <table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentat=
+ion" style=3D"width:100%;">           <tbody>             <tr>             =
+  <td style=3D"direction:ltr;font-size:0px;padding:0px;padding-top:32px;tex=
+t-align:center;">                                     <div class=3D"mj-colu=
+mn-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dir=
+ection:ltr;display:inline-block;vertical-align:top;width:100%;">           =
+     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"vertical-align:top;" width=3D"100%">         <tbody>      =
+                    <tr>                 <td align=3D"center" style=3D"font=
+-size:0px;padding:0px;word-break:break-word;">                          <di=
+v style=3D"font-family:Noto Sans, sans-serif;font-size:13px;line-height:1;t=
+ext-align:center;color:#000000;"><div style=3D"display:inline-block"><div s=
+tyle=3D"width:37px;height:37px"><a href=3D"https://u28645785.ct.sendgrid.ne=
+t/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcPZFEXQoW7PdG-2BIL46GK-2BztY-2BUE=
+brb5jxRgkLBTQyYTUTfMa_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7K=
+bU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYm=
+vuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT=
+26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2c=
+NdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK7TqfGBQowxn53XLMjrh90VMSRN3CkOu=
+-2FXZ-2Bu6aNAOszY773jyeJPZifKbS4CTcyKTeOT5qbnMquOFQBqaoZKNP-2FR2bcdbBhKIB8O=
+k9Sf4jQOaghvJg5Pgk6Y3Ow-2BRnkiXSGf7OrIxwoksWM2wkHGxXZk-2BpL4aayiBDK4je5fiMq=
+A-3D-3D" style=3D"display:inline-block;margin-right:10px;color:#1255cc;text=
+-decoration:none"><img src=3D"https://img.bgstatic.com/image/emailTemplate/=
+market_icon_bitget_1017.png" style=3D"width:28px;height:28px;color:#ffffff;=
+margin:0 auto"></a></div></div><div style=3D"display:inline-block"><div sty=
+le=3D"width:37px;height:37px"><a href=3D"https://u28645785.ct.sendgrid.net/=
+ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcLpJzGxi6qmTdsCY6WFABJQ-3DIB6n_mSC9=
+HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9=
+VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1d=
+UlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2=
+FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMe=
+Ener36-2FnJWy-2FnK79e0tJLNmVjzmQOBXWZl-2B6c9W1-2BuR5S-2FoDuOf17qRySSMFNIgui=
+Y2f2YWmQjtWiPLHMRhbtU4n74nU2BI2IrHCLHoHK-2FA2L7qlU1mUyZHZhJGezg6Kl5eRgcpJfX=
+Dwk20qEWfzJ-2FMGL-2FqwqicTcVppFIa2qkCASGwK6ESqWSFGlw-3D-3D" style=3D"displa=
+y:inline-block;margin-right:10px;color:#1255cc;text-decoration:none"><img s=
+rc=3D"https://img.bgstatic.com/image/emailTemplate/market_icon_telegram_101=
+7.png" style=3D"width:28px;height:28px;color:#ffffff;margin:0 auto"></a></d=
+iv></div><div style=3D"display:inline-block"><div style=3D"width:37px;heigh=
+t:37px"><a href=3D"https://u28645785.ct.sendgrid.net/ls/click?upn=3Du001.8T=
+uxOarP5wUfx4GRcjUbcFe2GSZTvwpnV7SuW-2FqsEQ2Rzl3MG3nktDvxYyfDSTxuWJz-2BVkuz9=
+DB2-2BjBzQFSfgA-3D-3DhWp3_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob=
+3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp=
+2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxr=
+VznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAn=
+VY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK5Hf17GskJYSGoERL7W1G5gbk6tP=
+mwvbby0SpW37PFbumgHu5rpFjBG-2Fb3nz7hw2Yge-2B-2BUBCCnkvO5xYfz4OL5lUzLDWjIJ49=
+aACDLSoD-2BEJKNr3H-2FbzS8gf5Vdo4okHl1f5NnJOyGdBF5b7PPNlIa6snU7-2BYlVfkPbMqa=
+iFATKLw-3D-3D" style=3D"display:inline-block;margin-right:10px;color:#1255c=
+c;text-decoration:none"><img src=3D"https://img.bgstatic.com/image/emailTem=
+plate/market_icon_facebook_1017.png" style=3D"width:28px;height:28px;color:=
+#ffffff;margin:0 auto"></a></div></div><div style=3D"display:inline-block">=
+<div style=3D"width:37px;height:37px"><a href=3D"https://u28645785.ct.sendg=
+rid.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcH8GHsuu85vElB3Oi0ANOdIVcT8=
+B1bSfwS-2FuUeH6NXsTAZ7x_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j=
+7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2r=
+YmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVz=
+nT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY=
+2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK54NgF1dpW7LIFMcQmucqaM-2FERiN=
+Ezl1uGsgjjqYEcMp1g8Gjwvj0-2BKtfzsKhYberQTI4kwcYz9yUdHj1wgVj3auzk-2F31Njfzuj=
+U46pZ6Ja9FAhXodkPI9EAQsx443tj-2FoffCpop64EENj7W1R-2FANaDJiEYLgdNF-2FGmP7bCz=
+EqC-2Fw-3D-3D" style=3D"display:inline-block;margin-right:10px;color:#1255c=
+c;text-decoration:none"><img src=3D"https://img.bgstatic.com/image/emailTem=
+plate/market_icon_twitter_1017.png" style=3D"width:28px;height:28px;color:#=
+ffffff;margin:0 auto"></a></div></div><div style=3D"display:inline-block"><=
+div style=3D"width:37px;height:37px"><a href=3D"https://u28645785.ct.sendgr=
+id.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcAi9QafHjPPon2WxfgahRzNghNuU=
+yXdkdwqV0uxbdjjukbQd-2FMdtCUhle6RcKo4NbHTc8dkjV7LH0-2Bn1WdDZVIE-3DcyH__mSC9=
+HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9=
+VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1d=
+UlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2=
+FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMe=
+Ener36-2FnJWy-2FnK4v-2B61hFpbLxDcymkAEMu4e17CfPVlUqvtZAeJCO5hYBUwiWk0YbFWjO=
+-2B8bIQ-2Bx1gG-2FSnm-2FIyNl-2FJ2NBHCajG4PSEDr8cUaift9nODXE4qLpcjWXk1nBLlOlc=
+IgXWFHd2O2iccMA9gP3Tn3IZziMrNP8NmxWr62eFd1eDK1adstSw-3D-3D" style=3D"displa=
+y:inline-block;margin-right:10px;color:#1255cc;text-decoration:none"><img s=
+rc=3D"https://img.bgstatic.com/image/emailTemplate/market_icon_youtube_1017=
+.png" style=3D"width:28px;height:28px;color:#ffffff;margin:0 auto"></a></di=
+v></div><div style=3D"display:inline-block"><div style=3D"width:37px;height=
+:37px"><a href=3D"https://u28645785.ct.sendgrid.net/ls/click?upn=3Du001.8Tu=
+xOarP5wUfx4GRcjUbcEyGgxi6-2FA1OdFqfwdcHdqGXudIydv31haBZ3Z3wTAt33-2Bsn101lWx=
+imvv3dqEEEBQ-3D-3DozCw_mSC9HnDOBZ-2F1jigkI-2Bjayfe718diY8XVJZRFQfmQW92ob3j7=
+KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGYJpxqllQj0N-2FfPPTp2rY=
+mvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQUtg8BeAUW4ZD5gdUxrVzn=
+T26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZz0EZBwP-2B40fy5aAnVY2=
+cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK7CjA6-2FnFPpocbNJO04g2v6WAsOtg=
+Rvh9mWdL7aytXdQSbN4nGm9tx4Cl-2FStsh0LqtOF74O7E96B7Jzpdok6zrVlUrbDlDFcly1fWf=
+g0DaT1h4Qms9RPDGsatHB3g16KYy9TSW70Yp5mCTdWTRPm0vRgKW7ZG1pmIB2NwSFv3DZWQ-3D-=
+3D" style=3D"display:inline-block;margin-right:10px;color:#1255cc;text-deco=
+ration:none"><img src=3D"https://img.bgstatic.com/image/emailTemplate/marke=
+t_icon_instagram_1017.png" style=3D"width:28px;height:28px;color:#ffffff;ma=
+rgin:0 auto"></a></div></div><div style=3D"display:inline-block"><div style=
+=3D"width:37px;height:37px"><a href=3D"https://u28645785.ct.sendgrid.net/ls=
+/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcBAMg3dzIgejDtXMKJNS8GbXy4D2NnFv-2BLA=
+r5YYeqGYcHC-2FN1ZhBmbRVbDxz8h01lw-3D-3D9Psa_mSC9HnDOBZ-2F1jigkI-2Bjayfe718d=
+iY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX3wJAGY=
+JpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv7225DQ=
+Utg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BADB7adZ=
+z0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK5Sm0pUVs8=
+BOVmG8KpLojaDYyqkNY8buW1F0bnFXicAfPNrr7Hp6bWuCzxMZpZ4TlyeYjQiWZiULq8uaMjd0y=
+NrwfGXeuYgw5F4dkHS-2BDKtxnjPzNm-2BDyDfhaAVk1m1uRUz66X-2BD3BgixY-2B-2Fl7cYpx=
+XfZ51Epakg-2B9EayouH4XjYg-3D-3D" style=3D"display:inline-block;margin-right=
+:10px;color:#1255cc;text-decoration:none"><img src=3D"https://img.bgstatic.=
+com/image/emailTemplate/market_icon_linkedin_1017.png" style=3D"width:28px;=
+height:28px;color:#ffffff;margin:0 auto"></a></div></div><div style=3D"disp=
+lay:inline-block"></div><div style=3D"display:inline-block"></div></div>   =
+                   </td>               </tr>                      </tbody> =
+      </table>            </div>                               </td>       =
+      </tr>           </tbody>         </table>                </div>      =
+                            </td>             </tr>           </tbody>     =
+    </table>                </div>                                      <di=
+v style=3D"background:#ffffff;background-color:#ffffff;margin:0px auto;max-=
+width:720px;">                  <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background:#ff=
+ffff;background-color:#ffffff;width:100%;">           <tbody>             <=
+tr>               <td style=3D"direction:ltr;font-size:0px;padding:0px;text=
+-align:center;">                                     <div class=3D"mj-colum=
+n-per-100 mj-outlook-group-fix" style=3D"font-size:0px;text-align:left;dire=
+ction:ltr;display:inline-block;vertical-align:top;width:100%;">            =
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"vertical-align:top;" width=3D"100%">         <tbody>       =
+                   <tr>                 <td align=3D"center" style=3D"font-=
+size:0px;padding:0px;padding-right:10px;padding-left:10px;word-break:break-=
+word;">                          <div style=3D"font-family:Noto Sans;font-s=
+ize:13px;font-weight:400;line-height:1.5;text-align:center;color:#919899;">=
+If you no longer wish to receive promotional emails, please&nbsp;<a style=
+=3D"text-decoration:underline;color:#919899" href=3D"https://u28645785.ct.s=
+endgrid.net/ls/click?upn=3Du001.8TuxOarP5wUfx4GRcjUbcPZFEXQoW7PdG-2BIL46GK-=
+2BzsDRd-2BqFAG4xj-2F-2B6PmaC-2FntaadFDiYRETmWInHjbus4GSdjh-2FJPg9DNr1qLzTTu=
+hG9erpK4DD93n-2B0XsIivl5DsFCPQTAM2ceR1i3fXiJUTtYdig0EzNZsNH2VLeJ8fHWkmzCS5M=
+OHeJbk82AdScsg08cix2u-2Bu0ED9FKRAHsgyR4rsaKorsAccmQojpABOn66XpTO2xxsw8A12I-=
+2BERmIcy2w9SMq-2B4K5ZAbx-2Be95zO90i4Qw4gG1Fx4f-2BycJcgt8uDeaIiMeQe33akKnoae=
+t-2FfJq1r9e4Wce03HldOIAtI2GgXeIbhhg7qWaSWOmQ0-2FbUSU-2Bc-2F05qNZH24vyaS4k-2=
+BTpRBkvNpNjcJtaMs5-2FjtToD5URTJoYtE77wCE-2FiixCURAysJonanU8k9ijWkpcw-2BjKi-=
+2F6o01vL5Od9Q6U9fgUcDWSiSzAOqGmFHaG0fQaheQ-3DVRVR_mSC9HnDOBZ-2F1jigkI-2Bjay=
+fe718diY8XVJZRFQfmQW92ob3j7KbU-2FOcXQdrgAPNaTebZWF5Cn9VG-2FfDAFeVDAQyxTYsbX=
+3wJAGYJpxqllQj0N-2FfPPTp2rYmvuOkfGwzYq6RCkrfF8-2FjHf1dUlcNqdaO0BELq2vqWP4jv=
+7225DQUtg8BeAUW4ZD5gdUxrVznT26WY5eqboxtjom4qPRspOEe9-2FBZ5MTN4zejGgsDVw-2BA=
+DB7adZz0EZBwP-2B40fy5aAnVY2cNdSmOcOFX9vRas9-2BIB086UMeEner36-2FnJWy-2FnK6p3=
+SR22YZ5JzrhIs6KbUqyKp3XQANnVELvebGMEP-2FMkm9cvnep-2BYHzE2pr6ijgkiRVa6maAC-2=
+BqaVSwGYiKqf-2FzKweZ3UaJ8Sdu0astfdyy-2ByCwJjr-2F4TTlNp-2FXjjIy0w8eOx-2Bm7wI=
+-2F2JiWTexVX22XmrXzHyflJT1F9-2FpJfKQikQ-3D-3D" target=3D"_blank">unsubscrib=
+e</a>&nbsp;.</div>                      </td>               </tr>          =
+                  <tr>                 <td align=3D"center" style=3D"font-s=
+ize:0px;padding:0px;padding-top:8px;word-break:break-word;">               =
+           <div style=3D"font-family:Noto Sans;font-size:13px;font-weight:4=
+00;line-height:1.5;text-align:center;color:#919899;">=C2=A9 2018-2025 Bitge=
+t.com reserves all rights.</div>                      </td>               <=
+/tr>                            <tr>                 <td style=3D"font-size=
+:0px;word-break:break-word;">                          <div style=3D"height=
+:18px;line-height:18px;">=E2=80=8A</div>                      </td>        =
+       </tr>                      </tbody>       </table>            </div>=
+                               </td>             </tr>           </tbody>  =
+       </table>                </div>                                  </td=
+>             </tr>           </tbody>         </table>                </di=
+v></div><img src=3D"https://u28645785.ct.sendgrid.net/wf/open?upn=3Du001.yV=
+OT3pz6PVJPt79QhyfNDDU6-2FLhEoHzhKuXPlv8eRk1q7WqOOPXUkJecRr3vyqWHcjF9Vkaeo99=
+edOlLaYrMSAt5nJLmGq4gXvZmCgo5vcpWlQPxCGixayAM8DzbipDrSnn-2BU7vxKqF2Z4ED4CeO=
+-2F1O4B0-2B1ILklfpypu6MAtuz2tX1c2tu1VCuw59DBklghJifdAIC7EavEZVEqezgb5NP9x48=
+JRnTZ-2FC-2BzFuxl37LWR4w9NgY3MFQIF75SMoDusT7s5fWP7hHydqyw59wYyLnsP6FHOG78Qd=
+yRwvdeDBi-2BCJx2AxxVyD2r7-2FSlZAZFv654SOZKoLb1jBzCNLXkOtEJuOtlMENMxyFuY6IAB=
+t9ieKmeUrbyMVR03st9drxlvKDcWFcaNhzDKdOKKXs0NbnvhkJCZCcj73jS4Lw-2FdcqeZeXhql=
+N8ldIqWvOCJg-2BCSDv-2B7M4knAb-2FJ5lcJHF-2FHatvRtL-2BID0PLehwiNdG2as-3D" alt=
+=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;=
+width:1px !important;border-width:0 !important;margin-top:0 !important;marg=
+in-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;p=
+adding-top:0 !important;padding-bottom:0 !important;padding-right:0 !import=
+ant;padding-left:0 !important;"/></body>=20=
+
+--4e358df49a00e80ee1e21e13ba6466effccf252e7747bba413a9bbd0565e--

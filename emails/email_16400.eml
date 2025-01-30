@@ -1,0 +1,735 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp2799346dye;
+        Mon, 27 Jan 2025 20:40:30 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGQsw3AJ0uMScEh/htRbq0a9HgYkvgGv+vF6nmMTbobyDjgD5n8mv73WQ4nY5aAL5G20RUT
+X-Received: by 2002:a17:90b:3a4c:b0:2f4:4500:bb4d with SMTP id 98e67ed59e1d1-2f782c9a956mr62035929a91.20.1738039230264;
+        Mon, 27 Jan 2025 20:40:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738039230; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZRoIIrgUMVc4LIckglbb9vWaIt0RGf6l3UsmGmFPNnHvqS57VmRc7IbKQsbokKQOHV
+         dUaQeKM+w8MtVP6s9YeK8J78Mzg5xt+BkxUmzTNo6Xl4SemWrbOKTCxbSPyj0h8x5UzX
+         gDGWmbBdpnYRCUjgiTaaGVLQcE0elyMjbkcMIToKgf1WBTI3fY08F5CTGWz4PWDL5P6i
+         e4+lQusnEQNE5COfMWcvb2UJ1oLOU1l4pXplSJbGrPRUmOcedXhGs9m2EBTsZKugvBul
+         QVu4SbdJ8feHy+n8KPCVRvan9bHqq4BMSTFsZBOkuPG1AAHoe+iUL6fSsSTp5fXZGKqZ
+         9iPQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:list-unsubscribe:list-unsubscribe-post
+         :content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=1Jxoaa/+hZoxbynfNg6Rfo5m8jai4uLlA5iqdaXEMQA=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=SkbuXg+qH2bkVasOxEsrhm3HIqf2VELuuHBcKwlmDHdoHhLcQbYyKwo7J+6/9NUGLD
+         VS4Bn5YI0dI2wL8853tg3Eqx/0uO6n7B7X5kojCHz5viJi0V8cxrv8pl5guQGZfWL+WV
+         feYzlOUnbDMJ+gPzQv6QnyJl3DL8ZGATnIrpzW9/K9Ds+uWeyawGXp3zbat/mjZ7oMGq
+         ah0wC4BNOhJIw72tBVSwiXDdrc7K5OYpiF7ouhKyeqb35pHjy6/BtdMHNd+o+AK4p2oh
+         bwxBhIRJF5AaYG9ftucr4on0W0p2BaLhbGYzMpvHmgOiT7VryArv2FpBsggPAGYaTanv
+         AGJg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jora.com header.s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz header.b=WyJDPOX1;
+       dkim=pass header.i=@amazonses.com header.s=th56fxceawp6wyoy6vlgnav4xsxoa5ue header.b=Iyc49QxF;
+       spf=pass (google.com: domain of 01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com designates 23.251.242.77 as permitted sender) smtp.mailfrom=01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jora.com
+Return-Path: <01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com>
+Received: from e242-77.smtp-out.us-west-1.amazonses.com (e242-77.smtp-out.us-west-1.amazonses.com. [23.251.242.77])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac48e6642c6si12868848a12.67.2025.01.27.20.40.29
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Jan 2025 20:40:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com designates 23.251.242.77 as permitted sender) client-ip=23.251.242.77;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jora.com header.s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz header.b=WyJDPOX1;
+       dkim=pass header.i=@amazonses.com header.s=th56fxceawp6wyoy6vlgnav4xsxoa5ue header.b=Iyc49QxF;
+       spf=pass (google.com: domain of 01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com designates 23.251.242.77 as permitted sender) smtp.mailfrom=01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jora.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=upzn3vdf5nnzs5k3hjnxrbsm22tbjacz; d=jora.com; t=1738039229;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=wqFfWEBnciwka6vAP7g2xKUDiORt7H/7vOELL07IGVg=;
+	b=WyJDPOX1P/wlTngtEP9/2jN5whzc0g9lfidIX0+qr86b/wbjiaM6ci2joA0TgZpF
+	DKx/sjpxTmCsJ1GvkCfsW7M6PUPFSnusYHulLT5m6gr58ghx7GvhwY43T2It1nobUtq
+	SrwdlIwYB9IaEeDsMqiBiJz2HpCUEkQcGA8HBk/g=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=th56fxceawp6wyoy6vlgnav4xsxoa5ue; d=amazonses.com; t=1738039229;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=wqFfWEBnciwka6vAP7g2xKUDiORt7H/7vOELL07IGVg=;
+	b=Iyc49QxFS57IOsibDmb8TzIBU1FhwSH9Cka4pUm6lKenMHgGGzEB67i/5YlAlUGC
+	fvfAjByL/ikxvZU98WyAA3IkuJWcV1o8Z4B2XUK8CQu7/2RXU8cpufLnGbNY/LEEHDJ
+	3Ft7O/KuWYD8XgwVEFT+nSL6H6Z1Ed8jQCxLBxt4=
+Date: Tue, 28 Jan 2025 04:40:29 +0000
+From: Jora Job Alert <donotreply@jora.com>
+To: azri.mokhzani@gmail.com
+Message-ID: <01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-000000@us-west-1.amazonses.com>
+Subject: instaDuit (BB Capital Sdn Bhd) is hiring: Loan Officer + 6 other
+ similar jobs
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Alert-ID: email-alert-daily-46681139-20250128
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://my.jora.com/email_alerts/YxiqcxPx9YNxnyvthtmo/cancel>
+Feedback-ID: ::1.us-west-1.NPEYxqIKOXYoNLfA+oO8wLSoTd+GR1LeFCdqq2yDFd4=:AmazonSES
+X-SES-Outgoing: 2025.01.28-23.251.242.77
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html><head><meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Cont=
+ent-Type"><title>Jora email alert</title><meta content=3D"mordor=3Dtrue, co=
+rrelation_id=3Demail-alert-daily-46681139-20250128" name=3D"jora_meta"><met=
+a content=3D"width=3Ddevice-width; initial-scale=3D1.0" name=3D"viewport"><=
+style>@media only screen and (max-width:530px) {
+
+  table.default-template {
+
+    width: 100% !important;
+
+  }
+
+
+
+  table.table-max-width {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+  }
+
+
+
+  .see-all-btn-link {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-width: 100% !important;
+
+  }
+
+
+
+  img.responsive-image {
+
+    max-width: 100% !important;
+
+    height: auto !important;
+
+  }
+
+}</style><!--[if gte mso 9]>
+
+  <style type=3D"text/css">
+
+    /* https://litmus.com/community/discussions/982-outlook-overrides-font-=
+to-times-new-roman#comment-6488 */
+
+    body, table, td, span, div {
+
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !importan=
+t;
+
+    }
+
+
+
+    body, table, td, a {
+
+      -webkit-text-size-adjust: 100%;
+
+      -ms-text-size-adjust: =3D 100%;
+
+    }
+
+
+
+    .result {
+
+      line-height: 20px;
+
+      padding: 11px 0;
+
+      border-bottom: 10px solid #ffffff;
+
+    }
+
+  </style>
+
+<![endif]-->
+
+<!--[if gte mso 9]>
+
+  <xml>
+
+    <o:OfficeDocumentSettings>
+
+      <o:AllowPNG/>
+
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+
+    </o:OfficeDocumentSettings>
+
+  </xml>
+
+<![endif]--><style>a:link{text-decoration:none !important}</style></head><b=
+ody leftmargin=3D"0" marginheight=3D"0" marginwidth=3D"0" offset=3D"0" topm=
+argin=3D"0" style=3D"font-family:Arial, 'Helvetica Neue', Helvetica, sans-s=
+erif;font-size:14px;line-height:26px;color:#555;height:100% !important;marg=
+in:0 !important;padding:0 !important;width:100% !important;min-width:100% !=
+important"><div class=3D"preheader" style=3D"mso-hide:all;display:none;max-=
+height:0;overflow:hidden;font-size:1px;color:#ffffff;line-height:1px;max-wi=
+dth:0px;opacity:0">instaDuit (BB Capital Sdn Bhd), Limau &amp; Linen and Ha=
+velock Dynamics Sdn. Bhd are looking for candidates like you.</div><div cla=
+ss=3D"blank-space" style=3D"mso-hide:all;display:none;max-height:0;overflow=
+:hidden;font-size:1px;color:#ffffff;line-height:1px;max-width:0px;opacity:0=
+">=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=
+=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0
+
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0</div><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"v2020-root" role=3D=
+"presentation" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-t=
+able-rspace:0pt;min-width: 100%;" width=3D"100%"><tr><td align=3D"center" s=
+tyle=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><!--[if (gte mso 9)|(IE)=
+]>
+
+<table role=3D"presentation" width=3D"560" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0">
+
+  <tr>
+
+    <td>
+
+<![endif]--><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"default-template common-text" role=3D"presentation" widt=
+h=3D"100%" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table=
+-rspace:0pt;font-size:14px;font-weight:normal;font-stretch:normal;font-styl=
+e:normal;letter-spacing:normal;background-color:#fff;max-width:560px"><tr><=
+td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><table align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-wid=
+th" role=3D"presentation" width=3D"100%" style=3D"border-collapse:collapse;=
+mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !important;min-width:1=
+00% !important;max-width:560px !important"><tr><td class=3D"bg-dark" style=
+=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#000000;text=
+-align: center; line-height: 40px; height: 40px; padding-top: 12px; padding=
+-bottom: 12px;" valign=3D"center"><img alt=3D"Jora logo" height=3D"40" styl=
+e=3D"-ms-interpolation-mode:bicubic;height:40px; vertical-align: middle;" s=
+rc=3D"http://cdn1.jora.com/assets/ea-logo-white-ee925b03074098aada971389f07=
+11e7e2e7b6630e5ee324a024582d543d5b7ca.png"></td></tr></table><table align=
+=3D"left" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-width" rol=
+e=3D"presentation" style=3D"border-collapse:collapse;mso-table-lspace:0pt;m=
+so-table-rspace:0pt;width:100% !important;min-width:100% !important;max-wid=
+th:560px !important;border-left: thin solid #DEDEDE; border-right: thin sol=
+id #DEDEDE;" width=3D"100%"><tr><td style=3D"mso-table-lspace:0pt;mso-table=
+-rspace:0pt"><table align=3D"left" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"table-max-width" role=3D"presentation" style=3D"border-co=
+llapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !impor=
+tant;min-width:100% !important;max-width:560px !important;background-color:=
+ #f7f7f7" width=3D"100%"><tr><td style=3D"mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;padding-top: 12px; padding-bottom: 8px; padding-left: 20px; paddin=
+g-right: 20px"><div class=3D"job-alert-summary-heading" style=3D"mso-line-h=
+eight-rule:exactly;font-size:16px;font-weight:bold;line-height:25px;color:#=
+1c1c1c;margin:0">10 new remote work, part time jobs</div><div class=3D"face=
+t-values" style=3D"mso-line-height-rule:exactly;line-height:32px;color:#1c1=
+c1c;margin:0">Within 10km</div></td></tr></table><table align=3D"center" bo=
+rder=3D"0" cellpadding=3D"20" cellspacing=3D"0" class=3D"table-max-width" i=
+d=3D"jobresults" role=3D"presentation" width=3D"100%" style=3D"border-colla=
+pse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;width:100% !importan=
+t;min-width:100% !important;max-width:560px !important"><tr><td style=3D"ms=
+o-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 10px; padding-bottom: =
+0"><div class=3D"sponsored_jobs"><div class=3D"table-max-width job-item com=
+mon-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:no=
+rmal;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;l=
+ine-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !i=
+mportant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job"=
+ title=3D"Loan Officer" href=3D"https://my.jora.com/job/Loan-Officer-3e8fd6=
+6f16482b5cf03d4fdfaff8a949?alert_id=3Demail-alert-daily-46681139-20250128&a=
+mp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&am=
+p;sp=3Dsalert&amp;sponsored=3Dtrue&amp;sr=3D1&amp;alid=3DYxiqcxPx9YNxnyvtht=
+mo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&am=
+p;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-decor=
+ation:none;display:block;color:#808080"><div class=3D"job-title" style=3D"m=
+so-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">=
+Loan Officer</div><div class=3D"company-info"><span class=3D"company-name" =
+style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;color=
+:#1c1c1c;margin-right:4px">instaDuit (BB Capital Sdn Bhd)</span>-<span clas=
+s=3D"company-location" style=3D"mso-line-height-rule:exactly;font-size:13px=
+;line-height:20px;color:#626262;margin-left:4px">Damansara, Selangor</span>=
+</div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-he=
+ight-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-r=
+adius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;=
+padding:3px;text-align:center">Part time</span><span class=3D"space">=C2=A0=
+</span><span class=3D"extra-info-text" id=3D"salary" style=3D"mso-line-heig=
+ht-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-rad=
+ius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;pa=
+dding:3px;text-align:center">RM8 - RM12 per day</span><span class=3D"space"=
+>=C2=A0</span><span class=3D"extra-info-text quick-apply" style=3D"mso-line=
+-height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-borde=
+r-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25=
+px;padding:3px;text-align:center;color:#ffffff;background:#0e8136">Quick ap=
+ply</span><div class=3D"job-abstract" style=3D"line-height:24px">As a Remot=
+e Loan Tele-Collection Associate, your role involves collecting payments on=
+ overdue bills by informing customers about their...</div></a></div><div cl=
+ass=3D"table-max-width job-item common-text result" style=3D"font-size:14px=
+;font-weight:normal;font-stretch:normal;font-style:normal;letter-spacing:no=
+rmal;padding:10px 0;display:block;line-height:20px;padding-bottom:20px;widt=
+h:100% !important;min-width:100% !important;max-width:560px !important;padd=
+ing-bottom: 15px;"><a class=3D"job" title=3D"Social Media Specialist" href=
+=3D"https://my.jora.com/job/Social-Media-Specialist-171c2e432d90e616e40ef35=
+2098bbe9d?alert_id=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxIjoic=
+mVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dsalert&amp=
+;sponsored=3Dtrue&amp;sr=3D2&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp=
+;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Dem=
+ail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;displa=
+y:block;color:#808080"><div class=3D"job-title" style=3D"mso-line-height-ru=
+le:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">Social Media Spec=
+ialist</div><div class=3D"company-info"><span class=3D"company-name" style=
+=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;color:#1c1=
+c1c;margin-right:4px">Limau &amp; Linen</span>-<span class=3D"company-locat=
+ion" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;=
+color:#626262;margin-left:4px">Kota Kinabalu, Sabah</span></div><span class=
+=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-height-rule:exactly=
+;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;backgro=
+und:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-=
+align:center">Part time</span><span class=3D"space">=C2=A0</span><span clas=
+s=3D"extra-info-text" id=3D"salary" style=3D"mso-line-height-rule:exactly;b=
+order-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;backgroun=
+d:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-al=
+ign:center">RM700 - RM2,500 per month</span><span class=3D"space">=C2=A0</s=
+pan><span class=3D"extra-info-text quick-apply" style=3D"mso-line-height-ru=
+le:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4=
+px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding=
+:3px;text-align:center;color:#ffffff;background:#0e8136">Quick apply</span>=
+<div class=3D"job-abstract" style=3D"line-height:24px">We=E2=80=99re seekin=
+g a creative and skilled freelance Social Media Content Creator to develop =
+engaging content for our social media...</div></a></div></div></td></tr><tr=
+><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 0; pad=
+ding-bottom: 0"><div class=3D"table-max-width job-item common-text result" =
+style=3D"font-size:14px;font-weight:normal;font-stretch:normal;font-style:n=
+ormal;letter-spacing:normal;padding:10px 0;display:block;line-height:20px;p=
+adding-bottom:20px;width:100% !important;min-width:100% !important;max-widt=
+h:560px !important;padding-bottom: 15px;"><a class=3D"job" title=3D"Loan Of=
+ficer" href=3D"https://my.jora.com/job/Loan-Officer-3e8fd66f16482b5cf03d4fd=
+faff8a949?alert_id=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxIjoic=
+mVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dalert&amp;=
+sponsored=3Dfalse&amp;sr=3D2&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp=
+;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Dem=
+ail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;displa=
+y:block;color:#808080"><div class=3D"job-title" style=3D"mso-line-height-ru=
+le:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">Loan Officer</div=
+><div class=3D"company-info"><span class=3D"company-name" style=3D"mso-line=
+-height-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-r=
+ight:4px">instaDuit (BB Capital Sdn Bhd)</span>-<span class=3D"company-loca=
+tion" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px=
+;color:#626262;margin-left:4px">Damansara, Selangor</span></div><span class=
+=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-height-rule:exactly=
+;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;backgro=
+und:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-=
+align:center">Part time</span><span class=3D"space">=C2=A0</span><span clas=
+s=3D"extra-info-text" id=3D"salary" style=3D"mso-line-height-rule:exactly;b=
+order-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;backgroun=
+d:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-al=
+ign:center">RM8 - RM12 per day</span><span class=3D"space">=C2=A0</span><sp=
+an class=3D"extra-info-text quick-apply" style=3D"mso-line-height-rule:exac=
+tly;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;back=
+ground:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;te=
+xt-align:center;color:#ffffff;background:#0e8136">Quick apply</span><div cl=
+ass=3D"job-abstract" style=3D"line-height:24px">As a Remote Loan Tele-Colle=
+ction Associate, your role involves collecting payments on overdue bills by=
+ informing customers about their...</div></a></div><div class=3D"table-max-=
+width job-item common-text result" style=3D"font-size:14px;font-weight:norm=
+al;font-stretch:normal;font-style:normal;letter-spacing:normal;padding:10px=
+ 0;display:block;line-height:20px;padding-bottom:20px;width:100% !important=
+;min-width:100% !important;max-width:560px !important;padding-bottom: 15px;=
+"><a class=3D"job" title=3D"Social Media Specialist" href=3D"https://my.jor=
+a.com/job/Social-Media-Specialist-171c2e432d90e616e40ef352098bbe9d?alert_id=
+=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHB=
+hcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dalert&amp;sponsored=3Dfalse&=
+amp;sr=3D3&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=
+=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_sourc=
+e=3Djobseeker_emails" style=3D"text-decoration:none;display:block;color:#80=
+8080"><div class=3D"job-title" style=3D"mso-line-height-rule:exactly;font-s=
+ize:16px;font-weight:bold;color:#1c1c1c">Social Media Specialist</div><div =
+class=3D"company-info"><span class=3D"company-name" style=3D"mso-line-heigh=
+t-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4=
+px">Limau &amp; Linen</span>-<span class=3D"company-location" style=3D"mso-=
+line-height-rule:exactly;font-size:13px;line-height:20px;color:#626262;marg=
+in-left:4px">Kota Kinabalu, Sabah</span></div><span class=3D"extra-info-tex=
+t" id=3D"work_type" style=3D"mso-line-height-rule:exactly;border-radius:4px=
+;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:=
+#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center">Part=
+ time</span><span class=3D"space">=C2=A0</span><span class=3D"extra-info-te=
+xt" id=3D"salary" style=3D"mso-line-height-rule:exactly;border-radius:4px;-=
+webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1=
+c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center">RM700 =
+- RM2,500 per month</span><span class=3D"space">=C2=A0</span><span class=3D=
+"extra-info-text quick-apply" style=3D"mso-line-height-rule:exactly;border-=
+radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d=
+9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:ce=
+nter;color:#ffffff;background:#0e8136">Quick apply</span><div class=3D"job-=
+abstract" style=3D"line-height:24px">We=E2=80=99re seeking a creative and s=
+killed freelance Social Media Content Creator to develop engaging content f=
+or our social media...</div></a></div><div class=3D"table-max-width job-ite=
+m common-text result" style=3D"font-size:14px;font-weight:normal;font-stret=
+ch:normal;font-style:normal;letter-spacing:normal;padding:10px 0;display:bl=
+ock;line-height:20px;padding-bottom:20px;width:100% !important;min-width:10=
+0% !important;max-width:560px !important;padding-bottom: 15px;"><a class=3D=
+"job" title=3D"Accountant (Part time/Remote)" href=3D"https://my.jora.com/j=
+ob/Accountant-4e605990acf4752f3f2126c40106e5f4?alert_id=3Demail-alert-daily=
+-46681139-20250128&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiI=
+iLCJsaWQiOm51bGx9&amp;sp=3Dalert&amp;sponsored=3Dfalse&amp;sr=3D1&amp;alid=
+=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_cam=
+paign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails=
+" style=3D"text-decoration:none;display:block;color:#808080"><div class=3D"=
+job-title" style=3D"mso-line-height-rule:exactly;font-size:16px;font-weight=
+:bold;color:#1c1c1c">Accountant (Part time/Remote)</div><div class=3D"compa=
+ny-info"><span class=3D"company-name" style=3D"mso-line-height-rule:exactly=
+;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Havelock D=
+ynamics Sdn. Bhd</span>-<span class=3D"company-location" style=3D"mso-line-=
+height-rule:exactly;font-size:13px;line-height:20px;color:#626262;margin-le=
+ft:4px">Ipoh, Perak</span></div><span class=3D"extra-info-text" id=3D"work_=
+type" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-borde=
+r-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-s=
+ize:10px;line-height:25px;padding:3px;text-align:center">Part time</span><s=
+pan class=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D"sala=
+ry" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-=
+radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-siz=
+e:10px;line-height:25px;padding:3px;text-align:center">RM3,000 - RM4,500 pe=
+r month</span><span class=3D"space">=C2=A0</span><div class=3D"job-abstract=
+" style=3D"line-height:24px">We are seeking a Remote Part-Time Accountant f=
+amiliar with multi-region tax regulations, specifically in China/Hong Kong,=
+ Singapore, or...</div></a></div><div class=3D"table-max-width job-item com=
+mon-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:no=
+rmal;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;l=
+ine-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !i=
+mportant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job"=
+ title=3D"Software Engineer Internship - Testing, Technical Analysis, and A=
+utomation (WFH Only)" href=3D"https://my.jora.com/job/Software-Engineer-1dd=
+ec8d0e59c418b06b109b56bfdc817?alert_id=3Demail-alert-daily-46681139-2025012=
+8&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9=
+&amp;sp=3Dalert&amp;sponsored=3Dfalse&amp;sr=3D4&amp;alid=3DYxiqcxPx9YNxnyv=
+thtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts=
+&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-de=
+coration:none;display:block;color:#808080"><div class=3D"job-title" style=
+=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#1c1=
+c1c">Software Engineer Internship - Testing, Technical Analysis, and Automa=
+tion (WFH Only)</div><div class=3D"company-info"><span class=3D"company-nam=
+e" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;co=
+lor:#1c1c1c;margin-right:4px">Seeka</span>-<span class=3D"company-location"=
+ style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;colo=
+r:#626262;margin-left:4px">Petaling</span></div><span class=3D"extra-info-t=
+ext" id=3D"work_type" style=3D"mso-line-height-rule:exactly;border-radius:4=
+px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;colo=
+r:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center">In=
+ternship</span><span class=3D"space">=C2=A0</span><div class=3D"job-abstrac=
+t" style=3D"line-height:24px">Internship Overview: Our Software Engineer In=
+ternship offers a unique opportunity to gain valuable experience in various=
+ aspects of...</div></a></div><div class=3D"table-max-width job-item common=
+-text result" style=3D"font-size:14px;font-weight:normal;font-stretch:norma=
+l;font-style:normal;letter-spacing:normal;padding:10px 0;display:block;line=
+-height:20px;padding-bottom:20px;width:100% !important;min-width:100% !impo=
+rtant;max-width:560px !important;padding-bottom: 15px;"><a class=3D"job" ti=
+tle=3D"Psychology Internship - WFH/ Remote-Work Accepted" href=3D"https://m=
+y.jora.com/job/Psychology-Internship-WFH-9d85cf41c05beebb7f586665b0b099ea?a=
+lert_id=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxIjoicmVtb3RlIHdv=
+cmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dalert&amp;sponsored=
+=3Dfalse&amp;sr=3D5&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommen=
+ded_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;u=
+tm_source=3Djobseeker_emails" style=3D"text-decoration:none;display:block;c=
+olor:#808080"><div class=3D"job-title" style=3D"mso-line-height-rule:exactl=
+y;font-size:16px;font-weight:bold;color:#1c1c1c">Psychology Internship - WF=
+H/ Remote-Work Accepted</div><div class=3D"company-info"><span class=3D"com=
+pany-name" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height=
+:20px;color:#1c1c1c;margin-right:4px">Seeka</span>-<span class=3D"company-l=
+ocation" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:2=
+0px;color:#626262;margin-left:4px">Petaling</span></div><span class=3D"extr=
+a-info-text" id=3D"work_type" style=3D"mso-line-height-rule:exactly;border-=
+radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d=
+9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:ce=
+nter">Internship</span><span class=3D"space">=C2=A0</span><div class=3D"job=
+-abstract" style=3D"line-height:24px">We are currently looking to hire inte=
+rns who want to work on the psychological aspects of human behavior, intera=
+ction and productivity...</div></a></div><div class=3D"table-max-width job-=
+item common-text result" style=3D"font-size:14px;font-weight:normal;font-st=
+retch:normal;font-style:normal;letter-spacing:normal;padding:10px 0;display=
+:block;line-height:20px;padding-bottom:20px;width:100% !important;min-width=
+:100% !important;max-width:560px !important;padding-bottom: 15px;"><a class=
+=3D"job" title=3D"Graphics Design Internship (Ui/UX) - WFH/Remote Work" hre=
+f=3D"https://my.jora.com/job/Graphics-Design-Internship-e8a8660905eb1ffd030=
+b5a3c435f0748?alert_id=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxI=
+joicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dalert&=
+amp;sponsored=3Dfalse&amp;sr=3D6&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0=
+&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=
+=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;d=
+isplay:block;color:#808080"><div class=3D"job-title" style=3D"mso-line-heig=
+ht-rule:exactly;font-size:16px;font-weight:bold;color:#1c1c1c">Graphics Des=
+ign Internship (Ui/UX) - WFH/Remote Work</div><div class=3D"company-info"><=
+span class=3D"company-name" style=3D"mso-line-height-rule:exactly;font-size=
+:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Seeka</span>-<span c=
+lass=3D"company-location" style=3D"mso-line-height-rule:exactly;font-size:1=
+3px;line-height:20px;color:#626262;margin-left:4px">Petaling</span></div><s=
+pan class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-height-rul=
+e:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4p=
+x;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;padding:=
+3px;text-align:center">Internship</span><span class=3D"space">=C2=A0</span>=
+<div class=3D"job-abstract" style=3D"line-height:24px">This is an internshi=
+p where you can improve your attention to details, critical thinking skills=
+ and creativity. We will encourage you to...</div></a></div></td></tr><!--[=
+if gt mso 9]> <table width=3D"100%"><tr><td height=3D"15"></td></tr></table=
+> <![endif]--><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;pa=
+dding-top: 0; padding-bottom: 0"><div class=3D"sponsored_jobs"><div class=
+=3D"table-max-width job-item common-text result" style=3D"font-size:14px;fo=
+nt-weight:normal;font-stretch:normal;font-style:normal;letter-spacing:norma=
+l;padding:10px 0;display:block;line-height:20px;padding-bottom:20px;width:1=
+00% !important;min-width:100% !important;max-width:560px !important;padding=
+-bottom: 15px;"><a class=3D"job" title=3D"Accountant (Part time/Remote)" hr=
+ef=3D"https://my.jora.com/job/rd/4e605990acf4752f3f2126c40106e5f4?alert_id=
+=3Demail-alert-daily-46681139-20250128&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHB=
+hcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dsalert&amp;sponsored=3Dtrue&=
+amp;sr=3D3&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=
+=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_sourc=
+e=3Djobseeker_emails" style=3D"text-decoration:none;display:block;color:#80=
+8080"><div class=3D"job-title" style=3D"mso-line-height-rule:exactly;font-s=
+ize:16px;font-weight:bold;color:#1c1c1c">Accountant (Part time/Remote)</div=
+><div class=3D"company-info"><span class=3D"company-name" style=3D"mso-line=
+-height-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-r=
+ight:4px">Havelock Dynamics Sdn. Bhd</span>-<span class=3D"company-location=
+" style=3D"mso-line-height-rule:exactly;font-size:13px;line-height:20px;col=
+or:#626262;margin-left:4px">Ipoh, Perak</span></div><span class=3D"extra-in=
+fo-text" id=3D"work_type" style=3D"mso-line-height-rule:exactly;border-radi=
+us:4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;=
+color:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center=
+">Part time</span><span class=3D"space">=C2=A0</span><span class=3D"extra-i=
+nfo-text" id=3D"salary" style=3D"mso-line-height-rule:exactly;border-radius=
+:4px;-webkit-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;co=
+lor:#1c1c1c;font-size:10px;line-height:25px;padding:3px;text-align:center">=
+RM3,000 - RM4,500 per month</span><span class=3D"space">=C2=A0</span><div c=
+lass=3D"job-abstract" style=3D"line-height:24px">We are seeking a Remote Pa=
+rt-Time Accountant familiar with multi-region tax regulations, specifically=
+ in China/Hong Kong, Singapore, or...</div></a></div><div class=3D"table-ma=
+x-width job-item common-text result" style=3D"font-size:14px;font-weight:no=
+rmal;font-stretch:normal;font-style:normal;letter-spacing:normal;padding:10=
+px 0;display:block;line-height:20px;padding-bottom:20px;width:100% !importa=
+nt;min-width:100% !important;max-width:560px !important;padding-bottom: 15p=
+x;"><a class=3D"job" title=3D"Virtual Assistant" href=3D"https://my.jora.co=
+m/job/Virtual-Assistant-3ec87019941d125b8ef92aea3f3911c1?alert_id=3Demail-a=
+lert-daily-46681139-20250128&amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZ=
+SIsImwiOiIiLCJsaWQiOm51bGx9&amp;sp=3Dsalert&amp;sponsored=3Dtrue&amp;sr=3D4=
+&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&am=
+p;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseek=
+er_emails" style=3D"text-decoration:none;display:block;color:#808080"><div =
+class=3D"job-title" style=3D"mso-line-height-rule:exactly;font-size:16px;fo=
+nt-weight:bold;color:#1c1c1c">Virtual Assistant</div><div class=3D"company-=
+info"><span class=3D"company-name" style=3D"mso-line-height-rule:exactly;fo=
+nt-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Myraid Tradin=
+g</span>-<span class=3D"company-location" style=3D"mso-line-height-rule:exa=
+ctly;font-size:13px;line-height:20px;color:#626262;margin-left:4px">Bayan L=
+epas, Penang</span></div><span class=3D"extra-info-text" id=3D"work_type" s=
+tyle=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radiu=
+s:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10p=
+x;line-height:25px;padding:3px;text-align:center">Part time</span><span cla=
+ss=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D"salary" sty=
+le=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-border-radius:=
+4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;=
+line-height:25px;padding:3px;text-align:center">RM1,850 - RM1,850 per week<=
+/span><span class=3D"space">=C2=A0</span><span class=3D"extra-info-text qui=
+ck-apply" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit-b=
+order-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;fo=
+nt-size:10px;line-height:25px;padding:3px;text-align:center;color:#ffffff;b=
+ackground:#0e8136">Quick apply</span><div class=3D"job-abstract" style=3D"l=
+ine-height:24px">The ideal candidate should be proficient in Microsoft Offi=
+ce and have a reliable internet connection. This is a great opportunity for=
+...</div></a></div></div></td></tr></table><!--[if gt mso 9]> <table width=
+=3D"100%"><tr><td height=3D"20"></td></tr></table> <![endif]--><table align=
+=3D"center" border=3D"0" cellpadding=3D"20" cellspacing=3D"0" class=3D"tabl=
+e-max-width" id=3D"top_match_job_container" role=3D"presentation" width=3D"=
+100%" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspa=
+ce:0pt;width:100% !important;min-width:100% !important;max-width:560px !imp=
+ortant"><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;padding-=
+top: 10px; padding-bottom: 0"><div class=3D"top-job-heading" id=3D"top_matc=
+h_job_heading" style=3D"font-size:16px;font-weight:bold;line-height:25px;co=
+lor:#0e8136;padding-bottom:20px">Jobs you may have missed</div><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table=
+-max-width" id=3D"top_match_job" role=3D"presentation" width=3D"100%" style=
+=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;widt=
+h:100% !important;min-width:100% !important;max-width:560px !important"><tr=
+><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><div class=3D"tabl=
+e-max-width job-item common-text result" style=3D"font-size:14px;font-weigh=
+t:normal;font-stretch:normal;font-style:normal;letter-spacing:normal;paddin=
+g:10px 0;display:block;line-height:20px;padding-bottom:20px;width:100% !imp=
+ortant;min-width:100% !important;max-width:560px !important;padding-bottom:=
+ 15px;"><a class=3D"job" title=3D"Marketplace Operations Specialist [Part T=
+ime/Freelance]" href=3D"https://my.jora.com/job/Operations-Specialist-12dd4=
+3952049d65b38f1741423360318?alert_id=3Demail-alert-daily-46681139-20250128&=
+amp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&a=
+mp;sp=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D1&amp;alid=3DYxiqcxPx9=
+YNxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_=
+alerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"t=
+ext-decoration:none;display:block;color:#808080"><div class=3D"job-title" s=
+tyle=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:=
+#1c1c1c">Marketplace Operations Specialist [Part Time/Freelance]</div><div =
+class=3D"company-info"><span class=3D"company-name" style=3D"mso-line-heigh=
+t-rule:exactly;font-size:13px;line-height:20px;color:#1c1c1c;margin-right:4=
+px">Porcelain Pte Ltd</span>-<span class=3D"company-location" style=3D"mso-=
+line-height-rule:exactly;font-size:13px;line-height:20px;color:#626262;marg=
+in-left:4px">Kuala Lumpur</span></div><span class=3D"extra-info-text" id=3D=
+"work_type" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit=
+-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;=
+font-size:10px;line-height:25px;padding:3px;text-align:center">Contract</sp=
+an><span class=3D"space">=C2=A0</span><span class=3D"extra-info-text" id=3D=
+"work_type" style=3D"mso-line-height-rule:exactly;border-radius:4px;-webkit=
+-border-radius:4px;-moz-border-radius:4px;background:#d9d9d9;color:#1c1c1c;=
+font-size:10px;line-height:25px;padding:3px;text-align:center">Full time</s=
+pan><span class=3D"space">=C2=A0</span><div class=3D"job-abstract" style=3D=
+"line-height:24px">Reporting to the Head of Marketing, the Marketplace Oper=
+ations Specialist will manage and optimise Porcelain Skins Marketplaces,...=
+</div></a></div><div class=3D"table-max-width job-item common-text result" =
+style=3D"font-size:14px;font-weight:normal;font-stretch:normal;font-style:n=
+ormal;letter-spacing:normal;padding:10px 0;display:block;line-height:20px;p=
+adding-bottom:20px;width:100% !important;min-width:100% !important;max-widt=
+h:560px !important;padding-bottom: 15px;"><a class=3D"job" title=3D"Freelan=
+ce Finance Analyst - AI Tutor" href=3D"https://my.jora.com/job/Tutor-9a4330=
+68e24a12469ceb53aa22ecb866?alert_id=3Demail-alert-daily-46681139-20250128&a=
+mp;qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&am=
+p;sp=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D2&amp;alid=3DYxiqcxPx9Y=
+Nxnyvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_a=
+lerts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"te=
+xt-decoration:none;display:block;color:#808080"><div class=3D"job-title" st=
+yle=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#=
+1c1c1c">Freelance Finance Analyst - AI Tutor</div><div class=3D"company-inf=
+o"><span class=3D"company-name" style=3D"mso-line-height-rule:exactly;font-=
+size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Mindrift</span>-=
+<span class=3D"company-location" style=3D"mso-line-height-rule:exactly;font=
+-size:13px;line-height:20px;color:#626262;margin-left:4px">Malaysia</span><=
+/div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-hei=
+ght-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-ra=
+dius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;p=
+adding:3px;text-align:center">Freelance</span><span class=3D"space">=C2=A0<=
+/span><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-he=
+ight-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border-r=
+adius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25px;=
+padding:3px;text-align:center">Part time</span><span class=3D"space">=C2=A0=
+</span><div class=3D"job-abstract" style=3D"line-height:24px">In this role,=
+ you will develop complex question-answer pairs and create scoring criteria=
+ (rubrics) to evaluate and grade the quality of...</div></a></div><div clas=
+s=3D"table-max-width job-item common-text result" style=3D"font-size:14px;f=
+ont-weight:normal;font-stretch:normal;font-style:normal;letter-spacing:norm=
+al;padding:10px 0;display:block;line-height:20px;padding-bottom:20px;width:=
+100% !important;min-width:100% !important;max-width:560px !important;paddin=
+g-bottom: 15px;"><a class=3D"job" title=3D"Freelance Accounting Consultant =
+- AI Tutor" href=3D"https://my.jora.com/job/Accounting-Consultant-beeb0a37c=
+5bc21b35844d5723cbac8e0?alert_id=3Demail-alert-daily-46681139-20250128&amp;=
+qd=3DeyJxIjoicmVtb3RlIHdvcmssIHBhcnQgdGltZSIsImwiOiIiLCJsaWQiOm51bGx9&amp;s=
+p=3Dalert_topjobs&amp;sponsored=3Dfalse&amp;sr=3D3&amp;alid=3DYxiqcxPx9YNxn=
+yvthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_aler=
+ts&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-=
+decoration:none;display:block;color:#808080"><div class=3D"job-title" style=
+=3D"mso-line-height-rule:exactly;font-size:16px;font-weight:bold;color:#1c1=
+c1c">Freelance Accounting Consultant - AI Tutor</div><div class=3D"company-=
+info"><span class=3D"company-name" style=3D"mso-line-height-rule:exactly;fo=
+nt-size:13px;line-height:20px;color:#1c1c1c;margin-right:4px">Mindrift</spa=
+n>-<span class=3D"company-location" style=3D"mso-line-height-rule:exactly;f=
+ont-size:13px;line-height:20px;color:#626262;margin-left:4px">Malaysia</spa=
+n></div><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-line-=
+height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-border=
+-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:25p=
+x;padding:3px;text-align:center">Freelance</span><span class=3D"space">=C2=
+=A0</span><span class=3D"extra-info-text" id=3D"work_type" style=3D"mso-lin=
+e-height-rule:exactly;border-radius:4px;-webkit-border-radius:4px;-moz-bord=
+er-radius:4px;background:#d9d9d9;color:#1c1c1c;font-size:10px;line-height:2=
+5px;padding:3px;text-align:center">Part time</span><span class=3D"space">=
+=C2=A0</span><div class=3D"job-abstract" style=3D"line-height:24px">You=E2=
+=80=99ll have the unique opportunity to contribute to AI development anywhe=
+re, at anytime. Flexible, community-focused, and...</div></a></div></td></t=
+r></table></td></tr></table></td></tr></table><table align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"table-max-width email-=
+alert-footer" role=3D"presentation" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0pt;mso-table-rspace:0pt;width:100% !important;min-width:100% !=
+important;max-width:560px !important;background-color: #f7f7f7; border-coll=
+apse: separate; padding: 48px 24px;" width=3D"100%"><tr><td style=3D"mso-ta=
+ble-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 24px;"><table align=3D"=
+center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentati=
+on" width=3D"288" style=3D"border-collapse:collapse;mso-table-lspace:0pt;ms=
+o-table-rspace:0pt"><tr><td align=3D"center" class=3D"app-upsell-title" sty=
+le=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;color:#1c1c1c;font-size:20p=
+x;line-height:24px;font-weight:700;padding-bottom: 24px">Get all the job op=
+portunities in your pocket.</td></tr><tr><td align=3D"center" style=3D"mso-=
+table-lspace:0pt;mso-table-rspace:0pt"><a class=3D"app_store_link" href=3D"=
+https://itunes.apple.com/app/id917565665?alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=
+=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_med=
+ium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:non=
+e"><img alt=3D"Link to App Store" width=3D"46%" src=3D"http://cdn1.jora.com=
+/assets/app-store-logos/app-store-en-db23f6109a00084902aab7eff6f70547b4fcb5=
+9525a7fc5bd56053369b5753cf.png" style=3D"-ms-interpolation-mode:bicubic"></=
+a>=C2=A0=C2=A0=C2=A0<a class=3D"play_store_link" href=3D"https://play.googl=
+e.com/store/apps/details?id=3Dcom.jora.android&amp;referrer=3Dutm_source%3D=
+job_alerts%26utm_medium%3Demail&amp;alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&=
+amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=
+=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-decoration:none">=
+<img alt=3D"Link to Play Store" width=3D"46%" src=3D"http://cdn1.jora.com/a=
+ssets/app-store-logos/play-store-en-10cd668c5a191360de8701a2bca854b6babc170=
+4b93e2a8e1b86b9d558362d7f.png" style=3D"-ms-interpolation-mode:bicubic"></a=
+></td></tr></table></td></tr><tr><td style=3D"mso-table-lspace:0pt;mso-tabl=
+e-rspace:0pt;padding-bottom: 24px"><div class=3D"footer-text" style=3D"colo=
+r:#626262;font-size:14px;text-align:center">You elected to receive Job Aler=
+ts emails.<br> No longer interested? <a class=3D"grey-link" href=3D"https:/=
+/my.jora.com/email_alerts/YxiqcxPx9YNxnyvthtmo/cancel?alid=3DYxiqcxPx9YNxny=
+vthtmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alert=
+s&amp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-d=
+ecoration:none;color:#808080;text-decoration:underline !important">Unsubscr=
+ibe</a> or <a class=3D"grey-link" href=3D"https://my.jora.com/email_alerts/=
+YxiqcxPx9YNxnyvthtmo/edit?alid=3DYxiqcxPx9YNxnyvthtmo&amp;hu=3D0&amp;recomm=
+ended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&amp;utm_medium=3Demail&amp=
+;utm_source=3Djobseeker_emails" style=3D"text-decoration:none;color:#808080=
+;text-decoration:underline !important">edit your preferences</a></div></td>=
+</tr><tr><td style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt"><div class=
+=3D"footer-text" style=3D"color:#626262;font-size:14px;text-align:center"><=
+a class=3D"green-link" href=3D"https://my.jora.com?alid=3DYxiqcxPx9YNxnyvth=
+tmo&amp;hu=3D0&amp;recommended_only=3Dfalse&amp;utm_campaign=3Djob_alerts&a=
+mp;utm_medium=3Demail&amp;utm_source=3Djobseeker_emails" style=3D"text-deco=
+ration:none;color:#0e8136">Jora</a>=C2=A0- More jobs in real time.=C2=A0|=
+=C2=A0Job Seeker Pty Ltd</div></td></tr></table><img id=3D"itracker" role=
+=3D"presentation" src=3D"https://my.jora.com/rpc/tracking/email_open?alert_=
+id=3Demail-alert-daily-46681139-20250128&amp;email_alert_key=3DYxiqcxPx9YNx=
+nyvthtmo&amp;frequency=3Ddaily&amp;query=3Dremote+work%2C+part+time&amp;sit=
+e_id=3Dmy&amp;user_id=3D18701934" style=3D"-ms-interpolation-mode:bicubic">=
+</td></tr></table><!--[if (gte mso 9)|(IE)]>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<![endif]--></td></tr></table><img alt=3D"" src=3D"https://p33qvtlw.r.us-we=
+st-1.awstrack.me/I0/01110194ab35fcda-9552c5b2-7af5-4089-8f92-0fa2445608a0-0=
+00000/-g8gVj142K8h5WL1FhTWjkHuw5Y=3D195" style=3D"display: none; width: 1px=
+; height: 1px;">
+</body></html>
+

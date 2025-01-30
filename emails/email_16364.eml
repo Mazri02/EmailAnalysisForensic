@@ -1,0 +1,107 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp1592836dye;
+        Sat, 25 Jan 2025 12:59:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEGxR3aH7iFKzZ1sIpv+z61+SVqlwcci5xcEqSnBB/Cjxth+SUxOsLn2tYSxnbIz1r68zek
+X-Received: by 2002:a05:622a:142:b0:461:4150:b8a4 with SMTP id d75a77b69052e-46e1284c93bmr498034291cf.0.1737838795413;
+        Sat, 25 Jan 2025 12:59:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737838795; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BhrPF1qTNcZyDhuwXZmvWxgBQmW1ug/bS7hyDQWBDPfe6OLqwyIHNDCfJD2EIDJBfK
+         B64WD76zb/Onr73zj476JU+8wqvpV+Vf89eeQzCDegRq0VlzCHrHLrTQX6s1YvSAaYmX
+         JZWNgdjZH1l1cp+zWHD7I+eTyzGDaOCo4hwAPipmjiZGgRpigaTUTuc1u8HQ38StkGKv
+         RMWMVQutldZbSTTpG4JA/eylBOwu3yVVP7OrWJ5X45FtSKj1J57gjBAIpVdP0NrxmXYJ
+         kTmlbGetN0cBIvdKRkMoVn/8KGfcDnvKKRCzKgBg+eRVXh45H8BBmYQMOaFitezShvJL
+         xOgQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:date:content-transfer-encoding:message-id
+         :subject:reply-to:to:from:list-unsubscribe:dkim-signature
+         :dkim-signature;
+        bh=XslGLaEHAMFA9LLFGffNzwq4wWHaDDjoCooCzoSbclQ=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=UlQ+om0p+Ou0qbiWf1xPrtjcnTQHNJMY6mePH390n/H+zbO6De0V07K1NyH1sjDl/z
+         mPK4378uU6QHcWGIv3cC0ScGxKYg4qzSdYomdIqAyYD+fyoJIEYTNtGys6k4hmeDwejS
+         rmvKdYupdUcOvuvoA09M7ubiOZ6F4ENn6glhnXyZC/Yj11pkTWJGsbv/1PBSymziwcwJ
+         0xlKTrU0snaXgP2x9ssPSJbbCCwic28aFcPdowOVtqWDZuyRBzjWc3gO8T7hXByp71o3
+         9CJNwJZhgTuXUEhNCH5zktYC/GfMyPqjteCdUyPJywS4zRpkaJH0UlGcIF8U/QUgJhHN
+         cvVA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@superteamearn.com header.s=resend header.b=PD4WZD1o;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=gwMQJdR2;
+       spf=pass (google.com: domain of 010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com designates 54.240.9.1 as permitted sender) smtp.mailfrom=010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=superteamearn.com
+Return-Path: <010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com>
+Received: from a9-1.smtp-out.amazonses.com (a9-1.smtp-out.amazonses.com. [54.240.9.1])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6e205df61ddsi58140686d6.189.2025.01.25.12.59.55
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 25 Jan 2025 12:59:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of 010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com designates 54.240.9.1 as permitted sender) client-ip=54.240.9.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@superteamearn.com header.s=resend header.b=PD4WZD1o;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=gwMQJdR2;
+       spf=pass (google.com: domain of 010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com designates 54.240.9.1 as permitted sender) smtp.mailfrom=010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@bounces.superteamearn.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=superteamearn.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=resend;
+	d=superteamearn.com; t=1737838795;
+	h=List-Unsubscribe:From:To:Reply-To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type;
+	bh=XslGLaEHAMFA9LLFGffNzwq4wWHaDDjoCooCzoSbclQ=;
+	b=PD4WZD1ozhqaQ0x/rN9GWmb3P8gYwK9mEGN/ZuJnYLSJZW9aZxGmam20RxCAZOsT
+	Sw79oy5Rq7/TllNxqy4yUfFGXbDOKbFNHJp2r7obifcYPMUMNmbBksRkpVyBCTZ5Id+
+	9O2wg3zSvHomSuI9UK5x1ZvKx8FH7V3pvsbVq8wA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1737838795;
+	h=List-Unsubscribe:From:To:Reply-To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Content-Type:Feedback-ID;
+	bh=XslGLaEHAMFA9LLFGffNzwq4wWHaDDjoCooCzoSbclQ=;
+	b=gwMQJdR2TAqbEvpIXi2U3CcE2JrTVjP5JKmSB0EBnVDQ3Sa/OQRhYoBzc1cIcwuu
+	FmvsJFn/LT+diuLr5Q3LedVD/iJZp6Kl3mm20379PrhhvCSGELgIvF74eGIBrXEuuos
+	jRE8Q2fA2kY6SqxEvgySiHVChRRp1YtII6QVUYcc=
+List-Unsubscribe:
+ <https://earn.superteam.fun/api/email/unsubscribe?email=azri.mokhzani%40gmail.com&signature=0ffdd6a6bf415c4edffeae9243841e247261a7b52ab1c38802be1c4320ba3e5a>
+From: Pratik from Earn <pratik@superteamearn.com>
+To: azri.mokhzani@gmail.com
+Reply-To: support@superteamearn.com
+Subject: SendAI Has a New Project Just for You!
+Message-ID: <010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000@email.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Sat, 25 Jan 2025 20:59:54 +0000
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Feedback-ID: ::1.us-east-1.epbACCJLarUaEI78XZoGREJ9LamRjxMH5pM2kZb64rA=:AmazonSES
+X-SES-Outgoing: 2025.01.25-54.240.9.1
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!--$--><div style=3D"font-fa=
+mily:Arial, sans-serif;color:#333;margin:0 auto;padding:20px"><p style=3D"f=
+ont-size:14px;line-height:20px;margin-bottom:16px">Hey <!-- -->MUHD AZRI<!-=
+- -->,</p><p style=3D"font-size:14px;line-height:20px;margin:10px 0">SendAI=
+<!-- --> just posted a new <!-- -->Project<!-- --> called<!-- --> <a href=
+=3D"https://2pd2t5cz.r.us-east-1.awstrack.me/L0/https:%2F%2Fearn.superteam.=
+fun%2Flisting%2Fbuild-an-on-chain-sleuth-like-zachxbt%2F%3Futm_source=3Dsup=
+erteamearn%26utm_medium=3Demail%26utm_campaign=3Dnotifications/1/010001949f=
+43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000/osvBEUCEiGn-Nm7uJquPK-1T=
+8HI=3D410" style=3D"font-size:14px;color:#007BFF">Build an on-chain sleuth =
+like @zachxbt <!-- --> (<!-- -->100,000<!-- --> <!-- -->SEND<!-- -->)</a> <=
+!-- -->that looks like a great match for your skills! Have a quick look at =
+the scope of the <!-- -->Project<!-- --> and make sure to <!-- -->apply<!--=
+ --> before the deadline.</p><p style=3D"font-size:14px;line-height:20px;ma=
+rgin:10px 0">Pro tip: Subscribe to the <!-- -->Project<!-- --> to get relev=
+ant updates on it.</p><p style=3D"font-size:14px;line-height:20px;margin:10=
+px 0">Looking forward to seeing your submission!</p><p style=3D"font-size:1=
+4px;line-height:20px;margin-top:16px">Best,<br/>Superteam Earn</p><p style=
+=3D"font-size:14px;line-height:20px">=C2=A0</p><p style=3D"font-size:11px;l=
+ine-height:20px;margin-top:16px"><a href=3D"https://2pd2t5cz.r.us-east-1.aw=
+strack.me/L0/https:%2F%2Fearn.superteam.fun%2F%23emailPreferences/1/0100019=
+49f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000/nR5vSAsXY0BVOJJHi26B8=
+JnFeOI=3D410" style=3D"font-size:11px;color:#007BFF">Click here</a> <!-- --=
+>to update your email preferences on Earn (recommended) or<!-- --> <a href=
+=3D"https://2pd2t5cz.r.us-east-1.awstrack.me/L0/https:%2F%2Fearn.superteam.=
+fun%2Fapi%2Femail%2Funsubscribe%3Femail=3Dazri.mokhzani%2540gmail.com%26sig=
+nature=3D0ffdd6a6bf415c4edffeae9243841e247261a7b52ab1c38802be1c4320ba3e5a/1=
+/010001949f43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000/m-f2V1XyN2bzb=
+0ZFdPcf0UAJpok=3D410" style=3D"font-size:11px;color:#007BFF">click here</a>=
+ <!-- -->to unsubscribe from all future emails from Superteam Earn</p></div=
+><!--/$-->
+<img alt=3D"" src=3D"https://2pd2t5cz.r.us-east-1.awstrack.me/I0/010001949f=
+43987d-6e0c2aed-f8c6-48b2-b453-024d1434521e-000000/FjcpAF0BBc0idr6Eaab4AXRg=
+uq0=3D410" style=3D"display: none; width: 1px; height: 1px;">

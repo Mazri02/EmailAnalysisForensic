@@ -1,0 +1,687 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp3701405dye;
+        Wed, 29 Jan 2025 07:17:43 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IECg7cOLQJo7Tn8E12m1I2PAlotZtIMTW8z141BdpNY+/4dDij+KWAy802yvqRGmvLdyqFJ
+X-Received: by 2002:a05:690c:1c:b0:6f5:3bb1:7b7f with SMTP id 00721157ae682-6f7a83fcecdmr22666217b3.26.1738163863294;
+        Wed, 29 Jan 2025 07:17:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738163863; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PkVoVysyH+aU6zFpIXgioTkS6LdSMpZsVU/u9uB5eSD1dh+0a2AqOnFIPDAZ2wcn/z
+         A/tuIOaoIdFOKtkm3PdIKkdWfdt3jb2tfjNn/4Bq0FwE+iOBIt4RT6NJ2AtLPiHN7hiB
+         dbPUpiB6Wh98wc+DRbXV5AIcgwNB9oyWMrARdnk9kr0nIlb+MaUycgUgGrhfH4YoB+3q
+         yMTifN8quxIPHA9pYi2vGVeYzm6uSZmgfoxIufO3KQa43UtndB2s9zbT3uKxerVd4JpE
+         KPDPR4Rc8nt4BxOVyeE4I7v6eOwfShRtKzfn6sVLb6rRvbXnLAJHFpQ8HR+3mDy//Pcf
+         vpEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:reply-to:message-id:subject:mime-version:list-unsubscribe-post
+         :list-unsubscribe:from:feedback-id:date:dkim-signature
+         :dkim-signature;
+        bh=xGUzx4XrktzsN6DLY1nt/68iDsIBkDd2qL1sLgeadaM=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=DeLONvvgddFFVi0yTI8ndwNJ0xAgIRIsgwpuEcrAGHgCyYRqqKqkR2zcyC+16pEyWR
+         G3jbJN3I7pnl0QxogAaYHjwzJ3I7FvHsR7uqOLtNkLDKphCs0o3rxDyBVB16dE46Gvcu
+         f3gGsGxoEsYvkI4vZNSuN65gYZaW7+GKe88J9GhPWYjt6p9VWQNq2qZ/bIaT2JP+qoFZ
+         gydbXR21oCc8wsj1SvhH1oGcduHOLwwTz0nLPROW3mHl+LE3i1FIxtVYxs/MI66KUCDO
+         P6YB/jESM0WBAZLp0hfVI6GNK2lSYC5ZtbSxHXArqJfjMdgastGP99tB8jfwr+0d5AvW
+         bbQw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@stackoverflow.email header.s=s1 header.b=AcuTwvli;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dctOQ9lJ;
+       spf=pass (google.com: domain of bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email designates 168.245.32.199 as permitted sender) smtp.mailfrom="bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=stackoverflow.email
+Return-Path: <bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email>
+Received: from o16824532x199.outbound-mail.sendgrid.net (o16824532x199.outbound-mail.sendgrid.net. [168.245.32.199])
+        by mx.google.com with ESMTPS id 00721157ae682-6f757a33e11si99324377b3.434.2025.01.29.07.17.42
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 29 Jan 2025 07:17:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email designates 168.245.32.199 as permitted sender) client-ip=168.245.32.199;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@stackoverflow.email header.s=s1 header.b=AcuTwvli;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dctOQ9lJ;
+       spf=pass (google.com: domain of bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email designates 168.245.32.199 as permitted sender) smtp.mailfrom="bounces+5841141-ff82-azri.mokhzani=gmail.com@em.stackoverflow.email";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=stackoverflow.email
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=stackoverflow.email;
+	h=content-type:from:list-unsubscribe:list-unsubscribe-post:mime-version:
+	subject:reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=xGUzx4XrktzsN6DLY1nt/68iDsIBkDd2qL1sLgeadaM=;
+	b=AcuTwvliRnyErqC+Ald90w+rDNpxRT3rEIJ4f2p/KaDEt7SJ1vvn8pZTqd0z7nHK9FRq
+	zh48nZTTlp0E/kVex2zhPOoU3QWNkytmhxVUt5fbASBi9R2uq2gPB3Xr1PEKJcGH7Op0ul
+	K5E6NIbgFbleyjAkkYDbbcXkYcLtX6qDBEN1Ri/4sS8eY0QQwV3dYv563LapGTJhIY2FZU
+	n8KW9o2cwej/aAvTb8bGYTyNzOYBB7Do2sGi46wCCkKUl3hBHswMXukj/KYoC5R57vTe5B
+	TpvKWeTHbs1l3rTf8v2bJ1dKw35Sc1TTCVGJoswp5flDoEo2YLPZOnU7zKNKNOgg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:list-unsubscribe:list-unsubscribe-post:mime-version:
+	subject:reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xGUzx4XrktzsN6DLY1nt/68iDsIBkDd2qL1sLgeadaM=;
+	b=dctOQ9lJbYIEso3zF2zubaELmYOelzQaIHYsSDB9OcctZTPWeU86VGnxTg0AdgACmNXm
+	r5ASc8yNC7oyeFxEa/JCvzFTvjR+WOQgSXT72LXsdSOa4mn9Wa3RdSZ2pg5M50AaFPDEQ+
+	Gr92yAE8ildgG20wuY9LnLTJ/TzZ/syeI=
+Received: by recvd-canary-644869b85d-8gz6r with SMTP id recvd-canary-644869b85d-8gz6r-1-679A4696-7D
+	2025-01-29 15:17:42.543799681 +0000 UTC m=+6552557.916943291
+Received: from NTg0MTE0MQ (unknown)
+	by geopod-ismtpd-30 (SG) with HTTP
+	id P4Hcx20_S3quxWK_EAIW7w
+	for <azri.mokhzani@gmail.com>;
+	Wed, 29 Jan 2025 15:17:42.525 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=96b1e4afca59ff14a1cd1da093f01ad6a0583bccef8cff67f18bee3c649e
+Date: Wed, 29 Jan 2025 15:17:42 +0000 (UTC)
+Feedback-ID: 16273500:12412198:7013:iterable
+From: Stack Overflow <do-not-reply@stackoverflow.email>
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fitr-links=2Estackoverflow=2Eemail=2Fe=2FencryptedUnsubscribe=3F?=
+ =?us-ascii?Q?=5Fr=3D3603a3d8f3104ca5bd7015a5845f7fb7&=5Fs=3D?=
+ =?us-ascii?Q?8f5abfb827f4475abaca9bd94af47615&=5Ft=3DHc4?=
+ =?us-ascii?Q?=5F287A=5F6yrkJn97C8fp51L5fz8yrGmI1NveP8AEN?=
+ =?us-ascii?Q?lKxqGTE1J=5F9T7WfIsqqjJ0eilyeSNmzPpb0m1fW?=
+ =?us-ascii?Q?KAYICQBzEgJi=5FpDIJuzYPch4iX20co65QmbeE60?=
+ =?us-ascii?Q?vmh6ISN9=3E=2C=3Cmailto=3Aunsubscribe+12412198+?=
+ =?us-ascii?Q?16273500=40unsubscribe=2Eiterable=2Ecom=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Mime-Version: 1.0
+Subject: Issue 262: How the internet changed last year
+X-Campaign-ID: 12412198
+X-Message-ID: 8f5abfb827f4475abaca9bd94af47615
+Message-ID: <P4Hcx20_S3quxWK_EAIW7w@geopod-ismtpd-30>
+Reply-To: do-not-reply@stackoverflow.email
+X-Feedback-ID: 5841141:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E7T9LG94gE5PvPFZ5sHqbx0aQEH39HM4VEag=2FoDxT0lEaM5vxOLHuwYy+B?=
+ =?us-ascii?Q?MjdOE+dWmvUnK6xD3zjeV+ScVTLWXr8dl7XfsiZ?=
+ =?us-ascii?Q?N879wpQ3aZqgYPaE9ZR6PiTNFlpXTsf3W7aUzsa?=
+ =?us-ascii?Q?ztgDikZnXfS93faKhn6qnzxRpEMehFJ6OTLsXst?=
+ =?us-ascii?Q?qXgGtxotuuuZNjSStFICZQjlcqtQurA2uC=2FMMgy?=
+ =?us-ascii?Q?S7dFQ9U+QoKOihYmJa+S+m0mBbj1gl3EOsYFo5M?=
+ =?us-ascii?Q?9o960suvdp4u+aKzDjZta4EOEw=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCP2hMuZSnyB9tfr?=
+ =?us-ascii?Q?2qtGFkiUXexc6iE5XU8X7s=2F9F4WBkrahFrSZevv?=
+ =?us-ascii?Q?B0Pa9cW97l4MGnuR19LWb77NJE7dRbJJ+mGOTLV?=
+ =?us-ascii?Q?jVI2QwRtvLh0l=2FcStdCOWjQjO4Xn1t1HnSeEkQS?=
+ =?us-ascii?Q?vfbzvMpLfQNYFfzZ7eVg7Dvz0USCdnNTS+V8=2FqI?=
+ =?us-ascii?Q?w=3D=3D?=
+To: azri.mokhzani@gmail.com
+X-Entity-ID: u001.Iju2bZKbZXqhk8zFKtJU3Q==
+
+--96b1e4afca59ff14a1cd1da093f01ad6a0583bccef8cff67f18bee3c649e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+State of the internet, Gulf of America, dark mode =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C=20
+ <https://stackoverflow.com/>=20
+
+
+
+
+ 29 January=20
+
+ Welcome to ISSUE #262 of The Overflow! This newsletter is by developers, f=
+or=20
+developers, written and curated by the Stack Overflow team andCassidy Willi=
+ams=20
+<https://cassidoo.co/>. This week: The organizations to which Stack gave ba=
+ck=20
+in 2024, what you can do when your open-source plugin is repackaged as=20
+commercial code, and the UX of login codes.
+
+
+
+ From the blog=20
+
+Stack Gives Back 2024!=20
+<https://stackoverflow.blog/2025/01/27/stack-gives-back-2024/?utm_source=3D=
+iterable&utm_medium=3Demail&utm_campaign=3Dthe-overflow-newsletter>
+stackoverflow.blog
+We=E2=80=99re excited to announce our 16th annual Stack Gives Back campaign=
+ donations.
+
+How the internet changed in 2024=20
+<https://stackoverflow.blog/2025/01/24/how-the-internet-changed-in-2024/?ut=
+m_source=3Diterable&utm_medium=3Demail&utm_campaign=3Dthe-overflow-newslett=
+er>
+stackoverflow.blog
+John Graham-Cumming, CTO of Cloudflare, joins Ben and Ryan for a conversati=
+on=20
+about the latest trends in internet usage highlighted in Cloudflare's 2024 =
+Year=20
+in Review report.
+
+Why all developers should adopt a safety-critical mindset=20
+<https://stackoverflow.blog/2025/01/22/why-all-developers-should-adopt-a-sa=
+fety-critical-mindset/?utm_source=3Diterable&utm_medium=3Demail&utm_campaig=
+n=3Dthe-overflow-newsletter>
+stackoverflow.blog
+Is anyone designing software where failures don't have consequences?
+
+WBIT#3: Can good team dynamics make Agile obsolete?=20
+<https://stackoverflow.blog/2025/01/22/wbit-3-can-good-team-dynamics-make-a=
+gile-obsolete/?utm_source=3Diterable&utm_medium=3Demail&utm_campaign=3Dthe-=
+overflow-newsletter>
+stackoverflow.blog
+Kyle welcomes Wes Copeland, a senior frontend engineer at Apartment Advisor=
+,=20
+to the interview. They talk about how good test coverage helps you develop=20
+software faster, the benefits of low-fidelity prototypes, and why he prefer=
+s to=20
+avoid vibes-driven development.
+
+UiPath Autopilot=E2=84=A2: your AI-driven automation orchestrator=20
+<https://www.uipath.com/community-blog/tutorials/agentic-automation-with-ui=
+path-autopilot/?utm_source=3Dstackoverflow&utm_medium=3Dpaid_web_referral&u=
+tm_campaign=3Dawareness&utm_content=3Dnewsletter&utm_term=3Dagentic-automat=
+ion&utm_team=3Dcmt&utm_team_geo=3Dglobal>
+promotion
+Ready to leverage machine learning for intelligent process optimization?=20
+Experience adaptive automation with decision-making for complex task sequen=
+cing=20
+and error handling. Securely scale with top-tier AI models and governance.
+
+
+
+ Interesting questions=20
+
+Does the US President have authority to rename a geographic feature outside=
+=20
+the US?=20
+<https://politics.stackexchange.com/questions/90351/does-the-us-president-h=
+ave-authority-to-rename-a-geographic-feature-outside-the?utm_source=3Ditera=
+ble&utm_medium=3Demail&utm_campaign=3Dthe-overflow-newsletter>
+politics.stackexchange.com
+=E2=80=9CYou can call a geographic feature whatever you want. Whether you c=
+an get=20
+other people to agree with you is another matter.=E2=80=9D
+
+Is it legal to delete a licensed github repository which was contributed to=
+=20
+and then distribute this code as commercial?=20
+<https://opensource.stackexchange.com/questions/15330/is-it-legal-to-delete=
+-an-mit-licensed-github-repository-which-was-contributed-to?utm_source=3Dit=
+erable&utm_medium=3Demail&utm_campaign=3Dthe-overflow-newsletter>
+opensource.stackexchange.com
+You can=E2=80=99t put the toothpaste back in the tube.
+
+Why do solvers for =E2=80=9Cslower=E2=80=9D programming languages exist?=20
+<https://or.stackexchange.com/questions/12846/why-do-solvers-for-slower-pro=
+gramming-languages-exist?utm_source=3Diterable&utm_medium=3Demail&utm_campa=
+ign=3Dthe-overflow-newsletter>
+or.stackexchange.com
+Those solvers aren't actually Python in the end.
+
+Must companies keep records of internal messages (emails, Slack messages, M=
+S=20
+Teams chats, etc.) and if so, for how long?=20
+<https://law.stackexchange.com/questions/106946/must-companies-keep-records=
+-of-internal-messages-emails-slack-messages-ms-tea?utm_source=3Diterable&ut=
+m_medium=3Demail&utm_campaign=3Dthe-overflow-newsletter>
+law.stackexchange.com
+Legally speaking, you have no obligation to retain internal messages=E2=80=
+=94unless=20
+there=E2=80=99s a lawsuit in the works.
+
+
+
+ Links from around the web=20
+
+ClockSquared Mini, a word clock wristwatch=20
+<https://willempennings.nl/clocksquared-mini-a-word-clock-wristwatch/>=20
+willempennings.nl
+A very cool hardware project that displays time in words.
+
+Please don=E2=80=99t force dark mode=20
+<https://iamvishnu.com/posts/please-dont-force-dark-mode> iamvishnu.com
+Dark mode is a great option, but it should be that: an option.
+
+The UX of login codes <https://bradfrost.com/blog/post/the-ux-of-login-code=
+s/>=20
+bradfrost.com
+Security is important, but the user experience around it is, too.
+
+Guided by the beauty of our test suite=20
+<https://www.mattkeeter.com/blog/2025-01-20-guided/> www.mattkeeter.com
+A fun story about the power of testing and improvement.
+
+ Onboard, organize, and bring your team up to speed in a jiffy. Try Stack=20
+Overflow for Teams=20
+<https://stackoverflow.com/teams/create/free?utm_source=3Dso-owned&utm_medi=
+um=3Dbanner&utm_campaign=3Dcampaign-18&utm_content=3Dnewsletter>
+.
+
+
+
+ You=E2=80=99re receiving this email because you are subscribed to The Over=
+flow=20
+Newsletter from Stack Overflow.=20
+Unsubscribe from emails like this=20
+<https://itr-links.stackoverflow.email/e/eh?_t=3D3603a3d8f3104ca5bd7015a584=
+5f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMf3t4=
+I-OxIjLeHnXuOO_tW0r3KgI82kUvkatIDBdnDWf9zZ7qWOoT58JCczfdkVhk_MsAAB3Y-DMSnX7=
+LP2oS_-Opl85-Jz3pc51an3CSI6JTdWNpmyiPbOpUaWm2gjSIE70k77rdVfv5h9eM4TtSFV4Dst=
+nVa4KqdKPHhKTq8azrKzdX3gSoGPb-fSj-m0Vlh-ETKjWJ3IGw-8PNz3O_6SeQ2uSkQ5W8LBB6C=
+JH_S_BZaJhkghCwypWRiYvc1I8Tn16Ow7MuIjSonsATvBkcolfuSfwuQSXpuRs-eM2zfSt0YE-8=
+Z9R7VpcvuoMtNchMA%3D%3D>
+Edit email settings=20
+<https://stackoverflow.email/subscriptions/manage?iterable=3D1&id=3D1930220=
+9&auth=3D837d544726556925d11b5bfaa7b6f39b0b9ec4f384b6f7faa0b2db336cdd8b68&b=
+ucketId=3D1024&campaignId=3D12412198&templateId=3D16273500&messageId=3D8f5a=
+bfb827f4475abaca9bd94af47615&email=3Dazri.mokhzani%40gmail.com>
+Contact us <https://stackoverflow.com/company/contact> Privacy=20
+<https://stackoverflow.com/legal/privacy-policy>=20
+
+
+
+Stack Overflow, 14 Wall Street, 20th Floor, New York, NY 10005=20
+
+<3=20=
+
+--96b1e4afca59ff14a1cd1da093f01ad6a0583bccef8cff67f18bee3c649e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html> <html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xm=
+lns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-mi=
+crosoft-com:vml"> <head> <title></title> <!-- The title tag shows in email =
+notifications, like Android 4.4. --> <meta charset=3D"utf-8"> <!-- utf-8 wo=
+rks for most cases --> <meta name=3D"viewport" content=3D"width=3Ddevice-wi=
+dth"> <!-- Forcing initial-scale shouldn't be necessary --> <meta http-equi=
+v=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <!-- Use the latest (edge) ver=
+sion of IE rendering engine --> <meta name=3D"x-apple-disable-message-refor=
+matting"> <!-- Disable auto-scale in iOS 10 Mail entirely --> <meta name=3D=
+"format-detection" content=3D"telephone=3Dno,address=3Dno,email=3Dno,date=
+=3Dno,url=3Dno"> <!-- Tell iOS not to automatically link certain text strin=
+gs. --> <!-- Desktop Outlook on Windows sometimes chokes on web font refere=
+nces and defaults to Times New Roman, so we force a safe system font fallba=
+ck. --> <!--[if mso]><style>*{font-family:arial,sans-serif!important}</styl=
+e><![endif]--> <!-- All other clients get the webfont reference; some will =
+render the font and others will silently fail to the fallbacks. More on tha=
+t here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->=
+ <!--[if !mso]><!--> <link href=3D"https://fonts.googleapis.com/css?family=
+=3DRoboto+Slab:700" rel=3D"stylesheet"> <!--<![endif]--> <!-- CSS Reset : B=
+EGIN --> <style>html,body{margin:0!important;padding:0!important;height:100=
+%!important;width:100%!important}*{-ms-text-size-adjust:100%;-webkit-text-s=
+ize-adjust:100%}div[style*=3D"margin: 16px 0"]{margin:0!important}table,td{=
+mso-table-lspace:0!important;mso-table-rspace:0!important}table{border:0;bo=
+rder-spacing:0;border-collapse:collapse}img{-ms-interpolation-mode:bicubic}=
+a{text-decoration:none}a[x-apple-data-detectors],.unstyle-auto-detected-lin=
+ks a,.aBn{border-bottom:0!important;cursor:default!important;color:inherit!=
+important;text-decoration:none!important;font-size:inherit!important;font-f=
+amily:inherit!important;font-weight:inherit!important;line-height:inherit!i=
+mportant}u+#body a,#MessageViewBody a{color:inherit;text-decoration:none;fo=
+nt-size:inherit;font-family:inherit;font-weight:inherit;line-height:inherit=
+}.im{color:inherit!important}.a6S{display:none!important;opacity:.01!import=
+ant}img.g-img+div{display:none!important}@media only screen and (min-device=
+-width:320px) and (max-device-width:374px){u ~ div .email-container{min-wid=
+th:320px!important}}@media only screen and (min-device-width:375px) and (ma=
+x-device-width:413px){u ~ div .email-container{min-width:375px!important}}@=
+media only screen and (min-device-width:414px){u ~ div .email-container{min=
+-width:414px!important}}</style> <!-- What it does: Helps DPI scaling in Ou=
+tlook 2007-2013 --> <!--[if gte mso 9]><xml> <o:OfficeDocumentSettings> <o:=
+AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings=
+> </xml><![endif]--> <!-- CSS Reset : END --> <!-- Progressive Enhancements=
+ : BEGIN --> <style>.s-btn__primary:hover{background:#07c!important;border-=
+color:#07c!important}.s-btn__white:hover{background:#eff0f1!important;borde=
+r-color:#eff0f1!important}.s-btn__outlined:hover{background:rgba(0,119,204,=
+.05)!important;color:#005999!important}.s-tag:hover,.post-tag:hover{border-=
+color:#cee0ed!important;background:#cee0ed!important}.has-markdown a,.has-m=
+arkdown a:visited{color:#07c!important;text-decoration:none!important}code{=
+padding:1px 5px;background-color:#eff0f1;color:#242729;font-size:13px;line-=
+height:inherit;font-weight:normal;font-family:monospace;border-radius:3px}p=
+re{margin:0 0 15px;line-height:17px;background-color:#eff0f1;padding:4px 8p=
+x;border-radius:3px;overflow-x:auto}pre code{margin:0 0 15px;padding:0;line=
+-height:17px;background-color:none}blockquote{margin:0 0 15px;padding:4px 1=
+0px;background-color:#fff8dc;border-left:2px solid #ffeb8e}blockquote p{pad=
+ding:4px 0;margin:0;overflow-wrap:break-word}.bar{border-radius:5px}.btr{bo=
+rder-top-left-radius:5px;border-top-right-radius:5px}.bbr{border-bottom-lef=
+t-radius:5px;border-bottom-right-radius:5px}.adjust-logo{padding-left:15px}=
+@media screen and (max-width:680px){.stack-column,.stack-column-center{disp=
+lay:block!important;width:100%!important;max-width:100%!important;direction=
+:ltr!important}.stack-column-center{text-align:center!important}.hide-on-mo=
+bile{display:none!important;max-height:0!important;overflow:hidden!importan=
+t;visibility:hidden!important}.sm-p-none{padding:0!important}.sm-pt-none{pa=
+dding-top:0!important}.sm-pb-none{padding-bottom:0!important}.sm-pr-none{pa=
+dding-right:0!important}.sm-pl-none{padding-left:0!important}.sm-px-none{pa=
+dding-left:0!important;padding-right:0!important}.sm-py-none{padding-top:0!=
+important;padding-bottom:0!important}.sm-p{padding:20px!important}.sm-pt{pa=
+dding-top:20px!important}.sm-pb{padding-bottom:20px!important}.sm-pr{paddin=
+g-right:20px!important}.sm-pl{padding-left:20px!important}.sm-px{padding-le=
+ft:20px!important;padding-right:20px!important}.sm-py{padding-top:20px!impo=
+rtant;padding-bottom:20px!important}.sm-mb{margin-bottom:20px!important}.ba=
+r,.btr,.bbr{border-top-left-radius:0;border-top-right-radius:0;border-botto=
+m-left-radius:0;border-bottom-right-radius:0}.adjust-logo{padding-left:0}}<=
+/style> <!-- Progressive Enhancements : END --> <!-- Hubspot data-hse-inlin=
+e-css --> <style type=3D"text/css" data-hse-inline-css=3D"true">.has-markdo=
+wn a,.has-markdown a:visited{color:#07c!important;text-decoration:none!impo=
+rtant}</style> </head> <body width=3D"100%" style=3D"margin: 0; padding: 0 =
+!important; background: #f3f3f5; mso-line-height-rule: exactly;"><span styl=
+e=3D"color:transparent;visibility:hidden;display:none;opacity:0;height:0;wi=
+dth:0;font-size:0;">State of the internet, Gulf of America, dark mode &nbsp=
+;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</span><img sr=
+c=3D"https://itr-links.stackoverflow.email/e/eo?_t=3D3603a3d8f3104ca5bd7015=
+a5845f7fb7&amp;_m=3D8f5abfb827f4475abaca9bd94af47615&amp;_e=3DHc4_287A_6yrk=
+Jn97C8fp51L5fz8yrGmI1NveP8AENlKxqGTE1J_9T7WfIsqqjJ0eilyeSNmzPpb0m1fWKAYICQB=
+zEgJi_pDIJuzYPch4iVK_lXZuowjPHc-cU4zOGEzzR_vzBZXFtSRwmi7yF4XZA%3D%3D" style=
+=3D"border:0;width:1px;height:1px;border-width:0px!important;display:none!i=
+mportant;line-height:0!important;" width=3D"1" height=3D"1"/> <center style=
+=3D"width: 100%; background: #f3f3f5;"> <!--[if mso | IE]><table role=3D"pr=
+esentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ style=3D"background-color: #f3f3f5;"> <tr> <td><![endif]--> <div class=3D"=
+email-container" style=3D"max-width: 680px; margin: 0 auto;"> <!--[if mso]>=
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" width=3D"680" align=3D"center"> <tr> <td><![endif]--> <table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"max-wi=
+dth: 680px; width:100%"> <!-- Logo : BEGIN --> <tr> <td style=3D"padding: 2=
+0px 30px; text-align: left;" class=3D"sm-px"> <a href=3D"https://itr-links.=
+stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5a=
+bfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMXkcg9gPoy5270mY0Onx8=
+5K8cKvGgvOkXp62lO_DalpV_RmDUkzoBVnRr6g9FQEbBsLIjjyL_nSjkhUfVRCtSWivk3D5f2mt=
+1YibexbZa4H_odgAz_YTokB2Gv9kMKn7LRboZQxI0wbauEYwO2W-46Hw994OFJR1BHWBVzTHIOa=
+DZjz8bUalBvLmdKRdNybWoA%3D%3D"> <img src=3D"https://d15k2d11r6t6rl.cloudfro=
+nt.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/3603a3=
+d8f3104ca5bd7015a5845f7fb7/logo-stack-overflow.png" alt=3D"" border=3D"0" h=
+eight=3D"36" width=3D"146" style=3D"display: block; font-family: arial, san=
+s-serif; font-size: 15px; line-height: 15px; color: #3C3F44; margin: 0;"> <=
+/a> </td> </tr> <!-- Logo : END --> <!----------------------------- EMAIL B=
+ODY : BEGIN ------------------------------> <tr> <td style=3D"padding: 0 30=
+px; background-color: #ffffff;" class=3D"sm-px bar"> <table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"width:100%=
+; font-family: arial, sans-serif; font-size: 15px; line-height: 21px; color=
+: #3C3F44; text-align: left;"> <!-- Header : BEGIN --> <tr> <td style=3D"pa=
+dding-top: 20px; text-align: center;" class=3D"adjust-logo"> <h1 style=3D"t=
+ext-align: center; margin: 0; line-height: 1;"> <img src=3D"https://d15k2d1=
+1r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c54=
+2cff6dd6a/3603a3d8f3104ca5bd7015a5845f7fb7/logo-the-overflow.png" alt=3D"Th=
+e Overflow." height=3D"" width=3D"354" border=3D"0" style=3D"width: 100%; m=
+ax-width: 354px; height: auto; display: block; margin: 0 auto; font-weight:=
+ normal; font-family: arial, sans-serif; font-size: 15px; color: #3C3F44;">=
+ </h1> </td> </tr> <tr> <td style=3D"padding-bottom: 10px; font-family: 'Ro=
+boto Slab', arial, sans; font-size: 12px; line-height: 15px; color: #848D95=
+; text-align: center; text-transform: uppercase; letter-spacing: .1em;" cla=
+ss=3D"unstyle-auto-detected-links"> 29 January </td> </tr> <!-- Header : EN=
+D --> <!-- Intro : BEGIN --> <tr> <td style=3D"padding-top: 20px;"> <p styl=
+e=3D"margin: 0 0 30px;"> Welcome to ISSUE #262 of The Overflow! This newsle=
+tter is by developers, for developers, written and curated by the Stack Ove=
+rflow team and <a href=3D"https://itr-links.stackoverflow.email/u/click?_t=
+=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_=
+e=3DRHKwrfPe7Gwm9hV-9-sLMUX1zOM2zP8PVf5KYQwrk2ogxrB99ED5mxoQKUlJEMnhV2YwpEF=
+Uf3WoGtheWpcqccNQ5GTTqNmIKxDwcQpB8Q0yrzD2CYeCmBk3mLY30zfpXIwabTpL2QJQwM-bnb=
+UXgw6IYAg1RR03pmhJqSQoalT-t-YPDaiFMs5IbEyob1Hh1qBFHUmdiv8cbq7-oOXNJw%3D%3D"=
+ style=3D"color:#0077cc;text-decoration:none">Cassidy Williams</a>. This we=
+ek: The organizations to which Stack gave back in 2024, what you can do whe=
+n your open-source plugin is repackaged as commercial code, and the UX of l=
+ogin codes. </p> </td> </tr> <!-- Intro : END --> <!-- Section : BEGIN --> =
+<tr> <td style=3D"padding: 30px 0 0; border-top: 1px solid #D6D8DB;" class=
+=3D"sm-pt"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation"> <tr> <td style=3D"vertical-align: middle; padding: 0 10px 2=
+0px 0;"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Int=
+egrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/3603a3d8f3104ca5bd7015a5845f7=
+fb7/icon-blog%402x.png" height=3D"26" width=3D"26" border=3D"0" alt=3D"" st=
+yle=3D"display: block; font-family: arial, sans-serif; font-size: 15px; lin=
+e-height: 15px; color: #3C3F44;"> </td> <td style=3D"vertical-align: middle=
+; padding-bottom: 20px;"> <h2 style=3D"margin: 0; font-family: 'Roboto Slab=
+', arial, sans; font-size: 19px; line-height: 19px; font-weight: bold; colo=
+r: #3C3F44;"> From the blog </h2> </td> </tr> </table> <p style=3D"margin:0=
+ 0 30px"><a href=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603=
+a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHK=
+wrfPe7Gwm9hV-9-sLMbVyBTyVESXk5cXN8cV8OMR2kPi1xSvhsFMQ8dxGHZ7nUNFrXqemZybYrN=
+G6gFyiypEHzlWjcdY9Kn5INkHzkdYAvDrXAuou_ooulW3LiiS7favhOI860GpwPwl4NoDyJONse=
+1VB2RHkLpI-0-uJ_xmqN0Sg4JX9IcCl8hXSRAYhuD6UDPxcuhMZb7S0XFmi6GcJUjfbwHYdGMh2=
+pFsKaeOcVBn4_zq9xEWUSU5645fj-G5rtR66XC7ntH_Ij3Vs6eHXC5aA9AUZSUhKSvXmTQI6TX2=
+iv0tmSBlEfc4pnikw2r8fr0M3EEdk_i4GzXLd92tCtnOKg31bmrf8sKyHt0U%3D" style=3D"f=
+ont-weight:bold;color:#0077cc;text-decoration:none">Stack Gives Back 2024!<=
+/a>=C2=A0<span style=3D"color:#6A737C;font-size:12px" class=3D"unstyle-auto=
+-detected-links">stackoverflow.blog</span><br/>We=E2=80=99re excited to ann=
+ounce our 16th annual Stack Gives Back campaign donations.</p><p style=3D"m=
+argin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email/u/click?_t=
+=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_=
+e=3DRHKwrfPe7Gwm9hV-9-sLMbVyBTyVESXk5cXN8cV8OMRqrdnnaLryo5H0sqyfEG6ip9YDLu1=
+De_OxZbg6IV9fu5E_2ROEdOaYf3c0XCu7A09LGOYK_oEHVDAr8Y7BJpna1Y7k0UoavEMZZ7Kojr=
+2w7SDVlf9cBSzaYnSNlP4qXHqWtB3ZlyyMESSJD94CBuX6rghaIp6qPZzvua-jnZpSxnHWm4Okc=
+FGZ0qqVO8O0VeVC6EiMjEhzUaK8P_odRtPd_MqkxW8zZOoHoWoa9IhNY08zqt84dKH8ww5-6E_c=
+Yheo_Df92WcC9q4Oj3jxfsjHON2UvFLnAA0hgXfi7QNuEce19OZf9tqSkJnEUQ_AiXDWBwYHt4Q=
+6m4zUEsfor8nD" style=3D"font-weight:bold;color:#0077cc;text-decoration:none=
+">How the internet changed in 2024</a>=C2=A0<span style=3D"color:#6A737C;fo=
+nt-size:12px" class=3D"unstyle-auto-detected-links">stackoverflow.blog</spa=
+n><br/>John Graham-Cumming, CTO of Cloudflare, joins Ben and Ryan for a con=
+versation about the latest trends in internet usage highlighted in Cloudfla=
+re&#x27;s 2024 Year in Review report. </p><p style=3D"margin:0 0 30px"><a h=
+ref=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5b=
+d7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-=
+9-sLMbVyBTyVESXk5cXN8cV8OMQ_CERo3W9QWn21pZyu7xxV1SOVXkMwhEbg1nrsWNrN0r3cOOQ=
+pGJg7ERcJbYq8MS0dkh4NQYxbc3tnTKjNI3hvyOw5SDA8QpQ_9KX12TXtafLWcmDApOGILzMSTr=
+UYvR67TGpIwWKlDLYIbrM4bEEZvIAOFbfIHONpmCj-US6gG0IN3hcsmljKrhZ_zOxtIC3GWpymY=
+d34XQeQsiqvbegKUGHRT2IAMiNrKR2ZhiZg68uAn4SmDXxAF-mcHqM_NELXEWldpYjcTAve5Tn4=
+j0RS9j0YZoSXByQOEnwXT_Gnd9ZxOqtKAbEAQ9yxwdHa23B-khKDJpJrlJRM7ConZu_n6eZIdAf=
+w01zcWGC4cgOWbA%3D%3D" style=3D"font-weight:bold;color:#0077cc;text-decorat=
+ion:none">Why all developers should adopt a safety-critical mindset</a>=C2=
+=A0<span style=3D"color:#6A737C;font-size:12px" class=3D"unstyle-auto-detec=
+ted-links">stackoverflow.blog</span><br/>Is anyone designing software where=
+ failures don&#x27;t have consequences?</p><p style=3D"margin:0 0 30px"><a =
+href=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5=
+bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV=
+-9-sLMbVyBTyVESXk5cXN8cV8OMQ_UPss96xreBdds_mv7LmsxOKXNKdVv3er3M1Go9FL1q-6Fc=
+2356xbXRtmWIEfeRRNVmq3S3TSQKZ6m6MMSN5M_eP1MZKvo4CpvUHdvapfDo_tTLDAP8t5sbDZS=
+U3tSXm22hNyd8-nCO0zqkCVpE-spvkBtacBV1bHcBQl1mbECkZ9GEGpFeftIDUMFnYYo3SrhqvG=
+wnaRxA_pnkyyWxno9nDhdmym4_JWr8kGGy0obRs3HNNREhe-A3khctnsScfpdD7CEVhORvL4Qjo=
+pL3S-x44iZb_ne6DVKkbqGli3wfq0usw7aHS_Z6wAK1pnLalSHUd27mf-LWZbYxKzfDItWP7ivV=
+dh-LW-cOWOItsrDQ%3D%3D" style=3D"font-weight:bold;color:#0077cc;text-decora=
+tion:none">WBIT#3: Can good team dynamics make Agile obsolete?</a>=C2=A0<sp=
+an style=3D"color:#6A737C;font-size:12px" class=3D"unstyle-auto-detected-li=
+nks">stackoverflow.blog</span><br/>Kyle welcomes Wes Copeland, a senior fro=
+ntend engineer at Apartment Advisor, to the interview. They talk about how =
+good test coverage helps you develop software faster, the benefits of low-f=
+idelity prototypes, and why he prefers to avoid vibes-driven development.</=
+p><p style=3D"margin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.e=
+mail/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abac=
+a9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMXk6l5pKZjjbC4kvSM8lKmdqYN5HlBAPAHWR=
+73Mw07Ibd6DUSo2S98-UtLm3hYZS-Jr2dKBG97ojY43xIQSHBaoeWWPaxJewLG_4DuQORfMgsO4=
+ZNsojtwSVvBxE00aOWg_oTV0mxbqXeBgE2DmUgbttwZcqCcTDCNsZblcPABVMnB6Dm-yw85BzUn=
+jgjbMKnQ0vi4GQjEz_br3w8ZzVF46ni_fxd5DFxAZD9DUuhHwHUA-okuM2OXSM1yd7T4N5Ue9Qg=
+tzUPfKZZAf4hc3wSPDzTTNu8EuDWQnK_TXxH5b5_kuWy75Pm75jUbFVHq0MOat69dR5zSvUxpW3=
+TNO7WJnIjwYFQFun3aCI_kTjgBBHvj1eI-L6eGNRApyBoXq2zTBzxM6IbuRTXKoGo-u-QDzRUd6=
+_CThH4GHIwwAd9s2cCuJNiKFEfDFPt-BMtigUQhxqLy3iN94kPR9EWh74yhjNUgtVm8xLxbF-w2=
+ehNZC-" style=3D"font-weight:bold;color:#0077cc;text-decoration:none">UiPat=
+h Autopilot=E2=84=A2: your AI-driven automation orchestrator</a>=C2=A0<span=
+ style=3D"color:#6A737C;font-size:12px;line-height:12px;border:3px solid #F=
+FEEA9;background-color:#FFEEA9;display:inline-block;border-radius:3px">prom=
+otion</span><br/>Ready to leverage machine learning for intelligent process=
+ optimization? Experience adaptive automation with decision-making for comp=
+lex task sequencing and error handling. Securely scale with top-tier AI mod=
+els and governance.</p> </td> </tr> <!-- Section : END --> <!-- Section : B=
+EGIN --> <tr> <td style=3D"padding: 30px 0 0; border-top: 1px solid #D6D8DB=
+;" class=3D"sm-pt"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation"> <tr> <td style=3D"vertical-align: middle; padding: =
+0 10px 20px 0;"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/u=
+sers/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/3603a3d8f3104ca5bd701=
+5a5845f7fb7/icon-qa%402x.png" height=3D"26" width=3D"26" border=3D"0" alt=
+=3D"" style=3D"display: block; font-family: arial, sans-serif; font-size: 1=
+5px; line-height: 15px; color: #3C3F44;"> </td> <td style=3D"vertical-align=
+: middle; padding-bottom: 20px;"> <h2 style=3D"margin: 0; font-family: 'Rob=
+oto Slab', arial, sans; font-size: 19px; line-height: 19px; font-weight: bo=
+ld; color: #3C3F44;"> Interesting questions </h2> </td> </tr> </table> <p s=
+tyle=3D"margin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email/u=
+/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94=
+af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMc7QQppCH8HJ2312Xo6u-dD9aXWbBvnxvijfa1PPxm=
+nTPDoXMvCHUPbpcjSbpsG9QNTEd1HXgwNdMxj8KyNzgIC-Zm6QxNTzzemoZwteZL6XMfKoNY5XQ=
+YUizAZzAGInfcRuS2ubu2_f2byjkvQhbif9TNic6H9qpZbYbwrliIlL4buh_eE4gBqGGn_n-9wH=
+mErsfb_im_bpdrHtAQ9Tfr_jiRgQP6wtXiKt10KRa2tWqv9mJzZIZfmEbVuedP1ASNFcQ8t6Fpp=
+iYoZmhNJLGQgXpq88hDN77rY_D5TBjEcF-9Mt2Roam-zFOj1MZNZdDipBFa-rdnyLYotoe5SGIp=
+Vem_614t7URZmtFzR7A6dkN3VVxipuwOrD6fzlvv7k7Sn-mFXZDSCgb59ASlNGFYUYizOOUD8xT=
+GAVt-iUqNOH" style=3D"font-weight:bold;color:#0077cc;text-decoration:none">=
+Does the US President have authority to rename a geographic feature outside=
+ the US?</a>=C2=A0<span style=3D"color:#6A737C;font-size:12px" class=3D"uns=
+tyle-auto-detected-links">politics.stackexchange.com</span><br/>=E2=80=9CYo=
+u can call a geographic feature whatever you want. Whether you can get othe=
+r people to agree with you is another matter.=E2=80=9D</p><p style=3D"margi=
+n:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3=
+603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3D=
+RHKwrfPe7Gwm9hV-9-sLMZv9t3BSN3j4rtXiZhNIw0QfycMjLDyrnZv8Xb10Ns2esdwSqVNSLql=
+4fbo_NFZnZXs9D6yFT67UnyExD8h6yc6Eu743MJNwwWn7_3BCGXBDGcfxyVpgE2vs6OAy8D75mc=
+ONZ6d4ic--zeui7XEGS-C_MMv9AMaHevhyw4ol6LDF_H5oOSpidFJljaJiMC1B8sjExGnHCAKXL=
+DBoiOBwiPmkdunVeuIGFTEqJR3YWfLEeGCMvHBhGs0G2Iq2mwMnQWPykc5dxR62N72A3cecbttY=
+aJL-hOTG1eJumcz8CN5KbKM2ivGahHOkGBQipLA6ryVe9rPNKOzUT4i6c3mg2xQlBXXRmCD1z_G=
+D8EAbZK7Qyz7458T4gWpC0Ny9nEzPYIqd2e7GLkzQd46aif4OhGwS-iPL73MqBEusU53TS8sD" =
+style=3D"font-weight:bold;color:#0077cc;text-decoration:none">Is it legal t=
+o delete a licensed github repository which was contributed to and then dis=
+tribute this code as commercial?</a>=C2=A0<span style=3D"color:#6A737C;font=
+-size:12px" class=3D"unstyle-auto-detected-links">opensource.stackexchange.=
+com</span><br/>You can=E2=80=99t put the toothpaste back in the tube.</p><p=
+ style=3D"margin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email=
+/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd=
+94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMZGxEMFaDeX3s84J69JgkB3oRIT__9f7xEIfOOkP=
+joDJ96h-dX_ehUCVCY25Of9X9qgWhPiHUBqKbVyZrqgXgOZn1PkJSskftZx4hXN2QcwenEoPIkH=
+ih1tD1-eqtriVx2Nhj4qzu6G20wTDnU6kP7cYprbhvKlKNJPmTQFSimbCjADJKaeH34S9T_AC7M=
+EOPmjKXPNiPi5rJnEewU-FLjdIVxTQoGGxND8C49GlsCDC5-M3DHlBKDA516qMNQWRS8-b5UxvN=
+MO5u4Pj-7sIqyQ9614RHrhgC4VYTwfobZ9AR-mfS7u97DnPOV7T8pHc3hLDfx5XGIy0PuzQ0Cnq=
+pcE3-bL3OxXYx9nawVOqY1H4hy-pEqoAFcjYZgLAq8M83w%3D%3D" style=3D"font-weight:=
+bold;color:#0077cc;text-decoration:none">Why do solvers for =E2=80=9Cslower=
+=E2=80=9D programming languages exist?</a>=C2=A0<span style=3D"color:#6A737=
+C;font-size:12px" class=3D"unstyle-auto-detected-links">or.stackexchange.co=
+m</span><br/>Those solvers aren&#x27;t actually Python in the end.</p><p st=
+yle=3D"margin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email/u/=
+click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94a=
+f47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMcepJZ4mHTb1CLjJSCm8mXW1O_sCIm80k14adEq08ww=
+XBuq5E3q1e5s7uKN6nhK1KxtTOznsGuwUbQ1yY6gh2RjvbyrL00Ufln9T9ahVQkQpga2l2jaCu2=
+k21rO1kc_SYAnvF07hkpFo2IjeyJs374bJQZmVH70A_Z4zhFLulftD4N2ia2i6okXHce5_x3xnO=
+_FUL2eV3FRO7FMyEC8dVUPF3lu0Zjz92YZaItGi7FO740XAtkb9NoSjH46pqwO_5TLZqV6OJiE-=
+hIjmtwouf8CPN0KFTevi4D67Po3pmqhX3CV1KY4nhqQaFTv8AlrKhUYsbL37SixT5db6_VITnqA=
+Q0UzqIEsKT9h46Q6Cnst7YL4yVnX4sBMKR7BR327w2OROnVKf6fPvCEq1lDwlODVkO8QXUs33pK=
+j_HAWFL32t" style=3D"font-weight:bold;color:#0077cc;text-decoration:none">M=
+ust companies keep records of internal messages (emails, Slack messages, MS=
+ Teams chats, etc.) and if so, for how long?</a>=C2=A0<span style=3D"color:=
+#6A737C;font-size:12px" class=3D"unstyle-auto-detected-links">law.stackexch=
+ange.com</span><br/>Legally speaking, you have no obligation to retain inte=
+rnal messages=E2=80=94unless there=E2=80=99s a lawsuit in the works.</p> </=
+td> </tr> <!-- Section : END --> <!-- Section : BEGIN --> <tr> <td style=3D=
+"padding: 30px 0 0; border-top: 1px solid #D6D8DB;" class=3D"sm-pt"> <table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"> <t=
+r> <td style=3D"vertical-align: middle; padding: 0 10px 20px 0;"> <img src=
+=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713=
+-9b6a-46bb-bd7e-c542cff6dd6a/3603a3d8f3104ca5bd7015a5845f7fb7/icon-links%40=
+2x.png" height=3D"26" width=3D"26" border=3D"0" alt=3D"" style=3D"display: =
+block; font-family: arial, sans-serif; font-size: 15px; line-height: 15px; =
+color: #3C3F44;"> </td> <td style=3D"vertical-align: middle; padding-bottom=
+: 20px;"> <h2 style=3D"margin: 0; font-family: 'Roboto Slab', arial, sans; =
+font-size: 19px; line-height: 19px; font-weight: bold; color: #3C3F44;"> Li=
+nks from around the web </h2> </td> </tr> </table> <p style=3D"margin:0 0 3=
+0px"><a href=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8=
+f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfP=
+e7Gwm9hV-9-sLMUfO2TDYDJKPtARwP0xWYJC_P-FVHR4_LP0q92M2gqvhJw6EtGZ-j4oYwDemFr=
+-5aOzLXSR47ZxVih5g_sCBBgcm7jHAFJEwqH1Gbo8JzDN5HQ3QFDqLI5MIfkaL6OZFIAQUFEWNU=
+76iX8KW8KEP-mfE-SyBv1g8tFgIjl1oztShw1IEs_GG7CpcTYZKCOVwc0nGeOQ8XwmAVrl1Pvmq=
+QUXUSvjt29349oudLEUcVviHD3Bu7AlWWpeV57j1LNoyzw%3D%3D" style=3D"font-weight:=
+bold;color:#0077cc;text-decoration:none">ClockSquared Mini, a word clock wr=
+istwatch</a>=C2=A0<span style=3D"color:#6A737C;font-size:12px" class=3D"uns=
+tyle-auto-detected-links">willempennings.nl</span><br/>A very cool hardware=
+ project that displays time in words.</p><p style=3D"margin:0 0 30px"><a hr=
+ef=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5bd=
+7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9=
+-sLMTJxETfo8v-1ME1Ees87lOFadbheR2xHOyxTKu9_H78fL_FAHuukIieGs1cPCGUn093x7BZo=
+HmfCkNPLN0HRc2uih613TU2vptVf2cNMBNSnMNA7nPF42wMqUqWgbu-KZkTfWmlWcn7nBQT2WbM=
+0S6oOfS28NOzecEsPusf6FJg9K5YePLv98DGSD1ZfymMju-D8EtKeJa5mzMFEV7lRUFiueFryIa=
+6M0cxzbBieefjn" style=3D"font-weight:bold;color:#0077cc;text-decoration:non=
+e">Please don=E2=80=99t force dark mode</a>=C2=A0<span style=3D"color:#6A73=
+7C;font-size:12px" class=3D"unstyle-auto-detected-links">iamvishnu.com</spa=
+n><br/>Dark mode is a great option, but it should be that: an option.</p><p=
+ style=3D"margin:0 0 30px"><a href=3D"https://itr-links.stackoverflow.email=
+/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd=
+94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMR0IZicCdTBKA8BTKeeMAs5CGT74S39Av9r7mScb=
+PujNhAzv8zGuhZj7Blb02pRY-UG1o5WuO-x7oTpTXWTlVyjvoc6MnpXFCrLpMWLMAWS_n2lCKMu=
+GxOM9MUd4SjFt4fCHVPYIvt3ad0VvYI71rziecSZNCRDyouBrDRbc3FkP06vAYU_v8G_F1DoyG4=
+29BUN2719Oc-_EOx1DblDKW6osRhZo-UUb9Fda5choYdOv" style=3D"font-weight:bold;c=
+olor:#0077cc;text-decoration:none">The UX of login codes</a>=C2=A0<span sty=
+le=3D"color:#6A737C;font-size:12px" class=3D"unstyle-auto-detected-links">b=
+radfrost.com</span><br/>Security is important, but the user experience arou=
+nd it is, too.</p><p style=3D"margin:0 0 30px"><a href=3D"https://itr-links=
+.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5=
+abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMUq58JriYGhfatbHxIZl=
+vYTGSzTH9FpHOjN1LQ_4PAjFWzunZjlZJ3Jf-O8d6Hm7vl_9cJnsyj_FByAdChT1fULId_PqzpW=
+Xb2QvQu9jfWl41J7pmTJPXtvIzlkjWlu7QufkPZCFhjJ_djl44SkdV1Lt9lfOO-rOaDi3zPh3gG=
+_TSOfPBZq43k_lJuVQK8ah80Ym-QxIIOR66L2GaRJFCM3sXczYUUnWBvvdsCx_b3oC" style=
+=3D"font-weight:bold;color:#0077cc;text-decoration:none">Guided by the beau=
+ty of our test suite</a>=C2=A0<span style=3D"color:#6A737C;font-size:12px" =
+class=3D"unstyle-auto-detected-links">www.mattkeeter.com</span><br/>A fun s=
+tory about the power of testing and improvement.</p> <p style=3D"margin: 0 =
+0 30px;"> Onboard, organize, and bring your team up to speed in a jiffy. <a=
+ href=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca=
+5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9h=
+V-9-sLMXkcg9gPoy5270mY0Onx85LX5STR5eKtzGG1oPk2VN40RZOsj-3pDcNOg5w_0upRxqokm=
+ZmdmwxTxudisGz5iG2nHK9R0rJNwgQpWh2JGXnanes55iGW-bFIuc_F41TUasujf0PQ51WKWN6Z=
+arc_4bzGHt_MsZ97nx6eecIl561mH2d-Ly9FypjF37yV85VaPTRelvBTdSmU-TC3BOasi4IybH1=
+Jx_ZAxu9X2r3K-m_BmhszN-Ms_CZrlB4t4nTLzPDzRUnz7VNvr79QgbvTEL9P00Qs7Ek9iJqODt=
+q45GSc7m5tU1hhP4uK2COaS8RtwhCM4c411RAOlg_XVECQrJg%3D" style=3D"color:#0077c=
+c;text-decoration:none">Try Stack Overflow for Teams</a>. </p> </td> </tr> =
+<!-- Section : END --> <!-- Bumper : BEGIN --> <tr> <td style=3D"text-align=
+: center; line-height: 1;"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.n=
+et/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/3603a3d8f3=
+104ca5bd7015a5845f7fb7/footer%402x.png" alt=3D"" height=3D"" width=3D"581" =
+border=3D"0" style=3D"width: 100%; max-width: 581px; height: auto; display:=
+ block; margin: 0 auto; font-weight: normal; font-family: arial, sans-serif=
+; font-size: 15px; color: #3C3F44;"> </td> </tr> <!-- Bumper : BEGIN --> </=
+table> </td> </tr> <!----------------------------- EMAIL BODY : END -------=
+-----------------------> <!-- Footer : BEGIN --> <tr> <td style=3D"padding:=
+ 30px;" class=3D"sm-p"> <table align=3D"left" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" width=3D"100%"> <!-- Subscription=
+ Info : BEGIN --> <tr> <td style=3D"padding-bottom: 10px; font-size: 12px; =
+line-height: 15px; font-family: arial, sans-serif; color: #9199A1; text-ali=
+gn: left;"> You=E2=80=99re receiving this email because you are subscribed =
+to The Overflow Newsletter from Stack Overflow. </td> </tr> <tr> <td style=
+=3D"font-size: 12px; line-height: 15px; font-family: arial, sans-serif; col=
+or: #9199A1; text-align: left;"> <a href=3D"https://itr-links.stackoverflow=
+.email/e/eh?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca=
+9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMf3t4I-OxIjLeHnXuOO_tW0r3KgI82kUvkatI=
+DBdnDWf9zZ7qWOoT58JCczfdkVhk_MsAAB3Y-DMSnX7LP2oS_-Opl85-Jz3pc51an3CSI6JTdWN=
+pmyiPbOpUaWm2gjSIE70k77rdVfv5h9eM4TtSFV4DstnVa4KqdKPHhKTq8azrKzdX3gSoGPb-fS=
+j-m0Vlh-ETKjWJ3IGw-8PNz3O_6SeQ2uSkQ5W8LBB6CJH_S_BZaJhkghCwypWRiYvc1I8Tn16Ow=
+7MuIjSonsATvBkcolfuSfwuQSXpuRs-eM2zfSt0YE-8Z9R7VpcvuoMtNchMA%3D%3D" style=
+=3D"color: #9199A1; text-decoration: underline;">Unsubscribe from emails li=
+ke this</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://itr-links.stackoverf=
+low.email/u/click?_t=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f447=
+5abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-sLMf3t4I-OxIjLeHnXuOO_tW0r3KgI82k=
+UvkatIDBdnDWfoM7J6aVihbhrVZbnV6szbc3HWzdw8zjUcisz1TZ7F4Fc5k5Lk1FxTd25K1Feba=
+12COIA4_Q3stg-eNys2QEOZnEmirX3EZTWybpDvNMotK7oQ2Om-gRJ7Q5l39ZONfVgakhzT5GY7=
+YRllhYexbysEDsJrMVmAWRR6Rg8r1ijDS5MpDac9PcKVuV7Zn9X_OMkW_PoTNxLqfoVuRyMZWpU=
+06SqVer3mApfkcs8fwN1O-_hpF6TWk8RaizNcSHHR_zUYOf2FHGjSOHVt5kYiHMwlpe0yOLh2GL=
+NGaFrQK2b0ewcPaP0JE7Fnq6wcq3TSKeUU-hCcakC8o8lYwcRcqmX93olXOpqDokl6u9F1XFPz0=
+Fq0yPpX4Z6vD7lciW4Epkgv_dfLLwfAbQigbxOrCnYtYpf7i4-lR_HxFVnZNxkWep3E-rOF9GWO=
+t_A7xpINrDEld0rfj8u4yS9VfZpiHut4Q%3D%3D" style=3D"color: #9199A1; text-deco=
+ration: underline;">Edit email settings</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=
+=3D"https://itr-links.stackoverflow.email/u/click?_t=3D3603a3d8f3104ca5bd70=
+15a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_e=3DRHKwrfPe7Gwm9hV-9-s=
+LMXkcg9gPoy5270mY0Onx85I0KTJpdFWSVbCv1SXf2mT0BXxZutw0wnHPzY1egFkeU9YqXRMkU_=
+w4FuoTraTxchnye_yxpI3p1lzjuxq9gZxZfWum5FbXzSPQGlQc4vigKpedvIU0p6klAhozEEX8Z=
+8x0kZOZGQ5WJRbaCFMLxVRdPh1CNfnOeZ6bQYJxt1XKid5Ebr6HGAzOOD93txblQU8%3D" styl=
+e=3D"color: #9199A1; text-decoration: underline;">Contact us</a>&nbsp;&nbsp=
+;&nbsp;&nbsp; <a href=3D"https://itr-links.stackoverflow.email/u/click?_t=
+=3D3603a3d8f3104ca5bd7015a5845f7fb7&_m=3D8f5abfb827f4475abaca9bd94af47615&_=
+e=3DRHKwrfPe7Gwm9hV-9-sLMXkcg9gPoy5270mY0Onx85KbLeIJpY3sIuSu41X2G8DWS3A3SJI=
+x1XKos7v0OTNmASxu_EkKG4W-TiSYCM80OsZaUaZmBHnIwNdepZHz1oQE_OJKR6bxv3jDayTMqo=
+qef9-lX8-Sl0bhMs6vC7kKnR_hRn1C51_hJ41-c4gyYRloVL0LN2Yatpk0_iWyoo53PgeIUG_ot=
+GfRrmBCdhZn9z4%3D" style=3D"color: #9199A1; text-decoration: underline;">Pr=
+ivacy</a> </td> </tr> <!-- Subscription Info : BEGIN --> <!-- HR line : BEG=
+IN --> <tr> <td style=3D"padding: 30px 0;" width=3D"100%" class=3D"sm-py"> =
+<table aria-hidden=3D"true" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"width:100%"> <tr> <td height=3D"1" width=
+=3D"100%" style=3D"font-size: 0; line-height: 0; border-top: 1px solid #D6D=
+8DB;">&nbsp;</td> </tr> </table> </td> </tr> <!-- HR line : END --> <!-- Se=
+nder Info : BEGIN --> <tr> <td style=3D"padding-bottom: 5px; text-align: le=
+ft;"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integr=
+ators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/3603a3d8f3104ca5bd7015a5845f7fb7=
+/LogoSm%402x.png" align=3D"left" alt=3D"" border=3D"0" width=3D"111" height=
+=3D"22" style=3D"display: block; font-family: arial, sans-serif; font-size:=
+ 12px; line-height: 12px; color: #3C3F44;"> </td> </tr> <tr> <td style=3D"p=
+adding-bottom: 5px; font-size: 12px; line-height: 15px; font-family: arial,=
+ sans-serif; color: #9199A1; text-align: left;"><strong>Stack&nbsp;Overflow=
+</strong>, <span class=3D"unstyle-auto-detected-links">14 Wall Street, 20th=
+ Floor, New York, NY 10005</span></td> <!-- Sender Info : END --> <!-- Hear=
+t : BEGIN --> <tr> <td> <table align=3D"left" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"background:#ffffff; bord=
+er-radius:1px; line-height:0px"> <tr> <td> <div style=3D"border-radius: 1px=
+; border: 1px solid #D6D9DC; padding: 4px 6px 3px 6px; font-size: 11px; lin=
+e-height: 11px; font-family: Consolas, monospace; color: #E06C77;" title=3D=
+"because we care">&lt;3</div> </td> </tr> </table> </td> </tr> <!-- Heart :=
+ END --> </table> </td> </tr> <!-- Footer : END --> </table> </div> <!--[if=
+ mso | IE]></td> </tr> </table><![endif]--> </center> </body> </html>
+--96b1e4afca59ff14a1cd1da093f01ad6a0583bccef8cff67f18bee3c649e--

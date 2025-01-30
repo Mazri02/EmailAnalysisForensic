@@ -1,0 +1,779 @@
+Delivered-To: azri.mokhzani@gmail.com
+Received: by 2002:a05:7300:640b:b0:14b:7925:ffac with SMTP id k11csp1932773dye;
+        Sun, 26 Jan 2025 07:48:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGQ/9rRzPYcTxhRSuCsWD4xdiyJmF9mky0GnkhP6f/Uj9z8JwfO+XB7kWV3uhrS/8Ls+p1Z
+X-Received: by 2002:a05:6a00:ad8d:b0:72a:ae66:3050 with SMTP id d2e1a72fcca58-72daf931cd0mr49231205b3a.1.1737906501691;
+        Sun, 26 Jan 2025 07:48:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1737906501; cv=none;
+        d=google.com; s=arc-20240605;
+        b=S8EOCVZArUGEjDrhAUFlyAJvjP4cClM+HTMYuKOwWZKVv4pbO96INJmxYS37afBJrS
+         a7+aFF1ZSnC0tGyEGhr0YfdqR13F+AcmOAcapi0yzyiGePtWMUUDUkZFm0VaHSArnFCN
+         HJ66YYdeNDYlwrMvXzpd6b56rRI0XXWPRMJy02v6m3o6DfTdljMQQI3PXDstrvm4CQ8R
+         M0CN/owAMNLJr7HiA5uGb7XUdynYbv3DGUGz0tHiJ3YdWlEI6M1IZCSgDTjGlneLyCQl
+         47OAFyGeZarPcXxfP6U766aeKeasewJlAbYkEjppSKQrrOHGxg41ASFlmXOPQm1rcbcj
+         2noA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=FD0OqIJUQDMUmf+fNL/ACDPZbGQ879DqPS/TtpI7sDQ=;
+        fh=sw/IGTtXZtHfUi8EdUeH3kcihBB4PaVB4GpXV5T1Tgw=;
+        b=J1tvo06hnRB/bGYbiWOZimLmieruILPCtYhjuVtMardN9+XG1iHGo7fX5ONpTdRvtv
+         PGfAh+QY8gYCGYYDfLGdO1rLWtDRXyOfoNQDxmEvlZ+MTqG+29/k2SipZ8dXX0u7miXr
+         tH4BjxKY8mpOtHAtzK5tNIwLH2Y6K1mPJuIwQTSSaiUJjOvb8eZDtBoNzxXC//smNF8f
+         NZrV/gk5wZDa33yfmAlexKx36/DWsFDnduU20Wfj673OVkkCWN8K0X2SqLGaveFtJM6j
+         3gfoxlxrNEvENIyXzV4+9b2a2+rTY/uY1Hzml1SFy1cF0OX1XS5xASz11KnijT9sP2Ap
+         C8Pw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bybit.com header.s=z7nojmt6xmbw4polu2bvdbjuods4uemd header.b=Awuuk+ru;
+       dkim=pass header.i=@amazonses.com header.s=iowwo7fd7wqffpmrry5t52h55zq2wg7s header.b=KU7jx2Ie;
+       spf=pass (google.com: domain of 010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com designates 216.221.164.127 as permitted sender) smtp.mailfrom=010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bybit.com
+Return-Path: <010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com>
+Received: from g164-127.smtp-out.ap-southeast-1.amazonses.com (g164-127.smtp-out.ap-southeast-1.amazonses.com. [216.221.164.127])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-ac4993fa1d8si8277554a12.704.2025.01.26.07.48.21
+        for <azri.mokhzani@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 26 Jan 2025 07:48:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of 010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com designates 216.221.164.127 as permitted sender) client-ip=216.221.164.127;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bybit.com header.s=z7nojmt6xmbw4polu2bvdbjuods4uemd header.b=Awuuk+ru;
+       dkim=pass header.i=@amazonses.com header.s=iowwo7fd7wqffpmrry5t52h55zq2wg7s header.b=KU7jx2Ie;
+       spf=pass (google.com: domain of 010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com designates 216.221.164.127 as permitted sender) smtp.mailfrom=010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@notification-sg.from.bybit.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bybit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=z7nojmt6xmbw4polu2bvdbjuods4uemd; d=bybit.com; t=1737906500;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date;
+	bh=xAgVC+Nu+HZUldxwulr79D/24t/pS/tCCTVZYuZVIAk=;
+	b=Awuuk+rud+T6Cv+wIp6KvO3i9UznEEWP4MXYSgqWZ7Eq+GETHftwN7XDKyz4pOb2
+	snug452r5wNIdR26q8zJH1xdZQblzg2jnAEjufPeBUdrMFQwxlL8nlTE6Bu+XL3Gp3W
+	4qCaVJC67GjO3FpXLtchEOKJ/w8fddb3uZir/Tq45tmWCDKxMBllL0xyTuUa2GFLymu
+	cG4Esirc8IWZO+jsuRmbMCwwQLOF3JjVEdR8pp++YOzn5TVQf1yCHnhAavvG2maohLL
+	gMv5sZjLqTN/0bnqN5443dR9yXdHhAyWPZdXKXaZ5hWYXpX/BORbLLbT8kwkY4cFU7W
+	sXDjCT2MBw==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=iowwo7fd7wqffpmrry5t52h55zq2wg7s; d=amazonses.com; t=1737906500;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID;
+	bh=xAgVC+Nu+HZUldxwulr79D/24t/pS/tCCTVZYuZVIAk=;
+	b=KU7jx2Iei10svXz4ocq1VAQp14I+GKZF49t5ygJzte/HlQyeJaAu96iRGFAbE9L3
+	eSJOqUaz2IRlbBOMGHHXMqPDpv73K40MIWzIU64dvKs1q4G0f8Bsrrm5NNjeQSB69Pv
+	YFIa9GcLbHLQMmtiIGGsbiQDlK3i9KfHErN1ipS8=
+From: Bybit <notification@bybit.com>
+To: azri.mokhzani@gmail.com
+Subject: [Bybit]P2P Order Confirmation
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Message-ID: <010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000@ap-southeast-1.amazonses.com>
+Date: Sun, 26 Jan 2025 15:48:20 +0000
+Feedback-ID: ::1.ap-southeast-1.QLjGZX2CxcjQAbJNAJfftPmd5Q2UBwJE+TznWSm5H/U=:AmazonSES
+X-SES-Outgoing: 2025.01.26-216.221.164.127
+
+<style>
+  p{ margin:10px 0; padding:0; } 
+  table{ border-collapse:collapse; } 
+  h1,h2,h3,h4,h5,h6{
+    display:block; margin:0; padding:0; 
+  } 
+  img,a img{ 
+    border:0; height:auto;
+    outline:none; 
+    text-decoration:none; 
+  } 
+  body,#bodyTable,#bodyCell{ 
+    height:100%;
+    margin:0; 
+    padding:0; 
+    width:100%;
+    font-family: system-ui, BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Ubuntu;
+  } 
+  .mcnPreviewText{ 
+    display:none !important;
+  } 
+  #outlook a{ padding:0; } 
+  img{ -ms-interpolation-mode:bicubic; } 
+  table{
+    mso-table-lspace:0pt; 
+    mso-table-rspace:0pt;
+    
+  } 
+  table th, table tr td{
+   
+  }
+  .ReadMsgBody{ 
+    width:100%;
+  } 
+  .ExternalClass{ width:100%; } 
+  p,a,li,td,blockquote{ 
+    mso-line-height-rule:exactly;
+  } 
+  a[href^=tel],a[href^=sms]{ 
+    color:inherit; 
+    cursor:default; 
+    text-decoration:none;
+  } 
+  p,a,li,td,body,table,blockquote{ 
+    -ms-text-size-adjust:100%; 
+    -webkit-text-size-adjust:100%;
+  } 
+  .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{ 
+    line-height:100%; 
+  } 
+  a[x-apple-data-detectors]{
+    color:inherit !important; 
+    text-decoration:none !important; 
+    font-size:inherit !important; 
+    font-family:inherit !important; 
+    font-weight:inherit !important; 
+    line-height:inherit !important; 
+  } 
+  .templateContainer{
+    max-width:600px !important;
+  } 
+  a.mcnButton{ display:block; } 
+  .mcnImage,.mcnRetinaImage{ 
+    vertical-align:bottom;
+  } 
+  .mcnTextContent{ word-break:break-word; } 
+  .mcnTextContent img{ height:auto!important; } 
+  .mcnDividerBlock{ table-layout:fixed !important; } 
+
+  /* @tab Page @section Heading 1 @style heading 1 */ 
+  h1{ 
+    /*@editable*/color:#3a2b2b;
+    /*@editable*/font-family:Helvetica; 
+    /*@editable*/font-size:40px; 
+    /*@editable*/font-style:normal;
+    /*@editable*/font-weight:bold; 
+    /*@editable*/line-height:150%; 
+    /*@editable*/letter-spacing:normal;
+    /*@editable*/text-align:left; 
+  } 
+  /* @tab Page @section Heading 2 @style heading 2 */ 
+  h2{ 
+    /*@editable*/color:#222222; 
+    /*@editable*/font-family:Helvetica;
+    /*@editable*/font-size:34px; 
+    /*@editable*/font-style:normal; 
+    /*@editable*/font-weight:bold;
+    /*@editable*/line-height:150%; 
+    /*@editable*/letter-spacing:normal; 
+    /*@editable*/text-align:left;
+  } 
+  /* @tab Page @section Heading 3 @style heading 3 */ 
+  h3{ 
+    /*@editable*/color:#444444;
+    /*@editable*/font-family:Helvetica; 
+    /*@editable*/font-size:22px; 
+    /*@editable*/font-style:normal;
+    /*@editable*/font-weight:bold; 
+    /*@editable*/line-height:150%; 
+    /*@editable*/letter-spacing:normal;
+    /*@editable*/text-align:left; 
+  } 
+  /* @tab Page @section Heading 4 @style heading 4 */ 
+  h4{ 
+    /*@editable*/color:#949494; 
+    /*@editable*/font-family:Georgia;
+    /*@editable*/font-size:20px; 
+    /*@editable*/font-style:italic; 
+    /*@editable*/font-weight:normal;
+    /*@editable*/line-height:125%; 
+    /*@editable*/letter-spacing:normal; 
+    /*@editable*/text-align:left;
+  } 
+  /* @tab Header @section Header Container Style */ 
+  #templateHeader{ 
+   
+    /*@editable*/background-repeat:no-repeat; 
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover; 
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0;
+   
+  } 
+  /* @tab Header @section Header Interior Style */ 
+  .headerContainer{ 
+    /*@editable*/background-color:transparent;
+    /*@editable*/background-image:none; 
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center; 
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0; 
+    /*@editable*/padding-top:0;
+    /*@editable*/padding-bottom:0; 
+  } 
+  /* @tab Header @section Header Text */
+  .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{ 
+    /*@editable*/color:#757575;
+    /*@editable*/font-family:Helvetica; 
+    /*@editable*/font-size:16px; 
+    /*@editable*/line-height:150%;
+    /*@editable*/text-align:left; 
+  } 
+  /* @tab Header @section Header Link */
+  .headerContainer .mcnTextContent a,.headerContainer .mcnTextContent p a{
+    /*@editable*/color:#007C89; 
+    /*@editable*/font-weight:normal; 
+    /*@editable*/text-decoration:underline;
+  } 
+  /* @tab Body @section Body Container Style */ 
+  #templateBody{ 
+    /*@editable*/
+    /*@editable*/background-image:none; 
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center; 
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0; 
+  }
+  /* @tab Body @section Body Interior Style */ 
+  .bodyContainer{ 
+    /*@editable*/background-color:transparent; 
+    /*@editable*/background-image:none;
+    /*@editable*/background-repeat:no-repeat; 
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover; 
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0;
+    /*@editable*/padding-top:0; 
+    /*@editable*/padding-bottom:0; 
+  } 
+  /* @tab Body @section Body Text */ 
+  .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{ 
+    /*@editable*/color:#757575; 
+    /*@editable*/font-family:Helvetica; 
+    /*@editable*/font-size:16px;
+    /*@editable*/line-height:150%; 
+    /*@editable*/text-align:left; 
+  } 
+  /* @tab Body @section Body Link */ 
+  .bodyContainer .mcnTextContent a,.bodyContainer .mcnTextContent p a{ 
+    /*@editable*/color:#007C89; 
+    /*@editable*/font-weight:normal;
+    /*@editable*/text-decoration:underline; 
+  } 
+  /* @tab Footer @section Footer Style */ 
+  #templateFooter{ 
+    /*@editable*/
+    /*@editable*/background-image:none;
+    /*@editable*/background-repeat:no-repeat; 
+    /*@editable*/background-position:center;
+    /*@editable*/background-size:cover; 
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0;
+    /*@editable*/padding-bottom:20px;
+  } 
+  /* 
+  @tab Footer @section Footer Interior Style */ 
+  .footerContainer{ 
+    /*@editable*/background-color:transparent;
+    /*@editable*/background-image:none; 
+    /*@editable*/background-repeat:no-repeat;
+    /*@editable*/background-position:center; 
+    /*@editable*/background-size:cover;
+    /*@editable*/border-top:0; 
+    /*@editable*/border-bottom:0; 
+    /*@editable*/padding-top:0;
+    /*@editable*/padding-bottom:0; 
+  } 
+  /* @tab Footer @section Footer Text */
+  .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{ 
+    /*@editable*/color:#FFFFFF;
+    /*@editable*/font-family:Helvetica; 
+    /*@editable*/font-size:12px; 
+    /*@editable*/line-height:150%;
+    /*@editable*/text-align:center; 
+  }
+  /* @tab Footer @section Footer Link */
+  .footerContainer .mcnTextContent a,.footerContainer .mcnTextContent p a{
+    /*@editable*/color:#FFFFFF; 
+    /*@editable*/font-weight:normal; 
+    /*@editable*/text-decoration:underline;
+  } 
+  @media only screen and (min-width:768px){ 
+    .templateContainer{ width:600px !important; } 
+  } 
+  @media only screen and (max-width: 480px){ 
+    body,table,td,p,a,li,blockquote{
+      -webkit-text-size-adjust:none !important; 
+    } 
+  }
+  @media only screen and (max-width: 480px){ 
+    body{ width:100% !important; min-width:100% !important; } 
+  } 
+  @media only screen and (max-width: 480px){ 
+    .mcnRetinaImage{ max-width:100% !important;} 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
+      max-width:100% !important; 
+      width:100% !important; 
+    } 
+  } 
+  @media only screen and (max-width: 480px){ 
+    .mcnBoxedTextContentContainer{ 
+      min-width:100% !important;
+    }
+  } 
+  @media only screen and (max-width: 480px){ 
+    .mcnImageGroupContent{ padding:9px !important; } 
+  } 
+  @media only screen and (max-width: 480px){ .mcnCaptionLeftContentOuter
+    .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{ 
+      padding-top:9px !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{ 
+      padding-top:18px !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnImageCardBottomImageContent{ padding-bottom:9px !important; }
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnImageGroupBlockInner{ padding-top:0 !important; padding-bottom:0 !important; } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnImageGroupBlockOuter{ 
+      padding-top:9px !important; 
+      padding-bottom:9px !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnTextContent,.mcnBoxedTextContentColumn{ 
+      padding-right:18px !important; 
+      padding-left:18px !important; 
+    }
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{ 
+      padding-right:18px !important; 
+      padding-bottom:0 !important; 
+      padding-left:18px !important;
+    } 
+  } 
+  @media only screen and (max-width: 480px){ 
+    .mcpreview-image-uploader{
+      display:none !important; 
+      width:100% !important; 
+    }
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Heading 1 @tip Make the first-level headings larger in size for better readability on small screens. */ 
+    h1{ 
+      /*@editable*/font-size:30px !important; 
+      /*@editable*/line-height:125% !important; 
+    } 
+  } 
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Heading 2 @tip Make the second-level headings larger in size for better readability on small screens. */ 
+    h2{ 
+      /*@editable*/font-size:26px !important; 
+      /*@editable*/line-height:125% !important; 
+    }
+  } 
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Heading 3 @tip Make the third-level headings larger in size for better readability on small screens. */ 
+    h3{ 
+      /*@editable*/font-size:20px !important; 
+      /*@editable*/line-height:150% !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Heading 4 @tip Make the fourth-level headings larger in size for better readability on small screens. */ 
+    h4{ 
+      /*@editable*/font-size:18px !important; 
+      /*@editable*/line-height:150% !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Boxed Text @tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px. */ 
+    .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{ 
+      /*@editable*/font-size:14px !important; 
+      /*@editable*/line-height:150% !important; 
+    }
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Header Text @tip Make the header text larger in size for better readability on small screens.*/ 
+    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      /*@editable*/font-size:16px !important; 
+      /*@editable*/line-height:150% !important;
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Body Text @tip Make the body text larger in size for better readability on small screens. We recommend a font size of at least 16px. */ 
+    .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{ 
+      /*@editable*/font-size:16px !important; 
+      /*@editable*/line-height:150% !important; 
+    } 
+  } 
+
+  @media only screen and (max-width: 480px){ 
+    /* @tab Mobile Styles @section Footer Text @tip Make the footer content text larger in size for better readability on small screens. */ 
+    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{ 
+      /*@editable*/font-size:14px !important; 
+      /*@editable*/line-height:150% !important; 
+    } 
+  }
+</style>
+<center>
+<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+<tbody>
+<tr>
+<td align="center" valign="top" id="bodyCell"><!-- BEGIN TEMPLATE // -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" valign="top" id="templateHeader" data-template-container=""><!-- [if (gte mso 9)|(IE)]>
+                  <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                  <tr>
+                  <td align="center" valign="top" width="600" style="width:600px;">
+                  <![endif]-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="max-width: 640px; margin: 0px auto; background: #fff;" width="100%" class="templateContainer">
+<tbody>
+<tr>
+<td valign="top" class="headerContainer">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;">
+<tbody class="mcnImageBlockOuter">
+<tr>
+<td valign="top" style="padding: 0px;" class="mcnImageBlockInner">
+<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;">
+<tbody>
+<tr>
+<td class="mcnImageContent" valign="top" style="text-align: center; padding: 20px 0px;"><img align="center" alt="" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/f354a305-ccb3-4b43-bb5c-39b08c0ac9707a1f37228082bb6ce81088e3980e6213.png" width="221" style="width: 221px; border-radius: 0%;" class="mcnImage" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+<tr>
+<td align="center" valign="top" id="templateBody" data-template-container=""><!-- [if (gte mso 9)|(IE)]>
+                  <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                  <tr>
+                  <td align="center" valign="top" width="600" style="width:600px;">
+                  <![endif]-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+<tbody>
+<tr>
+<td valign="top" class="bodyContainer">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;">
+<tbody class="mcnTextBlockOuter">
+<tr>
+<td valign="top" class="mcnTextBlockInner" style="padding-top: 0px;"><!-- [if mso]>
+                                  <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                  <tr>
+                                  <![endif]--> <!-- [if mso]>
+                                  <td valign="top" width="600" style="width:600px;">
+                                  <![endif]-->
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+<tbody>
+<tr>
+<td valign="top" style="padding: 0px 0px 0px;">
+<div id="contentContainer" style="box-sizing: border-box; text-align: left; max-width: 640px; width: 100%; margin: auto; background: #fff; padding: 20px 40px; line-height: 200%; font-size: 16px;"><div><span>Dear Trader,</span></div>
+<div><span></span></div>
+<div><span>You'</span><span><span>ve created a P2P order and are currently selling coins to the counterparty. To view more, </span></span>please head to the P2P Order List.</div>
+<div><span></span></div>
+<div>
+<div data-zone-id="0" data-line-index="4"><span>Order No.: </span><span><span data-lark-record-data="{&quot;rootId&quot;:&quot;doxusoJjru3IkbaJdt5hK5FEKeb&quot;,&quot;text&quot;:{&quot;initialAttributedTexts&quot;:{&quot;text&quot;:{&quot;0&quot;:&quot;******4944&quot;},&quot;attribs&quot;:{&quot;0&quot;:&quot;*0+b&quot;}},&quot;apool&quot;:{&quot;numToAttrib&quot;:{&quot;0&quot;:[&quot;author&quot;,&quot;7057811603734921222&quot;]},&quot;nextNum&quot;:1}},&quot;type&quot;:&quot;text&quot;,&quot;referenceRecordMap&quot;:{},&quot;extra&quot;:{&quot;mention_page_title&quot;:{},&quot;external_mention_url&quot;:{}},&quot;isCut&quot;:false}" data-lark-record-format="docx/text" class="lark-record-clipboard"></span></span>******4944</div>
+<div data-zone-id="0" data-line-index="5"><span>Transaction Amount: </span><span><span data-lark-record-data="{&quot;rootId&quot;:&quot;doxusoJjru3IkbaJdt5hK5FEKeb&quot;,&quot;text&quot;:{&quot;initialAttributedTexts&quot;:{&quot;text&quot;:{&quot;0&quot;:&quot;36.615 MYR&quot;},&quot;attribs&quot;:{&quot;0&quot;:&quot;*0+n&quot;}},&quot;apool&quot;:{&quot;numToAttrib&quot;:{&quot;0&quot;:[&quot;author&quot;,&quot;7057811603734921222&quot;]},&quot;nextNum&quot;:1}},&quot;type&quot;:&quot;text&quot;,&quot;referenceRecordMap&quot;:{},&quot;extra&quot;:{&quot;mention_page_title&quot;:{},&quot;external_mention_url&quot;:{}},&quot;isCut&quot;:false}" data-lark-record-format="docx/text" class="lark-record-clipboard"></span></span>36.615 MYR</div>
+<div data-zone-id="0" data-line-index="6"><span>Transaction Qty: </span><span><span data-lark-record-data="{&quot;rootId&quot;:&quot;doxusoJjru3IkbaJdt5hK5FEKeb&quot;,&quot;text&quot;:{&quot;initialAttributedTexts&quot;:{&quot;text&quot;:{&quot;0&quot;:&quot;8.4955 USDT&quot;},&quot;attribs&quot;:{&quot;0&quot;:&quot;*0+m&quot;}},&quot;apool&quot;:{&quot;numToAttrib&quot;:{&quot;0&quot;:[&quot;author&quot;,&quot;7057811603734921222&quot;]},&quot;nextNum&quot;:1}},&quot;type&quot;:&quot;text&quot;,&quot;referenceRecordMap&quot;:{},&quot;extra&quot;:{&quot;mention_page_title&quot;:{},&quot;external_mention_url&quot;:{}},&quot;isCut&quot;:false}" data-lark-record-format="docx/text" class="lark-record-clipboard"></span></span>8.4955 USDT</div>
+<div data-zone-id="0" data-line-index="7"><span>Order Creation Time: </span><span><span data-lark-record-data="{&quot;rootId&quot;:&quot;doxusoJjru3IkbaJdt5hK5FEKeb&quot;,&quot;text&quot;:{&quot;initialAttributedTexts&quot;:{&quot;text&quot;:{&quot;0&quot;:&quot;2025-01-26 15:48:20&quot;},&quot;attribs&quot;:{&quot;0&quot;:&quot;*0+e&quot;}},&quot;apool&quot;:{&quot;numToAttrib&quot;:{&quot;0&quot;:[&quot;author&quot;,&quot;7057811603734921222&quot;]},&quot;nextNum&quot;:1}},&quot;type&quot;:&quot;text&quot;,&quot;referenceRecordMap&quot;:{},&quot;extra&quot;:{&quot;mention_page_title&quot;:{},&quot;external_mention_url&quot;:{}},&quot;isCut&quot;:false}" data-lark-record-format="docx/text" class="lark-record-clipboard"></span></span>2025-01-26 15:48:20 (UTC+0)</div>
+</div>
+<div><span></span></div>
+<div><span>Note: This is an automated message. Please do not reply.</span></div>
+<div><span></span></div>
+<div><span>Regards,</span></div>
+<div><span>The Bybit Team</span></div></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if mso]>
+                                  </td>
+                                  <![endif]--> <!-- [if mso]>
+                                  </tr>
+                                  </table>
+                                  <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+<tr>
+<td align="center" valign="top" id="templateFooter" data-template-container=""><!-- [if (gte mso 9)|(IE)]>
+                  <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                  <tr>
+                  <td align="center" valign="top" width="600" style="width:600px;">
+                  <![endif]-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+<tbody>
+<tr>
+<td valign="top" class="footerContainer">
+<table border="0" style="max-width: 640px; margin: 0px auto; background: #fff;" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="background-color: transparent; padding: 0px 24px 20px 24px; border-top: 1px solid #ddd !important;" class="mceBlockContainer" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: transparent;" role="presentation" data-block-id="64">
+<tbody></tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 12px 0 0px 0;" class="mceBlockContainer" align="center" valign="top"><img data-block-id="126" width="95" height="auto" style="height: auto; max-width: 100%; display: block;" alt="" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/6a63e23a-b9b0-4637-8221-4d94b530acea3836c84f172151f52d2d6410443e3768.png" role="presentation" class="imageDropZone" /></td>
+</tr>
+<tr>
+<td style="padding: 32px 24px 0 24px;" class="mceBlockContainer" valign="top">
+<div data-block-id="27" class="mceText" id="dataBlockId-27" style="width: 100%;">
+<p style="text-align: center; margin: 0px;" class="last-child">Never miss a beat on our latest product updates and events.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding: 16px 0px 0 0;" class="mceLayoutContainer" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="7">
+<tbody>
+<tr class="mceRow">
+<td style="background-position: center; background-repeat: no-repeat; background-size: cover; padding-top: 0px; padding-bottom: 0px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="margin-bottom: 0px;" class="mceColumn" data-block-id="-11" valign="top" colspan="12" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="" role="presentation" class="mceClusterLayout" data-block-id="-10">
+<tbody>
+<tr>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 8px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Ftwitter.com%2FBybit_Official/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/mce1j2bopd5S-VywSDFsEyOJIRU=195" style="display: block;" target="_blank" data-block-id="-5" rel="noopener"> <img height="auto" style="border: 0; width: 40px; height: auto; max-width: 100%; display: block;" alt="Twitter icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/966e7680-8f83-492b-b02f-a0360dea2c5f1eaba4ae14c4e9b5a88d2df88eb00aeb.png" class="" /> </a></td>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 8px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.instagram.com%2Fbybit_official%2F/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/jtsckf7ZmkDsugsFrrXTwzApyz0=195" style="display: block;" target="_blank" data-block-id="-7" rel="noopener"> <img height="auto" style="border: 0; width: 40px; height: auto; max-width: 100%; display: block;" alt="Instagram icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/873a047d-4d6c-41fa-b42c-a71aa1afc703b262cc27ee8ddcaa8704b6725755b4a7.png" class="" /> </a></td>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 8px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.tiktok.com%2F@bybit_official/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/bRr7A-fR2fu4o_mSEKQouJKrl_M=195" style="display: block;" target="_blank" data-block-id="-6" rel="noopener"> <img width="40" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="Email icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/9338e802-8753-4cab-ba90-020942731d57d541e47624222f95a15135f5ec2dde01.png" class="" /> </a></td>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 8px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.youtube.com%2Fc%2FBybit/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/yb7hLFMVXa3J5HuCOkmiHfJNZ9o=195" style="display: block;" target="_blank" data-block-id="-8" rel="noopener"> <img width="40" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="YouTube icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/97fb4364-df15-4b61-8f18-685d002eb7ed06944bef98b56ea368fa34b9ef456e90.png" class="" /> </a></td>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 8px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.facebook.com%2FBybit/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/dXMSwwZtEHqg7NiggyGazwyASIQ=195" style="display: block;" target="_blank" data-block-id="-9" rel="noopener"> <img width="40" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="Facebook icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/602922a7-31ab-4a90-84e9-aa375b154cf6ac1d1a7ed1fb224e6d9abe55aea6f3d5.png" class="" /> </a></td>
+<td style="padding-left: 0px; padding-top: 0; padding-right: 0px;" data-breakpoint="203" valign="top" class="mobileClass-203"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Ft.me%2FBybitEnglish/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/q5PkJlm7gl9Ej6lwSkDoHC9ZzTs=195" style="display: block;" target="_blank" data-block-id="-6" rel="noopener"> <img width="40" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="Email icon" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/3f19498d-8d85-421d-856c-9541c7b506e6b7134be5734d1368439928f9ceb40503.png" class="" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 32px 24px 16px 24px;" class="mceBlockContainer" valign="top">
+<div data-block-id="27" class="mceText" id="dataBlockId-27" style="width: 100%;">
+<p style="text-align: center;" class="last-child">Trade on the go with Bybit</p>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0 0px 0;" class="mceLayoutContainer" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="127" id="section_86a8f86d89835859ad27f46ca345f2fa" class="mceLayout">
+<tbody>
+<tr class="mceRow">
+<td style="background-position: center; background-repeat: no-repeat; background-size: cover;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td class="mceColumn" data-block-id="-18" valign="top" colspan="12" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="-15">
+<tbody>
+<tr class="mceRow">
+<td style="background-position: center; background-repeat: no-repeat; background-size: cover;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td class="mceColumn" data-block-id="-21" valign="top" colspan="12" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="132">
+<tbody>
+<tr class="mceRow">
+<td style="background-position: center; background-repeat: no-repeat; background-size: cover; padding-top: 0px; padding-bottom: 0px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" role="presentation"><colgroup> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> <col span="1" width="8.333333333333332%" /> </colgroup>
+<tbody>
+<tr>
+<td style="padding-top: 0; padding-bottom: 0;" class="mceColumn" data-block-id="129" valign="top" colspan="6" width="50%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="padding: 0 8px 0 0px;" class="mceBlockContainer" align="right" valign="top"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fapps.apple.com%2Fapp%2Fbybit-crypto-trading-platform%2Fid1488296980/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/2jkoGOO4nQvSg75uJg3aFqGyidY=195" style="display: block;" target="_blank" data-block-id="74" rel="noopener"> <img width="142" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="App  Store" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/c4a80c80-9f85-4efa-96d1-991fe69e9001b04ba90a0ec2841cdeb1ae9741ffd98a.png" class="" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style="padding-top: 0; padding-bottom: 0;" class="mceColumn" data-block-id="131" valign="top" colspan="6" width="50%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="padding: 0 0 0 8px;" class="mceBlockContainer" align="left" valign="top"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid=com.bybit.app%26hl=en/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/VaiAAQS_fEHpavzEnKV4sRjNURw=195" style="display: block;" target="_blank" data-block-id="75" rel="noopener"> <img width="164" height="auto" style="border: 0; height: auto; max-width: 100%; display: block;" alt="Google Play" src="https://prod-infra-app-pigeon-public.s3.ap-southeast-1.amazonaws.com/494cdd37-a457-4514-93f9-1d9020cabddecdd67f1e6a0ff92a160c9d46514a350b.png" class="" /> </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 32px 0px 0 0;" class="mceBlockContainer" align="center" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" data-block-id="76">
+<tbody>
+<tr class="mceStandardButton">
+<td style="border-radius: 0; text-align: center;" class="mceButton" valign="top"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fannouncements.bybit.com%2Fen%2F/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/f7kSJVMw2Ig7K8YZWxqFG4J_RJc=195" target="_blank" style="border-radius: 0; color: #000000; display: block; font-size: 12px; font-weight: normal; font-style: normal; padding: 0px 28px; text-decoration: underline; min-width: 30px; text-align: center; direction: ltr; letter-spacing: 0px;" rel="noopener"> Latest Promotions </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0 0px 0 0;" class="mceBlockContainer" align="center" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" data-block-id="77">
+<tbody>
+<tr class="mceStandardButton">
+<td style="border-radius: 0; text-align: center;" class="mceButton" valign="top"><a href="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/L0/https:%2F%2Fwww.bybit.com%2Fen%2Fhelp-center%2F%3Flanguage=en/1/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/JiGiLiNkQoWSQ1erFh2RyBwj7Mg=195" target="_blank" style="color: #000000; display: block; font-size: 12px; font-weight: normal; font-style: normal; padding: 12px 28px; text-decoration: underline; min-width: 30px; text-align: center; direction: ltr; letter-spacing: 0px;" rel="noopener"> Help Center </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px 0px 0 0;" class="mceBlockContainer" align="center" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" data-block-id="77">
+<tbody>
+<tr class="mceStandardButton">
+<td style="border-radius: 0; text-align: center;" class="mceButton" valign="top"><a href="&lt;%asm_group_unsubscribe_raw_url%&gt;" target="_blank" style="color: #000000; display: none; font-size: 12px; font-weight: normal; height: 0px; overflow: hidden; font-style: normal; padding: 0px 28px; text-decoration: underline; min-width: 30px; text-align: center; direction: ltr; letter-spacing: 0px;" rel="noopener"> Unsubscribe </a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding: 20px 8px;" class="mceLayoutContainer" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-block-id="11" id="section_f1849ed0ac3d950d92480254966870e8" class="mceFooterSection">
+<tbody>
+<tr class="mceRow">
+<td style="background-position: center; background-repeat: no-repeat; background-size: cover; padding-top: 0px; padding-bottom: 0px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="padding-top: 0; padding-bottom: 0; margin-bottom: 0px;" class="mceColumn" data-block-id="-3" valign="top" colspan="12" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+<tbody>
+<tr>
+<td style="padding: 0px 16px 0px 10px;" class="mceBlockContainer" align="center" valign="top">
+<div data-block-id="9" class="mceText" id="dataBlockId-9" style="display: inline-block; width: 100%;">
+<p style="text-align: center; margin: 0px;" class="last-child"><span style="color: #adb1b8;"> <span style="font-size: 12px;"> Copyright @2018 - 2025 Bybit. All rights reserved. </span> </span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- [if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!-- // END TEMPLATE --></td>
+</tr>
+</tbody>
+</table>
+</center><img alt="" src="https://3gxwg7dv.r.ap-southeast-1.awstrack.me/I0/010e0194a34cb452-c4f3ca96-d9bc-4c01-b038-2107c06d2400-000000/6XImkkMEAR3IK-0AptN0hIt8qAU=195" style="display: none; width: 1px; height: 1px;">
